@@ -1,0 +1,6 @@
+# Fuentes de solo lectura (no se versionan - ver AGENTS.md)
+*.xlsx
+
+# Datos derivados regenerables (opcional: descomentar si se quiere excluir)
+# *.csv
+# *.gpkg
