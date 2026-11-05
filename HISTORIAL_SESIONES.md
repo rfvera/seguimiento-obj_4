@@ -534,7 +534,8 @@ de mar adyacente sin zona (656 fragmentos), incluida una parte de Puyuhuapi de
   sin capa de límites marítimos.
 
 ### Commits
-- Pendiente de registrar.
+- `a5d290f` Rehacer polígonos de zona sin tierra y acotados a 100 km
+- `dde88b7` Agregar scripts y resultados de auditoría SIG de los polígonos
 
 ### Pendiente
 1. Revisar la franja de 185,01 km² adyacente a Guaitecas sin zona asignada.
