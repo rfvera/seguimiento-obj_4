@@ -79,14 +79,14 @@ def main():
     # --- Figura ---
     fig, ax = plt.subplots(1, 1, figsize=(12, 10))
 
-    # Costa de Chile (fondo, línea continua)
+    # Costa de Chile (primero, al fondo)
     if costa is not None:
-        costa.plot(ax=ax, color="#8B4513", edgecolor="#8B4513", alpha=0.9, linewidth=1.2)
+        costa.plot(ax=ax, color="#8B4513", edgecolor="#8B4513", alpha=0.9, linewidth=1.2, zorder=0)
 
-    # Polígonos ACS (fondo, semitransparentes)
-    acs.plot(ax=ax, color="lightgray", edgecolor="gray", alpha=0.4, linewidth=0.8)
+    # Polígonos ACS (segundo, semitransparentes)
+    acs.plot(ax=ax, color="lightgray", edgecolor="gray", alpha=0.4, linewidth=0.8, zorder=1)
 
-    # Estaciones coloreadas por zona_mf
+    # Estaciones coloreadas por zona_mf (dibujadas sobre todo)
     for zona in zonas:
         sub = gdf_est[gdf_est["zona_mf"] == zona]
         ax.scatter(
@@ -98,6 +98,7 @@ def main():
             linewidth=0.5,
             alpha=0.8,
             label=zona,
+            zorder=3,
         )
 
     # Configurar ejes
@@ -135,7 +136,8 @@ def main():
     y_min, y_max = gdf_est.geometry.y.min(), gdf_est.geometry.y.max()
     x_margen = (x_max - x_min) * 0.08
     y_margen = (y_max - y_min) * 0.08
-    ax.set_xlim(x_min - x_margen, x_max + x_margen)
+    x_min_plot = min(x_min - x_margen, -76.0)  # asegurar que llegue a 76°W
+    ax.set_xlim(x_min_plot, x_max + x_margen)
     ax.set_ylim(y_min - y_margen, y_max + y_margen)
 
     plt.tight_layout()
