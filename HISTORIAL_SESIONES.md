@@ -300,3 +300,46 @@ Generar una capa GPKG con polígonos de las zonas de macrofauna usando tesselaci
 
 ### Pendiente
 1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`) — HECHO (commit 4de2599 en main).
+
+
+## Sesión 2026-11-05 (usuario `rfvera`) — polígonos de zona recortados por área marina (Chile)
+
+### Objetivo
+Generar polígonos de zona de macrofauna usando tesselación de Voronoi por estación, recortados
+por un área marina = bounding box grande alrededor de las estaciones MINUS el polígono del país
+Chile (Natural Earth 10m), para que los polígonos NO incluyan tierra firme.
+
+### Decisiones (usuario)
+1. Usar Voronoi por estación + disolución por zona para evitar solapamientos entre polígonos de zona.
+2. Recortar cada polígono de Voronoi por el área marina = bbox grande alrededor de las estaciones −
+   polígono de Chile (Natural Earth 10m).
+3. Cada polígono de zona representa el área marina más cercana a las estaciones de esa zona.
+
+### Archivos creados/modificados
+- `zonas_poligonos.py` (reescrito): script para generar polígonos de zona usando Voronoi + dissolve,
+  recortado por área marina (bbox − Chile).
+- `salidas/figuras/zonas_macrofauna.gpkg` (nuevo): capa GPKG con 19 polígonos de zona (EPSG:4326),
+  sin solapamientos entre sí, sin incluir tierra firme.
+- `salidas/figuras/ne_10m_admin_0_countries.*` (nuevo): países Natural Earth 10m (necesario para
+  reproducir).
+- `mapa_estaciones_acs.py` (modificado): mapa actualizado con polígonos de zona recortados por
+  área marina, costa de Chile al fondo, eje X hasta 76°W, leyenda de norte a sur.
+- `salidas/figuras/mapa_estaciones_acs.png` (regenerado): mapa con estaciones, polígonos de zona,
+  polígonos ACS y costa.
+- `informe/mapa_estaciones_acs.png` (copiado): misma imagen en directorio informe/.
+- `informe/informe_ambiental.pdf` (regenerado): PDF recompilado con el mapa actualizado.
+- `AGENTS.md` (modificado): documentación de Pipeline 6 actualizada.
+- `HISTORIAL_SESIONES.md` (modificado): esta bitácora.
+
+### Resultados de referencia
+- 19 polígonos de zona generados (una por cada zona de macrofauna).
+- Verificación de solapamientos: área de solapamiento ≈ 0 (OK, no hay solapamientos).
+- CRS: EPSG:4326 (WGS84).
+- Zonas incluidas: Ayacara, Aysen, Butachauques, Calbuco, Chacao, Chaiten, Chaulinec,
+  Chiloe central, Desertores, Estuario, Guaitecas, Hornopiren, Moraleda, Natales, Pta. Arenas,
+  Puyuhuapi, Quellon, Reloncavi, Tenaun.
+- Polígonos recortados por área marina = bbox grande de estaciones − polígono país Chile
+  (Natural Earth 10m), por lo que NO incluyen tierra firme.
+
+### Pendiente
+1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`).
