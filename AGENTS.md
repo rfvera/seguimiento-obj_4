@@ -83,12 +83,27 @@ Salidas (en `salidas/analisis_ambiental/`):
   - Desertores: salinidad -0,08 psu/año (p=0,029, R2=0,65, n=7 años).
 - 8 zonas con solo 2024–2025 (sin tendencia): Ancud, Calbuco, Chacao, Chiloé central, Guaitecas, Hornopirén, Natales, Tenaun.
 
-### Resultados de perfiles por profundidad (140.787 registros, 349 profundidades)
+### Resultados de perfiles por profundidad y series de tiempo (140.787 registros, 349 profundidades)
 
-- 102 tendencias significativas (p<0,05) en zona×profundidad×variable.
+- 102 tendencias significativas de anomalías (p<0,05) en zona×profundidad×variable.
+- 178 tendencias significativas de series de tiempo anual (p<0,05).
+- Temperatura: 41 tendencias sig., calentamiento en Quellón +1,07 °C/año (R²=0,996).
+- Oxígeno: 46 tendencias sig., aumentos en Butachauques +0,68 ml/L/año (R²=0,966).
+- Salinidad: 91 tendencias sig., desalinización en Reloncaví −0,92 psu/año (R²=0,999), salinización en Aysén +0,60 psu/año (R²=0,73).
 - Aysén (238–250 m): salinidad −0,14 psu/año (R²=0,78–0,82).
 - Butachauques (284–290 m): salinidad −0,04 psu/año (R²>0,99).
 - Quellón (superficie): temperatura +0,88 °C/año (R²=1,00).
+
+## Pipeline 4: Análisis de series de tiempo por variable
+
+`~/miniconda3/envs/r_env/bin/python analisis_serie_tiempo.py`
+
+Usa `salidas/perfiles_procesados/promedio_anual_por_profundidad.csv`.
+
+Salidas (en `salidas/analisis_serie_tiempo/`):
+- `serie_tiempo_por_variable.csv` — 19.893 filas (zona×profundidad×variable con estadísticas y tendencia).
+- `series_tiempo_detalladas.csv` — 49.677 filas (zona×profundidad×variable×año con valor anual).
+- `resumen_tendencias_significativas.csv` — 178 filas (solo tendencias con p<0.05).
 
 ## Informe Typst (en `informe/`)
 

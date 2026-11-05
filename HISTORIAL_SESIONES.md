@@ -178,5 +178,31 @@ Integrar metodologías de análisis de CTD en series de tiempo: generar perfiles
 - Nulos: fecha 8.333, temperatura 3.289, oxígeno 8.931, salinidad 8.804 (despiking o datos originales faltantes).
 - 43.474 registros de archivo B sin profundidad de fondo (GEBCO no disponible o valor de tierra).
 
+### Pendiente (cerrado)
+1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`) — HECHO (commit f9f1494 en main).
+
+---
+
+## Sesión 2026-11-05 (usuario `rfvera`) — análisis de series de tiempo por variable
+
+### Objetivo
+Analizar cada zona×profundidad×variable como serie de tiempo anual (2019–2025) con tendencia lineal OLS, estadísticas descriptivas y detección de tendencias significativas.
+
+### Archivos creados/modificados
+- `analisis_serie_tiempo.py` (nuevo): script de análisis de series de tiempo por variable.
+- `salidas/analisis_serie_tiempo/serie_tiempo_por_variable.csv` (nuevo): 19.893 filas con estadísticas y tendencia por zona×profundidad×variable.
+- `salidas/analisis_serie_tiempo/series_tiempo_detalladas.csv` (nuevo): 49.677 filas con valor anual por zona×profundidad×variable×año.
+- `salidas/analisis_serie_tiempo/resumen_tendencias_significativas.csv` (nuevo): 178 filas con tendencias significativas (p<0.05).
+- `informe/informe_ambiental.typ` (regenerado): sección de series de tiempo por variable añadida con 4 nuevas tablas.
+- `informe/informe_ambiental.pdf` (regenerado): PDF recompilado.
+- `AGENTS.md` (regenerado): documentación de los 4 pipelines.
+- `HISTORIAL_SESIONES.md` (modificado): esta bitácora.
+
+### Resultados de referencia (series de tiempo anual)
+- 178 tendencias significativas (p<0,05).
+- Temperatura: 41 tendencias sig., Quellón +1,07 °C/año (R²=0,996).
+- Oxígeno: 46 tendencias sig., Butachauques +0,68 ml/L/año (R²=0,966).
+- Salinidad: 91 tendencias sig., Reloncaví −0,92 psu/año (R²=0,999), Aysén +0,60 psu/año (R²=0,73).
+
 ### Pendiente
 1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`).

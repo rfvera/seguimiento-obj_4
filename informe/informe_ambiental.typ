@@ -183,6 +183,78 @@ Se detectaron 102 tendencias estadísticamente significativas en combinaciones d
 - Butachauques (profundidades 284–290 m): salinidad disminuye −0,04 psu/año (p menor que 0,05, R² mayor que 0,99). Tendencia muy consistente de desalinización en aguas profundas.
 - **Quellón (superficie)**: temperatura aumenta +0,88 °C/año (p=0,023, R²=1,00). Tendencia de calentamiento superficial fuerte, aunque basada en pocos años (2023–2025).
 
+= Series de tiempo por variable
+
+Cada zona×profundidad×variable se analizó como serie de tiempo anual (2019–2025), calculando tendencia lineal por mínimos cuadrados ordinarios (OLS), cambio por década, estadísticas descriptivas y detección de tendencias significativas (p menor que 0,05).
+
+Se detectaron 178 tendencias significativas en 19 zonas, 349 profundidades y 3 variables:
+
+#figure(
+  table(
+    columns: (2.2cm, 1.6cm, 2.0cm, 2.0cm, 2.0cm, 1.6cm),
+    align: center,
+    [Variable], [n tend. sig.], [Pendiente media], [Cambio por década], [R² medio], [p-valor mínimo],
+    [Temperatura (°C)], [41], [+0,57 °C/año], [+5,71 °C/década], [0,99], [0,006],
+    [Oxígeno (ml/L)], [46], [+0,23 ml/L/año], [+2,27 ml/L/década], [0,88], [0,003],
+    [Salinidad (psu)], [91], [+0,10 psu/año], [+0,95 psu/década], [0,78], [0,001],
+  ),
+  caption: [Cuadro 4: Resumen de tendencias significativas por variable (series de tiempo anual, 2019–2025).],
+)
+
+== Tendencias de temperatura
+
+La temperatura muestra las tendencias de calentamiento más fuertes, concentradas en Quellón (superficie, 3–21 m) con aumentos de hasta +1,07 °C/año (R²=0,996).
+
+#figure(
+  table(
+    columns: (2.4cm, 1.8cm, 2.2cm, 2.2cm, 1.8cm, 1.6cm),
+    align: center,
+    [Zona], [Prof. (m)], [Pendiente (°C/año)], [Cambio por década], [p-valor], [R²],
+    [Quellón], [3.0], [+1,07], [+10,73], [0,043], [0,996],
+    [Quellón], [5.0], [+1,03], [+10,34], [0,035], [0,997],
+    [Quellón], [10.0], [+0,99], [+9,85], [0,024], [0,999],
+    [Quellón], [15.0], [+0,94], [+9,42], [0,019], [0,999],
+    [Quellón], [20.0], [+0,89], [+8,92], [0,026], [0,998],
+  ),
+  caption: [Cuadro 5: Tendencias de calentamiento significativas en temperatura (top 5 por pendiente).],
+)
+
+== Tendencias de oxígeno disuelto
+
+El oxígeno disuelto muestra 46 tendencias significativas, con los aumentos más fuertes en Butachauques (profundidades 4–7 m, +0,68 ml/L/año, R²=0,966).
+
+#figure(
+  table(
+    columns: (2.4cm, 1.8cm, 2.2cm, 2.2cm, 1.8cm, 1.6cm),
+    align: center,
+    [Zona], [Prof. (m)], [Pendiente (ml/L/año)], [Cambio por década], [p-valor], [R²],
+    [Butachauques], [6.0], [+0,68], [+6,84], [0,017], [0,966],
+    [Butachauques], [5.0], [+0,68], [+6,84], [0,018], [0,965],
+    [Butachauques], [4.0], [+0,68], [+6,79], [0,017], [0,967],
+    [Butachauques], [7.0], [+0,68], [+6,77], [0,018], [0,965],
+    [Butachauques], [2.0], [+0,67], [+6,74], [0,014], [0,972],
+  ),
+  caption: [Cuadro 6: Tendencias de oxígeno disuelto significativas (top 5 por pendiente).],
+)
+
+== Tendencias de salinidad
+
+La salinidad muestra el mayor número de tendencias significativas (91), con los cambios más fuertes en Reloncaví (profundidades 3–5 m, desalinización de hasta −0,92 psu/año, R²=0,999) y Aysén (profundidades 31–44 m, salinización de hasta +0,60 psu/año, R²=0,73).
+
+#figure(
+  table(
+    columns: (2.4cm, 1.8cm, 2.2cm, 2.2cm, 1.8cm, 1.6cm),
+    align: center,
+    [Zona], [Prof. (m)], [Pendiente (psu/año)], [Cambio por década], [p-valor], [R²],
+    [Reloncaví], [3.0], [−0,92], [−9,18], [0,033], [0,997],
+    [Reloncaví], [4.0], [−0,75], [−7,50], [0,007], [1,000],
+    [Reloncaví], [5.0], [−0,62], [−6,15], [0,036], [0,997],
+    [Aysén], [44.0], [+0,60], [+6,02], [0,030], [0,732],
+    [Aysén], [31.0], [+0,59], [+5,92], [0,047], [0,668],
+  ),
+  caption: [Cuadro 7: Tendencias de salinidad significativas (top 5 por |pendiente|).],
+)
+
 = Conclusiones
 
 1. El estado ambiental de referencia regional muestra temperaturas frías (media 9,73 °C), oxígeno moderado (media 5,48 ml/L) y salinidad cercana al océano abierto (media 32,16 psu), con variabilidad entre zonas y profundidades que refleja la heterogeneidad de los fiordos y canales de la Patagonia chilena.
@@ -194,6 +266,8 @@ Se detectaron 102 tendencias estadísticamente significativas en combinaciones d
 4. Ocho zonas tienen datos solo para 2024–2025 (2 años), por lo que no es posible evaluar trayectorias de cambio para ellas. Se recomienda mantener el monitoreo para acumular suficiente serie temporal.
 
 5. Las zonas con menor oxígeno de referencia (Puyuhuapi, Moraleda, Chaitén, Estuario) son candidatas a monitoreo prioritario de desoxigenación.
+
+6. El análisis de series de tiempo por variable confirma 178 tendencias significativas (p menor que 0,05), con temperatura mostrando el calentamiento más intenso en Quellón (+1,07 °C/año en superficie), oxígeno mostrando aumentos en Butachauques (+0,68 ml/L/año), y salinidad mostrando cambios opuestos en Reloncaví (desalinización −0,92 psu/año) y Aysén (salinización +0,60 psu/año).
 
 = Anexo: archivos de salida
 
