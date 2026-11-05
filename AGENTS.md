@@ -4,13 +4,15 @@ Evaluación de variabilidad ambiental y exposición de áreas de emplazamiento a
 
 ## Contexto metodológico
 
-Los datos son perfiles CTD (conductividad, temperatura, profundidad, oxígeno, densidad) tomados en estaciones repetidas a través del tiempo (etapas/fechas/años). Cada estación×fecha es un cast independiente. El procesamiento sigue el estándar oceánico:
+Los datos son perfiles CTD (conductividad, temperatura, profundidad, oxígeno, densidad) tomados en estaciones repetidas a través del tiempo (etapas/fechas/años). Cada estación×fecha es un cast independiente. El procesamiento sigue el estándar oceánico (RBR CTD Guidelines DFO 2017, BODC series documents, paquete R `oce`):
 
 1. **Trimming**: remover datos de superficie/calibración (FLAG_BOOL==0 en A, profundidad <0,5 m en B).
 2. **Despiking**: eliminar valores atípicos por grupo (regla IQR 3×).
-3. **Bin averaging**: promedio en bins de 1 metro de profundidad.
-4. **Registro de fondo**: tomar la medición a la profundidad máxima por estación×fecha.
-5. **Profundidad de fondo**: Archivo A desde `PROF_SECT_m`; Archivo B desde GEBCO_2026.
+3. **Bin averaging**: promedio en bins de 1 metro de profundidad, centrados en valores enteros.
+4. **Perfiles procesados**: conservar cada nivel de profundidad bineado (estación×fecha×profundidad).
+5. **Registro de fondo**: tomar la medición a la profundidad máxima por estación×fecha.
+6. **Profundidad de fondo**: Archivo A desde `PROF_SECT_m`; Archivo B desde GEBCO_2026.
+7. **Series de tiempo por profundidad**: promedio anual por zona×profundidad, ciclo estacional (seno/coseno), anomalías y tendencia lineal de anomalías (OLS).
 
 Ver `contexto_metodologico_ctd.md` para detalles y referencias verificadas.
 
@@ -20,7 +22,7 @@ Ver `contexto_metodologico_ctd.md` para detalles y referencias verificadas.
 - Entorno opcional `~/miniconda3/envs/gebco_env` (xarray, netCDF4) usado solo para descargar batimetría GEBCO vía OPeNDAP.
 - Rutas en scripts son absolutas (`BASE = /home/rfvera/.../objetivo_4`).
 
-## Pipeline de reconstrucción (desde archivos originales)
+## Pipeline 1: Reconstrucción desde archivos originales
 
 `~/miniconda3/envs/r_env/bin/python reconstruir_ctd.py`
 
@@ -40,7 +42,25 @@ Reglas clave:
 - `profundidad_fondo_fuente`: `PROF_SECT_m` (A) o `GEBCO_2026` (B).
 - Todas las estaciones tienen zona_mf asignada (0 nulas).
 
-## Pipeline de análisis ambiental
+## Pipeline 2: Perfiles procesados y series de tiempo por profundidad
+
+`~/miniconda3/envs/r_env/bin/python perfiles_procesados.py`
+
+Usa los mismos archivos originales + `gebco_profundidades_marea_roja.csv`.
+
+Escribe (en `salidas/perfiles_procesados/`):
+- `perfiles_procesados.csv` — 140.787 filas (estación×fecha×profundidad, 1–349 m).
+- `promedio_anual_por_profundidad.csv` — 16.559 filas (zona×profundidad×año).
+- `ciclo_estacional_por_profundidad.csv` — 7.615 filas (zona×profundidad×variable, ajuste seno/coseno).
+- `tendencias_anomalias_por_profundidad.csv` — 7.615 filas (zona×profundidad×variable, tendencia de anomalías).
+- `resumen_regional_por_profundidad.csv` — 349 filas (una por profundidad).
+
+Metodología de series de tiempo integrada:
+- Ciclo estacional: A = A_avg + A_amp·sin(2π·t/12) + A_pha·cos(2π·t/12).
+- Anomalías: observado menos ciclo estacional esperado.
+- Tendencia: OLS de anomalías vs año (mínimo 3 años).
+
+## Pipeline 3: Análisis ambiental (registro de fondo)
 
 `~/miniconda3/envs/r_env/bin/python salidas/analisis_ambiental/analisis_estado_referencia.py`
 
@@ -52,16 +72,23 @@ Salidas (en `salidas/analisis_ambiental/`):
 - `resumen_regional.csv` — métricas regionales.
 - `README.md` — documentación.
 
-### Resultados (2019–2025, 2.363 registros, 19 zonas, 258 estaciones)
+### Resultados (2019–2025, 2.363 registros fondo, 19 zonas, 258 estaciones)
 
 - Temperatura regional: media 9,73 °C, mediana 9,87 °C, desvío 1,50 °C (n=2.310).
 - Oxígeno regional: media 5,48 ml/L, mediana 5,26 ml/L, desvío 1,97 ml/L (n=2.189).
 - Salinidad regional: media 32,16 psu, mediana 32,56 psu, desvío 1,54 psu (n=2.247).
-- Tendencias significativas (p<0,05):
+- Tendencias significativas (p<0,05, registro de fondo):
   - Quellón: temperatura +0,88 °C/año (p=0,023, R2=0,999, n=3 años).
   - Aysén: salinidad +0,50 psu/año (p=0,030, R2=0,76, n=6 años).
   - Desertores: salinidad -0,08 psu/año (p=0,029, R2=0,65, n=7 años).
 - 8 zonas con solo 2024–2025 (sin tendencia): Ancud, Calbuco, Chacao, Chiloé central, Guaitecas, Hornopirén, Natales, Tenaun.
+
+### Resultados de perfiles por profundidad (140.787 registros, 349 profundidades)
+
+- 102 tendencias significativas (p<0,05) en zona×profundidad×variable.
+- Aysén (238–250 m): salinidad −0,14 psu/año (R²=0,78–0,82).
+- Butachauques (284–290 m): salinidad −0,04 psu/año (R²>0,99).
+- Quellón (superficie): temperatura +0,88 °C/año (R²=1,00).
 
 ## Informe Typst (en `informe/`)
 

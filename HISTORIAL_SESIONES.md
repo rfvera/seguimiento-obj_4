@@ -137,5 +137,46 @@ Reconstruir `fondo_ctd_por_zona.csv` desde los dos archivos Excel originales apl
 - 8 zonas con solo 2024–2025 (sin tendencia): Ancud, Calbuco, Chacao, Chiloé central, Guaitecas, Hornopirén, Natales, Tenaun.
 - Nulos en variables: temperatura 53, oxígeno 174, salinidad 116 (despiking o datos originales faltantes).
 
+### Pendiente (cerrado)
+1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`) — HECHO (commit b9b1a3d en main).
+
+---
+
+## Sesión 2026-11-05 (usuario `rfvera`) — perfiles procesados y series de tiempo por profundidad
+
+### Objetivo
+Integrar metodologías de análisis de CTD en series de tiempo: generar perfiles procesados (todas las profundidades, no solo el fondo), promedios anuales por profundidad, ciclo estacional y tendencias de anomalías por zona×profundidad.
+
+### Decisiones (usuario)
+1. Los promedios anuales deben ser por profundidad, no solo por registro de fondo.
+2. Integrar metodologías de análisis de CTD en series de tiempo (bin averaging 1m, ciclo estacional seno/coseno, anomalías, tendencias lineales de anomalías).
+3. Crear archivos de salida con los perfiles procesados.
+
+### Metodología aplicada (verificada en literatura)
+- Bin averaging 1 m (aguas costeras): RBR CTD Guidelines (DFO 2017), BODC series documents, oce R package.
+- Ciclo estacional anual: ajuste de mínimos cuadrados A_avg + A_amp·sin/cos (Scottish Marine & Freshwater Science 2013).
+- Anomalías y tendencias: restar ciclo estacional, OLS de anomalías vs año (RADMED/STOCA, Frontiers 2022).
+
+### Archivos creados/modificados
+- `perfiles_procesados.py` (nuevo): script de reconstrucción de perfiles y análisis de series de tiempo por profundidad.
+- `salidas/perfiles_procesados/perfiles_procesados.csv` (nuevo): 140.787 filas (estación×fecha×profundidad, 1–349 m).
+- `salidas/perfiles_procesados/promedio_anual_por_profundidad.csv` (nuevo): 16.559 filas (zona×profundidad×año).
+- `salidas/perfiles_procesados/ciclo_estacional_por_profundidad.csv` (nuevo): 7.615 filas (zona×profundidad×variable).
+- `salidas/perfiles_procesados/tendencias_anomalias_por_profundidad.csv` (nuevo): 7.615 filas (zona×profundidad×variable).
+- `salidas/perfiles_procesados/resumen_regional_por_profundidad.csv` (nuevo): 349 filas (una por profundidad).
+- `informe/informe_ambiental.typ` (regenerado): incluye perfiles por profundidad, ciclo estacional, tendencias de anomalías.
+- `informe/informe_ambiental.pdf` (regenerado): PDF recompilado.
+- `AGENTS.md` (regenerado): documentación de los 3 pipelines.
+- `HISTORIAL_SESIONES.md` (modificado): esta bitácora.
+
+### Resultados de referencia (perfiles procesados)
+- 140.787 registros de perfil (2019–2025), 19 zonas, 258 estaciones, 349 profundidades (1–349 m).
+- 102 tendencias significativas (p<0,05) en zona×profundidad×variable.
+- Aysén (238–250 m): salinidad −0,14 psu/año (R²=0,78–0,82).
+- Butachauques (284–290 m): salinidad −0,04 psu/año (R²>0,99).
+- Quellón (superficie): temperatura +0,88 °C/año (R²=1,00).
+- Nulos: fecha 8.333, temperatura 3.289, oxígeno 8.931, salinidad 8.804 (despiking o datos originales faltantes).
+- 43.474 registros de archivo B sin profundidad de fondo (GEBCO no disponible o valor de tierra).
+
 ### Pendiente
 1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`).
