@@ -104,24 +104,49 @@ def leer_archivo_b(path: Path) -> pd.DataFrame:
 # ---------------------------------------------------------------------------
 def registro_fondo(df: pd.DataFrame, estacion_col: str, fecha_col: str,
                    prof_col: str, archivo: str,
-                   var_map: dict) -> pd.DataFrame:
-    """Para cada (estacion, fecha) se queda con la fila de profundidad maxima.
+                   var_map: dict, fondo_col: str | None = None) -> pd.DataFrame:
+    """Para cada (estacion, fecha) se queda con la fila de profundidad maxima de
+    medicion (prof_col) y reporta la profundidad de fondo (fondo_col).
+
+    - prof_col: columna de profundidad de cada medicion del perfil CTD. Se usa
+      para seleccionar la fila mas profunda (idxmax) de la que se toman las
+      variables (temperatura, oxigeno, salinidad).
+    - fondo_col: columna con la profundidad de fondo (carta/ecosonda) por grupo.
+      Si es None (archivo B marea roja), profundidad_fondo_m queda NaN porque
+      los perfiles no llegan al fondo y no hay dato de fondo en el archivo.
     var_map: diccionario {columna_origen: columna_salida} para las variables.
     """
     n_total = len(df)
     n_fecha_nula = int(df[fecha_col].isna().sum())
     n_prof_nula = int(df[prof_col].isna().sum())
 
-    # Solo filas con fecha y profundidad validas entran en la agrupacion
+    # Solo filas con fecha y profundidad de medicion validas entran en la agrupacion
     val = df.dropna(subset=[estacion_col, fecha_col, prof_col]).copy()
     n_val = len(val)
 
-    # idx de la profundidad maxima por grupo (primer fila en caso de empate;
-    # decision documentada y determinista).
+    # idx de la profundidad maxima de medicion por grupo (primer fila en caso
+    # de empate; decision documentada y determinista).
     idx = val.groupby([estacion_col, fecha_col])[prof_col].idxmax()
     fondo = val.loc[idx].copy()
 
-    # Detectar empates reales en la profundidad maxima por (estacion, fecha).
+    # Profundidad de fondo: valor de fondo_col en la fila seleccionada. Cuando
+    # un grupo tiene varios valores de fondo_col (diferentes campañas), se toma
+    # el maximo (profundidad de fondo más profunda declarada).
+    if fondo_col is not None and fondo_col in val.columns:
+        fondo_map = (
+            val.groupby([estacion_col, fecha_col])[fondo_col]
+            .max()
+            .rename("profundidad_fondo_m")
+        )
+        fondo = fondo.merge(
+            fondo_map, on=[estacion_col, fecha_col], how="left"
+        )
+        fondo_fuente = fondo_col
+    else:
+        fondo["profundidad_fondo_m"] = pd.NA
+        fondo_fuente = None
+
+    # Detectar empates reales en la profundidad maxima de medicion por (estacion, fecha).
     tamanos = val.groupby([estacion_col, fecha_col])[prof_col].transform("max")
     en_max = val[prof_col] == tamanos
     n_grupos_empate = int(val[en_max].groupby([estacion_col, fecha_col]).size().gt(1).sum()) if len(val) else 0
@@ -139,8 +164,12 @@ def registro_fondo(df: pd.DataFrame, estacion_col: str, fecha_col: str,
         "archivo": archivo,
         "estacion_id": fondo[estacion_col].astype(str),
         "fecha": fondo[fecha_col],
-        "profundidad_fondo_m": fondo[prof_col],
+        "profundidad_fondo_m": fondo["profundidad_fondo_m"],
     })
+    if fondo_fuente is not None:
+        out["profundidad_fondo_fuente"] = fondo_fuente
+    else:
+        out["profundidad_fondo_fuente"] = "no_disponible"
     for src, dst in var_map.items():
         out[dst] = fondo[src].values
 
@@ -154,6 +183,7 @@ def registro_fondo(df: pd.DataFrame, estacion_col: str, fecha_col: str,
         "n_grupos_con_empate_prof_max": n_grupos_empate,
         "n_empate_afecta_variables": n_empate_afecta_var,
         "regla_desempate": "primera fila en orden de lectura (idxmax)",
+        "fondo_col": fondo_col,
     }
     return out, resumen
 
@@ -187,6 +217,7 @@ def main():
     fondoA, resA = registro_fondo(
         dfA, estacion_col="ESTACION", fecha_col="FECHA_INICIO", prof_col="PROF_EQ_m",
         archivo="A",
+        fondo_col="PROF_SECT_m",
         var_map={"TEMPERATURA_C": "temperatura_C",
                  "OXIG_ml_L": "oxigeno_ml_L",
                  "OXIG_mg_L": "oxigeno_mg_L",
@@ -202,11 +233,32 @@ def main():
     fondoB, resB = registro_fondo(
         dfB, estacion_col="CODIGO", fecha_col="FECHA", prof_col="PROFUNDIDAD_m",
         archivo="B",
+        fondo_col=None,  # marea roja: perfiles no llegan al fondo; sin dato de fondo en el archivo
         var_map={"TEMPERATURA_C": "temperatura_C",
                  "OXIGENO_ml_L": "oxigeno_ml_L",
                  "SALINIDAD_psu": "salinidad_psu"},
     )
     fondoB["oxigeno_mg_L"] = np.nan  # archivo B solo reporta oxigeno en ml/L
+
+    # --- Profundidad de fondo para archivo B (marea roja) desde GEBCO_2026 ---
+    # Los perfiles de marea roja no llegan al fondo (~50 m max) y el archivo
+    # no trae profundidad de fondo. Se usa batimetria GEBCO_2026 por estacion.
+    GBCO = BASE / "gebco_profundidades_marea_roja.csv"
+    if GBCO.exists():
+        gb = pd.read_csv(GBCO, dtype={"CODIGO": str})
+        gb = gb.rename(columns={"CODIGO": "estacion_id"})
+        gb["estacion_id"] = gb["estacion_id"].astype(str).str.strip()
+        gb = gb[["estacion_id", "profundidad_fondo_m", "gebco_elevacion_m", "gebco_metodo"]]
+        fondoB = fondoB.merge(gb, on="estacion_id", how="left", suffixes=("", "_gb"))
+        # rellenar profundidad_fondo_m (NaN en fondoB) con el valor de GEBCO
+        fondoB["profundidad_fondo_m"] = fondoB["profundidad_fondo_m"].fillna(
+            fondoB["profundidad_fondo_m_gb"]
+        )
+        fondoB["profundidad_fondo_fuente"] = "GEBCO_2026"
+        fondoB = fondoB.drop(columns=["profundidad_fondo_m_gb"])
+    else:
+        fondoB["profundidad_fondo_m"] = pd.NA
+        fondoB["profundidad_fondo_fuente"] = "no_disponible"
 
     # --- Cobertura de estaciones: datos CTD vs CSV de zonas ---
     est_ctd_A = set(dfA["ESTACION"].dropna().astype(int).astype(str))
@@ -243,6 +295,7 @@ def main():
 
     # Orden de columnas de salida
     cols_salida = ["archivo", "estacion_id", "fecha", "profundidad_fondo_m",
+                   "profundidad_fondo_fuente",
                    "temperatura_C", "oxigeno_ml_L", "oxigeno_mg_L", "salinidad_psu",
                    "zona", "zona_tipo", "dist_km", "fuente"]
     fondo = fondo[cols_salida]
