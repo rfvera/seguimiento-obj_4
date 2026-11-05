@@ -51,3 +51,34 @@ Reglas clave del script (no modificar sin anotar):
 - Cobertura total: todas las estaciones CTD tienen zona asignada (0 sin zona, 0 CTD sin datos de fondo).
 - `oxigeno_mg_L` es NaN en todo el archivo B (no se reporta en esa unidad).
 - GEBCO_2026: grid global 15 arc-segundos (~450 m), valor negativo = profundidad, positivo = tierra. 124 estaciones con píxel de agua directo, 103 con búsqueda en vecindario (±50 px ≈ 20 km).
+
+## Analisis ambiental — estado de referencia y trayectorias de cambio
+
+Propósito: pasar de "caracterizar condiciones oceanográficas" a "definir el estado ambiental de referencia y las trayectorias de cambio ambiental regional", usando las zonas de macrofauna como zonificación de referencia.
+
+### Pipeline
+
+`~/miniconda3/envs/r_env/bin/python salidas/analisis_ambiental/analisis_estado_referencia.py`
+
+Une `fondo_ctd_por_zona.csv` con `estaciones_CTD_con_ZONA_MACROFAUNA.csv` (por archivo + estacion_id) para asignar `zona_mf` a cada registro de fondo.
+
+### Salidas (en `salidas/analisis_ambiental/`)
+
+- `estado_referencia_por_zona.csv` — estadísticas por zona_mf: n_registros, n_estaciones, anio_min/max, y para cada variable (temperatura_C, oxigeno_ml_L, salinidad_psu): media, mediana, p5, p25, p75, p95, desvio, n_validos.
+- `trayectorias_cambio_por_zona.csv` — pendiente de tendencia lineal anual (OLS) por zona_mf y variable, con intercepto, R², p-valor y n_anos. Requiere ≥3 años para calcular.
+- `resumen_regional.csv` — métricas regionales agregadas (media, mediana, desvio por variable; n_zonas, n_estaciones, n_registros, anio_min/max).
+- `README.md` — documentación del análisis.
+
+### Resultados (2019–2025, 2366 registros, 19 zonas, 258 estaciones)
+
+- Temperatura regional: media 9,72 °C, mediana 9,86 °C, desvío 1,51 °C.
+- Oxígeno regional: media 5,51 ml/L, mediana 5,26 ml/L, desvío 2,03 ml/L.
+- Salinidad regional: media 32,15 psu, mediana 32,56 psu, desvío 1,57 psu.
+- Tendencias significativas (p<0,05): Quellon temperatura +0,87 °C/año (p=0,013, R²=0,999, n=3 años); Aysen salinidad +0,54 psu/año (p=0,024, R²=0,76, n=6 años); Desertores salinidad -0,08 psu/año (p=0,029, R²=0,65, n=7 años).
+- 7 zonas solo tienen 2024–2025 (n_anos=2, sin tendencia calculable): Ancud, Calbuco, Chacao, Chiloe central, Guaitecas, Hornopiren, Natales, Tenaun.
+
+### Reglas
+
+- Todas las 259 estaciones tienen zona_mf asignada (0 nulas); no se necesita imputación por proximidad.
+- Las zonas sin suficientes años (≥3) no reportan pendiente (NaN).
+- Los .xlsx fuentes nunca se sobrescriben; salidas derivadas van en salidas/.

@@ -30,6 +30,42 @@ Corregir el cálculo de `profundidad_fondo_m` para el archivo B (marea roja): lo
 - `profundidad_fondo_m`: archivo A de `PROF_SECT_m` (79–447 m), archivo B de GEBCO_2026 (-1–4567 m).
 - `git status` limpio tras re-ejecutar el pipeline (salida reproducible).
 
-### Pendiente
+### Pendiente (sesión 2026-11-05)
 1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`).
 2. Opcional: análisis de variabilidad ambiental por zona/año.
+
+---
+
+## Sesión 2026-11-05 (usuario `rfvera`) — estado de referencia y trayectorias de cambio ambiental
+
+### Objetivo
+Pasar de "caracterizar condiciones oceanográficas" a "definir el estado ambiental de referencia y las trayectorias de cambio ambiental regional", usando las zonas de macrofauna como zonificación de referencia.
+
+### Decisiones (usuario)
+1. Usar `zona_mf` de `estaciones_CTD_con_ZONA_MACROFAUNA.csv` como zonificación de referencia (19 zonas).
+2. No imputar por proximidad: todas las 259 estaciones ya tienen zona_mf asignada.
+3. Tendencia lineal anual (OLS) por zona; requiere ≥3 años para calcular.
+
+### Archivos creados/modificados
+- `salidas/analisis_ambiental/analisis_estado_referencia.py` (nuevo): script de análisis.
+- `salidas/analisis_ambiental/estado_referencia_por_zona.csv` (nuevo): 19 zonas, estadísticas de referencia.
+- `salidas/analisis_ambiental/trayectorias_cambio_por_zona.csv` (nuevo): 19 zonas, pendientes de tendencia.
+- `salidas/analisis_ambiental/resumen_regional.csv` (nuevo): métricas regionales.
+- `salidas/analisis_ambiental/README.md` (nuevo): documentación del análisis.
+- `AGENTS.md` (modificado): sección de análisis ambiental agregada.
+- `HISTORIAL_SESIONES.md` (modificado): esta bitácora.
+
+### Resultados de referencia
+- 2366 registros (2019–2025), 19 zonas de macrofauna, 258 estaciones.
+- Temperatura regional: media 9,72 °C, mediana 9,86 °C, desvío 1,51 °C.
+- Oxígeno regional: media 5,51 ml/L, mediana 5,26 ml/L, desvío 2,03 ml/L.
+- Salinidad regional: media 32,15 psu, mediana 32,56 psu, desvío 1,57 psu.
+- Tendencias significativas (p<0,05):
+  - Quellon: temperatura +0,87 °C/año (p=0,013, R²=0,999, n=3 años)
+  - Aysen: salinidad +0,54 psu/año (p=0,024, R²=0,76, n=6 años)
+  - Desertores: salinidad -0,08 psu/año (p=0,029, R²=0,65, n=7 años)
+- 8 zonas con solo 2024–2025 (n_anos=2, sin tendencia): Ancud, Calbuco, Chacao, Chiloe central, Guaitecas, Hornopiren, Natales, Tenaun.
+
+### Pendiente
+1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`).
+2. Opcional: generar informe qmd/typst con figuras por zona.

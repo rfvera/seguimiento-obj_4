@@ -1,0 +1,15 @@
+metrica,valor,n
+temperatura_C_media_regional,9.722723277262352,2364
+temperatura_C_mediana_regional,9.86,2364
+temperatura_C_desvio_regional,1.5059762196486988,2364
+oxigeno_ml_L_media_regional,5.506280310525696,2216
+oxigeno_ml_L_mediana_regional,5.26355,2216
+oxigeno_ml_L_desvio_regional,2.027488051849465,2216
+salinidad_psu_media_regional,32.152220830618894,2276
+salinidad_psu_mediana_regional,32.557100000000005,2276
+salinidad_psu_desvio_regional,1.5695602388599343,2276
+n_zonas,19.0,2366
+n_estaciones,258.0,2366
+n_registros,2366.0,2366
+anio_min,2019.0,2366
+anio_max,2025.0,2366
