@@ -70,8 +70,13 @@ def main():
         crs="EPSG:4326",
     )
 
-    # --- Paleta de colores para zonas ---
-    zonas = sorted(gdf_est["zona_mf"].unique())
+    # --- Paleta de colores para zonas (ordenadas de norte a sur por latitud media) ---
+    zonas_lat = (
+        gdf_est.groupby("zona_mf")["lat"]
+        .mean()
+        .sort_values(ascending=False)  # de norte (menos negativo) a sur (más negativo)
+    )
+    zonas = zonas_lat.index.tolist()
     n_zonas = len(zonas)
     cmap = plt.cm.tab20 if n_zonas <= 20 else plt.cm.tab20b
     colores = {z: cmap(i / max(n_zonas - 1, 1)) for i, z in enumerate(zonas)}
