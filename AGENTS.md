@@ -114,20 +114,33 @@ Salida:
 - `salidas/figuras/mapa_estaciones_acs.png` — mapa con 259 estaciones de muestreo, polígonos de zona (Voronoi recortado por área marina) y 106 polígonos ACS SUBPESCA, estaciones coloreadas por zona_mf (20 zonas).
 - `salidas/figuras/zonas_macrofauna.gpkg` — capa GPKG con 19 polígonos de zona (EPSG:4326), sin solapamientos entre sí.
 
-## Pipeline 6: Polígonos de zona (Voronoi, recortados por área marina)
+## Pipeline 6: Polígonos de zona (Voronoi, recortados por área marina sin tierra)
 
 `~/miniconda3/envs/r_env/bin/python zonas_poligonos.py`
 
 Usa `estaciones_CTD_con_ZONA_MACROFAUNA.csv` y `salidas/figuras/ne_10m_admin_0_countries.shp` (países, Natural Earth 10m).
 
 Metodología:
-- Tesselación de Voronoi por estación.
-- Cada polígono de Voronoi se recorta por un polígono de "área marina" = bounding box grande alrededor de todas las estaciones MINUS polígono del país Chile (Natural Earth 10m).
-- Los polígonos se disuelven (unen) por zona_mf.
-- Resultado: polígonos de zona ADYACENTES entre sí (comparten bordes), que NO se solapan entre sí y NO incluyen tierra firme. Cubren todo el área marina de estudio para permitir extrapolación a cualquier punto dentro de cada zona.
+- Tesselación de Voronoi por estación con `shapely.voronoi_polygons` (no `geovoronoi`): las regiones se generan sobre el bbox y luego se recortan. Así no falla con estaciones en fiordos que Natural Earth clasifica como tierra.
+- Área marina = bounding box grande alrededor de todas las estaciones MINUS la unión de TODOS los países que intersectan ese bbox (Chile, Argentina y cualquier otro). Restar solo Chile dejaba tierra argentina dentro de los polígonos.
+- Cada región de Voronoi se asigna a la zona de su punto generador contenido (`region.contains`/`covers`) y se recorta al área marina.
+- Los polígonos se disuelven (unen) por zona_mf y se recortan de nuevo contra tierra; `set_precision(1e-9)` elimina astillas de borde.
+- Cada zona se recorta a la unión de buffers **geodésicos** de 100 km alrededor de sus propias estaciones, generados con `pyproj.Geod` (72 vértices). No se usa EPSG:6933: a estas latitudes un "buffer de 100 km" en 6933 resulta una elipse de ~148 km N-S por ~66 km E-O. Esto elimina extrapolaciones oceánicas sin respaldo: la auditoría SIG detectó que Puyuhuapi tenía 11.009,99 km² (94,4% de su área) en el Atlántico, a 649,9 km de su estación más cercana.
+- Después del recorte se conservan solo las partes conectadas por mar a una parte ancla (la que contiene una estación, o la más cercana si todas caen en tierra). Una parte al otro lado de una barrera terrestre está en otra componente conexa de la máscara marina y se descarta; una parte sin estación pero en la misma componente (agua adyacente) se conserva. No se descarta toda parte sin estación: eso abría huecos de cobertura innecesarios.
+- Resultado: 20 polígonos de zona, sin solapimientos significativos, sin tierra firme y sin partes al otro lado de una barrera terrestre sin respaldo.
+
+Verificación del script:
+- Área total: 178.279,27 km² (antes 325.139,94 km²).
+- Puyuhuapi: 657,94 km²; 2 partes (32,18 + 625,76 km²); bbox (-73,354, -44,965) – (-72,591, -44,341); 8 estaciones dentro, 5 fuera; fragmento atlántico ausente.
+- Partes sin estación conservadas: 17; en componentes sin ancla: **0** (todas conectadas por mar a una estación).
+- Partes menores a 1 km²: 3 (Chacao 0,224; Moraleda 0,007; Pta. Arenas 0,676).
+- Solapamiento entre zonas: 0,074 km² (73.607 m²; precisión de borde).
+- Tierra residual: 0,00000000 km² con `set_precision(1e-9)`; sin esa rejilla, 0,123 km² de astillas de borde.
+- Distancia máxima estación -> su polígono: 8,54 km (60 estaciones en fiordos quedan fuera por la costa NE 10m; se requiere GSHHG full/high o cartografía SHOA para corregirlo).
+- Distancia máxima parte -> estación más cercana de su zona: 97,76 km (dentro del buffer geodésico de 100 km).
 
 Salida:
-- `salidas/figuras/zonas_macrofauna.gpkg` — 19 polígonos de zona (EPSG:4326), sin solapamientos entre sí, sin incluir tierra, adyacentes entre sí.
+- `salidas/figuras/zonas_macrofauna.gpkg` — 20 polígonos de zona (EPSG:4326), sin tierra y con extensión acotada a 100 km de sus estaciones.
 - `salidas/figuras/ne_10m_admin_0_countries.*` — países Natural Earth 10m (necesario para reproducir).
 
 ## Informe Typst (en `informe/`)

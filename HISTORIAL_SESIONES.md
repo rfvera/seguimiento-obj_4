@@ -409,3 +409,136 @@ Generar polígonos de zona de macrofauna que sean ADYACENTES entre sí (comparte
 
 ### Pendiente
 1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`).
+
+
+## Sesión 2026-11-05 (usuario `rfvera`) — polígonos de zona sin tierra (todos los países)
+
+### Objetivo
+Rehacer los polígonos de zona para que cubran solo superficie marina y no tierra.
+El método anterior (bbox − Chile) dejaba tierra argentina y de otros territorios dentro
+del área marina, y el GPKG tenía solapamientos por un error de iteración sobre
+`region_polys` de geovoronoi.
+
+### Causas detectadas
+- `zonas_poligonos.py` restaba solo el polígono de Chile; Argentina (`ARG`) y otro
+  polígono (`SPI`) quedaban dentro del bbox.
+- `geovoronoi` 0.4 devuelve `region_polys` y `region_pts` como dicts; el script los
+  iteraba con `enumerate`, asignando claves en lugar de geometrías. Eso producía
+  solapamientos (26.120 km²) y polígonos mal asignados.
+- 60 de 259 estaciones caen en "tierra" según Natural Earth 10m (fiordos y canales);
+  `geovoronoi` falla si los puntos no están dentro del área.
+
+### Solución
+- Área marina = bbox − unión de todos los países que intersectan el bbox (no solo Chile).
+- Voronoi con `shapely.voronoi_polygons`, que no exige que los puntos estén dentro del
+  área; las regiones se recortan al mar.
+- Asignación por punto generador contenido (`contains`/`covers`).
+- Recorte contra tierra antes y después del dissolve; `set_precision(1e-9)` elimina
+  astillas de borde.
+
+### Archivos modificados
+- `zonas_poligonos.py` — reescrito.
+- `salidas/figuras/zonas_macrofauna.gpkg` — regenerado: 20 zonas, EPSG:4326.
+- `salidas/figuras/mapa_estaciones_acs.png` — regenerado.
+- `informe/zonas_macrofauna.gpkg` y `informe/mapa_estaciones_acs.png` — sincronizados.
+- `informe/informe_ambiental.pdf` — recompilado.
+- `AGENTS.md` — Pipeline 6 actualizado.
+- `HISTORIAL_SESIONES.md` — esta bitácora.
+
+### Resultados de la primera versión (bbox − todos los países)
+- 20 polígonos de zona, 20 zonas únicas.
+- Solapamiento entre zonas: 0,000000 grados².
+- Tierra residual: 0,00000011 km² (0,11 m²; precisión geométrica).
+- Extensión: (-75,436111, -55,711944) – (-66,600556, -40,996389).
+
+### Auditoría SIG y corrección del fragmento atlántico
+La auditoría independiente del agente SIG (sesión `ses_e52cacef6ffeNtFFlyBRZTz36Q`) confirmó:
+- 20 features, EPSG:4326, 20 zonas, 0 geometrías inválidas o vacías.
+- Solapamiento 0,0000 km².
+- Tierra residual 0,1307 km² (0,00004% del total).
+- **Hallazgo grave:** Puyuhuapi tenía una parte de 11.009,99 km² (94,4% de su área)
+  en el Atlántico, a 649,9 km de su estación más cercana y sin estaciones dentro.
+  El área real de Puyuhuapi era 657,95 km², no 11.667,94 km².
+- 60 de 259 estaciones quedaban fuera de su zona por la costa Natural Earth 10m en
+  fiordos (distancia máxima 8,18 km; mediana 1,23 km).
+- La capa estaba truncada por el bbox del CSV ± 0,5°; los bordes rectos afectaban
+  Ancud, Aysen, Guaitecas, Natales, Pta. Arenas y Quellon.
+- No hay capa de límites marítimos en el repositorio; no es calculable el residual
+  fuera de aguas chilenas.
+
+### Primera corrección (recorte a 100 km en EPSG:6933)
+- Cada polígono de zona se recortó a la unión de buffers de 100 km alrededor de sus
+  propias estaciones, calculados en EPSG:6933.
+- Resultado: 20 zonas, área total 177.266,48 km².
+- Puyuhuapi: 657,94 km²; bbox (-73,354, -44,965) – (-72,591, -44,341); estación más
+  cercana a 1,94 km.
+
+### Re-auditoría SIG: el buffer en 6933 no era geodésico
+La segunda auditoría del SIG (`ses_e52cacef6ffeNtFFlyBRZTz36Q`) mostró:
+- Un buffer de 100 km en EPSG:6933 es una elipse de ~148 km N-S por ~66 km E-O a
+  estas latitudes. La distancia máxima real parte -> estación era **148,08 km**
+  (Pta. Arenas), no 98,53 km. Seis zonas excedían 100 km en el terreno.
+- El `difference(tierra)` podía dejar partes marinas al otro lado de una barrera
+  terrestre, respaldadas o no por estaciones.
+- 5 partes < 1 km² (0,96 km² en total); 60 de 259 estaciones fuera de su polígono
+  (distancia máxima geodésica 8,45 km) por la costa NE 10m en fiordos.
+
+### Segunda corrección: buffer geodésico y topología de componentes
+- Buffer de 100 km generado con `pyproj.Geod` (72 vértices), no en EPSG:6933.
+- Después de restar tierra, se conservan solo las partes que contienen al menos una
+  estación de la zona; para estaciones en tierra, la parte más cercana. Se descartan
+  las partes al otro lado de una barrera terrestre sin respaldo.
+
+### Tercera corrección: topología por componentes conexas
+La auditoría SIG v3 mostró que descartar toda parte sin estación abría 3.439,70 km²
+de mar adyacente sin zona (656 fragmentos), incluida una parte de Puyuhuapi de
+32,18 km² a 14,5 km de su estación que no era tierra. La regla correcta no es
+"sin estación", sino "en otra componente marina separada por tierra":
+- Se calculan las componentes conexas de la máscara marina (`bbox − tierra`).
+- Las partes ancla son las que contienen una estación; si todas caen en tierra, la
+  parte más cercana.
+- Una parte sin estación se conserva si está en la misma componente que un ancla
+  (agua adyacente conectada) y se descarta si está en otra componente (separada por
+  tierra).
+
+### Resultados de la versión final
+- 20 zonas; área total **178.279,27 km²**.
+- Puyuhuapi: **657,94 km²**, 2 partes (32,18 + 625,76 km²), bbox
+  (-73,354, -44,965) – (-72,591, -44,341); 8 estaciones dentro, 5 fuera. Fragmento
+  atlántico ausente.
+- Partes sin estación conservadas: **17**; en componentes sin ancla: **0**.
+- Partes menores a 1 km²: **3** (Chacao 0,224; Moraleda 0,007; Pta. Arenas 0,676).
+- Distancia máxima estación -> su polígono: **8,54 km** (geodésica).
+- Distancia máxima parte -> estación más cercana de su zona: **97,76 km** (dentro
+  del buffer geodésico de 100 km).
+- Solapamiento: 0,074 km² (73.607 m²; precisión de borde).
+- Tierra residual: 0,00000000 km² con `set_precision(1e-9)`; 0,123 km² de astillas
+  sin rejilla.
+- Se mantiene la limitación de las 60 estaciones en fiordos: la costa NE 10m las
+  clasifica como tierra; se requiere GSHHG full/high o cartografía SHOA.
+
+### Auditoría SIG v4 (cierre)
+- md5 `d2630c42c1fe86233fc3e4f9b0295fc4` antes y después; GPKG intacto.
+- 20 features, 20 zonas, EPSG:4326, 20/20 válidas, 0 vacías.
+- Área total: 178.302,90 km² (Albers) / 178.279,27 km² (EPSG:6933).
+- Puyuhuapi: 657,95 km², 2 partes; fragmento atlántico ausente.
+- 17 partes sin estación conservadas; 0 en componentes sin ancla.
+- 3 partes < 1 km² (0,91 km² en total).
+- Tierra residual: 0 m² con `set_precision(1e-9)`; 88,86 m² sin rejilla.
+- Solapamiento: 8,1 m².
+- Distancia estricta parte -> estación: máximo 100,000000 km (+59 µm).
+- Limitaciones: 1.314,10 km² de mar dentro de los búferes sin zona (0,73%);
+  franja de 185,01 km² adyacente a Guaitecas sin explicar; Voronoi calculado en
+  grados (recomendado teselar en un CRS métrico); 60/259 estaciones fuera de su
+  polígono por la costa NE 10m (máximo 8,54 km); marco de recorte ±0,5° del CSV;
+  sin capa de límites marítimos.
+
+### Commits
+- Pendiente de registrar.
+
+### Pendiente
+1. Revisar la franja de 185,01 km² adyacente a Guaitecas sin zona asignada.
+2. Evaluar teselar el Voronoi en un CRS métrico (UTM 18S/19S o Albers).
+3. Incorporar GSHHG full/high o cartografía SHOA para las 60 estaciones en fiordos.
+4. Incorporar una capa de límites marítimos para el residual fuera de aguas chilenas.
+5. Decidir si se eliminan las 3 partes < 1 km².
