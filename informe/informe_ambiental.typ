@@ -53,6 +53,15 @@ Los principales hallazgos a nivel regional (todos los registros, todas las profu
 
 En términos de trayectorias de cambio, se detectaron tendencias estadísticamente significativas (p menor que 0,05) en 102 combinaciones de zona×profundidad×variable, principalmente en salinidad de Aysén (profundidades 238–250 m) y Butachauques (profundidades 284–290 m), y en temperatura de Quellón.
 
+= Área de estudio
+
+El mapa 1 muestra la distribución espacial de las 259 estaciones de muestreo CTD y los polígonos oficiales de áreas ACS de SUBPESCA. Las estaciones están agrupadas en 19 zonas de macrofauna que sirven como referencia para el análisis ambiental.
+
+#figure(
+  image("mapa_estaciones_acs.png", width: 80%),
+  caption: [Mapa 1: Estaciones de muestreo CTD (2019–2025) y polígonos ACS SUBPESCA. Las estaciones están coloreadas por zona de macrofauna (zona_mf). CRS: EPSG:4326 (WGS84).],
+)
+
 = Contexto y objetivo
 
 El objetivo 4 del seguimiento IFOP evalúa la variabilidad ambiental y la exposición de áreas de emplazamiento acuícola a forzantes naturales y asociados al cambio climático. El análisis pasa de una mera caracterización de condiciones oceanográficas a definir:
@@ -279,3 +288,4 @@ La salinidad muestra el mayor número de tendencias significativas (91), con los
 - perfiles_procesados.py — script reproducible de reconstrucción y análisis.
 - reconstruir_ctd.py — script de reconstrucción del registro de fondo.
 - fondo_ctd_por_zona.csv — registro de fondo (2.363 filas).
+- mapa_estaciones_acs.png — mapa de estaciones y zonas ACS (PNG, 470 KB).

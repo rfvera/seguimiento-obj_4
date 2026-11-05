@@ -209,7 +209,20 @@ Analizar cada zona×profundidad×variable como serie de tiempo anual (2019–202
 
 ---
 
-## Sesión 2026-11-05 (usuario `rfvera`) — mapa de estaciones y zonas ACS
+## Sesión 2026-11-05 (usuario `rfvera`) — mapa de estaciones y zonas ACS agregado al informe Typst
+
+### Objetivo
+Agregar el mapa de estaciones de muestreo y polígonos ACS al informe Typst compilado.
+
+### Archivos creados/modificados
+- `informe/mapa_estaciones_acs.png` (nuevo): copia del mapa PNG dentro del directorio informe/ (requerido por el sandbox de Typst).
+- `informe/informe_ambiental.typ` (modificado): sección "Área de estudio" con el mapa embebido (Mapa 1), ruta de imagen corregida a ruta local.
+- `informe/informe_ambiental.pdf` (regenerado): PDF recompilado con el mapa incluido (534 KB).
+- `AGENTS.md` (modificado): ruta de la figura actualizada en el anexo.
+- `HISTORIAL_SESIONES.md` (modificado): esta bitácora.
+
+### Pendiente
+1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`).
 
 ### Objetivo
 Generar un mapa visual con las estaciones de muestreo CTD y los polígonos de las áreas ACS de SUBPESCA, para mostrar el dominio del análisis.
