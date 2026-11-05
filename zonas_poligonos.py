@@ -4,21 +4,21 @@ Agente DATA - IFOP Seguimiento (objetivo_4)
 
 Genera una capa GPKG con polígonos de las zonas de macrofauna usando
 tesselación de Voronoi por estación y disolución por zona, recortados
-por un polígono de "área marina" construido a partir del país Chile.
+por un área marina definida como buffer alrededor de las estaciones.
 
 Metodología:
   1. Leer estaciones con zona_mf asignada
-  2. Crear polígonos de Voronoi (tesselación) para todas las estaciones
-  3. Crear un polígono de "área marina" = bounding box grande alrededor
-     de las estaciones MINUS el polígono del país Chile (para excluir tierra)
+  2. Crear un área marina = buffer de N km alrededor de todas las estaciones
+     (unión de todos los buffers)
+  3. Crear polígonos de Voronoi (tesselación) para todas las estaciones
   4. Recortar cada polígono de Voronoi por el área marina
   5. Asignar cada polígono de Voronoi a la zona de su estación
   6. Disolver (unir) todos los polígonos de Voronoi de la misma zona
   7. Resultado: polígonos de zona que NO se solapan y están limitados al mar
+     cerca de las estaciones
 
 Entradas (solo lectura):
   - estaciones_CTD_con_ZONA_MACROFAUNA.csv
-  - salidas/figuras/ne_10m_admin_0_countries.shp (países, Natural Earth)
 
 Salida:
   - salidas/figuras/zonas_macrofauna.gpkg — capa con polígonos de zona (EPSG:4326)
@@ -36,32 +36,23 @@ from pathlib import Path
 
 BASE = Path("/home/rfvera/Documentos/IFOP/SEGUIMIENTO/objetivo_4")
 ESTACIONES = BASE / "estaciones_CTD_con_ZONA_MACROFAUNA.csv"
-PAISES = BASE / "salidas" / "figuras" / "ne_10m_admin_0_countries.shp"
 SALIDA = BASE / "salidas" / "figuras" / "zonas_macrofauna.gpkg"
 
 
-def crear_area_marina(gdf: gpd.GeoDataFrame, pais_chile: gpd.GeoDataFrame, margen_grados: float = 1.0) -> Polygon:
+def crear_area_marina(gdf: gpd.GeoDataFrame, buffer_km: float = 30.0) -> Polygon:
     """
-    Crea un polígono que representa el área marina cubierta por las estaciones.
-    Usa un bounding box grande alrededor de todas las estaciones y le resta
-    el polígono del país Chile.
+    Crea un polígono que representa el área marina cubierto por las estaciones.
+    Usa un buffer de N km alrededor de cada estación, unido todo junto.
+    Como las estaciones están en el mar, el área marina aproximada es el
+    área dentro de un radio razonable alrededor de cada estación.
     """
     puntos = list(gdf.geometry)
+    multipoint = MultiPoint([p for p in puntos if not p.is_empty])
 
-    # Bounding box grande alrededor de todas las estaciones
-    coords = np.array([(p.x, p.y) for p in puntos if not p.is_empty])
-    xmin, ymin = coords.min(axis=0)
-    xmax, ymax = coords.max(axis=0)
-
-    # Añadir margen para cubrir el área marina alrededor de las estaciones
-    bbox = Polygon.from_bounds(
-        xmin - margen_grados, ymin - margen_grados,
-        xmax + margen_grados, ymax + margen_grados
-    )
-
-    # Restar Chile (tierra) del bounding box -> área marina
-    chile_union = pais_chile.geometry.unary_union
-    area_marina = bbox.difference(chile_union)
+    # Buffer de buffer_km alrededor de cada estación, unido todo junto
+    # 1 grado ≈ 111 km en latitud, por lo que buffer_km / 111 = grados aprox
+    buffer_deg = buffer_km / 111.0
+    area_marina = multipoint.buffer(buffer_deg)
 
     return area_marina
 
@@ -92,10 +83,10 @@ def crear_voronoi_por_zona(gdf: gpd.GeoDataFrame, area_marina: Polygon) -> gpd.G
 
         poligono = Polygon([vor.vertices[i] for i in region_idx])
 
-        # RECORTAR POR ÁREA MARINA
+        # RECORTAR POR ÁREA MARINA: solo mantener la parte dentro del área marina
         poligono_marino = poligono.intersection(area_marina)
         if poligono_marino.is_empty or poligono_marino.area < 1e-8:
-            continue  # El polígono está completamente fuera del área marina
+            continue  # El polígono está fuera del área marina
 
         # Encontrar el punto generador más cercano para asignar la zona
         cent = poligono_marino.centroid
@@ -135,16 +126,8 @@ def main():
     print(f"Estaciones: {len(gdf)}")
     print(f"Zonas: {gdf['zona_mf'].nunique()}")
 
-    print("Leyendo polígono de Chile...")
-    paises = gpd.read_file(str(PAISES))
-    chile = paises[paises["ADM0_A3"] == "CHL"].copy()
-    if len(chile) == 0:
-        # Intento alternativo: buscar por nombre
-        chile = paises[paises["NAME"].str.contains("Chile", case=False, na=False)].copy()
-    print(f"Chile encontrado: {len(chile)} feature(s)")
-
-    print("Creando área marina (bounding box - Chile)...")
-    area_marina = crear_area_marina(gdf, chile, margen_grados=1.0)
+    print("Creando área marina (buffer de 30 km alrededor de estaciones)...")
+    area_marina = crear_area_marina(gdf, buffer_km=30.0)
     print(f"Área marina creada: {area_marina.area:.4f} grados cuadrados")
 
     print("Generando polígonos de Voronoi por zona (recortados por área marina)...")
