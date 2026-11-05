@@ -1,0 +1,56 @@
+ERROR 1: PROJ: proj_create_from_database: Open of /home/rfvera/miniconda3/envs/r_env/share/proj failed
+/home/rfvera/Documentos/IFOP/SEGUIMIENTO/objetivo_4/salidas/auditoria_diagnostico2.py:44: UserWarning: Geometry is in a geographic CRS. Results from 'distance' are likely incorrect. Use 'GeoSeries.to_crs()' to re-project geometries to a projected CRS before this operation.
+
+  dcen = stp.distance(cen) * 111.32
+==============================================================================
+E. VERIFICACIÓN DE PUNTOS DE CONTROL EN EL LAYER DE PAÍSES
+==============================================================================
+  (-67.00,-46.10) mar Argentino?     -> NADIE (agua)
+  (-69.00,-46.00) interior ARG       -> ['Argentina']
+  (-67.50,-46.10) costa ARG          -> NADIE (agua)
+  (-72.86,-44.67) fiordo Puyuhuapi   -> ['Chile']
+  (-74.50,-45.70) mar abierto        -> NADIE (agua)
+
+==============================================================================
+F. PARTE 2 DE PUYUHAPI: ¿DÓNDE ESTÁ Y QUÉ ES?
+==============================================================================
+n partes: 3
+parte mayor: bounds (-67.62441972600001, -47.051218088000006, -66.600555556, -45.214589858000004) | área 11,009.993 km²
+  n vértices: 79
+  intersección con tierra (países): 0.000000 km²
+
+  distancia del centroide de la parte mayor a la estación Puyuhuapi más cercana:
+    649.9 km aprox
+  distancia de la parte mayor a la parte principal de la zona: 
+    434.6 km
+  distancia de la parte mayor a la costa más cercana: 0.0 km
+
+  vértices totales 79
+  vértices con lon_max=-66.600556: 2
+  vértices con lon_min=-67.6244: 0
+  rango lon [-67.624420, -66.600556]  lat [-47.051218, -45.214590]
+  nº vértices del anillo exterior (sin repetir cierre): 78
+
+==============================================================================
+G. BORDES RECTO EN EL CONJUNTO DE LA CAPA (recorte por marco)
+==============================================================================
+  lon: valores más repetidos -> -75.436111 (n=62), -73.769846 (n=12), -66.600556 (n=10), -73.61148 (n=9), -74.0572 (n=9)
+  lat: valores más repetidos -> -55.711944 (n=14), -53.187595 (n=9), -54.427667 (n=8), -54.65488 (n=7), -52.728204 (n=6)
+
+  Interpretación: un valor de coordenada repetido en muchos vértices = borde recto
+  (recorte por la extensión de un insumo previo), no una costa real.
+
+==============================================================================
+H. ESTACIONES: ¿LAS HAY EN LA PARTE ANÓMALA?
+==============================================================================
+estaciones del CSV dentro del bbox de la parte anómala (+1°): 0
+
+==============================================================================
+I. RECALCULO DE ÁREAS EXCLUYENDO LA PARTE ANÓMALA DE PUYUHAPI
+==============================================================================
+Puyuhuapi total          : 11,667.942 km²
+  parte anómala (Atlántico): 11,009.993 km²  (94.4%)
+  resto (fiordo)           : 657.949 km²
+
+Área total de las 20 zonas              : 325,139.944 km²
+Área total sin la parte anómala         : 314,129.951 km²

@@ -1,0 +1,186 @@
+ERROR 1: PROJ: proj_create_from_database: Open of /home/rfvera/miniconda3/envs/r_env/share/proj failed
+
+================================================================================
+0. ENTORNO Y HUELLA DEL ARCHIVO (antes de leer)
+================================================================================
+python    : 3.11.15
+geopandas : 1.1.3 | shapely: 2.1.2 | pyproj: 3.7.2 | pyogrio: 0.10.0
+GDAL      : 3.11.4
+md5 INICIAL: 2c7731e344fd5aa27be3034d432a4541
+mtime/size : 1793907690461016065 356352
+
+================================================================================
+1. INVENTARIO, CRS, VALIDEZ, VACÍAS
+================================================================================
+features          : 20
+columnas          : ['zona_mf', 'geometry']
+zonas únicas      : 20 | duplicadas: 0
+tipos geometría   : {'MultiPolygon': 20}
+CRS               : EPSG:4326 | EPSG: 4326 | geográfico: True
+bounds            : [np.float64(-75.436111), np.float64(-55.711944), np.float64(-66.600556), np.float64(-40.996389)]
+is_valid          : 20 / 20
+is_empty          : 0
+is_null           : 0
+geom no vacías y válidas: 20
+motivos de invalidez: {'Valid Geometry': 20}
+¿make_valid cambia algo?: False
+área total sin densificar la reproyección: 177308.3783 km²
+área total densificada (valor correcto)  : 177291.5803 km²
+
+================================================================================
+2. PUYUHAPI: ¿DESAPARECIÓ EL FRAGMENTO ATLÁNTICO?
+================================================================================
+Puyuhuapi: 2 partes
+ parte  area_km2  lon_min  lat_min  lon_max  lat_max  n_huecos  n_vert
+     0  625.7727 -73.3179 -44.9653 -72.5911 -44.3408         0     155
+     1   32.1798 -73.3540 -44.8137 -73.2074 -44.7590         0      19
+
+área total Puyuhuapi AHORA : 657.9525 km²   (antes: 11,667.9419 km²)
+bbox                       : [-73.354027, -44.965265, -72.591135, -44.340753]
+fragmento de 11,009.99 km² presente? NO
+
+estaciones Puyuhuapi: 13
+  distancia polígono-estación: min 0.000 km | MAX 1.907 km
+  estaciones DENTRO: 8/13
+  estaciones en la parte mayor (si >1): 8
+
+================================================================================
+3. TIERRA RESIDUAL: CON Y SIN REJILLA set_precision(1e-9)
+================================================================================
+países/entidades que intersectan bbox+0,5°: ['Chile', 'Argentina', 'Southern Patagonian Ice Field']
+unión 4326 válida: True | vacía: False
+
+(se aplica el criterio <0,001 km² = 0 después de medir y de calcular los totales crudos)
+TOTALES CRUDOS: sin rejilla 0.000089482 km² | con rejilla 0.000000000 km²
+       zona_mf      area_km2  area_6933_km2  tierra_sin_rejilla  tierra_con_rejilla  n_piezas    delta
+         Ancud 12,972.206073  12,969.934331            0.000000            0.000000        16 0.000000
+       Ayacara  1,002.600898   1,002.584177            0.000000            0.000000         6 0.000000
+         Aysen 24,315.614940  24,308.141609            0.000000            0.000000         1 0.000000
+  Butachauques  1,546.242394   1,546.262279            0.000000            0.000000         7 0.000000
+       Calbuco    661.441166     661.438146            0.000000            0.000000         4 0.000000
+        Chacao    636.089698     636.070806            0.000000            0.000000        11 0.000000
+       Chaiten  2,697.719625   2,697.428558            0.000000            0.000000         9 0.000000
+     Chaulinec    855.717350     855.721237            0.000000            0.000000         2 0.000000
+Chiloe central    777.007277     776.964533            0.000000            0.000000         5 0.000000
+    Desertores    712.368960     712.332500            0.000000            0.000000         5 0.000000
+      Estuario    153.118958     153.118494            0.000000            0.000000         9 0.000000
+     Guaitecas 18,085.354238  18,082.167241            0.000000            0.000000         1 0.000000
+    Hornopiren    926.071527     926.071780            0.000000            0.000000         6 0.000000
+      Moraleda  8,386.273362   8,382.556744            0.000000            0.000000         1 0.000000
+       Natales 31,387.264907  31,381.188278            0.000000            0.000000         1 0.000000
+   Pta. Arenas 56,089.596446  56,089.190800            0.000000            0.000000         1 0.000000
+     Puyuhuapi    657.952538     657.941175            0.000000            0.000000         1 0.000000
+       Quellon 13,090.503322  13,088.937221            0.000000            0.000000         1 0.000000
+     Reloncavi  1,691.475631   1,691.410392            0.000000            0.000000        14 0.000000
+        Tenaun    646.960998     647.024681            0.000000            0.000000         7 0.000000
+
+SYN rejilla : 0.000089482 km² (crudo) | enmascarado: 0.000000 km²
+CON rejilla : 0.000000000 km² (crudo) | enmascarado: 0.000000 km²
+diferencia  : 0.000089482 km²
+zonas con tierra >= 0,001 km² sin rejilla: []
+zonas con tierra >= 0,001 km² con rejilla: []
+
+área total de las zonas (Albers densificado): 177,291.5803 km²
+área total de las zonas (EPSG:6933, el CRS del generador): 177,266.4850 km²  (AGENTS.md documenta 177,266.48 km²)
+
+tierra por país (intersección en 4326, como en la tabla anterior):
+  Chile                              sin rejilla 0.000088 km² | con rejilla 0.000000 km²
+  Argentina                          sin rejilla 0.000001 km² | con rejilla 0.000000 km²
+  Southern Patagonian Ice Field      sin rejilla 0.000000 km² | con rejilla 0.000000 km²
+
+================================================================================
+4. SOLAPAMIENTO ENTRE ZONAS
+================================================================================
+suma de áreas : 177,291.5803 km²
+área de unión : 177,291.5803 km²
+solapamiento  : 0.000009 km²
+pares con solape > 0,001 km²: 0
+
+================================================================================
+5. DISTANCIA MÁXIMA DE CADA ZONA A SU ESTACIÓN MÁS CERCANA (límite 100 km)
+================================================================================
+Distancias GEODÉSICAS (pyproj.Geod, elipsoide WGS84), no proyectadas:
+ni Albers ni EPSG:6933 miden distancias correctamente a esta latitud.
+
+       zona_mf  n_est  dist_max_km  margen_km  lon_arg  lat_arg est_cercana_global zona_est_global  dist_global_km  n_muestras  cumple_100km
+   Pta. Arenas     41      148.076    -48.076  -67.306  -53.598                M46     Pta. Arenas         148.076      257277         False
+       Natales     42      142.352    -42.352  -73.734  -53.471                M29     Pta. Arenas          85.758      211030         False
+         Aysen     42      114.861    -14.861  -75.421  -46.776                 31           Aysen         114.861      145463         False
+     Guaitecas     16      108.687     -8.687  -75.337  -45.514              A49N1           Aysen          84.546       37393         False
+       Quellon     19      108.444     -8.444  -74.788  -42.490                L11          Tenaun          99.211       24387         False
+         Ancud      1      106.980     -6.980  -74.534  -40.996                L05           Ancud         106.980       14594         False
+        Tenaun      1       70.487     29.513  -74.414  -42.551                L11          Tenaun          70.487        5036          True
+      Moraleda     38       68.778     31.222  -75.068  -45.362              A49N1           Aysen          63.491       35336          True
+Chiloe central      1       57.008     42.992  -74.223  -42.659                L12  Chiloe central          57.008        4509          True
+    Hornopiren      3       39.028     60.972  -72.436  -42.368                L10         Ayacara          29.671        5711          True
+       Ayacara      4       33.794     66.206  -72.426  -42.463                L10         Ayacara          33.794        6060          True
+        Chacao      2       33.654     66.346  -73.690  -41.592              L04N3          Chacao          33.654        4532          True
+       Calbuco      2       27.184     72.816  -73.168  -42.079              L09N1      Hornopiren          22.426        2906          True
+  Butachauques      4       26.166     73.834  -73.163  -42.090              L09N1      Hornopiren          21.445        5088          True
+       Chaiten      7       25.056     74.944  -73.562  -43.693              L19N4         Chaiten          25.056        8401          True
+     Chaulinec      3       21.506     78.494  -73.226  -42.855                L16         Quellon          16.732        3224          True
+     Reloncavi      9       19.537     80.463  -72.904  -41.500              L04N2       Reloncavi          19.537        5642          True
+     Puyuhuapi     13       17.587     82.413  -73.301  -44.759                A18        Moraleda          15.792        7563          True
+    Desertores      3       17.203     82.797  -73.175  -42.837                L14      Desertores          17.203        3373          True
+      Estuario      8       14.345     85.655  -72.321  -41.367              L02N2        Estuario          14.345        2303          True
+
+máximo GLOBAL: 148.076 km (Pta. Arenas) | mínimo: 14.345 km
+zonas que exceden 100 km: ['Pta. Arenas', 'Natales', 'Aysen', 'Guaitecas', 'Quellon', 'Ancud']
+zonas más cerca del límite (margen < 10 km):
+    zona_mf  dist_max_km  margen_km
+Pta. Arenas      148.076    -48.076
+    Natales      142.352    -42.352
+      Aysen      114.861    -14.861
+  Guaitecas      108.687     -8.687
+    Quellon      108.444     -8.444
+      Ancud      106.980     -6.980
+
+================================================================================
+6. PARTES, HUECOS Y PARTES MENORES A 1 km²
+================================================================================
+total partes: 41 | zonas con >1 parte: 10 | huecos: 115
+
+partes por zona:
+                n_partes  area_total  huecos
+zona_mf                                     
+Ancud                  1 12,972.2061       0
+Ayacara                2  1,002.6009       0
+Aysen                  6 24,315.6149      30
+Butachauques           1  1,546.2424       1
+Calbuco                1    661.4412       0
+Chacao                 3    636.0897       0
+Chaiten                1  2,697.7196       0
+Chaulinec              1    855.7173       1
+Chiloe central         2    777.0073       1
+Desertores             1    712.3690       1
+Estuario               1    153.1190       0
+Guaitecas              1 18,085.3542      15
+Hornopiren             2    926.0715       1
+Moraleda               2  8,386.2734       7
+Natales                6 31,387.2649      34
+Pta. Arenas            3 56,089.5964      20
+Puyuhuapi              2    657.9525       0
+Quellon                1 13,090.5033       4
+Reloncavi              1  1,691.4756       0
+Tenaun                 3    646.9610       0
+
+PARTES MENORES A 1 km²: 5  (área sumada 0.961748 km²)
+    zona_mf  parte  area_km2  n_huecos    lon_min    lat_min    lon_max    lat_max
+   Moraleda      1  0.007399         0 -73.300709 -44.759332 -73.297660 -44.758559
+    Natales      1  0.027085         0 -75.436111 -50.742376 -75.433909 -50.739244
+      Aysen      4  0.039470         0 -75.436111 -48.203669 -75.433909 -48.198989
+     Chacao      1  0.223699         0 -73.699633 -41.678198 -73.694861 -41.644104
+Pta. Arenas      2  0.664095         0 -73.484919 -53.226912 -73.468129 -53.213487
+
+partes menores a 0,001 km²: 0
+parte menor: Moraleda parte 1 área 0.007399 km², bbox -73.3007,-44.7593 a -73.2977,-44.7586
+
+control geodésico del área total: 177,290.4827 km² (Albers 177,291.5803; desvío +0.0006%)
+
+================================================================================
+7. EXPORTACIÓN Y HUELLA FINAL
+================================================================================
+csv en /home/rfvera/Documentos/IFOP/SEGUIMIENTO/objetivo_4/salidas/auditoria_v2
+md5 INICIAL: 2c7731e344fd5aa27be3034d432a4541
+md5 FINAL  : 2c7731e344fd5aa27be3034d432a4541
+¿CAMBIÓ?   : NO (intacto)

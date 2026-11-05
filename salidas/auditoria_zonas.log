@@ -1,0 +1,271 @@
+ERROR 1: PROJ: proj_create_from_database: Open of /home/rfvera/miniconda3/envs/r_env/share/proj failed
+
+==============================================================================
+0. VERSIONES
+==============================================================================
+python      : 3.11.15
+geopandas   : 1.1.3
+shapely     : 2.1.2
+pyogrio     : 0.10.0
+pyproj      : 3.7.2
+GDAL (pyogrio): 3.11.4
+
+==============================================================================
+1. LECTURA E INVENTARIO DE LA CAPA
+==============================================================================
+read_info: {
+  "crs": "EPSG:4326",
+  "fields": "['zona_mf']",
+  "geometry_type": "MultiPolygon",
+  "features": 20,
+  "total_bounds": [
+    -75.436111111,
+    -55.711944444,
+    -66.600555556,
+    -40.996388889
+  ]
+}
+
+features leídas      : 20
+columnas             : ['zona_mf', 'geometry']
+tipo geometría (gpd) : {'MultiPolygon': 20}
+CRS                  : EPSG:4326
+EPSG                 : 4326
+CRS es geográfico    : True
+bounds (lon/lat)     : [-75.436111111, -55.711944444000004, -66.600555556, -40.996388889]
+
+==============================================================================
+1b. VALIDEZ TOPOLÓGICA (CRS original EPSG:4326)
+==============================================================================
+       zona_mf  is_valid  is_empty  is_null valid_reason
+         Ancud      True     False    False           OK
+       Ayacara      True     False    False           OK
+         Aysen      True     False    False           OK
+  Butachauques      True     False    False           OK
+       Calbuco      True     False    False           OK
+        Chacao      True     False    False           OK
+       Chaiten      True     False    False           OK
+     Chaulinec      True     False    False           OK
+Chiloe central      True     False    False           OK
+    Desertores      True     False    False           OK
+      Estuario      True     False    False           OK
+     Guaitecas      True     False    False           OK
+    Hornopiren      True     False    False           OK
+      Moraleda      True     False    False           OK
+       Natales      True     False    False           OK
+   Pta. Arenas      True     False    False           OK
+     Puyuhuapi      True     False    False           OK
+       Quellon      True     False    False           OK
+     Reloncavi      True     False    False           OK
+        Tenaun      True     False    False           OK
+
+resumen -> inválidas: 0 | vacías: 0 | nulas: 0
+
+==============================================================================
+2. PROYECCIONES MÉTRICAS
+==============================================================================
+  ESRI:102033                                             unidades=metre area_eq=True
+  EPSG:6933                                               unidades=metre area_eq=True
+  EPSG:32719                                              unidades=metre area_eq=True
+
+make_valid aplicado solo en memoria para el cálculo de áreas.
+¿alguna geometría cambió al aplicarlo?  False
+CRS tras reconstruir GeoDataFrame: 4326
+
+==============================================================================
+3. ÁREA POR ZONA (Albers Sudamérica ESRI:102033 = área equivalente)
+==============================================================================
+       zona_mf  area_km2_albers  area_km2_ease  area_km2_utm19s  diff_ease_%  diff_utm_%
+         Ancud      20,307.9268    20,316.6777      20,389.1876       0.0431      0.4001
+       Ayacara       1,002.6045     1,002.5841       1,004.2727      -0.0020      0.1664
+         Aysen      26,587.8096    26,582.2545      26,677.5089      -0.0209      0.3374
+  Butachauques       1,546.2224     1,546.2622       1,549.5895       0.0026      0.2178
+       Calbuco         661.4487       661.4382         662.8522      -0.0016      0.2122
+        Chacao         636.1241       636.0709         637.7929      -0.0084      0.2623
+       Chaiten       2,697.6088     2,697.4285       2,702.7313      -0.0067      0.1899
+     Chaulinec         855.6934       855.7212         857.4994       0.0032      0.2110
+Chiloe central         777.0329       776.9645         779.1641      -0.0088      0.2743
+    Desertores         712.3904       712.3325         713.7207      -0.0081      0.1867
+      Estuario         153.1179       153.1185         153.2926       0.0004      0.1141
+     Guaitecas      18,290.1020    18,285.8154      18,351.0988      -0.0234      0.3335
+    Hornopiren         926.0588       926.0719         927.5499       0.0014      0.1610
+      Moraleda       8,386.6883     8,382.5562       8,406.8718      -0.0493      0.2407
+       Natales      49,688.2874    49,649.6587      49,803.8090      -0.0777      0.2325
+   Pta. Arenas     161,529.1446   161,462.9075     161,509.6801      -0.0410     -0.0121
+     Puyuhuapi      11,667.9419    11,667.7575      11,663.4820      -0.0016     -0.0382
+       Quellon      16,375.3180    16,372.7139      16,445.0363      -0.0159      0.4258
+     Reloncavi       1,691.5418     1,691.4102       1,694.5828      -0.0078      0.1798
+        Tenaun         646.8816       647.0247         648.8541       0.0221      0.3049
+
+SUMA de áreas (Albers)     : 325,139.9439 km²
+SUMA de áreas (EASE 6933)  : 325,026.7688 km²
+SUMA de áreas (UTM 19S)    : 325,578.5769 km²
+
+CONTROL GEODÉSICO (elipsoide WGS84, pyproj.Geod) -> suma: 325,122.1680 km²
+  desviación relativa de la proyección Albers respecto a la geodésica:
+  min -0.0520% | max 0.0113% | media -0.0087%
+
+==============================================================================
+4. SOLAPAMIENTO ENTRE ZONAS
+==============================================================================
+suma de áreas de las 20 zonas : 325,139.9439 km²
+área de la UNIÓN              : 325,139.9439 km²
+solapamiento (suma - unión)   : 0.0000 km²
+  -> % del área media         : 0.0000%
+
+No hay pares de zonas con solape > 0,001 km².
+
+==============================================================================
+5. PARTES, HUECOS Y EXTENSIÓN POR ZONA
+==============================================================================
+       zona_mf    geom_type  n_partes  n_huecos  lon_min  lon_max  lat_min  lat_max  ancho_km  alto_km  perimetro_km
+         Ancud MultiPolygon         1         0 -75.4361 -73.6899 -42.5511 -40.9964  151.4671 175.8600      648.6336
+       Ayacara MultiPolygon         2         0 -73.0582 -72.4198 -42.8147 -42.1784   50.6483  71.2031      276.4950
+         Aysen MultiPolygon         5        31 -75.4361 -72.8306 -49.2201 -45.0576  206.8767 455.1848    6,437.9321
+  Butachauques MultiPolygon         1         1 -73.5023 -72.9458 -42.5361 -42.0001   49.2385  57.3225      220.4169
+       Calbuco MultiPolygon         1         0 -73.2978 -73.0110 -42.0790 -41.7211   22.6355  40.0627      134.1872
+        Chacao MultiPolygon         3         0 -73.7162 -73.2658 -42.0210 -41.5104   37.0786  56.5425      202.6031
+       Chaiten MultiPolygon         1         0 -73.6079 -72.7345 -43.7081 -42.8369   66.8604  96.7012      364.8929
+     Chaulinec MultiPolygon         1         1 -73.4101 -73.0268 -42.8550 -42.4727   29.4212  41.9695      141.2518
+Chiloe central MultiPolygon         2         1 -74.2234 -73.3668 -42.7894 -42.4516   68.5971  38.0246      198.6546
+    Desertores MultiPolygon         1         1 -73.1752 -72.7827 -43.0175 -42.6343   32.5656  41.7376      153.2413
+      Estuario MultiPolygon         1         0 -72.5495 -72.2999 -41.7210 -41.3674   19.7851  40.8100      109.1853
+     Guaitecas MultiPolygon         1        15 -75.4361 -73.5139 -45.5707 -43.4668  165.2221 240.4313    1,524.1856
+    Hornopiren MultiPolygon         2         1 -73.1676 -72.4123 -42.3680 -41.9509   63.7500  45.5600      261.5508
+      Moraleda MultiPolygon         2         7 -75.0680 -72.8246 -45.3617 -43.6444  165.3612 201.4105    1,496.9769
+       Natales MultiPolygon         6        36 -75.4361 -72.4533 -55.0558 -48.9941  254.9532 617.1938    8,988.5673
+   Pta. Arenas MultiPolygon         4        22 -75.4361 -66.6006 -55.7119 -48.4262  653.3328 779.0346   11,704.3143
+     Puyuhuapi MultiPolygon         3         0 -73.3540 -66.6006 -47.0512 -44.3408  555.2312 261.6383      816.3439
+       Quellon MultiPolygon         1         4 -75.4361 -73.1671 -43.7675 -42.3647  195.4992 150.4367    1,026.8550
+     Reloncavi MultiPolygon         1         0 -73.1119 -72.5471 -42.1870 -41.4832   47.8592  76.9799      245.7991
+        Tenaun MultiPolygon         3         0 -74.4141 -73.4058 -42.6592 -42.3009   81.8040  45.3928      227.2636
+
+partes por zona -> total de partes: 42 | zonas con >1 parte: 10 | huecos totales: 120
+
+EXTENSIÓN TOTAL capa (EPSG:4326): lon [-75.436111, -66.600556]  lat [-55.711944, -40.996389]
+EXTENSIÓN TOTAL unión (Albers m): x [-1,288,016, -484,351]  y [-2,625,408, -1,080,781]
+  ancho 803.7 km | alto 1,544.6 km
+  bbox unión área = 1,241,363.5 km² (llenado = 26.2%)
+
+==============================================================================
+6. INTERSECCIÓN CON LA UNIÓN DE TODOS LOS PAÍSES DEL BBOX
+==============================================================================
+países en la capa mundial: 258 | CRS: 4326 | geom types: {'MultiPolygon': 151, 'Polygon': 107}
+
+países que intersectan el bbox de las zonas (+0,5° margen): 3
+                        ADMIN                    SOVEREIGNT ISO_A3     CONTINENT
+                        Chile                         Chile    CHL South America
+                    Argentina                     Argentina    ARG South America
+Southern Patagonian Ice Field Southern Patagonian Ice Field    -99 South America
+
+países con geometría inválida: 0
+tipo de la unión de países: MultiPolygon | válida: True | vacía: False
+
+--- INTEGRIDAD: área de cada zona dentro de la unión de países ---
+       zona_mf  area_total_km2  area_en_tierra_km2  tierra_Chile_km2  tierra_Argentina_km2  residual_fuera_tierra_km2  residual_%
+         Ancud     20,307.9268              0.0000            0.0000                0.0000                20,307.9264    100.0000
+       Ayacara      1,002.6045              0.0000            0.0000                0.0000                 1,002.6044    100.0000
+         Aysen     26,587.8096              0.0175            0.0175                0.0000                26,587.7921     99.9999
+  Butachauques      1,546.2224              0.0000            0.0000                0.0000                 1,546.2224    100.0000
+       Calbuco        661.4487              0.0000            0.0000                0.0000                   661.4481     99.9999
+        Chacao        636.1241              0.0000            0.0000                0.0000                   636.1231     99.9998
+       Chaiten      2,697.6088              0.0000            0.0000                0.0000                 2,697.6078    100.0000
+     Chaulinec        855.6934              0.0000            0.0000                0.0000                   855.6934    100.0000
+Chiloe central        777.0329              0.0000            0.0000                0.0000                   777.0328    100.0000
+    Desertores        712.3904              0.0000            0.0000                0.0000                   712.3899     99.9999
+      Estuario        153.1179              0.0026            0.0026                0.0000                   153.1153     99.9983
+     Guaitecas     18,290.1020              0.0016            0.0016                0.0000                18,290.1004    100.0000
+    Hornopiren        926.0588              0.0000            0.0000                0.0000                   926.0587    100.0000
+      Moraleda      8,386.6883              0.0102            0.0102                0.0000                 8,386.6781     99.9999
+       Natales     49,688.2874              0.0453            0.0453                0.0000                49,688.2421     99.9999
+   Pta. Arenas    161,529.1446              0.0484            0.0391                0.0093               161,529.0962    100.0000
+     Puyuhuapi     11,667.9419              0.0052            0.0031                0.0020                11,667.9367    100.0000
+       Quellon     16,375.3180              0.0000            0.0000                0.0000                16,375.3175    100.0000
+     Reloncavi      1,691.5418              0.0000            0.0000                0.0000                 1,691.5416    100.0000
+        Tenaun        646.8816              0.0000            0.0000                0.0000                   646.8814    100.0000
+
+ÁREA TOTAL de las zonas          : 325,139.9439 km²
+ÁREA dentro de la unión de países: 0.1307 km²
+ÁREA RESIDUAL (fuera de todo país): 325,139.8086 km²  (100.0000%)
+  dentro de Chile       : 0.1194 km²
+  dentro de Argentina   : 0.0113 km²
+
+==============================================================================
+6b. CONTROL: ¿faltó algún país fuera del bbox+0,5°?
+==============================================================================
+área de zonas dentro de países NO incluidos en el bbox+0,5°: 0.000000 km²
+(si es 0.000000, la selección de países fue exhaustiva)
+
+==============================================================================
+7. CONTRASTE CON estaciones_CTD_con_ZONA_MACROFAUNA.csv
+==============================================================================
+zonas únicas en CSV : 20 ['Ancud', 'Ayacara', 'Aysen', 'Butachauques', 'Calbuco', 'Chacao', 'Chaiten', 'Chaulinec', 'Chiloe central', 'Desertores', 'Estuario', 'Guaitecas', 'Hornopiren', 'Moraleda', 'Natales', 'Pta. Arenas', 'Puyuhuapi', 'Quellon', 'Reloncavi', 'Tenaun']
+zonas únicas en GPKG: 20 ['Ancud', 'Ayacara', 'Aysen', 'Butachauques', 'Calbuco', 'Chacao', 'Chaiten', 'Chaulinec', 'Chiloe central', 'Desertores', 'Estuario', 'Guaitecas', 'Hornopiren', 'Moraleda', 'Natales', 'Pta. Arenas', 'Puyuhuapi', 'Quellon', 'Reloncavi', 'Tenaun']
+
+en CSV y no en GPKG: []
+en GPKG y no en CSV: []
+
+n estaciones por zona (CSV):
+zona_mf
+Ancud              1
+Ayacara            4
+Aysen             42
+Butachauques       4
+Calbuco            2
+Chacao             2
+Chaiten            7
+Chaulinec          3
+Chiloe central     1
+Desertores         3
+Estuario           8
+Guaitecas         16
+Hornopiren         3
+Moraleda          38
+Natales           42
+Pta. Arenas       41
+Puyuhuapi         13
+Quellon           19
+Reloncavi          9
+Tenaun             1
+
+estaciones DENTRO de su propia zona: 199/259
+estaciones DENTRO de alguna zona   : 199/259
+
+estaciones fuera de su zona (top 15 por distancia al borde):
+archivo estacion_id   zona_mf  dist_borde_km
+      A          31     Aysen          8.178
+      B         A29     Aysen          3.888
+      B         A37  Moraleda          2.962
+      B       M06N1   Natales          2.471
+      B         M04     Aysen          2.431
+      B       M06N3   Natales          2.368
+      B       M07N2   Natales          2.363
+      B         L17   Chaiten          2.351
+      B         A02 Guaitecas          2.224
+      B       M07N5   Natales          1.995
+      B         A16 Puyuhuapi          1.907
+      B       A08N2  Moraleda          1.804
+      B       A16N1 Puyuhuapi          1.683
+      B         A06  Moraleda          1.591
+      B       L03N1  Estuario          1.587
+resumen por zona de estaciones fuera:
+zona_mf
+Ayacara         1
+Aysen          10
+Calbuco         1
+Chacao          1
+Chaiten         1
+Estuario        3
+Guaitecas       1
+Moraleda        8
+Natales        20
+Pta. Arenas     5
+Puyuhuapi       5
+Quellon         2
+Reloncavi       2
+
+==============================================================================
+8. EXPORTACIÓN DE RESULTADOS (solo auditoría)
+==============================================================================
+escrito en /home/rfvera/Documentos/IFOP/SEGUIMIENTO/objetivo_4/salidas/auditoria
+GPKG NO fue modificado (lectura con pyogrio).

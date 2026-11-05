@@ -1,0 +1,105 @@
+ERROR 1: PROJ: proj_create_from_database: Open of /home/rfvera/miniconda3/envs/r_env/share/proj failed
+==================================================================================
+A. PRECISIÓN DEL MÁXIMO (criterio estricto, punto de la parte más lejano)
+==================================================================================
+  Ancud           max 100.000000 km  en (np.float64(-74.35348), np.float64(-41.00568))  EXCEDE
+  Ayacara         max  28.180319 km  en (np.float64(-72.55846), np.float64(-42.52483))  CUMPLE
+  Aysen           max 100.000000 km  en (np.float64(-75.22925), np.float64(-46.74763))  EXCEDE
+  Butachauques    max  26.167003 km  en (np.float64(-73.16313), np.float64(-42.0901))  CUMPLE
+  Calbuco         max  27.184237 km  en (np.float64(-73.16765), np.float64(-42.07901))  CUMPLE
+  Chacao          max  24.005497 km  en (np.float64(-73.70838), np.float64(-41.75557))  CUMPLE
+  Chaiten         max  25.055943 km  en (np.float64(-73.56191), np.float64(-43.69247))  CUMPLE
+  Chaulinec       max  21.506016 km  en (np.float64(-73.22565), np.float64(-42.85502))  CUMPLE
+  Chiloe central  max  23.708184 km  en (np.float64(-73.81697), np.float64(-42.58668))  CUMPLE
+  Desertores      max  17.203011 km  en (np.float64(-73.17523), np.float64(-42.8369))  CUMPLE
+  Estuario        max  14.344967 km  en (np.float64(-72.32136), np.float64(-41.36745))  CUMPLE
+  Guaitecas       max 100.000000 km  en (np.float64(-75.35179), np.float64(-45.41334))  EXCEDE
+  Hornopiren      max  39.027926 km  en (np.float64(-72.43575), np.float64(-42.36797))  CUMPLE
+  Moraleda        max  68.777985 km  en (np.float64(-75.06795), np.float64(-45.36172))  CUMPLE
+  Natales         max 100.000000 km  en (np.float64(-73.4852), np.float64(-53.08931))  EXCEDE
+  Pta. Arenas     max 100.000000 km  en (np.float64(-73.41573), np.float64(-54.32625))  EXCEDE
+  Puyuhuapi       max  17.405944 km  en (np.float64(-72.98095), np.float64(-44.6015))  CUMPLE
+  Quellon         max 100.000000 km  en (np.float64(-74.97298), np.float64(-42.66857))  EXCEDE
+  Reloncavi       max  19.537343 km  en (np.float64(-72.90372), np.float64(-41.50042))  CUMPLE
+  Tenaun          max  18.148474 km  en (np.float64(-73.40584), np.float64(-42.45161))  CUMPLE
+
+==================================================================================
+B. TIERRA RESIDUAL CRUDA POR ZONA (valores sin enmascarar)
+==================================================================================
+          zona  sin_rejilla_km2  con_rejilla_km2
+         Ancud        1.995e-07        0.000e+00
+       Ayacara        6.597e-07        0.000e+00
+         Aysen        1.677e-05        0.000e+00
+  Butachauques        1.144e-06        0.000e+00
+       Calbuco        6.438e-07        0.000e+00
+        Chacao        8.706e-07        0.000e+00
+       Chaiten        8.320e-07        0.000e+00
+     Chaulinec        9.500e-11        0.000e+00
+Chiloe central        3.008e-08        0.000e+00
+    Desertores        1.004e-06        0.000e+00
+      Estuario        1.071e-06        0.000e+00
+     Guaitecas        5.021e-06        0.000e+00
+    Hornopiren        2.685e-08        0.000e+00
+      Moraleda        6.892e-06        0.000e+00
+       Natales        2.547e-05        0.000e+00
+   Pta. Arenas        1.736e-05        0.000e+00
+     Puyuhuapi        2.748e-06        0.000e+00
+       Quellon        3.643e-06        0.000e+00
+     Reloncavi        2.241e-06        0.000e+00
+        Tenaun        1.363e-08        0.000e+00
+TOTAL sin rejilla: 8.664e-05 km² = 86.64 m²
+TOTAL con rejilla: 0.000e+00 km² = 0.000000 m²
+
+==================================================================================
+C. ESTACIONES DENTRO DE SU ZONA (efecto del descarte de partes)
+==================================================================================
+          zona  n  dentro  fuera  dist_max_fuera_km
+         Ancud  1       1      0              0.000
+       Ayacara  4       3      1              1.195
+         Aysen 42      32     10              8.539
+  Butachauques  4       4      0              0.000
+       Calbuco  2       1      1              0.455
+        Chacao  2       1      1              0.016
+       Chaiten  7       6      1              2.702
+     Chaulinec  3       3      0              0.000
+Chiloe central  1       1      0              0.000
+    Desertores  3       3      0              0.000
+      Estuario  8       5      3              1.591
+     Guaitecas 16      15      1              2.416
+    Hornopiren  3       3      0              0.000
+      Moraleda 38      30      8              3.038
+       Natales 42      22     20              2.322
+   Pta. Arenas 41      36      5              0.722
+     Puyuhuapi 13       8      5              2.002
+       Quellon 19      17      2              0.739
+     Reloncavi  9       7      2              0.729
+        Tenaun  1       1      0              0.000
+TOTAL dentro: 199/259 | fuera: 60
+estaciones fuera con distancia > 5 km: 1 zonas
+
+==================================================================================
+D. PARTES ELIMINADAS VS VERSIÓN ANTERIOR (v2 = md5 2c7731e3...)
+==================================================================================
+          zona   area_km2  area_prev      delta  partes  partes_prev
+         Ancud 14,322.064 12,972.206  1,349.858       1            1
+       Ayacara    948.140  1,002.601    -54.461       1            2
+         Aysen 25,317.921 24,315.615  1,002.306       2            6
+  Butachauques  1,546.242  1,546.242     -0.000       1            1
+       Calbuco    661.441    661.441     -0.000       1            1
+        Chacao    594.745    636.090    -41.344       1            3
+       Chaiten  2,697.720  2,697.720      0.000       1            1
+     Chaulinec    855.717    855.717      0.000       1            1
+Chiloe central    751.856    777.007    -25.151       1            2
+    Desertores    712.369    712.369     -0.000       1            1
+      Estuario    153.119    153.119     -0.000       1            1
+     Guaitecas 18,064.827 18,085.354    -20.527       1            1
+    Hornopiren    926.072    926.072      0.000       2            2
+      Moraleda  8,386.266  8,386.273     -0.007       1            2
+       Natales 30,199.623 31,387.265 -1,187.642       1            6
+   Pta. Arenas 53,280.562 56,089.596 -2,809.034       1            3
+     Puyuhuapi    625.773    657.952    -32.180       1            2
+       Quellon 14,167.536 13,090.503  1,077.033       1            1
+     Reloncavi  1,691.476  1,691.476      0.000       1            1
+        Tenaun    273.811    646.961   -373.150       1            3
+TOTAL actual 176,177.279 | previo 177,291.580 | delta -1,114.301 km²
+partes actuales 22 | previas 41 | eliminadas 19

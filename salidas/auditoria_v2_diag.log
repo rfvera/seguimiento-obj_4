@@ -1,0 +1,55 @@
+ERROR 1: PROJ: proj_create_from_database: Open of /home/rfvera/miniconda3/envs/r_env/share/proj failed
+================================================================================
+P. ¿QUÉ IMPLEMENTACIÓN DE BUFFER REPRODUCE LA GEOMETRÍA?
+================================================================================
+Se calcula, por zona, el área que queda FUERA de la unión de buffers de 100 km
+alrededor de sus propias estaciones, para cada variante.
+
+       zona_mf  Albers ESRI:102033  UTM 18S EPSG:32718  UTM 19S EPSG:32719  UTM 18S/19S por zona  4326 grados 0.8984°
+         Ancud            147.3291            137.9463            148.0427              137.9463           2,301.1490
+       Ayacara              0.0000              0.0000              0.0000                0.0000               0.0000
+         Aysen            261.6128            281.2997            292.0646              281.2997           1,996.5154
+  Butachauques              0.0000              0.0000              0.0000                0.0000               0.0000
+       Calbuco              0.0000              0.0000              0.0000                0.0000               0.0000
+        Chacao              0.0000              0.0000              0.0000                0.0000               0.0000
+       Chaiten              0.0000              0.0000              0.0000                0.0000               0.0000
+     Chaulinec              0.0000              0.0000              0.0000                0.0000               0.0000
+Chiloe central              0.0000              0.0000              0.0000                0.0000               0.0000
+    Desertores              0.0000              0.0000              0.0000                0.0000               0.0000
+      Estuario              0.0000              0.0000              0.0000                0.0000               0.0000
+     Guaitecas             85.7015            100.9689            106.5001              100.9689             920.6795
+    Hornopiren              0.0000              0.0000              0.0000                0.0000               0.0000
+      Moraleda              0.0000              0.0000              0.0000                0.0000               0.0000
+       Natales          1,639.1753          1,986.3613          2,003.5130            1,986.3613           5,467.1800
+   Pta. Arenas          4,741.4062          5,902.1040          5,869.0206            5,869.0206          11,584.3360
+     Puyuhuapi              0.0000              0.0000              0.0000                0.0000               0.0000
+       Quellon            166.3426            176.3508            187.8028              176.3508           1,901.8521
+     Reloncavi              0.0000              0.0000              0.0000                0.0000               0.0000
+        Tenaun              0.0000              0.0000              0.0000                0.0000               0.0000
+
+TOTAL de área fuera del buffer de 100 km:
+  Albers ESRI:102033       7,041.5675 km²   | zonas con exceso: 6
+  UTM 18S EPSG:32718       8,585.0310 km²   | zonas con exceso: 6
+  UTM 19S EPSG:32719       8,606.9439 km²   | zonas con exceso: 6
+  UTM 18S/19S por zona     8,551.9476 km²   | zonas con exceso: 6
+  4326 grados 0.8984°      24,171.7119 km²   | zonas con exceso: 6
+
+================================================================================
+Q. EXCESO DETALLADO CON EL BUFFER CORRECTO (Albers 100 km)
+================================================================================
+  Ancud            exceso  147.3291 km²  (  1.14% de la zona)  radio necesario 107.312 km  bbox exceso lon[-74.731,-74.305] lat[-41.173,-40.996]
+  Aysen            exceso  261.6128 km²  (  1.08% de la zona)  radio necesario 115.729 km  bbox exceso lon[-75.435,-75.160] lat[-46.907,-46.717]
+  Guaitecas        exceso   85.7015 km²  (  0.47% de la zona)  radio necesario 107.719 km  bbox exceso lon[-75.437,-75.256] lat[-45.515,-43.854]
+  Natales          exceso 1,639.1753 km²  (  5.22% de la zona)  radio necesario 127.669 km  bbox exceso lon[-75.095,-73.473] lat[-53.471,-52.532]
+  Pta. Arenas      exceso 4,741.4062 km²  (  8.45% de la zona)  radio necesario 129.948 km  bbox exceso lon[-73.148,-66.601] lat[-55.271,-53.594]
+  Quellon          exceso  166.3426 km²  (  1.27% de la zona)  radio necesario 108.116 km  bbox exceso lon[-75.033,-74.629] lat[-42.704,-42.490]
+
+================================================================================
+R. SOLAPE Aysen ∩ Guaitecas
+================================================================================
+tipo: Point | área 0.000000 km² | perímetro 0.0000 km
+Traceback (most recent call last):
+  File "/home/rfvera/Documentos/IFOP/SEGUIMIENTO/objetivo_4/salidas/auditoria_v2_diag.py", line 85, in <module>
+    print(f"compactness (4πA/P²): {4*np.pi*im.area/(im.length**2):.6f}  (≈0 => astilla alargada)")
+                                   ~~~~~~~~~~~~~~~^^~~~~~~~~~~~~~
+ZeroDivisionError: float division by zero

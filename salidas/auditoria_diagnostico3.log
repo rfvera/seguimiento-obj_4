@@ -1,0 +1,95 @@
+ERROR 1: PROJ: proj_create_from_database: Open of /home/rfvera/miniconda3/envs/r_env/share/proj failed
+==============================================================================
+J. HIPÓTESIS DEL MARCO: bbox del CSV +/- 0,5°
+==============================================================================
+extensión de la capa : [np.float64(-75.436111), np.float64(-55.711944), np.float64(-66.600556), np.float64(-40.996389)]
+bbox CSV +/- 0,5°    : [np.float64(-75.436111), np.float64(-55.711944), np.float64(-66.600556), np.float64(-40.996389)]
+¿coinciden?          : True
+diferencias (grados) : [np.float64(0.0), np.float64(0.0), np.float64(-0.0), np.float64(-0.0)]
+
+==============================================================================
+K. ESTACIONES ATÍPICAS DEL CSV (lon > -70)
+==============================================================================
+n = 9
+archivo estacion_id     zona_mf        lat        lon    dist_km
+      B       M46N1 Pta. Arenas -55.211944 -67.100556 504.730534
+      B         M46 Pta. Arenas -54.928333 -67.305556 475.037826
+      B         M45 Pta. Arenas -54.924444 -67.607778 459.530922
+      B       M44N1 Pta. Arenas -55.173333 -68.105000 454.165419
+      B         M44 Pta. Arenas -54.910278 -68.318333 424.133727
+      B         M43 Pta. Arenas -54.883889 -68.740000 402.789559
+      B         M42 Pta. Arenas -54.941944 -69.151389 389.793570
+      B         M41 Pta. Arenas -54.827222 -69.771389 355.084971
+      B       M39N4 Pta. Arenas -53.446667 -69.828056 243.889077
+
+zona_mf de esas estaciones: {'Pta. Arenas': 9}
+
+==============================================================================
+L. RECÁLCULO ROBUSTO DE LA INTERSECCIÓN CON TIERRA
+==============================================================================
+países seleccionados: ['Chile', 'Argentina', 'Southern Patagonian Ice Field']
+unión en 4326: tipo=MultiPolygon válida=True vacía=False
+unión reproyectada a Albers: tipo=MultiPolygon válida=True
+tras make_valid: válida=True diferencia de área=0.000000 km²
+
+       zona_mf  area_total_km2  area_tierra_km2  residual_km2
+         Ancud     20,307.9268           0.0000   20,307.9268
+       Ayacara      1,002.6045           0.0000    1,002.6045
+         Aysen     26,587.8096           0.0175   26,587.7921
+  Butachauques      1,546.2224           0.0000    1,546.2224
+       Calbuco        661.4487           0.0000      661.4487
+        Chacao        636.1241           0.0000      636.1241
+       Chaiten      2,697.6088           0.0000    2,697.6088
+     Chaulinec        855.6934           0.0000      855.6934
+Chiloe central        777.0329           0.0000      777.0329
+    Desertores        712.3904           0.0000      712.3904
+      Estuario        153.1179           0.0026      153.1153
+     Guaitecas     18,290.1020           0.0016   18,290.1004
+    Hornopiren        926.0588           0.0000      926.0588
+      Moraleda      8,386.6883           0.0102    8,386.6781
+       Natales     49,688.2874           0.0453   49,688.2421
+   Pta. Arenas    161,529.1446           0.0484  161,529.0962
+     Puyuhuapi     11,667.9419           0.0052   11,667.9367
+       Quellon     16,375.3180           0.0000   16,375.3180
+     Reloncavi      1,691.5418           0.0000    1,691.5418
+        Tenaun        646.8816           0.0000      646.8816
+
+total tierra  : 0.1307 km²
+total residual: 325,139.8132 km²
+zonas con tierra > 0,001 km²: ['Aysen', 'Estuario', 'Guaitecas', 'Moraleda', 'Natales', 'Pta. Arenas', 'Puyuhuapi']
+
+por país:
+  Chile                              0.1240 km²
+  Argentina                          0.0113 km²
+  Southern Patagonian Ice Field      0.0000 km²
+
+==============================================================================
+M. ESTACIONES FUERA DE SU ZONA: ¿EN TIERRA O EN AGUA?
+==============================================================================
+n estaciones fuera de su zona: 60
+de ellas, sobre tierra: 60 | en agua: 0
+distancia al borde de su zona (km): max 8.18 | media 1.23
+
+Detalle de las 10 más alejadas:
+archivo estacion_id   zona_mf     lat     lon  dist_km_calc
+      A          31     Aysen -46.677 -73.926         8.178
+      B         A29     Aysen -45.945 -73.571         3.888
+      B         A37  Moraleda -44.846 -73.851         2.962
+      B       M06N1   Natales -49.081 -74.368         2.471
+      B         M04     Aysen -48.669 -74.601         2.431
+      B       M06N3   Natales -49.119 -74.383         2.368
+      B       M07N2   Natales -49.223 -74.381         2.363
+      B         L17   Chaiten -43.106 -72.904         2.351
+      B         A02 Guaitecas -43.843 -73.814         2.224
+      B       M07N5   Natales -49.378 -74.398         1.995
+
+==============================================================================
+N. ÁREA TERRESTRE DENTRO DE LAS ZONAS: ¿ESPLÍN O ERROR?
+==============================================================================
+  Aysen            0.0175 km²  (0.000066% de la zona)
+  Estuario         0.0026 km²  (0.001699% de la zona)
+  Guaitecas        0.0016 km²  (0.000009% de la zona)
+  Moraleda         0.0102 km²  (0.000122% de la zona)
+  Natales          0.0453 km²  (0.000091% de la zona)
+  Pta. Arenas      0.0484 km²  (0.000030% de la zona)
+  Puyuhuapi        0.0052 km²  (0.000044% de la zona)

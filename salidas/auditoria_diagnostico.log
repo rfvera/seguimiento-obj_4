@@ -1,0 +1,126 @@
+ERROR 1: PROJ: proj_create_from_database: Open of /home/rfvera/miniconda3/envs/r_env/share/proj failed
+==============================================================================
+A. SANIDAD DEL LAYER DE PAÍSES (control independiente)
+==============================================================================
+  Santiago (Chile)           -> ['Chile']
+  Coyhaique (Chile)          -> ['Chile']
+  Punta Arenas (Chile)       -> []
+  Bariloche (Argentina)      -> ['Argentina']
+  Río Gallegos (Argentina)   -> ['Argentina']
+  Punto océano Pacífico      -> []
+  Punto mar Argentino        -> []
+  área total Chile     : 736,637 km²
+  área total Argentina : 2,782,916 km²
+
+==============================================================================
+B. PARTES INDIVIDUALES POR ZONA (detección de fragmentos anómalos)
+==============================================================================
+       zona_mf  parte     area_km2  n_huecos  lon_min  lat_min  lon_max  lat_max       cx       cy
+         Ancud      0  20,307.9268         0 -75.4361 -42.5511 -73.6899 -40.9964 -74.6708 -41.7021
+       Ayacara      0     948.1335         0 -73.0582 -42.8147 -72.5394 -42.1784 -72.8695 -42.4607
+       Ayacara      1      54.4710         0 -72.5190 -42.4630 -72.4198 -42.2990 -72.4596 -42.3853
+         Aysen      1  15,676.6073        17 -75.4361 -49.2201 -73.2279 -46.4376 -74.7608 -47.6517
+         Aysen      4  10,882.9672        14 -75.4361 -46.6027 -72.8306 -45.0576 -74.4513 -45.7338
+         Aysen      2      26.0846         0 -75.4361 -48.3503 -75.3458 -48.2741 -75.4031 -48.3162
+         Aysen      0       2.1111         0 -75.4361 -49.0816 -75.4140 -49.0594 -75.4283 -49.0685
+         Aysen      3       0.0395         0 -75.4361 -48.2037 -75.4339 -48.1990 -75.4354 -48.2007
+  Butachauques      0   1,546.2224         1 -73.5023 -42.5361 -72.9458 -42.0001 -73.2363 -42.2798
+       Calbuco      0     661.4487         0 -73.2978 -42.0790 -73.0110 -41.7211 -73.1542 -41.9106
+        Chacao      0     594.7793         0 -73.7162 -42.0210 -73.2658 -41.7556 -73.4376 -41.8831
+        Chacao      2      41.1211         0 -73.6948 -41.6357 -73.4949 -41.5104 -73.6041 -41.5918
+        Chacao      1       0.2237         0 -73.6996 -41.6782 -73.6949 -41.6441 -73.6965 -41.6560
+       Chaiten      0   2,697.6088         0 -73.6079 -43.7081 -72.7345 -42.8369 -73.1976 -43.3277
+     Chaulinec      0     855.6934         1 -73.4101 -42.8550 -73.0268 -42.4727 -73.2340 -42.6453
+Chiloe central      1     751.8813         1 -73.8170 -42.7894 -73.3668 -42.4516 -73.5494 -42.6190
+Chiloe central      0      25.1516         0 -74.2234 -42.6924 -74.1275 -42.6354 -74.1602 -42.6624
+    Desertores      0     712.3904         1 -73.1752 -43.0175 -72.7827 -42.6343 -72.9867 -42.8344
+      Estuario      0     153.1179         0 -72.5495 -41.7210 -72.2999 -41.3674 -72.3829 -41.5822
+     Guaitecas      0  18,290.1020        15 -75.4361 -45.5707 -73.5139 -43.4668 -74.6541 -44.3249
+    Hornopiren      1     503.5117         0 -73.1676 -42.2853 -72.8057 -42.0230 -72.9901 -42.1519
+    Hornopiren      0     422.5471         1 -72.7104 -42.3680 -72.4123 -41.9509 -72.5717 -42.1245
+      Moraleda      0   8,386.6809         7 -75.0680 -45.3617 -72.8246 -43.6444 -73.8161 -44.6155
+      Moraleda      1       0.0074         0 -73.3007 -44.7593 -73.2977 -44.7586 -73.2993 -44.7590
+       Natales      0  48,965.9440        36 -75.4361 -55.0558 -72.4533 -48.9941 -74.5757 -52.3081
+       Natales      4     551.7696         0 -75.4361 -49.5012 -74.8045 -49.0453 -75.1525 -49.2455
+       Natales      5     133.3788         0 -72.9884 -52.7171 -72.6385 -52.5022 -72.8093 -52.5810
+       Natales      3      31.0198         0 -75.4361 -50.6110 -75.3594 -50.5148 -75.4078 -50.5741
+       Natales      2       6.1481         0 -75.4361 -50.7053 -75.4071 -50.6713 -75.4231 -50.6861
+       Natales      1       0.0271         0 -75.4361 -50.7424 -75.4339 -50.7392 -75.4354 -50.7412
+   Pta. Arenas      0 161,521.3715        22 -75.4361 -55.7119 -66.6006 -48.4262 -69.9098 -53.2448
+   Pta. Arenas      1       5.7619         0 -73.5557 -53.3010 -73.4949 -53.2807 -73.5258 -53.2917
+   Pta. Arenas      2       1.3353         0 -73.5191 -53.2639 -73.5003 -53.2408 -73.5084 -53.2548
+   Pta. Arenas      3       0.6758         0 -73.4872 -53.2278 -73.4681 -53.2135 -73.4758 -53.2210
+     Puyuhuapi      2  11,009.9932         0 -67.6244 -47.0512 -66.6006 -45.2146 -66.9990 -46.1064
+     Puyuhuapi      0     625.7709         0 -73.3179 -44.9653 -72.5911 -44.3408 -72.8614 -44.6687
+     Puyuhuapi      1      32.1778         0 -73.3540 -44.8137 -73.2074 -44.7590 -73.2818 -44.7871
+       Quellon      0  16,375.3180         4 -75.4361 -43.7675 -73.1671 -42.3647 -74.6229 -43.1216
+     Reloncavi      0   1,691.5418         0 -73.1119 -42.1870 -72.5471 -41.4832 -72.8740 -41.7949
+        Tenaun      0     341.9556         0 -74.4141 -42.6592 -74.1297 -42.3785 -74.2506 -42.5469
+        Tenaun      2     273.8116         0 -73.6885 -42.5057 -73.4058 -42.3009 -73.5383 -42.3980
+        Tenaun      1      31.1145         0 -73.8245 -42.5514 -73.7409 -42.4571 -73.7893 -42.5073
+
+total partes: 42 | partes < 1 km²: 5
+
+Partes menores a 10 km²:
+    zona_mf  parte  area_km2  n_huecos  lon_min  lat_min  lon_max  lat_max       cx       cy
+      Aysen      0    2.1111         0 -75.4361 -49.0816 -75.4140 -49.0594 -75.4283 -49.0685
+      Aysen      3    0.0395         0 -75.4361 -48.2037 -75.4339 -48.1990 -75.4354 -48.2007
+     Chacao      1    0.2237         0 -73.6996 -41.6782 -73.6949 -41.6441 -73.6965 -41.6560
+   Moraleda      1    0.0074         0 -73.3007 -44.7593 -73.2977 -44.7586 -73.2993 -44.7590
+    Natales      2    6.1481         0 -75.4361 -50.7053 -75.4071 -50.6713 -75.4231 -50.6861
+    Natales      1    0.0271         0 -75.4361 -50.7424 -75.4339 -50.7392 -75.4354 -50.7412
+Pta. Arenas      1    5.7619         0 -73.5557 -53.3010 -73.4949 -53.2807 -73.5258 -53.2917
+Pta. Arenas      2    1.3353         0 -73.5191 -53.2639 -73.5003 -53.2408 -73.5084 -53.2548
+Pta. Arenas      3    0.6758         0 -73.4872 -53.2278 -73.4681 -53.2135 -73.4758 -53.2210
+
+Partes cuyo centroide cae sobre tierra (según países):
+  Aysen            parte 4  área 10,882.967 km²  centroide (-74.4513, -45.7338)  -> SOBRE TIERRA
+  Chacao           parte 2  área 41.121 km²  centroide (-73.6041, -41.5918)  -> SOBRE TIERRA
+  Estuario         parte 0  área 153.118 km²  centroide (-72.3829, -41.5822)  -> SOBRE TIERRA
+  Hornopiren       parte 0  área 422.547 km²  centroide (-72.5717, -42.1245)  -> SOBRE TIERRA
+  Moraleda         parte 0  área 8,386.681 km²  centroide (-73.8161, -44.6155)  -> SOBRE TIERRA
+  Natales          parte 0  área 48,965.944 km²  centroide (-74.5757, -52.3081)  -> SOBRE TIERRA
+  Pta. Arenas      parte 0  área 161,521.372 km²  centroide (-69.9098, -53.2448)  -> SOBRE TIERRA
+  Puyuhuapi        parte 0  área 625.771 km²  centroide (-72.8614, -44.6687)  -> SOBRE TIERRA
+  Tenaun           parte 2  área 273.812 km²  centroide (-73.5383, -42.3980)  -> SOBRE TIERRA
+
+==============================================================================
+C. ¿POR QUÉ 60 ESTACIONES QUEDAN FUERA DE SU ZONA?
+==============================================================================
+situacion
+dentro de la zona        199
+fuera de la geometría     60
+
+Detalle de las que caen en huecos (isla) -> indican islas dentro de la zona:
+  n = 0
+
+Detalle de las que quedan fuera de la geometría:
+  n = 60 | distancia aprox al borde (km): max 8.67 | mediana 1.23
+zona_mf
+Ayacara         1
+Aysen          10
+Calbuco         1
+Chacao          1
+Chaiten         1
+Estuario        3
+Guaitecas       1
+Moraleda        8
+Natales        20
+Pta. Arenas     5
+Puyuhuapi       5
+Quellon         2
+Reloncavi       2
+Traceback (most recent call last):
+  File "/home/rfvera/Documentos/IFOP/SEGUIMIENTO/objetivo_4/salidas/auditoria_diagnostico.py", line 102, in <module>
+    print(f"\n  de esas {len(f)}, sobre tierra según países: {int(sum(shapely.contains(land_a, p) for p in f2.geometry))}")
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rfvera/Documentos/IFOP/SEGUIMIENTO/objetivo_4/salidas/auditoria_diagnostico.py", line 102, in <genexpr>
+    print(f"\n  de esas {len(f)}, sobre tierra según países: {int(sum(shapely.contains(land_a, p) for p in f2.geometry))}")
+                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rfvera/miniconda3/envs/r_env/lib/python3.11/site-packages/shapely/decorators.py", line 88, in wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rfvera/miniconda3/envs/r_env/lib/python3.11/site-packages/shapely/predicates.py", line 608, in contains
+    return lib.contains(a, b, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+shapely.errors.GEOSException: TopologyException: side location conflict at -20852231.510495409 -5270406.1080954252. This can occur if the input geometry is invalid.

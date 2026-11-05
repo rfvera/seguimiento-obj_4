@@ -1,0 +1,193 @@
+ERROR 1: PROJ: proj_create_from_database: Open of /home/rfvera/miniconda3/envs/r_env/share/proj failed
+
+====================================================================================
+0. ENTORNO Y HUELLA (antes de leer)
+====================================================================================
+python    : 3.11.15
+geopandas : 1.1.3 | shapely: 2.1.2 | pyproj: 3.7.2 | pyogrio: 0.10.0 | GDAL: 3.11.4
+md5 INICIAL: d2630c42c1fe86233fc3e4f9b0295fc4
+mtime_ns / size: 1793908346262066766 360448
+
+====================================================================================
+1. INVENTARIO, CRS, VALIDEZ, VACÍAS
+====================================================================================
+features           : 20
+columnas           : ['zona_mf', 'geometry']
+zonas únicas       : 20 | duplicadas: 0
+tipos de geometría : {'MultiPolygon': 20}
+CRS                : EPSG:4326 | EPSG: 4326 | geográfico: True
+bounds             : [np.float64(-75.436111), np.float64(-55.711944), np.float64(-66.600556), np.float64(-40.996389)]
+is_valid           : 20 / 20
+is_empty           : 0
+is_null            : 0
+motivos invalidez   : {'Valid Geometry': 20}
+make_valid cambia  : False
+
+zonas CSV: 20 | estaciones: 259 | zonas GPKG == CSV: True
+
+====================================================================================
+2. ÁREA TOTAL Y POR ZONA
+====================================================================================
+       zona_mf  n_partes  albers_km2  geodesica_km2  epsg6933_km2
+   Pta. Arenas         6 54,177.5798    54,206.6380   54,177.2644
+       Natales         4 30,887.9768    30,883.1300   30,883.0346
+         Aysen         3 25,331.8707    25,321.7470   25,324.5493
+     Guaitecas         1 18,064.8270    18,058.5796   18,061.7240
+         Ancud         1 14,322.0641    14,320.0930   14,319.8396
+       Quellon         1 14,167.5362    14,170.4252   14,165.9323
+      Moraleda         2  8,386.2734     8,383.2420    8,382.5567
+       Chaiten         1  2,697.7196     2,697.2000    2,697.4286
+     Reloncavi         1  1,691.4756     1,691.6232    1,691.4104
+  Butachauques         1  1,546.2424     1,546.1730    1,546.2623
+       Ayacara         2  1,002.6009     1,002.6084    1,002.5842
+    Hornopiren         2    926.0715       926.0387      926.0718
+     Chaulinec         1    855.7173       855.6616      855.7212
+Chiloe central         2    777.0073       777.0782      776.9645
+    Desertores         1    712.3690       712.4293      712.3325
+       Calbuco         1    661.4412       661.4491      661.4381
+     Puyuhuapi         2    657.9525       657.9441      657.9412
+        Tenaun         3    646.9610       646.7608      647.0247
+        Chacao         3    636.0897       636.1574      636.0708
+      Estuario         1    153.1190       153.1157      153.1185
+
+TOTAL Albers (densificado): 178,302.8950 km²
+TOTAL geodésico           : 178,308.0943 km²
+TOTAL EPSG:6933           : 178,279.2697 km²
+desvío Albers vs geodésica: -0.0029%
+total de partes           : 39 | zonas con >1 parte: 10
+
+====================================================================================
+3. PUYUHUPI
+====================================================================================
+partes: 2
+  parte 0: 625.7727 km² (Albers) | 625.7690 km² (geod) | huecos 0 | bbox [-73.317905, -44.965265, -72.591135, -44.340753]
+  parte 1: 32.1798 km² (Albers) | 32.1751 km² (geod) | huecos 0 | bbox [-73.354027, -44.813735, -73.207428, -44.75899]
+área total : 657.9525 km² (Albers) / 657.9441 km² (geodésica)
+bbox total : [-73.354027, -44.965265, -72.591135, -44.340753]
+fragmento atlántico 11.009,99 km²: AUSENTE
+¿alguna parte con lon_max > -70? NO
+estaciones: 13 | dentro 8 | fuera 5
+distancia estación -> polígono: min 0.000 km | MAX 2.002 km | media 0.560 km
+  estaciones fuera: [('A16', 2.002), ('A16N1', 1.707), ('A19N1', 0.527), ('A19N2', 1.482), ('A21', 1.558)]
+
+====================================================================================
+4. PARTES SIN ESTACIÓN CONSERVADAS Y SU COMPONENTE MARINA
+====================================================================================
+marco (bbox estaciones ±0,5°) : [-75.436111, -55.711944, -66.600556, -40.996389]
+países restados               : ['Chile', 'Argentina', 'Southern Patagonian Ice Field']
+componentes conexas de la máscara marina: 9
+  área de la mayor: 226,782.6 km² | de la 2ª: 87,218.138 km² | mediana 26.084288 km²
+  componentes > 1 km²: 7 | > 100 km²: 3
+
+total partes: 39 | con estación (ancla): 22 | SIN estación: 17
+PARTES SIN ESTACIÓN EN COMPONENTE SIN ANCLA: 0  OK
+partes sin estación en la componente mayor (id 0): 8 de 17
+partes con asignación ambigua de componente (n_comps_hit != 1): 0
+
+partes SIN estación conservadas:
+       zona_mf  parte  area_km2  componente  comp_tiene_ancla  n_huecos  lon_min  lat_min  lon_max  lat_max
+       Ayacara      1   54.4611           8              True         0 -72.5190 -42.4630 -72.4198 -42.2990
+         Aysen      2   13.9501           8              True         0 -75.1298 -46.3578 -75.0298 -46.3230
+        Chacao      1   41.1207           8              True         0 -73.6948 -41.6357 -73.4949 -41.5104
+        Chacao      2    0.2237           8              True         0 -73.6996 -41.6782 -73.6949 -41.6441
+Chiloe central      1   25.1514           8              True         0 -74.2234 -42.6924 -74.1275 -42.6354
+      Moraleda      1    0.0074           8              True         0 -73.3007 -44.7593 -73.2977 -44.7586
+       Natales      1  551.8533           0              True         0 -75.4361 -49.5012 -74.8045 -49.0453
+       Natales      2  133.3685           0              True         0 -72.9884 -52.7171 -72.6385 -52.5022
+       Natales      3    3.1323           0              True         0 -73.9017 -53.0802 -73.8578 -53.0577
+   Pta. Arenas      1  674.2491           0              True         0 -67.3408 -54.3775 -66.6006 -54.0300
+   Pta. Arenas      2  214.9953           0              True         0 -68.5636 -53.3124 -68.3436 -53.0846
+   Pta. Arenas      3    5.7619           0              True         0 -73.5557 -53.3010 -73.4949 -53.2807
+   Pta. Arenas      4    1.3353           0              True         0 -73.5191 -53.2639 -73.5003 -53.2408
+   Pta. Arenas      5    0.6758           0              True         0 -73.4872 -53.2278 -73.4681 -53.2135
+     Puyuhuapi      1   32.1798           8              True         0 -73.3540 -44.8137 -73.2074 -44.7590
+        Tenaun      0  342.0362           8              True         0 -74.4141 -42.6592 -74.1297 -42.3785
+        Tenaun      2   31.1141           8              True         0 -73.8245 -42.5514 -73.7409 -42.4571
+
+componentes usadas por zona (>1 componente => zona anclada en varias):
+  Aysen: componentes [0, 8]
+
+PARTES MENORES A 1 km²: 3 (suma 0.906925 km²)
+    zona_mf  parte  area_km2  n_est_dentro  componente    lon_min    lat_min    lon_max    lat_max
+   Moraleda      1  0.007399             0           8 -73.300709 -44.759332 -73.297660 -44.758559
+     Chacao      2  0.223699             0           8 -73.699633 -41.678198 -73.694861 -41.644104
+Pta. Arenas      5  0.675827             0           0 -73.487151 -53.227805 -73.468129 -53.213487
+partes menores a 0,001 km²: 0
+
+====================================================================================
+5. DISTANCIA ESTRICTA GEODÉSICA (punto de cada parte más alejado de toda estación de su zona)
+====================================================================================
+       zona_mf  n_est  dist_max_km       exceso_m  lon_argmax  lat_argmax
+   Pta. Arenas     41   100.000000       0.000059  -73.415730  -54.326250
+       Natales     42   100.000000       0.000042  -73.485200  -53.089310
+         Ancud      1   100.000000       0.000042  -74.353480  -41.005680
+     Guaitecas     16   100.000000       0.000030  -75.351790  -45.413340
+       Quellon     19   100.000000       0.000028  -74.972980  -42.668570
+         Aysen     42   100.000000       0.000026  -75.229250  -46.747630
+        Tenaun      1    70.486501 -29,513.499032  -74.414110  -42.551140
+      Moraleda     38    68.777985 -31,222.014680  -75.067950  -45.361720
+Chiloe central      1    57.008427 -42,991.572519  -74.223450  -42.659200
+    Hornopiren      3    39.027926 -60,972.073767  -72.435750  -42.367970
+       Ayacara      4    33.793573 -66,206.427061  -72.426010  -42.462990
+        Chacao      2    33.654234 -66,345.766376  -73.689880  -41.591930
+       Calbuco      2    27.184237 -72,815.763436  -73.167650  -42.079010
+  Butachauques      4    26.167003 -73,832.997068  -73.163130  -42.090100
+       Chaiten      7    25.055943 -74,944.057008  -73.561910  -43.692470
+     Chaulinec      3    21.506016 -78,493.983621  -73.225650  -42.855020
+     Reloncavi      9    19.537343 -80,462.656537  -72.903720  -41.500420
+     Puyuhuapi     13    17.586981 -82,413.019210  -73.300710  -44.758990
+    Desertores      3    17.203011 -82,796.989134  -73.175230  -42.836900
+      Estuario      8    14.344967 -85,655.033114  -72.321360  -41.367450
+
+máximo global: 100.000000 km (Pta. Arenas)
+zonas que exceden 100 km: ['Pta. Arenas', 'Natales', 'Ancud', 'Guaitecas', 'Quellon', 'Aysen']
+exceso máximo sobre 100 km: +0.000059 m
+zonas entre 95 y 100 km (margen < 5 km):
+Empty DataFrame
+Columns: [zona_mf, dist_max_km]
+Index: []
+
+====================================================================================
+6. TIERRA RESIDUAL CON/SIN set_precision(1e-9) Y SOLAPAMIENTO
+====================================================================================
+       zona_mf  sin_rejilla_km2  con_rejilla_km2  n_piezas
+         Ancud        1.995e-07        0.000e+00        16
+       Ayacara        7.822e-07        0.000e+00         6
+         Aysen        1.679e-05        0.000e+00      2737
+  Butachauques        1.144e-06        0.000e+00         7
+       Calbuco        6.438e-07        0.000e+00         4
+        Chacao        8.824e-07        0.000e+00        11
+       Chaiten        8.320e-07        0.000e+00         9
+     Chaulinec        9.500e-11        0.000e+00         2
+Chiloe central        3.008e-08        0.000e+00         5
+    Desertores        1.004e-06        0.000e+00         5
+      Estuario        1.071e-06        0.000e+00         9
+     Guaitecas        5.021e-06        0.000e+00        57
+    Hornopiren        2.685e-08        0.000e+00         6
+      Moraleda        6.892e-06        0.000e+00        81
+       Natales        2.684e-05        0.000e+00      4186
+   Pta. Arenas        1.784e-05        0.000e+00      4367
+     Puyuhuapi        2.810e-06        0.000e+00       127
+       Quellon        3.643e-06        0.000e+00       234
+     Reloncavi        2.241e-06        0.000e+00        14
+        Tenaun        1.634e-07        0.000e+00         7
+
+TOTAL sin rejilla: 8.885621e-05 km² = 88.86 m²
+TOTAL con rejilla: 0.000000e+00 km² = 0.000000 m²
+zonas con >= 0,001 km² de tierra: sin rejilla ninguna | con rejilla ninguna
+
+por país:
+  Chile                              sin 8.723295e-05 km² | con 0.000000e+00 km²
+  Argentina                          sin 1.629424e-06 km² | con 0.000000e+00 km²
+  Southern Patagonian Ice Field      sin 0.000000e+00 km² | con 0.000000e+00 km²
+
+SOLAPAMIENTO: suma 178,302.894978 km² | unión 178,302.894970 km² | solape 0.000008 km² (8.1 m²)
+pares con solape > 0,001 km²: 0
+
+====================================================================================
+7. EXPORTACIÓN Y HUELLA FINAL
+====================================================================================
+csv en /home/rfvera/Documentos/IFOP/SEGUIMIENTO/objetivo_4/salidas/auditoria_v4
+md5 INICIAL: d2630c42c1fe86233fc3e4f9b0295fc4
+md5 FINAL  : d2630c42c1fe86233fc3e4f9b0295fc4
+¿CAMBIÓ?   : NO (intacto)

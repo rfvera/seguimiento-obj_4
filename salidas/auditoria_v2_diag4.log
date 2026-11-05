@@ -1,0 +1,77 @@
+ERROR 1: PROJ: proj_create_from_database: Open of /home/rfvera/miniconda3/envs/r_env/share/proj failed
+================================================================================
+W. ¿CUÁNTO MIDE DE VERDAD UN BÚFER DE 100 km HECHO EN EPSG:6933?
+================================================================================
+  rumbo N: 100 km en 6933 =   148.1 km en el terreno
+  rumbo S: 100 km en 6933 =   153.1 km en el terreno
+  rumbo E: 100 km en 6933 =    66.4 km en el terreno
+  rumbo O: 100 km en 6933 =    66.4 km en el terreno
+  -> el búfer en 6933 NO es un círculo de 100 km: es una elipse de ~69 km N-S por ~144 km E-O
+
+================================================================================
+X. DISTANCIA GEODÉSICA MÁXIMA: polígono -> estación más cercana de su zona
+================================================================================
+       zona_mf  n_est  dist_max_geod_km  exceso_sobre_100_km  lon_argmax  lat_argmax  dist_global_km zona_est_global  n_muestras
+   Pta. Arenas     41           148.076               48.076     -67.306     -53.598         148.076     Pta. Arenas      257277
+       Natales     42           142.352               42.352     -73.734     -53.471          85.758     Pta. Arenas      211030
+         Aysen     42           114.861               14.861     -75.421     -46.776         114.861           Aysen      145463
+     Guaitecas     16           108.687                8.687     -75.337     -45.514          84.546           Aysen       37393
+       Quellon     19           108.444                8.444     -74.788     -42.490          99.211          Tenaun       24387
+         Ancud      1           106.980                6.980     -74.534     -40.996         106.980           Ancud       14594
+        Tenaun      1            70.487                0.000     -74.414     -42.551          70.487          Tenaun        5036
+      Moraleda     38            68.778                0.000     -75.068     -45.362          63.491           Aysen       35336
+Chiloe central      1            57.008                0.000     -74.223     -42.659          57.008  Chiloe central        4509
+    Hornopiren      3            39.028                0.000     -72.436     -42.368          29.671         Ayacara        5711
+       Ayacara      4            33.794                0.000     -72.426     -42.463          33.794         Ayacara        6060
+        Chacao      2            33.654                0.000     -73.690     -41.592          33.654          Chacao        4532
+       Calbuco      2            27.184                0.000     -73.168     -42.079          22.426      Hornopiren        2906
+  Butachauques      4            26.166                0.000     -73.163     -42.090          21.445      Hornopiren        5088
+       Chaiten      7            25.056                0.000     -73.562     -43.693          25.056         Chaiten        8401
+     Chaulinec      3            21.506                0.000     -73.226     -42.855          16.732         Quellon        3224
+     Reloncavi      9            19.537                0.000     -72.904     -41.500          19.537       Reloncavi        5642
+     Puyuhuapi     13            17.587                0.000     -73.301     -44.759          15.792        Moraleda        7563
+    Desertores      3            17.203                0.000     -73.175     -42.837          17.203      Desertores        3373
+      Estuario      8            14.345                0.000     -72.321     -41.367          14.345        Estuario        2303
+
+MÁXIMO GLOBAL (geodésico): 148.076 km  (Pta. Arenas)
+zonas > 100 km (criterio propio)  : ['Pta. Arenas', 'Natales', 'Aysen', 'Guaitecas', 'Quellon', 'Ancud']
+zonas > 100 km (criterio global)  : ['Pta. Arenas', 'Aysen', 'Ancud']
+
+zonas con margen < 10 km del límite:
+    zona_mf  dist_max_geod_km  exceso_sobre_100_km
+Pta. Arenas           148.076               48.076
+    Natales           142.352               42.352
+      Aysen           114.861               14.861
+  Guaitecas           108.687                8.687
+    Quellon           108.444                8.444
+      Ancud           106.980                6.980
+
+================================================================================
+Y. ÁREAS EN EPSG:6933 (el CRS que usa el generador) vs Albers vs geodésica
+================================================================================
+       zona_mf  EPSG6933_km2  Albers_km2  geodesica_km2
+         Ancud   12,969.9343 12,972.2061    12,969.1315
+       Ayacara    1,002.5842  1,002.6009     1,002.6084
+         Aysen   24,308.1416 24,315.6149    24,306.0696
+  Butachauques    1,546.2623  1,546.2424     1,546.1730
+       Calbuco      661.4381    661.4412       661.4491
+        Chacao      636.0708    636.0897       636.1574
+       Chaiten    2,697.4286  2,697.7196     2,697.2000
+     Chaulinec      855.7212    855.7173       855.6616
+Chiloe central      776.9645    777.0073       777.0782
+    Desertores      712.3325    712.3690       712.4293
+      Estuario      153.1185    153.1190       153.1157
+     Guaitecas   18,082.1672 18,085.3542    18,079.2985
+    Hornopiren      926.0718    926.0715       926.0387
+      Moraleda    8,382.5567  8,386.2734     8,383.2420
+       Natales   31,381.1883 31,387.2649    31,381.6892
+   Pta. Arenas   56,089.1908 56,089.5964    56,113.7001
+     Puyuhuapi      657.9412    657.9525       657.9441
+       Quellon   13,088.9372 13,090.5033    13,093.1123
+     Reloncavi    1,691.4104  1,691.4756     1,691.6232
+        Tenaun      647.0247    646.9610       646.7608
+
+total EPSG:6933 : 177,266.4850 km²
+total Albers    : 177,291.5803 km²
+total geodésica : 177,290.4827 km²
+documentado en AGENTS.md: 177,266.48 km²  -> diferencia con 6933: +0.0050 km²

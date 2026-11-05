@@ -1,0 +1,80 @@
+ERROR 1: PROJ: proj_create_from_database: Open of /home/rfvera/miniconda3/envs/r_env/share/proj failed
+================================================================================
+U. SOLAPE Aysen ∩ Guaitecas EN DISTINTOS SISTEMAS
+================================================================================
+en 4326 : tipo=Point area_grados2=0.000000e+00
+en Albers: tipo=Polygon area_km2=0.036381 perim_km=46.2111
+  bbox del solape (Albers m): [-1226543.1, -1583992.1, -1209684.5, -1568192.3]
+  dimensiones: 16,858.6 m x 15,799.8 m
+  n vértices: 4
+  área en 4326 del solape reproyectado: 4.182803e-06 grados²
+
+  ¿los vértices de ambos bordes son idénticos? intersección de conjuntos de coords:
+  vértices compartidos exactos (9 dec): 1
+  vértices Aysen 3056 | Guaitecas 507
+  distancia Aysen-Guaitecas en 4326: 0.000000e+00 grados
+  con set_precision(1e-3 m) en Albers: area_km2=0.036374
+
+================================================================================
+V. PUNTO DE MÁXIMA DISTANCIA: ¿qué estación es la más cercana?
+================================================================================
+Ancud            max 107.223 km en ( -74.534,-40.996)
+    estación más cercana: L05      zona=Ancud        d=107.223 km (propia)
+    estación más cercana: L04N3    zona=Chacao       d=130.257 km (OTRA ZONA)
+Ayacara          max  33.847 km en ( -72.426,-42.463)
+    estación más cercana: L10      zona=Ayacara      d= 33.847 km (propia)
+    estación más cercana: L10N3    zona=Ayacara      d= 41.000 km (propia)
+Aysen            max 115.649 km en ( -75.378,-46.754)
+    estación más cercana: A62      zona=Aysen        d=115.649 km (propia)
+    estación más cercana: 31       zona=Aysen        d=115.651 km (propia)
+Butachauques     max  26.182 km en ( -73.163,-42.090)
+    estación más cercana: L09N1    zona=Hornopiren   d= 21.478 km (OTRA ZONA)
+    estación más cercana: L07      zona=Butachauques d= 26.182 km (propia)
+Calbuco          max  27.191 km en ( -73.168,-42.079)
+    estación más cercana: L09N1    zona=Hornopiren   d= 22.433 km (OTRA ZONA)
+    estación más cercana: L07      zona=Butachauques d= 26.099 km (OTRA ZONA)
+Chacao           max  33.634 km en ( -73.690,-41.592)
+    estación más cercana: L04N3    zona=Chacao       d= 33.634 km (propia)
+    estación más cercana: L05      zona=Ancud        d= 36.008 km (OTRA ZONA)
+Chaiten          max  24.934 km en ( -73.562,-43.692)
+    estación más cercana: L19N4    zona=Chaiten      d= 24.934 km (propia)
+    estación más cercana: L25N1    zona=Guaitecas    d= 25.362 km (OTRA ZONA)
+Chaulinec        max  21.422 km en ( -73.367,-42.488)
+    estación más cercana: L12      zona=Chiloe central d= 19.564 km (OTRA ZONA)
+    estación más cercana: L08      zona=Butachauques d= 21.326 km (OTRA ZONA)
+Chiloe central   max  57.259 km en ( -74.223,-42.659)
+    estación más cercana: L12      zona=Chiloe central d= 57.259 km (propia)
+    estación más cercana: L11      zona=Tenaun       d= 61.173 km (OTRA ZONA)
+Desertores       max  17.226 km en ( -73.175,-42.837)
+    estación más cercana: L14      zona=Desertores   d= 17.226 km (propia)
+    estación más cercana: L13      zona=Chaulinec    d= 20.316 km (OTRA ZONA)
+Estuario         max  14.399 km en ( -72.321,-41.367)
+    estación más cercana: L02N2    zona=Estuario     d= 14.399 km (propia)
+    estación más cercana: L02N4    zona=Estuario     d= 14.843 km (propia)
+Guaitecas        max 107.718 km en ( -75.338,-45.515)
+    estación más cercana: A49N1    zona=Aysen        d= 86.803 km (OTRA ZONA)
+    estación más cercana: A41N1    zona=Moraleda     d= 96.630 km (OTRA ZONA)
+Hornopiren       max  38.987 km en ( -72.436,-42.368)
+    estación más cercana: L10      zona=Ayacara      d= 29.738 km (OTRA ZONA)
+    estación más cercana: 7        zona=Ayacara      d= 38.960 km (OTRA ZONA)
+Moraleda         max  69.507 km en ( -75.069,-45.362)
+    estación más cercana: A49N1    zona=Aysen        d= 65.139 km (OTRA ZONA)
+    estación más cercana: A41N1    zona=Moraleda     d= 69.507 km (propia)
+Natales          max 127.568 km en ( -73.734,-53.471)
+    estación más cercana: M29      zona=Pta. Arenas  d= 96.275 km (OTRA ZONA)
+    estación más cercana: M27      zona=Pta. Arenas  d=100.672 km (OTRA ZONA)
+Pta. Arenas      max 129.791 km en ( -67.306,-53.598)
+    estación más cercana: M46      zona=Pta. Arenas  d=129.791 km (propia)
+    estación más cercana: M45      zona=Pta. Arenas  d=131.351 km (propia)
+Puyuhuapi        max  17.601 km en ( -72.981,-44.601)
+    estación más cercana: A18N2    zona=Moraleda     d= 16.100 km (OTRA ZONA)
+    estación más cercana: A19      zona=Puyuhuapi    d= 17.601 km (propia)
+Quellon          max 108.032 km en ( -74.788,-42.490)
+    estación más cercana: L05      zona=Ancud        d= 99.215 km (OTRA ZONA)
+    estación más cercana: L11      zona=Tenaun       d= 99.508 km (OTRA ZONA)
+Reloncavi        max  19.535 km en ( -72.904,-41.500)
+    estación más cercana: L04N2    zona=Reloncavi    d= 19.535 km (propia)
+    estación más cercana: L01      zona=Reloncavi    d= 19.664 km (propia)
+Tenaun           max  70.673 km en ( -74.414,-42.551)
+    estación más cercana: L11      zona=Tenaun       d= 70.673 km (propia)
+    estación más cercana: L12      zona=Chiloe central d= 73.157 km (OTRA ZONA)
