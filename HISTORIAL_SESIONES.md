@@ -235,16 +235,17 @@ Generar un mapa visual con las estaciones de muestreo CTD y los polígonos de la
 
 ### Resultados de referencia
 - 259 estaciones con coordenadas válidas (lat/lon).
-- 20 zonas de macrofauna representadas en el mapa (incluyendo nueva zona "Pta. Arenas").
+- 20 zonas de macrofauna representadas en el mapa (incluyendo "Pta. Arenas").
 - 106 polígonos ACS de SUBPESCA mostrados como fondo.
 - Costa de Chile agregada (línea continua marrón, Natural Earth 10m) al fondo del mapa.
 - Eje X ajustado para llegar hasta 76°W.
 - CRS: EPSG:4326 (WGS84).
 - Estaciones coloreadas por zona_mf (zorder=3), polígonos ACS gris semitransparente (zorder=1), costa marrón (zorder=0).
 - 42 estaciones movidas de zona "Natales" a "Pta. Arenas" (latitud <= -52.45°S).
+- 1 estación corregida: M08N1 latitud de -59.916940 a -49.916944 (error de tipeo), vuelve a zona "Natales".
 
 ### Pendiente (cerrado)
-1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`) — HECHO (commit 6dfc036 en main).
+1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`) — HECHO (commit 1fe206b en main).
 
 ---
 
