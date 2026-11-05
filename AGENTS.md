@@ -105,6 +105,15 @@ Salidas (en `salidas/analisis_serie_tiempo/`):
 - `series_tiempo_detalladas.csv` — 49.677 filas (zona×profundidad×variable×año con valor anual).
 - `resumen_tendencias_significativas.csv` — 178 filas (solo tendencias con p<0.05).
 
+## Pipeline 5: Mapa de estaciones y zonas ACS
+
+`~/miniconda3/envs/r_env/bin/python mapa_estaciones_acs.py`
+
+Usa `estaciones_CTD_con_ZONA_MACROFAUNA.csv` y `acs_subpesca.gpkg`.
+
+Salida:
+- `salidas/figuras/mapa_estaciones_acs.png` — mapa con 259 estaciones de muestreo y 106 polígonos ACS SUBPESCA, estaciones coloreadas por zona_mf (19 zonas).
+
 ## Informe Typst (en `informe/`)
 
 - `informe/informe_ambiental.typ` — documento Typst completo.

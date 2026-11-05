@@ -204,5 +204,28 @@ Analizar cada zona×profundidad×variable como serie de tiempo anual (2019–202
 - Oxígeno: 46 tendencias sig., Butachauques +0,68 ml/L/año (R²=0,966).
 - Salinidad: 91 tendencias sig., Reloncaví −0,92 psu/año (R²=0,999), Aysén +0,60 psu/año (R²=0,73).
 
+### Pendiente (cerrado)
+1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`) — HECHO (commit 522ae62 en main).
+
+---
+
+## Sesión 2026-11-05 (usuario `rfvera`) — mapa de estaciones y zonas ACS
+
+### Objetivo
+Generar un mapa visual con las estaciones de muestreo CTD y los polígonos de las áreas ACS de SUBPESCA, para mostrar el dominio del análisis.
+
+### Archivos creados/modificados
+- `mapa_estaciones_acs.py` (nuevo): script para generar el mapa con estaciones y polígonos ACS.
+- `salidas/figuras/mapa_estaciones_acs.png` (nuevo): mapa PNG (470 KB) con 259 estaciones de muestreo y 106 polígonos ACS, estaciones coloreadas por zona_mf (19 zonas).
+- `AGENTS.md` (modificado): sección de Pipeline 5 agregada.
+- `HISTORIAL_SESIONES.md` (modificado): esta bitácora.
+
+### Resultados de referencia
+- 259 estaciones con coordenadas válidas (lat/lon).
+- 19 zonas de macrofauna representadas en el mapa.
+- 106 polígonos ACS de SUBPESCA mostrados como fondo.
+- CRS: EPSG:4326 (WGS84).
+- Estaciones coloreadas por zona_mf, polígonos ACS en gris semitransparente.
+
 ### Pendiente
 1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`).
