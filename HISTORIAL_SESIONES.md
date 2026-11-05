@@ -235,12 +235,43 @@ Generar un mapa visual con las estaciones de muestreo CTD y los polígonos de la
 
 ### Resultados de referencia
 - 259 estaciones con coordenadas válidas (lat/lon).
-- 19 zonas de macrofauna representadas en el mapa.
+- 20 zonas de macrofauna representadas en el mapa (incluyendo nueva zona "Pta. Arenas").
 - 106 polígonos ACS de SUBPESCA mostrados como fondo.
 - Costa de Chile agregada (línea continua marrón, Natural Earth 10m) al fondo del mapa.
 - Eje X ajustado para llegar hasta 76°W.
 - CRS: EPSG:4326 (WGS84).
 - Estaciones coloreadas por zona_mf (zorder=3), polígonos ACS gris semitransparente (zorder=1), costa marrón (zorder=0).
+- 42 estaciones movidas de zona "Natales" a "Pta. Arenas" (latitud <= -52.45°S).
 
 ### Pendiente (cerrado)
 1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`) — HECHO (commit 6dfc036 en main).
+
+---
+
+## Sesión 2026-11-05 (usuario `rfvera`) — nueva zona "Pta. Arenas"
+
+### Objetivo
+Crear una nueva zona de macrofauna llamada "Pta. Arenas" que incluya todas las estaciones al sur de los 52°27'S (-52.45°S), separadas de la zona "Natales".
+
+### Decisiones (usuario)
+1. Las estaciones con latitud <= -52.45°S cambian de zona "Natales" a "Pta. Arenas".
+2. El punto de corte (-52.45°S) es la latitud intermedia entre Puerto Natales (-51.73°S) y Punta Arenas (-53.16°S).
+
+### Archivos creados/modificados
+- `estaciones_CTD_con_ZONA_MACROFAUNA.csv` (modificado): 42 estaciones movidas de "Natales" a "Pta. Arenas".
+- `mapa_estaciones_acs.py` (modificado): ordenamiento de zonas por latitud (norte a sur).
+- `salidas/figuras/mapa_estaciones_acs.png` (regenerado): 20 zonas (incluyendo "Pta. Arenas").
+- `informe/mapa_estaciones_acs.png` (copiado): misma imagen en directorio informe/.
+- `informe/informe_ambiental.typ` (modificado): mapa actualizado en el informe.
+- `informe/informe_ambiental.pdf` (regenerado): PDF recompilado.
+- `AGENTS.md` (modificado): documentación actualizada.
+- `HISTORIAL_SESIONES.md` (modificado): esta bitácora.
+
+### Resultados de referencia
+- 42 estaciones movidas de "Natales" a "Pta. Arenas".
+- Zonas: Natales (41), Pta. Arenas (42), Aysen (42), Moraleda (38), Quellon (19), etc. (20 zonas totales).
+- Zona Pta. Arenas: latitudes de -52.70°S a -59.92°S.
+- Mapa regenerado con costa al fondo, eje X hasta 76°W y leyenda de norte a sur.
+
+### Pendiente
+1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`).

@@ -72,7 +72,7 @@ Salidas (en `salidas/analisis_ambiental/`):
 - `resumen_regional.csv` — métricas regionales.
 - `README.md` — documentación.
 
-### Resultados (2019–2025, 2.363 registros fondo, 19 zonas, 258 estaciones)
+### Resultados (2019–2025, 2.363 registros fondo, 20 zonas, 258 estaciones)
 
 - Temperatura regional: media 9,73 °C, mediana 9,87 °C, desvío 1,50 °C (n=2.310).
 - Oxígeno regional: media 5,48 ml/L, mediana 5,26 ml/L, desvío 1,97 ml/L (n=2.189).
