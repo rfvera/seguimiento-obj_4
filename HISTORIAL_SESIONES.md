@@ -66,6 +66,32 @@ Pasar de "caracterizar condiciones oceanográficas" a "definir el estado ambient
   - Desertores: salinidad -0,08 psu/año (p=0,029, R²=0,65, n=7 años)
 - 8 zonas con solo 2024–2025 (n_anos=2, sin tendencia): Ancud, Calbuco, Chacao, Chiloe central, Guaitecas, Hornopiren, Natales, Tenaun.
 
+### Pendiente (cerrado)
+1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`) — HECHO (commit 96be762).
+2. Informe Typst con figuras por zona — HECHO (`informe/informe_ambiental.typ` + PDF compilado).
+
+---
+
+## Sesión 2026-11-05 (usuario `rfvera`) — informe Typst de estado ambiental de referencia
+
+### Objetivo
+Generar un informe en Typst dentro de `informe/` que documente el estado ambiental de referencia y las trayectorias de cambio ambiental regional (2019–2025).
+
+### Archivos creados
+- `informe/informe_ambiental.typ` — documento Typst completo con resumen ejecutivo, contexto, metodología, estado de referencia regional y por zona, trayectorias de cambio, tendencias significativas y conclusiones.
+- `informe/informe_ambiental.pdf` — PDF compilado (117 KB).
+
+### Contenido del informe
+- Resumen ejecutivo con hallazgos principales (temperatura 9,72 °C, oxígeno 5,51 ml/L, salinidad 32,15 psu).
+- 3 tendencias significativas: Quellón temperatura +0,87 °C/año (p=0,013), Aysén salinidad +0,54 psu/año (p=0,024), Desertores salinidad -0,08 psu/año (p=0,029).
+- 8 zonas sin datos suficientes para tendencia (solo 2024–2025).
+- Conclusiones y recomendaciones de monitoreo.
+
+### Correcciones aplicadas al .typ
+- Eliminados delimitadores `*` que chocaban con caracteres especiales (`²`, `<`).
+- Reemplazado `header + center` por `center` en tablas.
+- Reemplazado `#counter(page).align(right)` por `#counter(page)` en footer.
+- Tablas envueltas dentro de `#figure(table(...), caption: [...])`.
+
 ### Pendiente
 1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`).
-2. Opcional: generar informe qmd/typst con figuras por zona.

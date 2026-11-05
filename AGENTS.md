@@ -82,3 +82,10 @@ Une `fondo_ctd_por_zona.csv` con `estaciones_CTD_con_ZONA_MACROFAUNA.csv` (por a
 - Todas las 259 estaciones tienen zona_mf asignada (0 nulas); no se necesita imputación por proximidad.
 - Las zonas sin suficientes años (≥3) no reportan pendiente (NaN).
 - Los .xlsx fuentes nunca se sobrescriben; salidas derivadas van en salidas/.
+
+### Informe Typst (en `informe/`)
+
+- `informe/informe_ambiental.typ` — documento Typst con resumen ejecutivo, contexto, metodología, estado de referencia regional y por zona, trayectorias de cambio, tendencias significativas y conclusiones.
+- `informe/informe_ambiental.pdf` — PDF compilado (generado con `typst compile`).
+
+Para compilar: `/home/rfvera/.typst/bin/typst compile informe/informe_ambiental.typ`
