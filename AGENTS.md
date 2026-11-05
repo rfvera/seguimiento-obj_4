@@ -1,91 +1,77 @@
 # AGENTS.md — objetivo_4 (IFOP Seguimiento CTD)
 
-Evaluación de variabilidad ambiental y exposición de áreas de emplazamiento acuícola a forzantes naturales y cambio climático. Repositorio git con 2 commits; fuentes `.xlsx` de solo lectura, no versionadas.
+Evaluación de variabilidad ambiental y exposición de áreas de emplazamiento acuícola a forzantes naturales y cambio climático. Repositorio git; fuentes `.xlsx` de solo lectura, no versionadas.
+
+## Contexto metodológico
+
+Los datos son perfiles CTD (conductividad, temperatura, profundidad, oxígeno, densidad) tomados en estaciones repetidas a través del tiempo (etapas/fechas/años). Cada estación×fecha es un cast independiente. El procesamiento sigue el estándar oceánico:
+
+1. **Trimming**: remover datos de superficie/calibración (FLAG_BOOL==0 en A, profundidad <0,5 m en B).
+2. **Despiking**: eliminar valores atípicos por grupo (regla IQR 3×).
+3. **Bin averaging**: promedio en bins de 1 metro de profundidad.
+4. **Registro de fondo**: tomar la medición a la profundidad máxima por estación×fecha.
+5. **Profundidad de fondo**: Archivo A desde `PROF_SECT_m`; Archivo B desde GEBCO_2026.
+
+Ver `contexto_metodologico_ctd.md` para detalles y referencias verificadas.
 
 ## Entorno
 
-- Python: `~/miniconda3/envs/r_env/bin/python` (pandas 3.0.2, openpyxl instalado). No usar pip en sistema (PEP 668).
-- Entorno opcional `~/miniconda3/envs/gebco_env` (xarray, netCDF4) usado solo para descargar batimetría GEBCO vía OPeNDAP; no es necesario para re-ejecutar el pipeline.
-- Ejecutar desde cualquier directorio: las rutas en `procesar_fondo_ctd.py` son absolutas (`BASE = /home/rfvera/.../objetivo_4`).
+- Python: `~/miniconda3/envs/r_env/bin/python` (pandas 3.0.2, openpyxl, scipy instalados). No usar pip en sistema (PEP 668).
+- Entorno opcional `~/miniconda3/envs/gebco_env` (xarray, netCDF4) usado solo para descargar batimetría GEBCO vía OPeNDAP.
+- Rutas en scripts son absolutas (`BASE = /home/rfvera/.../objetivo_4`).
 
-## Pipeline (único script)
+## Pipeline de reconstrucción (desde archivos originales)
 
-`~/miniconda3/envs/r_env/bin/python procesar_fondo_ctd.py`
+`~/miniconda3/envs/r_env/bin/python reconstruir_ctd.py`
 
 Lee:
-1. `Compilacion_BD_CTD_SEGUIMIENTO_2019-2025.xlsx` — hoja `Base de Datos CTD2019-2025_IFOP`, encabezado en fila 20 (0-indexed), 31 columnas renombradas por posición.
-2. `datos CTD - marea roja.xlsx` — hoja `Datos CTD`, `FECHA` mixta (datetime / `DD-MM-YYYY` / `S/I` → NaT).
-3. `estaciones_CTD_con_zona_final.csv` — 259 estaciones con zona (159 `ACS_SUBPESCA`, 100 `ZONA_PROXIMIDAD`).
-4. `gebco_profundidades_marea_roja.csv` — profundidad de fondo por estación del archivo B, extraída de GEBCO_2026.
+1. `Compilacion_BD_CTD_SEGUIMIENTO_2019-2025.xlsx` — hoja `Base de Datos CTD2019-2025_IFOP`, encabezado fila 20, 31 columnas. 45.820 filas, estaciones 1–32, fechas 2019–2025. Sensor CTD SeaBird SBE19plus.
+2. `datos CTD - marea roja.xlsx` — hoja `Datos CTD`, FECHA mixta. 358.360 filas, 227 códigos, fechas 2023–2025. Profundidades 0.8–100,6 m.
+3. `estaciones_CTD_con_ZONA_MACROFAUNA.csv` — 259 estaciones con zona_mf.
+4. `gebco_profundidades_marea_roja.csv` — profundidad GEBCO_2026 para 227 estaciones de marea roja.
 
 Escribe:
-- `fondo_ctd_por_zona.csv` — registro de fondo (una fila por estación×fecha) con zona unida, 2.366 filas.
+- `fondo_ctd_por_zona.csv` — 2.363 registros de fondo (220 archivo A + 2.143 archivo B).
 
-Reglas clave del script (no modificar sin anotar):
-- Por cada (estación, fecha) se selecciona la fila de **profundidad de medición máxima** (`idxmax`, primera fila en caso de empate). Las variables (temperatura, oxígeno, salinidad) se toman de esa fila.
-- `profundidad_fondo_m` (profundidad real del fondo):
-  - Archivo A: desde `PROF_SECT_m` (profundidad de sector/carta). Si un grupo tiene varios valores, se toma el máximo.
-  - Archivo B (marea roja): desde `gebco_profundidades_marea_roja.csv` (batimetría GEBCO_2026 por estación). Los perfiles de marea roja solo llegan a ~50 m y el archivo no trae profundidad de fondo, por lo que **no se asume que la medición más profunda es el fondo**.
+Reglas clave:
+- Archivo A: FLAG_BOOL==0 se descarta (220 filas de superficie/calibración). Profundidades son enteros (1m, 2m...). Nutrientes/clorofila de botella Niskin se dejan como están (no se promedian).
+- Archivo B: profundidad <0,5 m se descarta. Datos de alta frecuencia, bin averaging por 1m.
+- `profundidad_fondo_m`: Archivo A desde `PROF_SECT_m`; Archivo B desde `GEBCO_2026`.
 - `profundidad_fondo_fuente`: `PROF_SECT_m` (A) o `GEBCO_2026` (B).
-- Sin match de zona → zona NaN, reportado (no se inventa).
-- Archivo B solo reporta oxígeno en ml/L; `oxigeno_mg_L` = NaN para esas filas.
+- Todas las estaciones tienen zona_mf asignada (0 nulas).
 
-## Salidas derivadas (versionadas, regenerables)
+## Pipeline de análisis ambiental
 
-- `fondo_ctd_por_zona.csv` — salida del script (columnas: archivo, estacion_id, fecha, profundidad_fondo_m, profundidad_fondo_fuente, temperatura_C, oxigeno_ml_L, oxigeno_mg_L, salinidad_psu, zona, zona_tipo, dist_km, fuente).
-- `gebco_profundidades_marea_roja.csv` — profundidad de fondo GEBCO para las 227 estaciones de marea roja (extraída vía OPeNDAP).
-- `estaciones_CTD_con_zona_final.csv`, `estaciones_CTD_con_zona.gpkg`, `estaciones_CTD_con_ZONA_MACROFAUNA.csv`, `estaciones_sin_ACS.csv`, `estaciones_con_ACS_asignado.csv`, `estaciones_CTD_paso1_ACS.csv`, `estaciones_archivoA/B_UTM18S.csv`, `resumen_estaciones_por_zona.csv` — capas y resúmenes previos.
-- `acs_subpesca.gpkg` — polígonos oficiales ACS SUBPESCA (EPSG:4326).
+`~/miniconda3/envs/r_env/bin/python salidas/analisis_ambiental/analisis_estado_referencia.py`
+
+Usa `fondo_ctd_por_zona.csv` (ya tiene zona_mf, no necesita merge).
+
+Salidas (en `salidas/analisis_ambiental/`):
+- `estado_referencia_por_zona.csv` — 19 zonas, estadísticas por zona y variable.
+- `trayectorias_cambio_por_zona.csv` — 19 zonas, pendientes OLS por variable.
+- `resumen_regional.csv` — métricas regionales.
+- `README.md` — documentación.
+
+### Resultados (2019–2025, 2.363 registros, 19 zonas, 258 estaciones)
+
+- Temperatura regional: media 9,73 °C, mediana 9,87 °C, desvío 1,50 °C (n=2.310).
+- Oxígeno regional: media 5,48 ml/L, mediana 5,26 ml/L, desvío 1,97 ml/L (n=2.189).
+- Salinidad regional: media 32,16 psu, mediana 32,56 psu, desvío 1,54 psu (n=2.247).
+- Tendencias significativas (p<0,05):
+  - Quellón: temperatura +0,88 °C/año (p=0,023, R2=0,999, n=3 años).
+  - Aysén: salinidad +0,50 psu/año (p=0,030, R2=0,76, n=6 años).
+  - Desertores: salinidad -0,08 psu/año (p=0,029, R2=0,65, n=7 años).
+- 8 zonas con solo 2024–2025 (sin tendencia): Ancud, Calbuco, Chacao, Chiloé central, Guaitecas, Hornopirén, Natales, Tenaun.
+
+## Informe Typst (en `informe/`)
+
+- `informe/informe_ambiental.typ` — documento Typst completo.
+- `informe/informe_ambiental.pdf` — PDF compilado.
+
+Compilar: `/home/rfvera/.typst/bin/typst compile informe/informe_ambiental.typ`
 
 ## Reglas de versión
 
 - Nunca sobrescribir `.xlsx` fuentes. Están en `.gitignore` (`*.xlsx`).
-- `fondo_ctd_por.zona.csv` y demás derivados son regenerables; revisar diff antes de commitear si hay cambio real (pandas 3.x puede introducir ruido ≤1e-13 en sumas).
-- `git status` debe quedar limpio tras re-ejecutar el script (salida byte-idéntica).
-- `gebco_profundidades_marea_roja.csv` se genera una vez con `gebco_env` (xarray + netCDF4) consultando GEBCO_2026 vía OPeNDAP; no se regenera en cada corrida del pipeline a menos que cambie.
-
-## Gotchas
-
-- Archivo A: 45.820 filas, estaciones 1–32, fechas 2019–05–09 a 2025–10–27. `PROF_SECT_m` no es único en 19 de 222 grupos (estación×fecha); se toma el máximo.
-- Archivo B: 358.360 filas, 227 códigos únicos, fechas 2023–06–23 a 2025–03–26. 16 fechas nulas, 57 profundidades nulas, 73 grupos con empate de profundidad máxima, 51 afectan variables (desempate por primera fila). Profundidad de medición máxima ~50 m (no es fondo).
-- Cobertura total: todas las estaciones CTD tienen zona asignada (0 sin zona, 0 CTD sin datos de fondo).
-- `oxigeno_mg_L` es NaN en todo el archivo B (no se reporta en esa unidad).
-- GEBCO_2026: grid global 15 arc-segundos (~450 m), valor negativo = profundidad, positivo = tierra. 124 estaciones con píxel de agua directo, 103 con búsqueda en vecindario (±50 px ≈ 20 km).
-
-## Analisis ambiental — estado de referencia y trayectorias de cambio
-
-Propósito: pasar de "caracterizar condiciones oceanográficas" a "definir el estado ambiental de referencia y las trayectorias de cambio ambiental regional", usando las zonas de macrofauna como zonificación de referencia.
-
-### Pipeline
-
-`~/miniconda3/envs/r_env/bin/python salidas/analisis_ambiental/analisis_estado_referencia.py`
-
-Une `fondo_ctd_por_zona.csv` con `estaciones_CTD_con_ZONA_MACROFAUNA.csv` (por archivo + estacion_id) para asignar `zona_mf` a cada registro de fondo.
-
-### Salidas (en `salidas/analisis_ambiental/`)
-
-- `estado_referencia_por_zona.csv` — estadísticas por zona_mf: n_registros, n_estaciones, anio_min/max, y para cada variable (temperatura_C, oxigeno_ml_L, salinidad_psu): media, mediana, p5, p25, p75, p95, desvio, n_validos.
-- `trayectorias_cambio_por_zona.csv` — pendiente de tendencia lineal anual (OLS) por zona_mf y variable, con intercepto, R², p-valor y n_anos. Requiere ≥3 años para calcular.
-- `resumen_regional.csv` — métricas regionales agregadas (media, mediana, desvio por variable; n_zonas, n_estaciones, n_registros, anio_min/max).
-- `README.md` — documentación del análisis.
-
-### Resultados (2019–2025, 2366 registros, 19 zonas, 258 estaciones)
-
-- Temperatura regional: media 9,72 °C, mediana 9,86 °C, desvío 1,51 °C.
-- Oxígeno regional: media 5,51 ml/L, mediana 5,26 ml/L, desvío 2,03 ml/L.
-- Salinidad regional: media 32,15 psu, mediana 32,56 psu, desvío 1,57 psu.
-- Tendencias significativas (p<0,05): Quellon temperatura +0,87 °C/año (p=0,013, R²=0,999, n=3 años); Aysen salinidad +0,54 psu/año (p=0,024, R²=0,76, n=6 años); Desertores salinidad -0,08 psu/año (p=0,029, R²=0,65, n=7 años).
-- 7 zonas solo tienen 2024–2025 (n_anos=2, sin tendencia calculable): Ancud, Calbuco, Chacao, Chiloe central, Guaitecas, Hornopiren, Natales, Tenaun.
-
-### Reglas
-
-- Todas las 259 estaciones tienen zona_mf asignada (0 nulas); no se necesita imputación por proximidad.
-- Las zonas sin suficientes años (≥3) no reportan pendiente (NaN).
-- Los .xlsx fuentes nunca se sobrescriben; salidas derivadas van en salidas/.
-
-### Informe Typst (en `informe/`)
-
-- `informe/informe_ambiental.typ` — documento Typst con resumen ejecutivo, contexto, metodología, estado de referencia regional y por zona, trayectorias de cambio, tendencias significativas y conclusiones.
-- `informe/informe_ambiental.pdf` — PDF compilado (generado con `typst compile`).
-
-Para compilar: `/home/rfvera/.typst/bin/typst compile informe/informe_ambiental.typ`
+- Salidas derivadas en `salidas/` y `informe/` son regenerables; revisar diff antes de commitear.
+- `git status` debe quedar limpio tras re-ejecutar los scripts.

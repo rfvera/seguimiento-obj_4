@@ -93,5 +93,49 @@ Generar un informe en Typst dentro de `informe/` que documente el estado ambient
 - Reemplazado `#counter(page).align(right)` por `#counter(page)` en footer.
 - Tablas envueltas dentro de `#figure(table(...), caption: [...])`.
 
+### Pendiente (cerrado)
+1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`) — HECHO (commit cb6671d en main).
+
+---
+
+## Sesión 2026-11-05 (usuario `rfvera`) — reconstrucción desde archivos originales con procedimiento CTD estándar
+
+### Objetivo
+Reconstruir `fondo_ctd_por_zona.csv` desde los dos archivos Excel originales aplicando el procedimiento estándar de procesamiento de perfiles CTD (trimming, despiking, bin averaging por 1 metro, registro de fondo).
+
+### Decisiones (usuario)
+1. Separar datos de CTD (perfil continuo) de datos de botella Niskin (muestras discretas) en el archivo A.
+2. Archivo A: FLAG_BOOL==0 = superficie/calibración, se descarta (220 filas). Profundidades son enteros (1m, 2m...).
+3. Archivo B: profundidad < 0,5 m se descarta (datos en aire/calibración). Datos de alta frecuencia, requieren bin averaging.
+4. Despiking por grupo usando regla IQR 3×. Valores atípicos se marcan NaN.
+5. Bin averaging por 1 metro de profundidad.
+6. Registro de fondo: fila de profundidad máxima por estación×fecha.
+7. Profundidad de fondo: Archivo A desde PROF_SECT_m; Archivo B desde GEBCO_2026.
+
+### Archivos creados/modificados
+- `reconstruir_ctd.py` (nuevo): script de reconstrucción desde archivos originales.
+- `fondo_ctd_por_zona.csv` (modificado): 2.363 registros (220 archivo A + 2.143 archivo B), profundidad de fondo sin nulos.
+- `contexto_metodologico_ctd.md` (nuevo): documentación del procedimiento CTD estándar con referencias verificadas.
+- `salidas/analisis_ambiental/analisis_estado_referencia.py` (modificado): cargar_datos() usa zona_mf ya presente si existe.
+- `salidas/analisis_ambiental/estado_referencia_por_zona.csv` (regenerado): 19 zonas con nuevos valores.
+- `salidas/analisis_ambiental/trayectorias_cambio_por_zona.csv` (regenerado): 19 zonas con nuevas pendientes.
+- `salidas/analisis_ambiental/resumen_regional.csv` (regenerado): métricas regionales actualizadas.
+- `informe/informe_ambiental.typ` (regenerado): con nuevos datos.
+- `informe/informe_ambiental.pdf` (regenerado): PDF recompilado.
+- `AGENTS.md` (regenerado): documentación completa del nuevo pipeline.
+- `HISTORIAL_SESIONES.md` (modificado): esta bitácora.
+
+### Resultados de referencia (datos reconstruidos)
+- 2.363 registros (2019–2025), 19 zonas de macrofauna, 258 estaciones.
+- Temperatura regional: media 9,73 °C, mediana 9,87 °C, desvío 1,50 °C (n=2.310).
+- Oxígeno regional: media 5,48 ml/L, mediana 5,26 ml/L, desvío 1,97 ml/L (n=2.189).
+- Salinidad regional: media 32,16 psu, mediana 32,56 psu, desvío 1,54 psu (n=2.247).
+- Tendencias significativas (p<0,05):
+  - Quellón: temperatura +0,88 °C/año (p=0,023, R2=0,999, n=3 años).
+  - Aysén: salinidad +0,50 psu/año (p=0,030, R2=0,76, n=6 años).
+  - Desertores: salinidad -0,08 psu/año (p=0,029, R2=0,65, n=7 años).
+- 8 zonas con solo 2024–2025 (sin tendencia): Ancud, Calbuco, Chacao, Chiloé central, Guaitecas, Hornopirén, Natales, Tenaun.
+- Nulos en variables: temperatura 53, oxígeno 174, salinidad 116 (despiking o datos originales faltantes).
+
 ### Pendiente
 1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`).

@@ -46,18 +46,24 @@ VARIABLES = ["temperatura_C", "oxigeno_ml_L", "salinidad_psu"]
 # ---------------------------------------------------------------------------
 def cargar_datos() -> pd.DataFrame:
     fondo = pd.read_csv(FONDO, parse_dates=["fecha"])
-    zonas = pd.read_csv(ZONAS_MF, dtype={"estacion_id": str})
 
-    # Unir por estacion_id y archivo (archivo A y B tienen estacion_id distintos en origen)
-    df = fondo.merge(
-        zonas[["archivo", "estacion_id", "zona_mf", "acs_mf", "dist_km"]],
-        on=["archivo", "estacion_id"],
-        how="left",
-    )
-
-    n_sin_zona = int(df["zona_mf"].isna().sum())
-    if n_sin_zona > 0:
-        print(f"ADVERTENCIA: {n_sin_zona} registros sin zona_mf tras el merge.")
+    # Si ya tiene zona_mf (viene de reconstruir_ctd.py), usarlo directamente.
+    # Sino, hacer merge con zonas de macrofauna.
+    if "zona_mf" not in fondo.columns:
+        zonas = pd.read_csv(ZONAS_MF, dtype={"estacion_id": str})
+        df = fondo.merge(
+            zonas[["archivo", "estacion_id", "zona_mf", "acs_mf", "dist_km"]],
+            on=["archivo", "estacion_id"],
+            how="left",
+        )
+        n_sin_zona = int(df["zona_mf"].isna().sum())
+        if n_sin_zona > 0:
+            print(f"ADVERTENCIA: {n_sin_zona} registros sin zona_mf tras el merge.")
+    else:
+        df = fondo.copy()
+        n_sin_zona = int(df["zona_mf"].isna().sum())
+        if n_sin_zona > 0:
+            print(f"ADVERTENCIA: {n_sin_zona} registros sin zona_mf en los datos.")
 
     df["anio"] = df["fecha"].dt.year
     return df
