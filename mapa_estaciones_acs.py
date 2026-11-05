@@ -2,15 +2,17 @@
 mapa_estaciones_acs.py
 Agente DATA - IFOP Seguimiento (objetivo_4)
 
-Genera un mapa con las estaciones de muestreo CTD y los polígonos de las
-áreas ACS de SUBPESCA, para visualizar el dominio del análisis.
+Genera un mapa con las estaciones de muestreo CTD, los polígonos de las
+áreas ACS de SUBPESCA y la costa continental de Chile, para visualizar
+el dominio del análisis.
 
 Entradas (solo lectura):
   - estaciones_CTD_con_ZONA_MACROFAUNA.csv — estaciones con lat/lon y zona_mf
   - acs_subpesca.gpkg — polígonos oficiales ACS de SUBPESCA (EPSG:4326)
+  - salidas/figuras/chile_coastline.shp — costa de Chile (Natural Earth, EPSG:4326)
 
 Salida:
-  - salidas/figuras/mapa_estaciones_acs.png — mapa con estaciones y polígonos
+  - salidas/figuras/mapa_estaciones_acs.png — mapa con estaciones, polígonos y costa
 """
 
 from __future__ import annotations
@@ -51,6 +53,16 @@ def main():
     elif acs.crs.to_epsg() != 4326:
         acs = acs.to_crs("EPSG:4326")
 
+    # --- Leer costa de Chile (Natural Earth 10m, filtrada) ---
+    costa_path = BASE / "salidas" / "figuras" / "chile_coastline.shp"
+    if costa_path.exists():
+        costa = gpd.read_file(str(costa_path))
+        print(f"Costa de Chile cargada: {len(costa)} features")
+        print(f"CRS costa: {costa.crs}")
+    else:
+        costa = None
+        print("ADVERTENCIA: no se encontró chile_coastline.shp, el mapa no tendrá costa")
+
     # --- Crear GeoDataFrame de estaciones ---
     gdf_est = gpd.GeoDataFrame(
         est,
@@ -66,6 +78,10 @@ def main():
 
     # --- Figura ---
     fig, ax = plt.subplots(1, 1, figsize=(12, 10))
+
+    # Costa de Chile (fondo, línea continua)
+    if costa is not None:
+        costa.plot(ax=ax, color="#8B4513", edgecolor="#8B4513", alpha=0.9, linewidth=1.2)
 
     # Polígonos ACS (fondo, semitransparentes)
     acs.plot(ax=ax, color="lightgray", edgecolor="gray", alpha=0.4, linewidth=0.8)
