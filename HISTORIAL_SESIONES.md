@@ -276,3 +276,26 @@ Crear una nueva zona de macrofauna llamada "Pta. Arenas" que incluya todas las e
 
 ### Pendiente
 1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`).
+
+## Sesión 2026-11-05 (usuario `rfvera`) — polígonos de zona de macrofauna (Voronoi, sin solapamientos)
+
+### Objetivo
+Generar una capa GPKG con polígonos de las zonas de macrofauna usando tesselación de Voronoi por estación y disolución por zona, asegurando que los polígonos NO se solapen entre sí.
+
+### Decisiones (usuario)
+1. Usar Voronoi por estación + disolución por zona para evitar solapamientos entre polígonos de zona.
+2. Cada polígono de zona representa el área más cercana a las estaciones de esa zona.
+
+### Archivos creados/modificados
+- `zonas_poligonos.py` (nuevo): script para generar polígonos de zona usando Voronoi + dissolve.
+- `salidas/figuras/zonas_macrofauna.gpkg` (nuevo): capa GPKG con 19 polígonos de zona (EPSG:4326), sin solapamientos entre sí.
+- `zonas_poligonos.py` — script reproducible.
+
+### Resultados de referencia
+- 19 polígonos de zona generados (una por cada zona de macrofauna).
+- Verificación de solapamientos: área de solapamiento ≈ 0 (OK, no hay solapamientos).
+- CRS: EPSG:4326 (WGS84).
+- Zonas incluidas: Ayacara, Aysen, Butachauques, Calbuco, Chacao, Chaiten, Chaulinec, Chiloe central, Desertores, Estuario, Guaitecas, Hornopiren, Moraleda, Natales, Pta. Arenas, Puyuhuapi, Quellon, Reloncavi, Tenaun.
+
+### Pendiente
+1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`).
