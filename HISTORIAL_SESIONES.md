@@ -237,9 +237,10 @@ Generar un mapa visual con las estaciones de muestreo CTD y los polígonos de la
 - 259 estaciones con coordenadas válidas (lat/lon).
 - 19 zonas de macrofauna representadas en el mapa.
 - 106 polígonos ACS de SUBPESCA mostrados como fondo.
-- Costa de Chile agregada (línea continua marrón, Natural Earth 10m).
+- Costa de Chile agregada (línea continua marrón, Natural Earth 10m) al fondo del mapa.
+- Eje X ajustado para llegar hasta 76°W.
 - CRS: EPSG:4326 (WGS84).
-- Estaciones coloreadas por zona_mf, polígonos ACS en gris semitransparente, costa como línea de fondo.
+- Estaciones coloreadas por zona_mf (zorder=3), polígonos ACS gris semitransparente (zorder=1), costa marrón (zorder=0).
 
 ### Pendiente (cerrado)
-1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`) — HECHO (commit 910af61 en main).
+1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`) — HECHO (commit 6dfc036 en main).
