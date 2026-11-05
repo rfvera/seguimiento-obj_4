@@ -377,3 +377,35 @@ estación, unido todo junto.
 
 ### Pendiente
 1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`).
+
+
+## Sesión 2026-11-05 (usuario `rfvera`) — polígonos de zona adyacentes sin solapamientos (área marina = bbox - Chile)
+
+### Objetivo
+Generar polígonos de zona de macrofauna que sean ADYACENTES entre sí (comparten bordes) y cubran todo el área marina de estudio, para permitir extrapolación de resultados a cualquier punto dentro de cada zona.
+
+### Decisiones (usuario)
+1. Los polígonos de zona deben ser adyacentes entre sí (comparten bordes), no tener huecos entre ellos.
+2. Los polígonos deben cubrir todo el área de estudio marina para permitir extrapolación.
+3. Usar área marina = bounding box grande alrededor de todas las estaciones MINUS el polígono del país Chile (Natural Earth 10m).
+4. Los polígonos NO se solapan entre sí.
+
+### Archivos creados/modificados
+- `zonas_poligonos.py` (reescrito): genera polígonos de Voronoi por estación recortados por el área marina = bbox grande - Chile. Los polígonos resultantes son adyacentes entre sí y cubren todo el área marina de estudio.
+- `salidas/figuras/zonas_macrofauna.gpkg` (regenerado): 19 polígonos de zona (EPSG:4326), sin solapamientos, sin tierra firme, adyacentes entre sí.
+- `salidas/figuras/mapa_estaciones_acs.png` (regenerado): mapa con polígonos de zona adyacentes, estaciones, polígonos ACS y costa.
+- `informe/mapa_estaciones_acs.png` (copiado).
+- `informe/informe_ambiental.pdf` (regenerado).
+- `AGENTS.md` (modificado): documentación de Pipeline 6 actualizada.
+- `HISTORIAL_SESIONES.md` (modificado): esta bitácora.
+
+### Resultados de referencia
+- 19 polígonos de zona generados (una por cada zona de macrofauna).
+- Verificación de solapamientos: área de solapamiento ≈ 0 (OK).
+- Verificación de adyacencia: 14 pares de zonas comparten borde (son adyacentes).
+- CRS: EPSG:4326 (WGS84).
+- Zonas incluidas: Ayacara, Aysen, Butachauques, Calbuco, Chacao, Chaiten, Chaulinec, Chiloe central, Desertores, Estuario, Guaitecas, Hornopiren, Moraleda, Natales, Pta. Arenas, Puyuhuapi, Quellon, Reloncavi, Tenaun.
+- Los polígonos cubren todo el área marina de estudio (extrapolación válida para cualquier punto dentro de cada zona).
+
+### Pendiente
+1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`).

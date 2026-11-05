@@ -118,16 +118,16 @@ Salida:
 
 `~/miniconda3/envs/r_env/bin/python zonas_poligonos.py`
 
-Usa `estaciones_CTD_con_ZONA_MACROFAUNA.csv` y `salidas/figuras/ne_10m_admin_0_countries.shp` (países, Natural Earth).
+Usa `estaciones_CTD_con_ZONA_MACROFAUNA.csv` y `salidas/figuras/ne_10m_admin_0_countries.shp` (países, Natural Earth 10m).
 
 Metodología:
 - Tesselación de Voronoi por estación.
 - Cada polígono de Voronoi se recorta por un polígono de "área marina" = bounding box grande alrededor de todas las estaciones MINUS polígono del país Chile (Natural Earth 10m).
 - Los polígonos se disuelven (unen) por zona_mf.
-- Resultado: polígonos de zona que NO se solapan entre sí y están limitados al área marina (no incluyen tierra firme).
+- Resultado: polígonos de zona ADYACENTES entre sí (comparten bordes), que NO se solapan entre sí y NO incluyen tierra firme. Cubren todo el área marina de estudio para permitir extrapolación a cualquier punto dentro de cada zona.
 
 Salida:
-- `salidas/figuras/zonas_macrofauna.gpkg` — 19 polígonos de zona (EPSG:4326), sin solapamientos entre sí.
+- `salidas/figuras/zonas_macrofauna.gpkg` — 19 polígonos de zona (EPSG:4326), sin solapamientos entre sí, sin incluir tierra, adyacentes entre sí.
 - `salidas/figuras/ne_10m_admin_0_countries.*` — países Natural Earth 10m (necesario para reproducir).
 
 ## Informe Typst (en `informe/`)
