@@ -296,6 +296,7 @@ Generar una capa GPKG con polígonos de las zonas de macrofauna usando tesselaci
 - Verificación de solapamientos: área de solapamiento ≈ 0 (OK, no hay solapamientos).
 - CRS: EPSG:4326 (WGS84).
 - Zonas incluidas: Ayacara, Aysen, Butachauques, Calbuco, Chacao, Chaiten, Chaulinec, Chiloe central, Desertores, Estuario, Guaitecas, Hornopiren, Moraleda, Natales, Pta. Arenas, Puyuhuapi, Quellon, Reloncavi, Tenaun.
+- Polígonos recortados por área marina (bounding box de estaciones − polígono país Chile de Natural Earth 10m), por lo que NO incluyen tierra firme.
 
 ### Pendiente
-1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`).
+1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`) — HECHO (commit 4de2599 en main).

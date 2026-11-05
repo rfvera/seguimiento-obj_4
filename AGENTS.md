@@ -114,14 +114,21 @@ Salida:
 - `salidas/figuras/mapa_estaciones_acs.png` — mapa con 259 estaciones de muestreo, polígonos de zona (Voronoi recortado por área marina) y 106 polígonos ACS SUBPESCA, estaciones coloreadas por zona_mf (20 zonas).
 - `salidas/figuras/zonas_macrofauna.gpkg` — capa GPKG con 19 polígonos de zona (EPSG:4326), sin solapamientos entre sí.
 
-## Pipeline 6: Polígonos de zona (Voronoi)
+## Pipeline 6: Polígonos de zona (Voronoi, recortados por área marina)
 
 `~/miniconda3/envs/r_env/bin/python zonas_poligonos.py`
 
-Usa `estaciones_CTD_con_ZONA_MACROFAUNA.csv`.
+Usa `estaciones_CTD_con_ZONA_MACROFAUNA.csv` y `salidas/figuras/ne_10m_admin_0_countries.shp` (países, Natural Earth).
+
+Metodología:
+- Tesselación de Voronoi por estación.
+- Cada polígono de Voronoi se recorta por un polígono de "área marina" = bounding box grande alrededor de todas las estaciones MINUS polígono del país Chile (Natural Earth 10m).
+- Los polígonos se disuelven (unen) por zona_mf.
+- Resultado: polígonos de zona que NO se solapan entre sí y están limitados al área marina (no incluyen tierra firme).
 
 Salida:
-- `salidas/figuras/zonas_macrofauna.gpkg` — 19 polígonos de zona generados por tesselación de Voronoi por estación + disolución por zona, recortados por área marina (buffer de 15km alrededor de las estaciones). Los polígonos NO se solapan entre sí.
+- `salidas/figuras/zonas_macrofauna.gpkg` — 19 polígonos de zona (EPSG:4326), sin solapamientos entre sí.
+- `salidas/figuras/ne_10m_admin_0_countries.*` — países Natural Earth 10m (necesario para reproducir).
 
 ## Informe Typst (en `informe/`)
 
