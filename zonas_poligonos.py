@@ -3,14 +3,19 @@ zonas_poligonos.py
 Agente DATA - IFOP Seguimiento (objetivo_4)
 
 Genera una capa GPKG con polígonos de las zonas de macrofauna usando
-tesselación de Voronoi por estación y disolución por zona.
+tesselación de Voronoi por estación y disolución por zona, recortados
+por un polígono de "área marina" construido a partir de las estaciones
+para que NO incluyan tierra firme.
 
 Metodología:
   1. Leer estaciones con zona_mf asignada
   2. Crear polígonos de Voronoi (tesselación) para todas las estaciones
-  3. Asignar cada polígono de Voronoi a la zona de su estación
-  4. Disolver (unir) todos los polígonos de Voronoi de la misma zona
-  5. Resultado: polígonos de zona que NO se solapan entre sí
+  3. Crear un polígono de "área marina" = buffer grande alrededor de todas
+     las estaciones (aproxima el área marina cubierto por las estaciones)
+  4. Recortar cada polígono de Voronoi por el área marina
+  5. Asignar cada polígono recortado a la zona de su estación
+  6. Disolver (unir) todos los polígonos de Voronoi de la misma zona
+  7. Resultado: polígonos de zona que NO se solapan y están limitados al área marina
 
 Entradas (solo lectura):
   - estaciones_CTD_con_ZONA_MACROFAUNA.csv
@@ -24,7 +29,7 @@ from __future__ import annotations
 import geopandas as gpd
 import pandas as pd
 import numpy as np
-from shapely.geometry import Point, MultiPoint, Polygon
+from shapely.geometry import Point, Polygon, MultiPoint
 from shapely.ops import unary_union
 from scipy.spatial import Voronoi
 from pathlib import Path
@@ -34,10 +39,28 @@ ESTACIONES = BASE / "estaciones_CTD_con_ZONA_MACROFAUNA.csv"
 SALIDA = BASE / "salidas" / "figuras" / "zonas_macrofauna.gpkg"
 
 
-def crear_voronoi_por_zona(gdf: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
+def crear_area_marina(gdf: gpd.GeoDataFrame, buffer_km: float = 15.0) -> Polygon:
     """
-    Crea polígonos de Voronoi por estación y los disuelve por zona.
-    Los polígonos resultantes NO se solapan entre sí.
+    Crea un polígono que representa el área marina cubierta por las estaciones.
+    Usa un buffer (amortiguamiento) alrededor de todas las estaciones combinadas.
+    Como las estaciones están en el mar, el área marina aproximada es el
+    área dentro de un radio razonable alrededor de todas las estaciones.
+    """
+    puntos = list(gdf.geometry)
+    multipoint = MultiPoint([p for p in puntos if not p.is_empty])
+
+    # Buffer alrededor de todas las estaciones (aprox. área marina cubierta)
+    # 15 km ≈ 0.135 grados en latitud sur
+    buffer_deg = buffer_km / 111.0  # km a grados aprox
+    area_marina = multipoint.buffer(buffer_deg)
+
+    return area_marina
+
+
+def crear_voronoi_por_zona(gdf: gpd.GeoDataFrame, area_marina: Polygon) -> gpd.GeoDataFrame:
+    """
+    Crea polígonos de Voronoi por estación, recortados por el área marina,
+    y los disuelve por zona. Los polígonos resultantes NO se solapan.
     """
     # Obtener puntos y sus zonas
     puntos = list(gdf.geometry)
@@ -46,14 +69,14 @@ def crear_voronoi_por_zona(gdf: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
     # Filtrar puntos vacíos
     puntos_validos = [(p.x, p.y, z) for p, z in zip(puntos, zonas) if not p.is_empty]
 
-    # Crear un MultiPoint de todas las estaciones
+    # Coordenadas para Voronoi
     coords = np.array([(px, py) for px, py, _ in puntos_validos])
     zonas_lista = [z for _, _, z in puntos_validos]
 
-    # Bounding box con margen
+    # Bounding box con margen pequeño
     xmin, ymin = coords.min(axis=0)
     xmax, ymax = coords.max(axis=0)
-    margen = 0.5  # grados
+    margen = 0.3  # grados
     bbox = Polygon.from_bounds(
         xmin - margen, ymin - margen, xmax + margen, ymax + margen
     )
@@ -61,7 +84,7 @@ def crear_voronoi_por_zona(gdf: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
     # Generar Voronoi con scipy
     vor = Voronoi(coords)
 
-    # Crear polígonos de Voronoi recortados al bbox
+    # Crear polígonos de Voronoi recortados al bbox y al área marina
     filas = []
     for region_idx in vor.regions:
         if -1 in region_idx or len(region_idx) == 0:
@@ -73,8 +96,13 @@ def crear_voronoi_por_zona(gdf: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
         if poligono.is_empty or poligono.area < 1e-10:
             continue
 
+        # RECORTAR POR ÁREA MARINA: solo mantener la parte dentro del área marina
+        poligono_marino = poligono.intersection(area_marina)
+        if poligono_marino.is_empty or poligono_marino.area < 1e-10:
+            continue  # El polígono está fuera del área marina
+
         # Encontrar el punto generador más cercano para asignar la zona
-        cent = poligono.centroid
+        cent = poligono_marino.centroid
         dist_min = float("inf")
         zona_asignada = None
         for px, py, z in puntos_validos:
@@ -83,9 +111,12 @@ def crear_voronoi_por_zona(gdf: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
                 dist_min = d
                 zona_asignada = z
 
-        filas.append({"zona_mf": zona_asignada, "geometry": poligono})
+        filas.append({"zona_mf": zona_asignada, "geometry": poligono_marino})
 
-    gdf_voronoi = gpd.GeoDataFrame(filas, crs="EPSG:4326")
+    if len(filas) == 0:
+        raise ValueError("No se generó ningún polígono de Voronoi válido después del recorte.")
+
+    gdf_voronoi = gpd.GeoDataFrame(filas, geometry="geometry", crs="EPSG:4326")
 
     # Disolver (unir) por zona_mf -> polígonos que NO se solapan
     zonas_disueltas = gdf_voronoi.dissolve(by="zona_mf", as_index=False)
@@ -108,8 +139,12 @@ def main():
     print(f"Estaciones: {len(gdf)}")
     print(f"Zonas: {gdf['zona_mf'].nunique()}")
 
-    print("Generando polígonos de Voronoi por zona...")
-    zonas_gdf = crear_voronoi_por_zona(gdf)
+    print("Creando área marina (buffer alrededor de estaciones)...")
+    area_marina = crear_area_marina(gdf, buffer_km=15.0)
+    print(f"Área marina creada: {area_marina.area:.4f} grados cuadrados")
+
+    print("Generando polígonos de Voronoi por zona (recortados por área marina)...")
+    zonas_gdf = crear_voronoi_por_zona(gdf, area_marina)
     print(f"Polígonos de zona generados: {len(zonas_gdf)}")
 
     # Verificar que no haya solapamientos

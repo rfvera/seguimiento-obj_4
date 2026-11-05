@@ -83,10 +83,9 @@ Salidas (en `salidas/analisis_ambiental/`):
   - Desertores: salinidad -0,08 psu/año (p=0,029, R2=0,65, n=7 años).
 - 8 zonas con solo 2024–2025 (sin tendencia): Ancud, Calbuco, Chacao, Chiloé central, Guaitecas, Hornopirén, Natales, Tenaun.
 
-### Resultados de perfiles por profundidad y series de tiempo (140.787 registros, 349 profundidades)
+### Resultados de perfiles por profundidad y series de tiempo (140.787 registros, 349 profundidades, 20 zonas)
 
-- 102 tendencias significativas de anomalías (p<0,05) en zona×profundidad×variable.
-- 178 tendencias significativas de series de tiempo anual (p<0,05).
+- 178 tendencias significativas (p<0,05) en zona×profundidad×variable.
 - Temperatura: 41 tendencias sig., calentamiento en Quellón +1,07 °C/año (R²=0,996).
 - Oxígeno: 46 tendencias sig., aumentos en Butachauques +0,68 ml/L/año (R²=0,966).
 - Salinidad: 91 tendencias sig., desalinización en Reloncaví −0,92 psu/año (R²=0,999), salinización en Aysén +0,60 psu/año (R²=0,73).
@@ -101,18 +100,28 @@ Salidas (en `salidas/analisis_ambiental/`):
 Usa `salidas/perfiles_procesados/promedio_anual_por_profundidad.csv`.
 
 Salidas (en `salidas/analisis_serie_tiempo/`):
-- `serie_tiempo_por_variable.csv` — 19.893 filas (zona×profundidad×variable con estadísticas y tendencia).
-- `series_tiempo_detalladas.csv` — 49.677 filas (zona×profundidad×variable×año con valor anual).
+- `serie_tiempo_por_variable.csv` — 19.940 filas (zona×profundidad×variable con estadísticas y tendencia).
+- `series_tiempo_detalladas.csv` — 50.277 filas (zona×profundidad×variable×año con valor anual).
 - `resumen_tendencias_significativas.csv` — 178 filas (solo tendencias con p<0.05).
 
 ## Pipeline 5: Mapa de estaciones y zonas ACS
 
 `~/miniconda3/envs/r_env/bin/python mapa_estaciones_acs.py`
 
-Usa `estaciones_CTD_con_ZONA_MACROFAUNA.csv` y `acs_subpesca.gpkg`.
+Usa `estaciones_CTD_con_ZONA_MACROFAUNA.csv`, `acs_subpesca.gpkg` y `salidas/figuras/zonas_macrofauna.gpkg`.
 
 Salida:
-- `salidas/figuras/mapa_estaciones_acs.png` — mapa con 259 estaciones de muestreo y 106 polígonos ACS SUBPESCA, estaciones coloreadas por zona_mf (19 zonas).
+- `salidas/figuras/mapa_estaciones_acs.png` — mapa con 259 estaciones de muestreo, polígonos de zona (Voronoi recortado por área marina) y 106 polígonos ACS SUBPESCA, estaciones coloreadas por zona_mf (20 zonas).
+- `salidas/figuras/zonas_macrofauna.gpkg` — capa GPKG con 19 polígonos de zona (EPSG:4326), sin solapamientos entre sí.
+
+## Pipeline 6: Polígonos de zona (Voronoi)
+
+`~/miniconda3/envs/r_env/bin/python zonas_poligonos.py`
+
+Usa `estaciones_CTD_con_ZONA_MACROFAUNA.csv`.
+
+Salida:
+- `salidas/figuras/zonas_macrofauna.gpkg` — 19 polígonos de zona generados por tesselación de Voronoi por estación + disolución por zona, recortados por área marina (buffer de 15km alrededor de las estaciones). Los polígonos NO se solapan entre sí.
 
 ## Informe Typst (en `informe/`)
 
