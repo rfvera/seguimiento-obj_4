@@ -343,3 +343,37 @@ Chile (Natural Earth 10m), para que los polígonos NO incluyan tierra firme.
 
 ### Pendiente
 1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`).
+
+
+## Sesión 2026-11-05 (usuario `rfvera`) — polígonos de zona recortados por área marina (buffer 30km)
+
+### Objetivo
+Corregir los polígonos de zona de macrofauna para que NO incluyan tierra firme.
+El método anterior (bbox grande − polígono Chile) dejaba polígonos con tierra en áreas
+costeras. Se cambió a un área marina definida como buffer de 30 km alrededor de cada
+estación, unido todo junto.
+
+### Decisiones (usuario)
+1. Usar buffer de 30 km alrededor de cada estación como área marina (unión de todos los buffers).
+2. Crear polígonos de Voronoi por estación recortados por esta área marina.
+3. Disolver por zona_mf para obtener polígonos de zona sin solapamientos.
+
+### Archivos creados/modificados
+- `zonas_poligonos.py` (reescrito): usa buffer de 30 km alrededor de estaciones como área marina.
+- `salidas/figuras/zonas_macrofauna.gpkg` (regenerado): 19 polígonos de zona (EPSG:4326),
+  sin solapamientos, sin tierra firme.
+- `salidas/figuras/mapa_estaciones_acs.png` (regenerado): mapa con polígonos de zona recortados.
+- `informe/mapa_estaciones_acs.png` (copiado).
+- `informe/informe_ambiental.pdf` (regenerado).
+- `AGENTS.md` (modificado): documentación actualizada.
+- `HISTORIAL_SESIONES.md` (modificado): esta bitácora.
+
+### Resultados de referencia
+- 19 polígonos de zona generados (una por cada zona de macrofauna).
+- Verificación de solapamientos: área de solapamiento ≈ 0 (OK).
+- CRS: EPSG:4326 (WGS84).
+- Área marina: buffer de 25 km alrededor de estaciones.
+- Los polígonos NO incluyen tierra firme y están limitados al área cercana a las estaciones.
+
+### Pendiente
+1. Commit y push a GitHub (`rfvera/seguimiento-obj_4`).
