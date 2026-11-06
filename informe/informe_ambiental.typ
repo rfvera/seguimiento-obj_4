@@ -76,6 +76,7 @@
   margin: 0cm,
   header: none,
   footer: none,
+  background: image("imagenes/portada.png", width: 100%, height: 100%, fit: "cover")
 )[
   #include "formato/portada.typ"
 ]
