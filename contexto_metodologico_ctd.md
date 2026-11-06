@@ -1,4 +1,4 @@
-# Contexto metodológico — Perfiles CTD oceanográficos (objetivo_4)
+# Contexto metodológico — Perfiles CTD (Conductividad, Temperatura y Profundidad) oceanográficos (objetivo_4)
 
 ## Qué son los perfiles CTD
 
@@ -38,7 +38,7 @@ Se eliminan picos espurios (spikes) en los sensores y se aplica suavizado (p. ej
 
 Una vez aislado el downcast y limpio, los datos se promedian en bins de profundidad (típicamente 1 metro o 1 decibar), quedando un perfil con un valor por variable por metro de profundidad.
 
-**Fuente verificada:** Paquete `gapctd` (NOAA AFSC) y `oce::ctd.decimate()`: promedio en bins de 1 m de profundidad, con interpolación lineal a valores de presión uniformemente espaciados. [`oce vignette`](https://cran.r-project.org/web/packages/oce/vignettes/B_ctd.html)
+**Fuente verificada:** Paquete `gapctd` (NOAA (National Oceanic and Atmospheric Administration) AFSC) y `oce::ctd.decimate()`: promedio en bins de 1 m de profundidad, con interpolación lineal a valores de presión uniformemente espaciados. [`oce vignette`](https://cran.r-project.org/web/packages/oce/vignettes/B_ctd.html)
 
 ### 4. Calibración
 

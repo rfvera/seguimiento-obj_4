@@ -66,13 +66,13 @@
 
 = Resumen ejecutivo
 
-Este informe define el estado ambiental de referencia y las trayectorias de cambio de las áreas de emplazamiento acuícola monitoreadas por el IFOP entre 2019 y 2025. El análisis se apoya en dos escalas de observación: el registro de fondo de cada cast (2.363 registros estación×fecha en 20 zonas y 258 estaciones) y el perfil completo procesado a 1 m (140.787 registros, profundidades 1–349 m). Los datos se reconstruyeron desde los archivos originales aplicando trimming, despiking y bin averaging de 1 m.
+Este informe define el estado ambiental de referencia y las trayectorias de cambio de las áreas de emplazamiento acuícola monitoreadas por el IFOP (Instituto de Fomento Pesquero) entre 2019 y 2025. El análisis se apoya en dos escalas de observación: el registro de fondo de cada cast (2.363 registros estación×fecha en 20 zonas y 258 estaciones) y el perfil completo CTD (Conductividad, Temperatura y Profundidad) procesado a 1 m (140.787 registros, profundidades 1–349 m). Los datos se reconstruyeron desde los archivos originales aplicando trimming, despiking y bin averaging de 1 m.
 
 Los valores regionales del registro de fondo son:
 
 - Temperatura: media 9,73 °C (mediana 9,87 °C, desvío estándar 1,50 °C) sobre 2.310 registros válidos.
 - Oxígeno disuelto: media 7,83 mg/L (mediana 7,52 mg/L, desvío estándar 2,81 mg/L) sobre 2.189 registros válidos.
-- Salinidad: media 32,16 PSU (mediana 32,56 PSU, desvío estándar 1,54 PSU) sobre 2.247 registros válidos.
+- Salinidad: media 32,16 PSU (Unidades Prácticas de Salinidad; mediana 32,56 PSU, desvío estándar 1,54 PSU) sobre 2.247 registros válidos.
 
 La cobertura temporal no es uniforme: 11 zonas cubren 2019–2025 (con huecos: Aysén, Moraleda y Puyuhuapi sin 2020), 9 zonas tienen solo 2024–2025 y Quellón cubre 2023–2025. La Figura 1 y el cuadro de la sección 3 detallan la cobertura por zona.
 
@@ -80,7 +80,7 @@ Seis combinaciones zona×variable muestran tendencia significativa en el registr
 
 = Área de estudio
 
-El mapa 1 muestra la distribución espacial de las 259 estaciones de la red CTD y los polígonos oficiales de áreas ACS de SUBPESCA. Las estaciones se agrupan en 20 zonas de macrofauna que sirven de referencia para el análisis ambiental; 258 de ellas tienen al menos un registro procesado.
+El mapa 1 muestra la distribución espacial de las 259 estaciones de la red CTD y los polígonos oficiales de áreas ACS (Áreas de Concesión de Salmonicultura) de SUBPESCA (Subsecretaría de Pesca y Acuicultura). Las estaciones se agrupan en 20 zonas de macrofauna que sirven de referencia para el análisis ambiental; 258 de ellas tienen al menos un registro procesado.
 
 #mapa(
   image("mapa_estaciones_acs.png", width: 80%),
@@ -164,7 +164,7 @@ Se aplicó el procedimiento estándar para perfiles CTD, basado en el paquete R 
 3. Despiking: se eliminan valores atípicos por grupo estación×fecha con la regla del IQR (3×IQR). Los valores atípicos se marcan como faltantes.
 4. Bin averaging: los datos se promedian en bins de 1 metro centrados en valores enteros (0,5–1,5 m para el bin 1 m), obteniendo un valor por variable por metro.
 5. Perfiles procesados: se conserva cada nivel de profundidad bineado, con un registro por estación×fecha×profundidad.
-6. Profundidad de fondo: en el archivo A se toma de la columna PROF_SECT_m (profundidad de sector o carta, valor máximo por grupo); en el archivo B, de la batimetría GEBCO_2026 en la coordenada de la estación, porque los perfiles de marea roja llegan mayoritariamente hasta ~55 m (máximo 101 m) y su medición más profunda no representa el fondo.
+6. Profundidad de fondo: en el archivo A se toma de la columna PROF_SECT_m (profundidad de sector o carta, valor máximo por grupo); en el archivo B, de la batimetría GEBCO (General Bathymetric Chart of the Oceans) 2026 en la coordenada de la estación, porque los perfiles de marea roja llegan mayoritariamente hasta ~55 m (máximo 101 m) y su medición más profunda no representa el fondo.
 7. Unión con zonas: cada registro se asigna a su zona de macrofauna (zona_mf).
 
 == Estado de referencia
@@ -183,7 +183,7 @@ a) Ciclo estacional anual: ajuste de mínimos cuadrados de la forma
 
 b) Anomalías: se resta el ciclo estacional esperado de cada valor observado.
 
-c) Tendencia lineal de anomalías: ajuste OLS de las anomalías contra el año, reportando pendiente, R², p-valor y error estándar. Se requieren al menos 3 años para calcular la tendencia.
+c) Tendencia lineal de anomalías: ajuste OLS (mínimos cuadrados ordinarios) de las anomalías contra el año, reportando pendiente, R² (coeficiente de determinación), p-valor y error estándar. Se requieren al menos 3 años para calcular la tendencia.
 
 Este enfoque de anomalías con ciclo estacional removido se contrasta con un segundo ajuste, OLS directamente sobre el promedio anual por zona×profundidad×variable; de ahí provienen las 178 tendencias de la sección 9.
 
@@ -466,7 +466,7 @@ El análisis por zona agrega señal y puede ocultar la heterogeneidad dentro de 
 
 - Kelley, D. y Richards, C. (2026). *Analysis of CTD data*. Vignette del paquete oce. #link("https://cran.r-project.org/web/packages/oce/vignettes/B_ctd.html") (consultado el 6 de noviembre de 2026).
 - Williams, C. A. J. (2014). *DY026 CTD processing report*. National Oceanography Centre, Liverpool. #link("https://www.bodc.ac.uk/data/documents/nodb/pdf/DY026_CTD_processing_report.pdf")
-- Rohan, S. K., Charriere, N. E., Riggle, B., O'Leary, C. A. y Raring, N. W. (2023). *A flexible approach for processing data collected using trawl-mounted CTDs during Alaska bottom-trawl surveys*. NOAA Technical Memorandum NMFS-AFSC 475. #link("https://doi.org/10.25923/8ape-q461")
+- Rohan, S. K., Charriere, N. E., Riggle, B., O'Leary, C. A. y Raring, N. W. (2023), NOAA (National Oceanic and Atmospheric Administration). *A flexible approach for processing data collected using trawl-mounted CTDs during Alaska bottom-trawl surveys*. NOAA Technical Memorandum NMFS-AFSC 475. #link("https://doi.org/10.25923/8ape-q461")
 
 = Estaciones por zona
 
