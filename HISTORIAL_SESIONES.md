@@ -650,3 +650,61 @@ de mar adyacente sin zona (656 fragmentos), incluida una parte de Puyuhuapi de
 - Commit 3e9e555 — declaracion de uso de IA.
 
 - Commit 58076b4 — cambios en declaracion de IA y sincronizacion de salidas.
+
+---
+
+## Sesión 2026-11-06 (cont.) — unidades, GSHHG, análisis por estación y formato IFOP
+
+### Objetivo
+Cerrar el informe con unidades homogéneas (mg/L, PSU), resolver la zonificación de fiordos con cartografía de alta resolución, agregar el análisis por estación y aplicar el formato institucional IFOP (portada, créditos, índices, bibliografía .bib, declaración de IA).
+
+### Decisiones del usuario
+1. Oxígeno en mg/L con la ecuación de Weiss para la saturación; propagar a informe, scripts y CSVs.
+2. Resolver los puntos en tierra con GEBCO/GSHHG (opción 1: tierra combinada).
+3. Ordenar zonas de norte a sur en tablas y figuras.
+4. Formato IFOP con portada y contraportada del informe final de Didymo.
+5. Índices de contenidos, figuras y tablas; bibliografía en .bib; citas en azul.
+6. Declaración de uso de IA al final, después de la bibliografía.
+
+### Diagnósticos (no perder)
+- **Oxígeno:** el sensor SBE43 reporta en ml/L. La conversión a mg/L es un factor constante (1,42903 mg/ml a STP); la ecuación de Weiss (1970) calcula la solubilidad/saturación, no la conversión.
+- **Zonificación:** ninguna base de costa resuelve los fiordos de la Patagonia. Natural Earth 10m deja 60 estaciones en tierra; GSHHG high deja 71 (más detalle = más falsos positivos). La combinación NE ∩ GSHHG reduce a 32, que se incluyen con buffer de 100 m. Resultado: 0 estaciones fuera, tierra residual 0,00015 km².
+- **Gráficos:** las figuras deben generarse al tamaño final. Una imagen de 11 in insertada a 90% deja el texto interno a ~4 pt.
+- **Zonas:** el orden norte-sur se calcula desde `estaciones_CTD_con_ZONA_MACROFAUNA.csv` (latitud media), no se hardcodea.
+
+### Correcciones aplicadas
+1. `salidas/oxigeno_conversion.py`: añade `oxigeno_mg_L` (×1,42903) y `oxigeno_sat_pct` (Weiss 1970) a fondo y perfiles.
+2. `perfiles_procesados.py`, `analisis_estado_referencia.py` y `analisis_serie_tiempo.py` usan mg/L.
+3. `zonas_poligonos.py`: tierra combinada NE ∩ GSHHG; post-procesamiento con buffer de 100 m para las 32 estaciones en fiordos.
+4. `salidas/figuras/descargar_gshhg.py`: descarga GSHHG high desde ArcGIS REST.
+5. `salidas/analisis_por_estacion.py`: 1.548 tendencias estación×variable×profundidad; 13 significativas (5%).
+6. `informe/formato/`: portada, créditos, contraportada, declaración IA y `apa-ifop.csl`.
+7. `informe/referencias.bib`: 3 referencias verificadas (Kelley 2026, Williams 2014, Rohan 2023).
+8. `informe/informe_ambiental.typ`: portada, créditos, índices, bibliografía, citas en azul, encabezado/pie IFOP.
+
+### Verificación
+- `pdftotext` y `pdfimages` sobre el PDF: portada, créditos, índices, figuras, cuadros y bibliografía presentes.
+- `cifras_informe.csv` regenerado; 152 cifras contrastadas.
+- `zonas_macrofauna.gpkg`: 20 zonas, 0 estaciones fuera, 0,00015 km² de tierra.
+- `mapa_reproducible.gpkg`: capas zonas, estaciones, costa_gshhg_high.
+
+### Archivos creados/modificados
+- `salidas/oxigeno_conversion.py`, `salidas/analisis_por_estacion.py`, `salidas/figuras/descargar_gshhg.py`, `salidas/figuras/cobertura_temporal.py`
+- `informe/formato/portada.typ`, `creditos.typ`, `contraportada.typ`, `declaracion_ia.typ`, `apa-ifop.csl`
+- `informe/referencias.bib`, `informe/imagenes/logo_ifop_2.png`, `informe/imagenes/portada.png`
+- `informe/datos/mapa_reproducible.gpkg`, `costa_gshhg_high.gpkg`, `gshhg_chile_high.*`
+- `salidas/auditoria/auditoria_citas_objetivo_4.md`
+
+### Commits
+- `d5ebeb1` — conversión O2 ml/L → mg/L + saturación Weiss
+- `c965ee6` — zonificación de fiordos (tierra combinada NE+GSHHG)
+- `8f38c8e` — línea de costa GSHHG en paquete reproducible
+- `deeb5b1` — formato IFOP (encabezado/pie)
+- `21a50c7` — portada, créditos y contraportada
+- `d541a86` — índices, bibliografía .bib y citas en azul
+- `3e9e555` — declaración de uso de IA
+- `58076b4` — cambios en declaración de IA y sincronización
+
+### Pendiente
+1. Revisar si el buffer de 100 m en fiordos es suficiente o si se requiere cartografía SHOA.
+2. Análisis de exposición a forzantes (núcleo del objetivo 4, aún sin desarrollar).
