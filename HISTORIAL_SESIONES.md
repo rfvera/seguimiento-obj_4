@@ -648,3 +648,5 @@ de mar adyacente sin zona (656 fragmentos), incluida una parte de Puyuhuapi de
 - Commit d541a86 — indices, bibliografia .bib y citas en azul.
 
 - Commit 3e9e555 — declaracion de uso de IA.
+
+- Commit 58076b4 — cambios en declaracion de IA y sincronizacion de salidas.
