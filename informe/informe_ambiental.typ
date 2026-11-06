@@ -1,8 +1,26 @@
 #set page(
-  width: 210mm,
-  height: 297mm,
-  margin: (top: 20mm, right: 20mm, bottom: 20mm, left: 20mm),
-  footer: context [ #align(center)[#counter(page).display()] ]
+  paper: "a4",
+  margin: (top: 2.5cm, bottom: 2cm, left: 2cm, right: 2cm),
+  numbering: "1",
+  number-align: center,
+)
+
+// ---------- ENCABEZADO Y PIE INSTITUCIONAL IFOP ----------
+#set page(
+  header: [
+    #set align(center)
+    #set text(size: 8pt)
+    #set par(leading: 0em, spacing: 0pt)
+    #image("imagenes/logo_ifop_2.png", height: 0.4cm) \
+    INSTITUTO DE FOMENTO PESQUERO / DIVISIÓN INVESTIGACIÓN EN ACUICULTURA
+  ],
+  footer: [
+    #set align(center)
+    #set text(size: 8pt)
+    #set par(leading: 0.5em, spacing: 0pt)
+    SEGUIMIENTO CTD IFOP — OBJETIVO 4 (2019–2025) \
+    #context counter(page).display()
+  ],
 )
 
 #set text(
@@ -11,12 +29,21 @@
   lang: "es",
 )
 
-#set par(justify: true, leading: 0.5em)
+#set par(justify: true, leading: 0.5em, spacing: 20pt, first-line-indent: 0pt)
 
-#set heading(
-  numbering: "1.",
-  supplement: title,
-)
+#set heading(numbering: "1.", supplement: auto)
+#show heading.where(level: 1): set text(size: 14pt, weight: "bold")
+#show heading.where(level: 2): set text(size: 12pt, weight: "bold")
+#show heading.where(level: 1): it => [#it #v(0.8em)]
+#show heading.where(level: 2): it => [#it #v(0.5em)]
+
+// ---------- COLORES INSTITUCIONALES ----------
+#let darkred = rgb("#8b0000")
+#let blue = rgb("#0000ff")
+#show ref: set text(fill: blue)
+#show link: set text(fill: blue)
+#show enum: set par(spacing: 10pt)
+#show list: set par(spacing: 10pt)
 
 #set list(
   spacing: 0.6em,
