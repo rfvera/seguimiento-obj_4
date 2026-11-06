@@ -38,7 +38,7 @@ Se eliminan picos espurios (spikes) en los sensores y se aplica suavizado (p. ej
 
 Una vez aislado el downcast y limpio, los datos se promedian en bins de profundidad (típicamente 1 metro o 1 decibar), quedando un perfil con un valor por variable por metro de profundidad.
 
-**Fuente verificada:** Paquete `gapctd` (NOAA (National Oceanic and Atmospheric Administration) AFSC) y `oce::ctd.decimate()`: promedio en bins de 1 m de profundidad, con interpolación lineal a valores de presión uniformemente espaciados. [`oce vignette`](https://cran.r-project.org/web/packages/oce/vignettes/B_ctd.html)
+**Fuente verificada:** Paquete `oce::ctd.decimate()`: promedio en bins de 1 m de profundidad, con interpolación a valores de presión uniformemente espaciados (por defecto `ctdDecimate` usa un filtro boxcar; la interpolación lineal no es el comportamiento por defecto). La referencia a `gapctd` se eliminó: la URL apuntaba al Technical Memorandum de Rohan et al. (2023). [`oce vignette`](https://cran.r-project.org/web/packages/oce/vignettes/B_ctd.html)
 
 ### 4. Calibración
 
@@ -85,6 +85,6 @@ Lo que sigue sin estar disponible es el dato crudo a 24 Hz por cast, necesario p
 
 ## Referencias verificadas
 
-1. Kelley, D. & Richards, C. (2022). *oce: Analysis of Oceanographic Data*. R package vignette "Analysis of CTD data". Funciones `ctdTrim()`, `ctd.decimate()`. [CRAN](https://cran.r-project.org/web/packages/oce/vignettes/B_ctd.html)
-2. Williams, C.A.J. (2015). *DY026 CTD processing report*. BODC / NOC Liverpool. Bin averaging, despiking, calibraciones, smoothing. [PDF](https://www.bodc.ac.uk/data/documents/nodb/pdf/DY026_CTD_processing_report.pdf)
-3. NOAA AFSC. *gapctd* R package for CTD processing (trawl-mounted CTDs, SBE 19plus V2). Bin average 1 m, despiking. [NOAA Repository](https://repository.library.noaa.gov/view/noaa/55614)
+1. Kelley, D. & Richards, C. (2026). *oce: Analysis of Oceanographic Data*. R package vignette "Analysis of CTD data". Funciones `ctdTrim()`, `ctd.decimate()`. [CRAN](https://cran.r-project.org/web/packages/oce/vignettes/B_ctd.html)
+2. Williams, C.A.J. (2014). *DY026 CTD processing report*. BODC / NOC Liverpool. Bin averaging, despiking, calibraciones, smoothing. [PDF](https://www.bodc.ac.uk/data/documents/nodb/pdf/DY026_CTD_processing_report.pdf)
+3. Rohan, S. K., Charriere, N. E., Riggle, B., O'Leary, C. A. y Raring, N. W. (2023). *A flexible approach for processing data collected using trawl-mounted CTDs during Alaska bottom-trawl surveys*. NOAA Technical Memorandum NMFS-AFSC 475. DOI: 10.25923/8ape-q461. (Reemplaza la referencia anterior a `gapctd`: la URL apuntaba a este mismo documento.)

@@ -4,7 +4,7 @@ Evaluación de variabilidad ambiental y exposición de áreas de emplazamiento a
 
 ## Contexto metodológico
 
-Los datos son perfiles CTD (conductividad, temperatura, profundidad, oxígeno, densidad) tomados en estaciones repetidas a través del tiempo (etapas/fechas/años). Cada estación×fecha es un cast independiente. El procesamiento sigue el estándar oceánico (RBR CTD Guidelines DFO 2017, BODC series documents, paquete R `oce`):
+Los datos son perfiles CTD (conductividad, temperatura, profundidad, oxígeno, densidad) tomados en estaciones repetidas a través del tiempo (etapas/fechas/años). Cada estación×fecha es un cast independiente. El procesamiento sigue el estándar oceánico (Halverson et al. 2017; Williams 2014; Kelley y Richards 2026; Rohan et al. 2023):
 
 1. **Trimming**: remover datos de superficie/calibración (FLAG_BOOL==0 en A, profundidad <0,5 m en B).
 2. **Despiking**: eliminar valores atípicos por grupo (regla IQR 3×).
@@ -224,6 +224,13 @@ Resultado: 13 de 258 estaciones (5 %) con tendencia significativa. La señal de 
 Lee `zonas_macrofauna.gpkg`, `estaciones_CTD_con_ZONA_MACROFAUNA.csv` y `ne_10m_coastline.shp`.
 Escribe `informe/datos/mapa_reproducible.gpkg` (capas `zonas`, `estaciones`, `costa`) y copia
 `acs_subpesca.gpkg` y la linea de costa a `informe/datos/`.
+
+## Referencias (verificadas)
+
+- Halverson, M., Jackson, J., Richards, C., Melling, H., Brunsting, R., Dempsey, M., Gatien, G., Hamilton, A., Hunt, B., Jacob, W. y Zimmerman, S. (2017). *Guidelines for processing RBR CTD profiles*. Can. Tech. Rep. Hydrogr. Ocean Sci. 314: iv + 38 p. URL: https://waves-vagues.dfo-mpo.gc.ca/Library/40578112.pdf
+- Williams, C. A. J. (2014). *DY026 CTD processing report*. National Oceanography Centre, Liverpool. URL: https://www.bodc.ac.uk/data/documents/nodb/pdf/DY026_CTD_processing_report.pdf
+- Kelley, D. y Richards, C. (2026). *Analysis of CTD data*. Vignette del paquete oce. URL: https://cran.r-project.org/web/packages/oce/vignettes/B_ctd.html
+- Rohan, S. K., Charriere, N. E., Riggle, B., O'Leary, C. A. y Raring, N. W. (2023). *A flexible approach for processing data collected using trawl-mounted CTDs during Alaska bottom-trawl surveys*. NOAA Technical Memorandum NMFS-AFSC 475. DOI: 10.25923/8ape-q461
 
 ## Reglas de versión
 
