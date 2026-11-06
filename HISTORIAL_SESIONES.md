@@ -622,3 +622,5 @@ de mar adyacente sin zona (656 fragmentos), incluida una parte de Puyuhuapi de
 - Commit 6468b3a — formato Roboto 12, justificado, interlineado 1,5.
 
 - Commit 8046bbc — pie de pagina centrado, solo numero.
+
+- Commit 9593635 — analisis por estacion (13/258, 5 figuras).
