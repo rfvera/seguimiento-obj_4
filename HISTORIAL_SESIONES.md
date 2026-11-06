@@ -45,7 +45,7 @@ Las 10 correcciones obligatorias y las 5 recomendadas se aplicaron y se verifica
 - `git status` revisado antes del commit; los `.xlsx` siguen excluidos.
 
 ### Commits
-- (pendiente) Aplicar correcciones de auditoría + figura + trazabilidad.
+- Commit 1f055f8 — correcciones de auditoría + figura + trazabilidad.
 
 ---
 
