@@ -70,6 +70,29 @@
   supplement: [Figura],
 )
 
+// ============ PORTADA ============
+#page(
+  paper: "a4",
+  margin: 0cm,
+  header: none,
+  footer: none,
+)[
+  #include "formato/portada.typ"
+]
+
+// ============ CRÉDITOS ============
+#page(
+  paper: "a4",
+  margin: (x: 2cm, y: 2cm),
+  header: none,
+  footer: none,
+  numbering: none,
+)[
+  #include "formato/creditos.typ"
+]
+
+#counter(page).update(1)
+
 #align(center)[
   #set text(size: 20pt, weight: "bold")
   Estado ambiental de referencia y trayectorias de cambio ambiental regional
@@ -582,3 +605,7 @@ Las cifras regionales y los conteos provienen de `salidas/verificacion/cifras_in
 - `fondo_ctd_por_zona.csv` — registro de fondo (2.363 filas, 220 del archivo A y 2.143 del archivo B).
 - `perfiles_procesados.py`, `reconstruir_ctd.py`, `salidas/analisis_ambiental/analisis_estado_referencia.py` — scripts reproducibles.
 - `mapa_estaciones_acs.png` — mapa de estaciones y zonas ACS.
+
+// ============ CONTRAPORTADA ============
+#pagebreak()
+#include "formato/contraportada.typ"
