@@ -2,7 +2,7 @@
   width: 210mm,
   height: 297mm,
   margin: (top: 20mm, right: 20mm, bottom: 20mm, left: 20mm),
-  footer: context [Página #counter(page).display()]
+  footer: context [ #align(center)[#counter(page).display()] ]
 )
 
 #set text(
