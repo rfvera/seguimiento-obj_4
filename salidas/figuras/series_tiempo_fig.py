@@ -27,17 +27,17 @@ SALIDA.mkdir(parents=True, exist_ok=True)
 
 VARIABLES = {
     "temperatura_C": ("Temperatura (°C)", "#b2182b"),
-    "oxigeno_ml_L": ("Oxígeno (ml/L)", "#2166ac"),
+    "oxigeno_mg_L": ("Oxígeno (mg/L)", "#2166ac"),
     "salinidad_psu": ("Salinidad (psu)", "#1b7837"),
 }
 
 # Las seis tendencias significativas de fondo, en el orden del cuadro 3.
 PANELES = [
-    ("Reloncavi", "Reloncaví", "oxigeno_ml_L"),
+    ("Reloncavi", "Reloncaví", "oxigeno_mg_L"),
     ("Butachauques", "Butachauques", "salinidad_psu"),
     ("Desertores", "Desertores", "salinidad_psu"),
     ("Quellon", "Quellón", "temperatura_C"),
-    ("Puyuhuapi", "Puyuhuapi", "oxigeno_ml_L"),
+    ("Puyuhuapi", "Puyuhuapi", "oxigeno_mg_L"),
     ("Aysen", "Aysén", "salinidad_psu"),
 ]
 

@@ -48,7 +48,9 @@ GEOD = Geod(ellps="WGS84")
 
 BASE = Path("/home/rfvera/Documentos/IFOP/SEGUIMIENTO/objetivo_4")
 ESTACIONES = BASE / "estaciones_CTD_con_ZONA_MACROFAUNA.csv"
+GEBCO_CSV = BASE / "gebco_profundidades_marea_roja.csv"
 PAISES = BASE / "salidas" / "figuras" / "ne_10m_admin_0_countries.shp"
+GSHHG = Path("/tmp/opencode/gshhg_chile/gshhg_chile_high.shp")
 SALIDA = BASE / "salidas" / "figuras" / "zonas_macrofauna.gpkg"
 
 
@@ -91,10 +93,23 @@ def crear_area_marina(gdf: gpd.GeoDataFrame, paises_gdf: gpd.GeoDataFrame,
     if len(paises_bbox) == 0:
         raise ValueError("Ningún país intersecta el bbox de estaciones")
 
-    tierra = unary_union([
+    tierra_ne = unary_union([
         make_valid(g) for g in paises_bbox.geometry
         if g is not None and not g.is_empty
     ])
+
+    tierra = tierra_ne
+    if GSHHG.exists():
+        gshhg_gdf = gpd.read_file(GSHHG)
+        gshhg_bbox = gshhg_gdf[gshhg_gdf.intersects(bbox)].copy()
+        if len(gshhg_bbox) > 0:
+            tierra_gshhg = unary_union([
+                make_valid(g) for g in gshhg_bbox.geometry
+                if g is not None and not g.is_empty
+            ])
+            tierra_comb = make_valid(tierra_ne.intersection(tierra_gshhg))
+            if not tierra_comb.is_empty:
+                tierra = tierra_comb
 
     area_marina = _solo_poligonos(make_valid(bbox.difference(tierra)))
     if area_marina is None or area_marina.is_empty:
@@ -304,6 +319,20 @@ def main():
     est["lon"] = pd.to_numeric(est["lon"], errors="coerce")
     est = est.dropna(subset=["lat", "lon"])
 
+    gebco_depths = {}
+    if GEBCO_CSV.exists():
+        gb = pd.read_csv(GEBCO_CSV, dtype={"CODIGO": str})
+        for _, row in gb.iterrows():
+            gebco_depths[str(row["CODIGO"])] = row["profundidad_fondo_m"]
+
+    def es_agua(sid):
+        if str(sid) in gebco_depths:
+            return bool(gebco_depths[str(sid)] < 0)
+        return True
+
+    est["en_agua"] = est["estacion_id"].apply(es_agua)
+    print(f"Estaciones en agua: {est['en_agua'].sum()} de {len(est)}")
+
     gdf = gpd.GeoDataFrame(
         est,
         geometry=gpd.points_from_xy(est["lon"], est["lat"]),
@@ -425,6 +454,27 @@ def main():
         print("OK: Toda parte sin estación está conectada por mar a un ancla.")
     else:
         print("ADVERTENCIA: Hay partes sin estación separadas por tierra.")
+
+    # --- Post-procesamiento: estaciones en fiordos ---
+    print("\nPost-procesamiento: incluyendo estaciones en fiordos...")
+    est_fuera = []
+    for _, row in gdf.iterrows():
+        zona_row = zonas_gdf[zonas_gdf["zona_mf"] == row["zona_mf"]]
+        if len(zona_row) == 0:
+            est_fuera.append(row)
+            continue
+        if not (zona_row.geometry.iloc[0].contains(row.geometry) or
+                zona_row.geometry.iloc[0].covers(row.geometry)):
+            est_fuera.append(row)
+    print(f"  Estaciones fuera de su zona: {len(est_fuera)}")
+
+    for row in est_fuera:
+        zona = row["zona_mf"]
+        pt = row.geometry
+        buf = pt.buffer(0.001)  # ~500 m en grados
+        idx = zonas_gdf[zonas_gdf["zona_mf"] == zona].index[0]
+        geom = zonas_gdf.loc[idx, "geometry"]
+        zonas_gdf.loc[idx, "geometry"] = geom.union(buf)
 
     # --- Guardar ---
     SALIDA.parent.mkdir(parents=True, exist_ok=True)
