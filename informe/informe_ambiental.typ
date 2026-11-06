@@ -371,6 +371,83 @@ La salinidad reúne el mayor número de tendencias significativas (91), con los 
   caption: [Tendencias de salinidad significativas (top 5 por magnitud de la pendiente).],
 )
 
+
+= Análisis por estación
+
+El análisis por zona agrega señal y puede ocultar la heterogeneidad dentro de cada zona. Repetir el mismo procedimiento estación por estación muestra cuántas estaciones individualmente sostienen una tendencia.
+
+#cuadro(
+  table(
+    columns: (2.8cm, 1.8cm, 2.0cm, 2.2cm, 2.4cm),
+    align: center,
+    [Variable], [Profundidad], [Estaciones], [Con 3+ años], [Con tendencia sig.],
+    [Temperatura (°C)], [10 m], [258], [44], [6],
+    [Temperatura (°C)], [Fondo], [258], [45], [3],
+    [Oxígeno (mg/L)], [10 m], [258], [45], [1],
+    [Oxígeno (mg/L)], [Fondo], [258], [45], [0],
+    [Salinidad (PSU)], [10 m], [258], [35], [2],
+    [Salinidad (PSU)], [Fondo], [258], [45], [1],
+  ),
+  caption: [Resumen del análisis por estación (2019–2025). Con 3+ años = estaciones con al menos 3 años de datos anuales. Con tendencia sig. = p menor que 0,05.],
+)
+
+
+#cuadro(
+  table(
+    columns: (2.2cm, 1.8cm, 2.4cm, 1.6cm, 1.2cm, 1.8cm, 1.4cm, 1.2cm),
+    align: center,
+    [Zona], [Estación], [Variable], [Prof.], [n años], [Pendiente/año], [p-valor], [R²],
+    [Chaulinec], [10], [Temperatura (°C)], [10 m], [7], [−0,11], [0,0480], [0,576],
+    [Desertores], [11], [Salinidad (PSU)], [Fondo], [7], [−0,05], [0,0299], [0,644],
+    [Quellón], [L22N1], [Oxígeno (mg/L)], [10 m], [3], [−0,51], [0,0109], [1,000],
+    [Quellón], [L22N2], [Temperatura (°C)], [10 m], [3], [+1,20], [0,0434], [0,995],
+    [Quellón], [L16N1], [Temperatura (°C)], [10 m], [3], [+1,12], [0,0278], [0,998],
+    [Quellón], [L22N3], [Temperatura (°C)], [10 m], [3], [+1,10], [0,0042], [1,000],
+    [Quellón], [L24N1], [Temperatura (°C)], [10 m], [3], [+0,98], [0,0168], [0,999],
+    [Quellón], [L16N1], [Temperatura (°C)], [Fondo], [3], [+1,03], [0,0179], [0,999],
+    [Quellón], [L24N1], [Temperatura (°C)], [Fondo], [3], [+0,89], [0,0177], [0,999],
+    [Chaitén], [13], [Salinidad (PSU)], [10 m], [6], [−0,09], [0,0290], [0,735],
+    [Aysén], [21], [Salinidad (PSU)], [10 m], [3], [+0,09], [0,0367], [0,997],
+    [Aysén], [32], [Temperatura (°C)], [10 m], [3], [−0,61], [0,0182], [0,999],
+    [Aysén], [24], [Temperatura (°C)], [Fondo], [6], [−0,12], [0,0245], [0,756],
+  ),
+  caption: [Estaciones con tendencia significativa (p menor que 0,05) en el análisis por estación (2019–2025). Pendiente en la unidad de la variable por año.],
+)
+
+
+#figura(
+  image("figuras/series_estaciones_temperatura_fondo.png", width: 90%),
+  caption: [Series anuales de temperatura por estación con tendencia significativa, registro de fondo. Una línea por estación, coloreada por zona.],
+)
+
+#figura(
+  image("figuras/series_estaciones_temperatura_10m.png", width: 90%),
+  caption: [Series anuales de temperatura por estación con tendencia significativa, a 10 m.],
+)
+
+#figura(
+  image("figuras/series_estaciones_oxigeno_10m.png", width: 90%),
+  caption: [Series anuales de oxígeno por estación con tendencia significativa, a 10 m. No hay estaciones con tendencia significativa en el registro de fondo.],
+)
+
+#figura(
+  image("figuras/series_estaciones_salinidad_fondo.png", width: 90%),
+  caption: [Series anuales de salinidad por estación con tendencia significativa, registro de fondo.],
+)
+
+#figura(
+  image("figuras/series_estaciones_salinidad_10m.png", width: 90%),
+  caption: [Series anuales de salinidad por estación con tendencia significativa, a 10 m.],
+)
+
+== Interpretación del análisis por estación
+
+- Solo *13 de las 258 estaciones* (5 %) presentan una tendencia significativa en alguna variable y profundidad. La señal de cambio detectada a nivel de zona no se repite estación por estación.
+- La temperatura concentra la mayoría de las tendencias (9 de 13), y casi todas en Quellón (7 de las 9). Quellón es el único caso donde el calentamiento es consistente entre estaciones individuales y la zona.
+- El oxígeno tiene una sola estación con tendencia significativa (L22N1, Quellón, 10 m, −0,51 mg/L/año), a pesar de que la zona de Puyuhuapi muestra un aumento de fondo. La señal de oxígeno es más difusa a escala de estación.
+- La salinidad tiene 4 estaciones con tendencia: 2 en Quellón (calentamiento asociado a desalinización), 1 en Chaitén, 1 en Aysén y 1 en Desertores. En Aysén, la estación 21 se saliniza (+0,09 PSU/año a 10 m) mientras la estación 24 se desaliniza (−0,12 PSU/año en fondo), lo que ilustra la heterogeneidad vertical y espacial dentro de la zona.
+- Las estaciones con tendencia tienen series de 3 a 7 años, con n pequeño. Sus R² altos (mayor que 0,99 en Quellón) reflejan el escaso número de puntos, no una relación excepcionalmente fuerte.
+
 = Conclusiones
 
 1. El estado ambiental de referencia regional combina temperaturas frías (media 9,73 °C), oxígeno moderado (7,83 mg/L) y salinidad cercana a la del océano abierto (32,16 PSU). La heterogeneidad entre zonas y profundidades refleja la complejidad de fiordos y canales de la Patagonia chilena, no un régimen único.
@@ -442,6 +519,7 @@ Las cifras regionales y los conteos provienen de `salidas/verificacion/cifras_in
 - `salidas/verificacion/zonas_estaciones.csv` — estaciones (código) por zona, orden norte-sur.
 - `salidas/verificacion/zonas_estaciones.py` — genera el CSV anterior.
 - `salidas/oxigeno_conversion.py` — añade `oxigeno_mg_L` (factor 1,429) y `oxigeno_sat_pct` (Weiss 1970) a los CSVs de fondo y perfiles.
+- `salidas/analisis_por_estacion.py` — tendencias por estación (fondo y 10 m), resumen y top. Genera las Figuras 3 a 7.
 - `fondo_ctd_por_zona.csv` — registro de fondo (2.363 filas, 220 del archivo A y 2.143 del archivo B).
 - `perfiles_procesados.py`, `reconstruir_ctd.py`, `salidas/analisis_ambiental/analisis_estado_referencia.py` — scripts reproducibles.
 - `mapa_estaciones_acs.png` — mapa de estaciones y zonas ACS.

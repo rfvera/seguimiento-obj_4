@@ -1,0 +1,1549 @@
+estacion_id,zona_mf,variable,profundidad,n_anos,anio_min,anio_max,media,pendiente,p_valor,r2,tendencia_sig
+1,Estuario,temperatura_C,fondo,7,2019.0,2025.0,11.15894285714286,-0.06602142857142855,0.12523214108426864,0.4036023314504053,False
+10,Chaulinec,temperatura_C,fondo,7,2019.0,2025.0,10.446285714285713,-0.05791428571428574,0.4022723362259643,0.14336731664965702,False
+11,Desertores,temperatura_C,fondo,7,2019.0,2025.0,10.185471428571429,0.03931428571428557,0.6052453114282136,0.05727606680560092,False
+12,Chaiten,temperatura_C,fondo,6,2019.0,2025.0,10.152716666666665,0.004489999999999938,0.966186349121495,0.0005083335810840756,False
+13,Chaiten,temperatura_C,fondo,5,2019.0,2025.0,9.555950000000001,0.10117249999999994,0.6381243639690714,0.08309374423413897,False
+14,Moraleda,temperatura_C,fondo,6,2019.0,2025.0,9.298033333333334,0.07938142857142837,0.5373660780496815,0.10193383039778155,False
+15,Moraleda,temperatura_C,fondo,5,2019.0,2025.0,9.373520000000001,0.03776666666666683,0.8679759670424053,0.010790754794160714,False
+16,Moraleda,temperatura_C,fondo,6,2019.0,2025.0,9.558275,-0.0025885714285714357,0.9874063695525057,7.04919917519261e-05,False
+17,Puyuhuapi,temperatura_C,fondo,6,2019.0,2025.0,8.633983333333333,0.02176000000000006,0.7799107204685428,0.02184556795091779,False
+18,Puyuhuapi,temperatura_C,fondo,6,2019.0,2025.0,8.831333333333335,-0.01973428571428583,0.7273810943834428,0.03378840371214696,False
+19,Puyuhuapi,temperatura_C,fondo,6,2019.0,2025.0,8.817875,-0.02192571428571422,0.715476396910672,0.036880626933666456,False
+2,Estuario,temperatura_C,fondo,7,2019.0,2025.0,11.236257142857143,-0.07064642857142868,0.06306632050987053,0.5314143085677249,False
+20,Puyuhuapi,temperatura_C,fondo,5,2019.0,2025.0,8.88751,0.04624298245614037,0.630923706163599,0.08653685574239615,False
+21,Aysen,temperatura_C,fondo,5,2019.0,2024.0,9.71345,-0.0362499999999999,0.797814067898498,0.02543228559519907,False
+22,Aysen,temperatura_C,fondo,6,2019.0,2025.0,9.984475000000002,-0.07049999999999992,0.5680953047527628,0.08799362279643816,False
+23,Aysen,temperatura_C,fondo,6,2019.0,2025.0,10.2337,-0.18136285714285721,0.3159584938914523,0.24694145761722894,False
+24,Aysen,temperatura_C,fondo,6,2019.0,2025.0,10.653333333333334,-0.115867142857143,0.024474403673565865,0.7558390589980295,True
+25,Aysen,temperatura_C,fondo,6,2019.0,2025.0,10.173166666666667,-0.14588714285714288,0.3887458067424818,0.18916107629803833,False
+26,Aysen,temperatura_C,fondo,6,2019.0,2025.0,10.159533333333332,-0.14189857142857135,0.4198980300472784,0.1678126583142196,False
+27,Aysen,temperatura_C,fondo,6,2019.0,2025.0,10.151133333333334,-0.12535571428571424,0.4924349705168182,0.12464046559391694,False
+28,Aysen,temperatura_C,fondo,6,2019.0,2025.0,10.106416666666666,-0.13520285714285696,0.4983688943105343,0.12147560792952215,False
+29,Aysen,temperatura_C,fondo,6,2019.0,2025.0,10.4003,-0.13971857142857141,0.15948360524511726,0.4267718740756864,False
+3,Reloncavi,temperatura_C,fondo,7,2019.0,2025.0,11.210228571428571,-0.0015357142857141959,0.9789391206909286,0.00015392959973726825,False
+30,Aysen,temperatura_C,fondo,6,2019.0,2025.0,9.362266666666665,-0.17237714285714284,0.5105789692468592,0.11512546163970584,False
+31,Aysen,temperatura_C,fondo,6,2019.0,2025.0,6.232233333333333,-0.0692342857142858,0.7295841143524224,0.033232058050964325,False
+32,Aysen,temperatura_C,fondo,5,2021.0,2025.0,10.27291,-0.14045000000000005,0.4695469701025205,0.18514989960625255,False
+4,Reloncavi,temperatura_C,fondo,6,2019.0,2025.0,11.226508333333333,-0.02869571428571437,0.5796902465628418,0.08305026786400643,False
+5,Reloncavi,temperatura_C,fondo,6,2019.0,2025.0,11.049558333333332,-0.015611428571428615,0.8331082370934213,0.012482711736185058,False
+6,Reloncavi,temperatura_C,fondo,6,2019.0,2025.0,10.974649999999999,-0.0498728571428572,0.6466325554232175,0.0576949316632327,False
+7,Ayacara,temperatura_C,fondo,7,2019.0,2025.0,10.71567142857143,-0.0869107142857143,0.3401263899793978,0.18179350686710227,False
+8,Butachauques,temperatura_C,fondo,5,2019.0,2025.0,10.605900000000002,-0.12686403508771923,0.3371195404781985,0.3022007235466219,False
+9,Ayacara,temperatura_C,fondo,7,2019.0,2025.0,10.649642857142856,-0.10426071428571433,0.20752101118405814,0.29518524459465967,False
+A01,Guaitecas,temperatura_C,fondo,2,2024.0,2025.0,10.817375,,,,False
+A02,Guaitecas,temperatura_C,fondo,2,2024.0,2025.0,10.956403439153439,,,,False
+A02N1,Guaitecas,temperatura_C,fondo,2,2024.0,2025.0,11.257265625,,,,False
+A03,Guaitecas,temperatura_C,fondo,2,2024.0,2025.0,10.674968750000001,,,,False
+A03N1,Guaitecas,temperatura_C,fondo,2,2024.0,2025.0,10.5288125,,,,False
+A04,Guaitecas,temperatura_C,fondo,2,2024.0,2025.0,10.740972222222222,,,,False
+A04N1,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.604534444444443,,,,False
+A05,Guaitecas,temperatura_C,fondo,2,2024.0,2025.0,10.805566666666667,,,,False
+A05N1,Guaitecas,temperatura_C,fondo,2,2024.0,2025.0,10.84275,,,,False
+A05N2,Guaitecas,temperatura_C,fondo,2,2024.0,2025.0,11.03221875,,,,False
+A06,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.84185027100271,,,,False
+A07,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,11.084806451612906,,,,False
+A08,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,11.144968253968255,,,,False
+A08N1,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,11.125884259259259,,,,False
+A08N2,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.947881944444443,,,,False
+A08N3,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.878936965811967,,,,False
+A09,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.7150625,,,,False
+A10,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.7318125,,,,False
+A11,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.511375000000001,,,,False
+A11N1,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.5449,,,,False
+A12,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.309843749999999,,,,False
+A13,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.296578125,,,,False
+A14,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.291656249999999,,,,False
+A15,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.21784375,,,,False
+A16,Puyuhuapi,temperatura_C,fondo,2,2024.0,2025.0,10.0295625,,,,False
+A16N1,Puyuhuapi,temperatura_C,fondo,2,2024.0,2025.0,10.02928125,,,,False
+A17,Puyuhuapi,temperatura_C,fondo,2,2024.0,2025.0,10.1306875,,,,False
+A18,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.044218749999999,,,,False
+A18N1,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.21578125,,,,False
+A18N2,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,9.9103125,,,,False
+A18N3,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,9.9426875,,,,False
+A18N4,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.44803125,,,,False
+A19,Puyuhuapi,temperatura_C,fondo,2,2024.0,2025.0,9.9998125,,,,False
+A19N1,Puyuhuapi,temperatura_C,fondo,2,2024.0,2025.0,10.228828125,,,,False
+A19N2,Puyuhuapi,temperatura_C,fondo,2,2024.0,2025.0,10.0228125,,,,False
+A20,Puyuhuapi,temperatura_C,fondo,2,2024.0,2025.0,9.9468125,,,,False
+A20N1,Puyuhuapi,temperatura_C,fondo,2,2024.0,2025.0,9.96165625,,,,False
+A21,Puyuhuapi,temperatura_C,fondo,2,2024.0,2025.0,10.009625,,,,False
+A22,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.014125,,,,False
+A23,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.087625,,,,False
+A24,Aysen,temperatura_C,fondo,2,2024.0,2025.0,10.45342857142857,,,,False
+A25,Aysen,temperatura_C,fondo,2,2024.0,2025.0,10.600437499999998,,,,False
+A26,Aysen,temperatura_C,fondo,2,2024.0,2025.0,11.29059375,,,,False
+A27,Aysen,temperatura_C,fondo,2,2024.0,2025.0,10.5431875,,,,False
+A28,Aysen,temperatura_C,fondo,2,2024.0,2025.0,10.74715625,,,,False
+A29,Aysen,temperatura_C,fondo,2,2024.0,2025.0,10.747250000000001,,,,False
+A30,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.086354166666666,,,,False
+A30N1,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.116583333333331,,,,False
+A32,Aysen,temperatura_C,fondo,2,2024.0,2025.0,10.0591875,,,,False
+A32N1,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.0584375,,,,False
+A33,Guaitecas,temperatura_C,fondo,2,2024.0,2025.0,10.7053125,,,,False
+A34,Guaitecas,temperatura_C,fondo,2,2024.0,2025.0,10.598433333333332,,,,False
+A35,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.68040625,,,,False
+A35N1,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.2483125,,,,False
+A35N2,Guaitecas,temperatura_C,fondo,2,2024.0,2025.0,10.481578124999999,,,,False
+A35N3,Guaitecas,temperatura_C,fondo,2,2024.0,2025.0,10.774285714285714,,,,False
+A36,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.457593750000001,,,,False
+A37,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.7305,,,,False
+A38N1,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.875142857142857,,,,False
+A38N2,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,11.3141875,,,,False
+A38N3,Guaitecas,temperatura_C,fondo,2,2024.0,2025.0,11.41478125,,,,False
+A38N4,Guaitecas,temperatura_C,fondo,2,2024.0,2025.0,11.2490625,,,,False
+A39,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.506,,,,False
+A40,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.237749999999998,,,,False
+A41,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,10.544,,,,False
+A41N1,Moraleda,temperatura_C,fondo,2,2024.0,2025.0,11.11675,,,,False
+A42,Aysen,temperatura_C,fondo,2,2024.0,2025.0,10.846145833333333,,,,False
+A43,Aysen,temperatura_C,fondo,2,2024.0,2025.0,9.95752380952381,,,,False
+A44,Aysen,temperatura_C,fondo,2,2024.0,2025.0,11.178916666666666,,,,False
+A45,Aysen,temperatura_C,fondo,2,2024.0,2025.0,10.651625,,,,False
+A47,Aysen,temperatura_C,fondo,2,2024.0,2025.0,11.07015625,,,,False
+A48,Aysen,temperatura_C,fondo,2,2024.0,2025.0,11.027375,,,,False
+A48N1,Aysen,temperatura_C,fondo,2,2024.0,2025.0,11.212625,,,,False
+A49,Aysen,temperatura_C,fondo,2,2024.0,2025.0,11.06996875,,,,False
+A49N1,Aysen,temperatura_C,fondo,2,2024.0,2025.0,11.276375,,,,False
+A50,Aysen,temperatura_C,fondo,2,2024.0,2025.0,10.7128125,,,,False
+A50N1,Aysen,temperatura_C,fondo,2,2024.0,2025.0,10.7225,,,,False
+A51,Aysen,temperatura_C,fondo,2,2024.0,2025.0,11.169562500000001,,,,False
+A51N1,Aysen,temperatura_C,fondo,2,2024.0,2025.0,11.123321428571428,,,,False
+A52,Aysen,temperatura_C,fondo,2,2024.0,2025.0,10.74040625,,,,False
+A53,Aysen,temperatura_C,fondo,2,2024.0,2025.0,11.3215,,,,False
+A54,Aysen,temperatura_C,fondo,2,2024.0,2025.0,10.954885416666666,,,,False
+A55,Aysen,temperatura_C,fondo,2,2024.0,2025.0,9.817940035985984,,,,False
+A57,Aysen,temperatura_C,fondo,2,2024.0,2025.0,9.957169602453895,,,,False
+A59,Aysen,temperatura_C,fondo,2,2024.0,2025.0,10.262470254121476,,,,False
+A60,Aysen,temperatura_C,fondo,2,2024.0,2025.0,9.498380689510368,,,,False
+A62,Aysen,temperatura_C,fondo,2,2024.0,2025.0,10.358441909294838,,,,False
+L01,Reloncavi,temperatura_C,fondo,2,2024.0,2025.0,11.4575089017991,,,,False
+L02,Estuario,temperatura_C,fondo,2,2024.0,2025.0,11.045089285714287,,,,False
+L02N1,Estuario,temperatura_C,fondo,2,2024.0,2025.0,11.199659455128204,,,,False
+L02N2,Estuario,temperatura_C,fondo,2,2024.0,2025.0,11.260188187248291,,,,False
+L02N3,Estuario,temperatura_C,fondo,2,2024.0,2025.0,11.129149725274726,,,,False
+L02N4,Estuario,temperatura_C,fondo,2,2024.0,2025.0,11.243083400974026,,,,False
+L03,Reloncavi,temperatura_C,fondo,2,2024.0,2025.0,11.634883771929825,,,,False
+L03N1,Estuario,temperatura_C,fondo,2,2024.0,2025.0,11.061999007936507,,,,False
+L04,Calbuco,temperatura_C,fondo,2,2024.0,2025.0,11.509991758241757,,,,False
+L04N2,Reloncavi,temperatura_C,fondo,2,2024.0,2025.0,11.39512271062271,,,,False
+L04N3,Chacao,temperatura_C,fondo,2,2024.0,2025.0,11.637703349282297,,,,False
+L04N4,Calbuco,temperatura_C,fondo,2,2024.0,2025.0,11.796128472222223,,,,False
+L05,Ancud,temperatura_C,fondo,2,2024.0,2025.0,12.613945209826761,,,,False
+L06,Chacao,temperatura_C,fondo,2,2024.0,2025.0,11.37216282894737,,,,False
+L06N1,Reloncavi,temperatura_C,fondo,2,2024.0,2025.0,11.714790307971015,,,,False
+L06N2,Reloncavi,temperatura_C,fondo,2,2024.0,2025.0,11.725995583717358,,,,False
+L06N3,Hornopiren,temperatura_C,fondo,2,2024.0,2025.0,11.466855381016044,,,,False
+L06N4,Hornopiren,temperatura_C,fondo,2,2024.0,2025.0,11.378260641234991,,,,False
+L07,Butachauques,temperatura_C,fondo,2,2024.0,2025.0,11.262370993589743,,,,False
+L08,Butachauques,temperatura_C,fondo,2,2024.0,2025.0,11.424229797979798,,,,False
+L09,Butachauques,temperatura_C,fondo,2,2024.0,2025.0,11.510123511904762,,,,False
+L09N1,Hornopiren,temperatura_C,fondo,2,2024.0,2025.0,11.268236607142859,,,,False
+L10,Ayacara,temperatura_C,fondo,2,2024.0,2025.0,11.193887152777776,,,,False
+L10N2,Desertores,temperatura_C,fondo,2,2024.0,2025.0,11.514805059523809,,,,False
+L10N3,Ayacara,temperatura_C,fondo,2,2024.0,2025.0,11.941642113095238,,,,False
+L11,Tenaun,temperatura_C,fondo,2,2024.0,2025.0,11.136720238095238,,,,False
+L12,Chiloe central,temperatura_C,fondo,2,2024.0,2025.0,11.284484375,,,,False
+L13,Chaulinec,temperatura_C,fondo,2,2024.0,2025.0,11.286535714285714,,,,False
+L13N1,Chaulinec,temperatura_C,fondo,2,2024.0,2025.0,11.175522569444444,,,,False
+L14,Desertores,temperatura_C,fondo,2,2024.0,2025.0,11.416200367647058,,,,False
+L16,Quellon,temperatura_C,fondo,3,2023.0,2025.0,10.174166666666666,0.7850000000000001,0.0711063521135585,0.9875763332654446,False
+L16N1,Quellon,temperatura_C,fondo,3,2023.0,2025.0,10.53451388888889,1.0312500000000009,0.017890274092661137,0.9992104867628246,True
+L17,Chaiten,temperatura_C,fondo,3,2023.0,2025.0,10.5826,0.9949999999999992,0.15468945536300144,0.9421108619898776,False
+L17N1,Chaiten,temperatura_C,fondo,3,2023.0,2025.0,10.566107407407408,0.966111111111112,0.18833749003515257,0.9150025008093391,False
+L17N2,Chaiten,temperatura_C,fondo,3,2023.0,2025.0,10.34314367816092,0.8462500000000013,0.1448255609493071,0.9491342673987869,False
+L18,Quellon,temperatura_C,fondo,2,2024.0,2025.0,11.027270833333333,,,,False
+L18N2,Quellon,temperatura_C,fondo,2,2024.0,2025.0,11.159627777777779,,,,False
+L19,Quellon,temperatura_C,fondo,2,2024.0,2025.0,10.696678418803419,,,,False
+L19N1,Quellon,temperatura_C,fondo,3,2023.0,2025.0,10.555177777777779,1.169666666666667,0.05125624052432263,0.9935316333221562,False
+L19N2,Quellon,temperatura_C,fondo,2,2024.0,2025.0,10.722763888888888,,,,False
+L19N3,Quellon,temperatura_C,fondo,2,2024.0,2025.0,10.90193287037037,,,,False
+L19N4,Chaiten,temperatura_C,fondo,2,2024.0,2025.0,10.759762301587301,,,,False
+L20,Quellon,temperatura_C,fondo,2,2024.0,2025.0,10.641841666666668,,,,False
+L20N1,Quellon,temperatura_C,fondo,2,2024.0,2025.0,10.519971428571429,,,,False
+L22,Quellon,temperatura_C,fondo,2,2024.0,2025.0,10.720491666666668,,,,False
+L22N1,Quellon,temperatura_C,fondo,3,2023.0,2025.0,10.136087962962963,0.4190277777777771,0.31809810188023147,0.7704310252761751,False
+L22N2,Quellon,temperatura_C,fondo,3,2023.0,2025.0,10.609660714285715,1.1434285714285712,0.09297223897746314,0.9788233812190711,False
+L22N3,Quellon,temperatura_C,fondo,3,2023.0,2025.0,10.7117,1.1150000000000002,0.06239872279426559,0.9904236514912654,False
+L23,Quellon,temperatura_C,fondo,2,2024.0,2025.0,10.476566666666667,,,,False
+L23N1,Quellon,temperatura_C,fondo,3,2023.0,2025.0,10.200305555555554,0.6391666666666662,0.23255743753777483,0.8723868272197549,False
+L23N2,Quellon,temperatura_C,fondo,3,2023.0,2025.0,10.188407407407409,0.6911111111111108,0.15226343513611115,0.9438778968509334,False
+L24,Quellon,temperatura_C,fondo,2,2024.0,2025.0,11.180441666666667,,,,False
+L24N1,Quellon,temperatura_C,fondo,3,2023.0,2025.0,10.636861111111111,0.8925,0.01773814332599189,0.9992238535368018,True
+L25,Chaiten,temperatura_C,fondo,3,2023.0,2025.0,10.439444444444446,0.9770833333333337,0.12002980528022661,0.9648710060417484,False
+M01N,Natales,temperatura_C,fondo,2,2024.0,2025.0,8.619388095238095,,,,False
+M02N,Natales,temperatura_C,fondo,2,2024.0,2025.0,8.563783333333333,,,,False
+M03N,Natales,temperatura_C,fondo,2,2024.0,2025.0,8.782037500000001,,,,False
+M04,Aysen,temperatura_C,fondo,2,2024.0,2025.0,8.571721875,,,,False
+M05,Aysen,temperatura_C,fondo,2,2024.0,2025.0,9.558396428571427,,,,False
+M06,Natales,temperatura_C,fondo,2,2024.0,2025.0,8.754210416666666,,,,False
+M06N,Natales,temperatura_C,fondo,2,2024.0,2025.0,8.906844791666668,,,,False
+M06N1,Natales,temperatura_C,fondo,2,2024.0,2025.0,8.57859761904762,,,,False
+M06N2,Natales,temperatura_C,fondo,2,2024.0,2025.0,9.054605,,,,False
+M06N3,Natales,temperatura_C,fondo,2,2024.0,2025.0,8.636888095238096,,,,False
+M06N4,Natales,temperatura_C,fondo,2,2024.0,2025.0,8.562825,,,,False
+M07,Natales,temperatura_C,fondo,2,2024.0,2025.0,8.663065625,,,,False
+M07N,Natales,temperatura_C,fondo,2,2024.0,2025.0,8.719193749999999,,,,False
+M07N1,Natales,temperatura_C,fondo,2,2024.0,2025.0,8.645433333333333,,,,False
+M07N2,Natales,temperatura_C,fondo,2,2024.0,2025.0,8.565164285714285,,,,False
+M07N3,Natales,temperatura_C,fondo,2,2024.0,2025.0,8.593321428571429,,,,False
+M07N4,Natales,temperatura_C,fondo,2,2024.0,2025.0,8.62458125,,,,False
+M07N5,Natales,temperatura_C,fondo,2,2024.0,2025.0,8.7174875,,,,False
+M08,Natales,temperatura_C,fondo,2,2024.0,2025.0,9.018614285714285,,,,False
+M08N1,Natales,temperatura_C,fondo,2,2024.0,2025.0,8.28505,,,,False
+M09,Natales,temperatura_C,fondo,2,2024.0,2025.0,9.570915625,,,,False
+M09N1,Natales,temperatura_C,fondo,1,2024.0,2024.0,7.39,,,,False
+M09N2,Natales,temperatura_C,fondo,1,2024.0,2024.0,7.6464,,,,False
+M10,Natales,temperatura_C,fondo,2,2024.0,2025.0,9.648478571428573,,,,False
+M11,Natales,temperatura_C,fondo,2,2024.0,2025.0,10.409428125,,,,False
+M12,Natales,temperatura_C,fondo,2,2024.0,2025.0,8.81825357142857,,,,False
+M13,Natales,temperatura_C,fondo,2,2024.0,2025.0,8.931564285714286,,,,False
+M13N1,Natales,temperatura_C,fondo,2,2024.0,2025.0,6.8183,,,,False
+M13N2,Natales,temperatura_C,fondo,2,2024.0,2025.0,6.98795,,,,False
+M14,Natales,temperatura_C,fondo,2,2024.0,2025.0,8.820221875,,,,False
+M15,Natales,temperatura_C,fondo,2,2024.0,2025.0,9.025805555555555,,,,False
+M16,Natales,temperatura_C,fondo,2,2024.0,2025.0,8.878830357142858,,,,False
+M16N1,Natales,temperatura_C,fondo,2,2024.0,2025.0,9.097407142857143,,,,False
+M17,Natales,temperatura_C,fondo,2,2024.0,2025.0,8.716953571428572,,,,False
+M18,Natales,temperatura_C,fondo,2,2024.0,2025.0,8.56599375,,,,False
+M20,Natales,temperatura_C,fondo,2,2024.0,2025.0,8.735886904761905,,,,False
+M21,Natales,temperatura_C,fondo,2,2024.0,2025.0,8.758849999999999,,,,False
+M22,Natales,temperatura_C,fondo,2,2024.0,2025.0,8.812809375,,,,False
+M23,Natales,temperatura_C,fondo,2,2024.0,2025.0,7.64655625,,,,False
+M24,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.883595833333333,,,,False
+M24N,Natales,temperatura_C,fondo,2,2024.0,2025.0,9.487984375,,,,False
+M24N1,Natales,temperatura_C,fondo,2,2024.0,2025.0,8.6311625,,,,False
+M24N2,Natales,temperatura_C,fondo,2,2024.0,2025.0,9.06993125,,,,False
+M24N3,Natales,temperatura_C,fondo,2,2024.0,2025.0,9.471496875,,,,False
+M25,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.932758593750001,,,,False
+M25N,Natales,temperatura_C,fondo,2,2024.0,2025.0,9.08813125,,,,False
+M26,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.990092424242423,,,,False
+M27,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.977989285714285,,,,False
+M29,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,8.023239583333334,,,,False
+M29N1,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.929185416666666,,,,False
+M30,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,8.15608962585034,,,,False
+M31,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,8.033458333333332,,,,False
+M32,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,8.222874285714285,,,,False
+M33,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.657791666666666,,,,False
+M34,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,8.132236458333333,,,,False
+M34N1,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.881388095238096,,,,False
+M35,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.451270238095239,,,,False
+M36,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.785369047619048,,,,False
+M36N1,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.792886875,,,,False
+M36N2,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.909925,,,,False
+M37,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.865221354166667,,,,False
+M37N1,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.932504315476191,,,,False
+M37N2,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.939669583333334,,,,False
+M38,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.899230625,,,,False
+M38N1,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.870510416666667,,,,False
+M39,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.989231785714285,,,,False
+M39C1,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.9785241071428565,,,,False
+M39C3,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.908438095238094,,,,False
+M39D1,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.997614583333333,,,,False
+M39D2,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.963347142857144,,,,False
+M39N1,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.891895833333334,,,,False
+M39N2,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.957960714285715,,,,False
+M39N3,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.925528472222222,,,,False
+M39N4,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.966096875,,,,False
+M39N5,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.9613458333333345,,,,False
+M40,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,6.9533764285714295,,,,False
+M40N1,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.1618208333333335,,,,False
+M41,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.035747916666667,,,,False
+M42,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.732127083333333,,,,False
+M43,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.537601041666667,,,,False
+M44,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.592534920634922,,,,False
+M44N1,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.9951875,,,,False
+M45,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,7.695580833333333,,,,False
+M46,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,8.07917142857143,,,,False
+M46N1,Pta. Arenas,temperatura_C,fondo,2,2024.0,2025.0,8.017938541666666,,,,False
+1,Estuario,temperatura_C,10 m,4,2019.0,2025.0,11.586275,-0.16407500000000014,0.5703968783811872,0.18455884210462842,False
+10,Chaulinec,temperatura_C,10 m,7,2019.0,2025.0,10.897257142857143,-0.11393571428571418,0.047982663816844844,0.5756911193418877,True
+11,Desertores,temperatura_C,10 m,5,2019.0,2024.0,10.71908,-0.15454999999999983,0.08904629857662326,0.672648811153874,False
+12,Chaiten,temperatura_C,10 m,5,2019.0,2025.0,11.02098,-0.012705000000000057,0.9305046998258809,0.0029821029842337764,False
+13,Chaiten,temperatura_C,10 m,6,2019.0,2025.0,10.697883333333332,-0.11448285714285711,0.44889870058989395,0.14951522163959854,False
+14,Moraleda,temperatura_C,10 m,6,2019.0,2025.0,10.718275,-0.16368428571428556,0.5149056745395815,0.11292673447745714,False
+15,Moraleda,temperatura_C,10 m,6,2019.0,2025.0,10.663316666666665,-0.22438428571428554,0.43899345507558934,0.15560197714635504,False
+16,Moraleda,temperatura_C,10 m,6,2019.0,2025.0,10.439991666666668,-0.1489899999999998,0.6310051339661598,0.06314449278042002,False
+17,Puyuhuapi,temperatura_C,10 m,6,2019.0,2025.0,10.61405,-0.21375,0.5336249999859425,0.10371663440993853,False
+18,Puyuhuapi,temperatura_C,10 m,5,2019.0,2025.0,10.059839999999998,-0.05733584905660397,0.7073914620390438,0.053782287586730544,False
+19,Puyuhuapi,temperatura_C,10 m,6,2019.0,2025.0,10.570933333333334,-0.23126428571428584,0.4831299776486971,0.12970923336205054,False
+2,Estuario,temperatura_C,10 m,3,2019.0,2025.0,11.082633333333334,-0.09497741935483849,0.22995549190869913,0.875101765541859,False
+20,Puyuhuapi,temperatura_C,10 m,5,2019.0,2025.0,10.33032,-0.13986491228070191,0.68816103933117,0.06124006007976441,False
+21,Aysen,temperatura_C,10 m,4,2019.0,2024.0,10.3779375,-0.17183813559322056,0.6176470086699789,0.14619380997901515,False
+22,Aysen,temperatura_C,10 m,6,2019.0,2025.0,10.235883333333334,-0.15493142857142853,0.5026775841894073,0.11921005116684236,False
+23,Aysen,temperatura_C,10 m,5,2019.0,2025.0,9.933940000000002,-0.08872264150943376,0.6539315489132631,0.07580135791578418,False
+24,Aysen,temperatura_C,10 m,5,2019.0,2025.0,10.332580000000002,-0.1478349999999998,0.5967994235844747,0.10390676131996576,False
+25,Aysen,temperatura_C,10 m,6,2019.0,2025.0,10.09755,-0.13746428571428576,0.6264768736560248,0.06477574368052227,False
+26,Aysen,temperatura_C,10 m,5,2019.0,2025.0,9.773079999999998,-0.04815283018867923,0.8126770456199675,0.021803910529001887,False
+27,Aysen,temperatura_C,10 m,6,2019.0,2025.0,10.144541666666667,-0.13221571428571433,0.5282668378158392,0.10630331106497998,False
+28,Aysen,temperatura_C,10 m,4,2019.0,2024.0,9.8616125,-0.22914807692307682,0.5820983303608855,0.17464180548715952,False
+29,Aysen,temperatura_C,10 m,6,2019.0,2025.0,9.724116666666665,-0.2023599999999999,0.44128372697101215,0.1541798952764451,False
+3,Reloncavi,temperatura_C,10 m,6,2019.0,2025.0,11.373333333333333,-0.2626,0.142603691615926,0.45343279238642925,False
+30,Aysen,temperatura_C,10 m,4,2019.0,2025.0,9.126149999999999,-0.22640799999999994,0.615958534204701,0.14748784745020174,False
+31,Aysen,temperatura_C,10 m,6,2019.0,2025.0,5.82295,-0.0486557142857143,0.8270688089659854,0.013410830854662645,False
+32,Aysen,temperatura_C,10 m,3,2021.0,2025.0,11.018233333333333,-0.6102499999999997,0.018184464371666376,0.9991843146490232,True
+4,Reloncavi,temperatura_C,10 m,5,2019.0,2025.0,11.18698,-0.12076132075471703,0.19389885664473988,0.4811812676745555,False
+5,Reloncavi,temperatura_C,10 m,5,2019.0,2025.0,11.35088,-0.2011448275862068,0.306705571693375,0.3348492011804785,False
+6,Reloncavi,temperatura_C,10 m,4,2019.0,2025.0,11.571375,-0.15390499999999988,0.4807581548934366,0.26961209370966843,False
+7,Ayacara,temperatura_C,10 m,2,2019.0,2024.0,11.31715,,,,False
+8,Butachauques,temperatura_C,10 m,4,2019.0,2024.0,10.939575,-0.1586186440677968,0.18493678623089446,0.6643280424396226,False
+9,Ayacara,temperatura_C,10 m,6,2019.0,2025.0,10.921883333333334,-0.14434596273291928,0.08988707962076764,0.5535989135994421,False
+A01,Guaitecas,temperatura_C,10 m,2,2024.0,2025.0,11.66938888888889,,,,False
+A02,Guaitecas,temperatura_C,10 m,2,2024.0,2025.0,11.183333333333332,,,,False
+A02N1,Guaitecas,temperatura_C,10 m,2,2024.0,2025.0,11.581687500000001,,,,False
+A03,Guaitecas,temperatura_C,10 m,2,2024.0,2025.0,10.802660714285715,,,,False
+A03N1,Guaitecas,temperatura_C,10 m,2,2024.0,2025.0,10.608083333333333,,,,False
+A04,Guaitecas,temperatura_C,10 m,2,2024.0,2025.0,11.269833333333334,,,,False
+A04N1,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.285219658119658,,,,False
+A05,Guaitecas,temperatura_C,10 m,2,2024.0,2025.0,11.012854061447811,,,,False
+A05N1,Guaitecas,temperatura_C,10 m,2,2024.0,2025.0,11.141593750000002,,,,False
+A05N2,Guaitecas,temperatura_C,10 m,2,2024.0,2025.0,11.282125,,,,False
+A06,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.329675925925926,,,,False
+A07,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.251981481481481,,,,False
+A08,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.300631944444444,,,,False
+A08N1,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.078073232323234,,,,False
+A08N2,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.23725,,,,False
+A08N3,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.219127777777778,,,,False
+A09,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.2688125,,,,False
+A10,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.928,,,,False
+A11,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.650749999999999,,,,False
+A11N1,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.09621111111111,,,,False
+A12,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.481928571428572,,,,False
+A13,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.312178571428571,,,,False
+A14,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.745875,,,,False
+A15,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.6155,,,,False
+A16,Puyuhuapi,temperatura_C,10 m,1,2024.0,2024.0,10.2122,,,,False
+A16N1,Puyuhuapi,temperatura_C,10 m,2,2024.0,2025.0,11.627678571428572,,,,False
+A17,Puyuhuapi,temperatura_C,10 m,2,2024.0,2025.0,11.4513,,,,False
+A18,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,12.3005625,,,,False
+A18N1,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.697,,,,False
+A18N2,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,12.846357142857142,,,,False
+A18N3,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,12.730428571428572,,,,False
+A18N4,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.4725,,,,False
+A19,Puyuhuapi,temperatura_C,10 m,2,2024.0,2025.0,12.2929,,,,False
+A19N1,Puyuhuapi,temperatura_C,10 m,2,2024.0,2025.0,11.843607142857142,,,,False
+A19N2,Puyuhuapi,temperatura_C,10 m,2,2024.0,2025.0,11.673714285714286,,,,False
+A20,Puyuhuapi,temperatura_C,10 m,2,2024.0,2025.0,12.919,,,,False
+A20N1,Puyuhuapi,temperatura_C,10 m,2,2024.0,2025.0,12.597785714285715,,,,False
+A21,Puyuhuapi,temperatura_C,10 m,2,2024.0,2025.0,12.217214285714284,,,,False
+A22,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.759812499999999,,,,False
+A23,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.552815476190474,,,,False
+A24,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.220559523809525,,,,False
+A25,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.060535714285715,,,,False
+A26,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.406479166666667,,,,False
+A27,Aysen,temperatura_C,10 m,2,2024.0,2025.0,10.902354166666667,,,,False
+A28,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.113156250000001,,,,False
+A29,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.02295238095238,,,,False
+A30,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.615660714285713,,,,False
+A30N1,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.525349702380952,,,,False
+A32,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.719645833333335,,,,False
+A32N1,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,12.029652777777779,,,,False
+A33,Guaitecas,temperatura_C,10 m,2,2024.0,2025.0,11.064142857142858,,,,False
+A34,Guaitecas,temperatura_C,10 m,2,2024.0,2025.0,10.806020833333333,,,,False
+A35,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.2122,,,,False
+A35N1,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.72375,,,,False
+A35N2,Guaitecas,temperatura_C,10 m,2,2024.0,2025.0,10.846166666666667,,,,False
+A35N3,Guaitecas,temperatura_C,10 m,2,2024.0,2025.0,11.01184375,,,,False
+A36,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.13942857142857,,,,False
+A37,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.103357142857142,,,,False
+A38N1,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,10.968208333333333,,,,False
+A38N2,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.50657142857143,,,,False
+A38N3,Guaitecas,temperatura_C,10 m,2,2024.0,2025.0,11.876750000000001,,,,False
+A38N4,Guaitecas,temperatura_C,10 m,2,2024.0,2025.0,11.6229375,,,,False
+A39,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.348312499999999,,,,False
+A40,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.60925,,,,False
+A41,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.0529375,,,,False
+A41N1,Moraleda,temperatura_C,10 m,2,2024.0,2025.0,11.50103125,,,,False
+A42,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.189745535714284,,,,False
+A43,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.034407738095238,,,,False
+A44,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.407250000000001,,,,False
+A45,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.08579761904762,,,,False
+A47,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.419526785714286,,,,False
+A48,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.479494047619049,,,,False
+A48N1,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.50605505952381,,,,False
+A49,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.381357142857143,,,,False
+A49N1,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.577823593073592,,,,False
+A50,Aysen,temperatura_C,10 m,2,2024.0,2025.0,10.877785714285714,,,,False
+A50N1,Aysen,temperatura_C,10 m,2,2024.0,2025.0,10.985607142857145,,,,False
+A51,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.657767857142858,,,,False
+A51N1,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.529589285714286,,,,False
+A52,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.01342857142857,,,,False
+A53,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.321821428571429,,,,False
+A54,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.092607142857142,,,,False
+A55,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.429340986394557,,,,False
+A57,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.218060547634867,,,,False
+A59,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.455438787693453,,,,False
+A60,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.676796165807659,,,,False
+A62,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.729199999999999,,,,False
+L01,Reloncavi,temperatura_C,10 m,2,2024.0,2025.0,12.266553604977112,,,,False
+L02,Estuario,temperatura_C,10 m,2,2024.0,2025.0,13.018792601495727,,,,False
+L02N1,Estuario,temperatura_C,10 m,2,2024.0,2025.0,13.575766865079364,,,,False
+L02N2,Estuario,temperatura_C,10 m,2,2024.0,2025.0,12.400708581349207,,,,False
+L02N3,Estuario,temperatura_C,10 m,2,2024.0,2025.0,13.194592596998309,,,,False
+L02N4,Estuario,temperatura_C,10 m,2,2024.0,2025.0,12.578548385642137,,,,False
+L03,Reloncavi,temperatura_C,10 m,2,2024.0,2025.0,12.828461174242426,,,,False
+L03N1,Estuario,temperatura_C,10 m,2,2024.0,2025.0,12.884652777777777,,,,False
+L04,Calbuco,temperatura_C,10 m,2,2024.0,2025.0,12.02876167929293,,,,False
+L04N2,Reloncavi,temperatura_C,10 m,2,2024.0,2025.0,12.233319470212328,,,,False
+L04N3,Chacao,temperatura_C,10 m,2,2024.0,2025.0,11.995886800699303,,,,False
+L04N4,Calbuco,temperatura_C,10 m,2,2024.0,2025.0,12.243577020202018,,,,False
+L05,Ancud,temperatura_C,10 m,2,2024.0,2025.0,12.281547397047397,,,,False
+L06,Chacao,temperatura_C,10 m,2,2024.0,2025.0,11.604219647954704,,,,False
+L06N1,Reloncavi,temperatura_C,10 m,2,2024.0,2025.0,12.803915103088336,,,,False
+L06N2,Reloncavi,temperatura_C,10 m,2,2024.0,2025.0,12.897935120435122,,,,False
+L06N3,Hornopiren,temperatura_C,10 m,2,2024.0,2025.0,13.457774980001883,,,,False
+L06N4,Hornopiren,temperatura_C,10 m,2,2024.0,2025.0,13.19134970238095,,,,False
+L07,Butachauques,temperatura_C,10 m,2,2024.0,2025.0,12.357271681525656,,,,False
+L08,Butachauques,temperatura_C,10 m,2,2024.0,2025.0,12.005347585913483,,,,False
+L09,Butachauques,temperatura_C,10 m,2,2024.0,2025.0,11.958520636721113,,,,False
+L09N1,Hornopiren,temperatura_C,10 m,2,2024.0,2025.0,12.183969561887256,,,,False
+L10,Ayacara,temperatura_C,10 m,2,2024.0,2025.0,12.204475671550671,,,,False
+L10N2,Desertores,temperatura_C,10 m,2,2024.0,2025.0,11.601858333333332,,,,False
+L10N3,Ayacara,temperatura_C,10 m,2,2024.0,2025.0,12.074024844051557,,,,False
+L11,Tenaun,temperatura_C,10 m,2,2024.0,2025.0,12.174781415343915,,,,False
+L12,Chiloe central,temperatura_C,10 m,2,2024.0,2025.0,11.417553685897435,,,,False
+L13,Chaulinec,temperatura_C,10 m,2,2024.0,2025.0,11.312880608974357,,,,False
+L13N1,Chaulinec,temperatura_C,10 m,2,2024.0,2025.0,11.35071130952381,,,,False
+L14,Desertores,temperatura_C,10 m,2,2024.0,2025.0,11.508838055319753,,,,False
+L16,Quellon,temperatura_C,10 m,3,2023.0,2025.0,10.238851851851853,0.8491111111111129,0.09485919974432953,0.9779614931087877,False
+L16N1,Quellon,temperatura_C,10 m,3,2023.0,2025.0,10.57423611111111,1.1191666666666666,0.027829227026957153,0.998090298935561,True
+L17,Chaiten,temperatura_C,10 m,3,2023.0,2025.0,10.797433333333332,1.2634999999999996,0.1589905139363201,0.9389150506832049,False
+L17N1,Chaiten,temperatura_C,10 m,3,2023.0,2025.0,10.733194444444443,1.2037500000000003,0.22028006104466882,0.8849760574726687,False
+L17N2,Chaiten,temperatura_C,10 m,3,2023.0,2025.0,10.550137777777778,1.131666666666666,0.16344362432814744,0.9355218329450418,False
+L18,Quellon,temperatura_C,10 m,2,2024.0,2025.0,11.349780934343435,,,,False
+L18N2,Quellon,temperatura_C,10 m,2,2024.0,2025.0,11.310900628306879,,,,False
+L19,Quellon,temperatura_C,10 m,2,2024.0,2025.0,10.834892857142858,,,,False
+L19N1,Quellon,temperatura_C,10 m,3,2023.0,2025.0,10.659834511784512,1.3212878787878797,0.0923580136713617,0.9791003061019602,False
+L19N2,Quellon,temperatura_C,10 m,2,2024.0,2025.0,10.797774154589373,,,,False
+L19N3,Quellon,temperatura_C,10 m,2,2024.0,2025.0,11.040777777777778,,,,False
+L19N4,Chaiten,temperatura_C,10 m,2,2024.0,2025.0,11.23682619047619,,,,False
+L20,Quellon,temperatura_C,10 m,2,2024.0,2025.0,10.8722316017316,,,,False
+L20N1,Quellon,temperatura_C,10 m,2,2024.0,2025.0,10.692597222222222,,,,False
+L22,Quellon,temperatura_C,10 m,2,2024.0,2025.0,11.05082638888889,,,,False
+L22N1,Quellon,temperatura_C,10 m,3,2023.0,2025.0,10.40664212962963,0.7009444444444455,0.14782681284198057,0.9470426248748705,False
+L22N2,Quellon,temperatura_C,10 m,3,2023.0,2025.0,10.70218888888889,1.2020833333333343,0.04340700973770719,0.9953582005181348,True
+L22N3,Quellon,temperatura_C,10 m,3,2023.0,2025.0,10.793864672364672,1.0980000000000008,0.0041528110720059274,0.9999574481994685,True
+L23,Quellon,temperatura_C,10 m,2,2024.0,2025.0,10.558432539682538,,,,False
+L23N1,Quellon,temperatura_C,10 m,3,2023.0,2025.0,10.23376388888889,0.6949166666666668,0.2121027607933359,0.8930444629848534,False
+L23N2,Quellon,temperatura_C,10 m,3,2023.0,2025.0,10.245583333333334,0.7491666666666665,0.13962763817662985,0.9526622568823844,False
+L24,Quellon,temperatura_C,10 m,2,2024.0,2025.0,11.1476,,,,False
+L24N1,Quellon,temperatura_C,10 m,3,2023.0,2025.0,10.720024782135077,0.9849999999999994,0.016760127449762206,0.9993070625249241,True
+L25,Chaiten,temperatura_C,10 m,3,2023.0,2025.0,10.669100529100527,1.2610119047619044,0.13931185752194214,0.9528727069865666,False
+M01N,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.1582625,,,,False
+M02N,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.315548611111112,,,,False
+M03N,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.208208854166667,,,,False
+M04,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.253811904761903,,,,False
+M05,Aysen,temperatura_C,10 m,2,2024.0,2025.0,11.336589285714286,,,,False
+M06,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.163643229166667,,,,False
+M06N,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.212794062499999,,,,False
+M06N1,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.2391,,,,False
+M06N2,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.234568833333334,,,,False
+M06N3,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.193849404761906,,,,False
+M06N4,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.342544444444446,,,,False
+M07,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.355446874999998,,,,False
+M07N,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.376469791666667,,,,False
+M07N1,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.269419047619047,,,,False
+M07N2,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.245171428571428,,,,False
+M07N3,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.14073773809524,,,,False
+M07N4,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.384018125,,,,False
+M07N5,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.36545,,,,False
+M08,Natales,temperatura_C,10 m,2,2024.0,2025.0,8.388845833333333,,,,False
+M08N1,Natales,temperatura_C,10 m,2,2024.0,2025.0,6.626149999999999,,,,False
+M09,Natales,temperatura_C,10 m,2,2024.0,2025.0,8.819498958333334,,,,False
+M09N1,Natales,temperatura_C,10 m,1,2024.0,2024.0,5.7713,,,,False
+M09N2,Natales,temperatura_C,10 m,1,2024.0,2024.0,10.1151,,,,False
+M10,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.070422916666665,,,,False
+M11,Natales,temperatura_C,10 m,2,2024.0,2025.0,10.345760119047618,,,,False
+M12,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.466716666666667,,,,False
+M13,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.058044791666667,,,,False
+M13N1,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.009,,,,False
+M13N2,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.184833333333334,,,,False
+M14,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.227786458333334,,,,False
+M15,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.28930119047619,,,,False
+M16,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.169809166666667,,,,False
+M16N1,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.363030833333333,,,,False
+M17,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.42562611111111,,,,False
+M18,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.320922916666667,,,,False
+M20,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.465765595238095,,,,False
+M21,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.257249479166667,,,,False
+M22,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.312461785714286,,,,False
+M23,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.7230378125,,,,False
+M24,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,8.136128194444444,,,,False
+M24N,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.368408333333333,,,,False
+M24N1,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.266541874999998,,,,False
+M24N2,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.366610416666667,,,,False
+M24N3,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.34882625,,,,False
+M25,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,8.093044791666667,,,,False
+M25N,Natales,temperatura_C,10 m,2,2024.0,2025.0,9.192311979166666,,,,False
+M26,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,8.188449166666667,,,,False
+M27,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,8.214235524891777,,,,False
+M29,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,8.281892083333334,,,,False
+M29N1,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,8.19704043154762,,,,False
+M30,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,8.309831776556777,,,,False
+M31,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,8.158197142857142,,,,False
+M32,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,8.378286666666666,,,,False
+M33,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,8.157320297619048,,,,False
+M34,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,8.148334077380952,,,,False
+M34N1,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,7.968999702380952,,,,False
+M35,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,8.257419761904762,,,,False
+M36,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,8.132681190476191,,,,False
+M36N1,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,8.115945833333333,,,,False
+M36N2,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,8.076867604166667,,,,False
+M37,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,7.984710312500001,,,,False
+M37N1,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,8.002992651515152,,,,False
+M37N2,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,8.021363303571428,,,,False
+M38,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,7.9147721875,,,,False
+M38N1,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,7.915344375,,,,False
+M39,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,8.046487301587302,,,,False
+M39C1,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,7.993614354395605,,,,False
+M39C3,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,8.012716964285714,,,,False
+M39D1,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,7.992184375,,,,False
+M39D2,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,8.004207708333333,,,,False
+M39N1,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,7.907470625,,,,False
+M39N2,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,7.982460654761905,,,,False
+M39N3,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,8.011977050865802,,,,False
+M39N4,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,8.015488020833335,,,,False
+M39N5,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,7.9631375,,,,False
+M40,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,7.7573156249999995,,,,False
+M40N1,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,7.978279166666667,,,,False
+M41,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,7.646002604166667,,,,False
+M42,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,7.883318750000001,,,,False
+M43,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,7.974122619047619,,,,False
+M44,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,7.737752604166666,,,,False
+M44N1,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,8.28215625,,,,False
+M45,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,7.809812395833333,,,,False
+M46,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,8.099823958333333,,,,False
+M46N1,Pta. Arenas,temperatura_C,10 m,2,2024.0,2025.0,8.055767708333333,,,,False
+1,Estuario,oxigeno_mg_L,fondo,7,2019.0,2025.0,4.39016389242857,0.02568171057142843,0.8734061315790173,0.0055918757094846425,False
+10,Chaulinec,oxigeno_mg_L,fondo,6,2019.0,2024.0,7.013107628,0.30186013131428574,0.4427091629751665,0.15329930322572685,False
+11,Desertores,oxigeno_mg_L,fondo,7,2019.0,2025.0,6.3938476848571435,0.1438471805357143,0.6230168821861627,0.05195488837000363,False
+12,Chaiten,oxigeno_mg_L,fondo,6,2019.0,2025.0,6.097873455916666,0.008186300428571441,0.9709461261824824,0.00037526169004312973,False
+13,Chaiten,oxigeno_mg_L,fondo,6,2019.0,2025.0,5.0417488344166665,-0.0031132439285714163,0.9840243272571855,0.0001134406321715935,False
+14,Moraleda,oxigeno_mg_L,fondo,5,2019.0,2025.0,4.4115156421,0.007891818174999976,0.9800868895932748,0.0002446207991142727,False
+15,Moraleda,oxigeno_mg_L,fondo,6,2019.0,2025.0,4.707058099833334,-0.21016948357142856,0.5291691164534723,0.10586497446192382,False
+16,Moraleda,oxigeno_mg_L,fondo,6,2019.0,2025.0,4.4893930136666675,-0.25113977367142853,0.3677457598614737,0.20462756474940744,False
+17,Puyuhuapi,oxigeno_mg_L,fondo,6,2019.0,2025.0,3.0236845770000005,-0.11905861371428571,0.36956460465621116,0.20325181811862522,False
+18,Puyuhuapi,oxigeno_mg_L,fondo,6,2019.0,2025.0,2.3550295314166667,-0.13497188349999997,0.37822044399533145,0.19679979182005633,False
+19,Puyuhuapi,oxigeno_mg_L,fondo,6,2019.0,2025.0,2.53756429675,-0.21418914081428572,0.23441472246119102,0.328501411184166,False
+2,Estuario,oxigeno_mg_L,fondo,7,2019.0,2025.0,4.462329907428571,0.029290011321428593,0.8654759642494314,0.006318996333356381,False
+20,Puyuhuapi,oxigeno_mg_L,fondo,5,2019.0,2025.0,3.1476243489,-0.14078327216666664,0.48020579730825375,0.1772738605888579,False
+21,Aysen,oxigeno_mg_L,fondo,5,2019.0,2024.0,5.0530643702999996,0.16662296687837838,0.6080926480062729,0.09796365782069213,False
+22,Aysen,oxigeno_mg_L,fondo,6,2019.0,2025.0,6.570548945583333,-0.046861976642857066,0.8794194173382961,0.006490129440585765,False
+23,Aysen,oxigeno_mg_L,fondo,6,2019.0,2025.0,6.165383214833334,0.16836831460000007,0.669469838840187,0.050223138984431176,False
+24,Aysen,oxigeno_mg_L,fondo,6,2019.0,2025.0,4.347299797333333,-0.16966873189999998,0.23599768999952977,0.32670478234423256,False
+25,Aysen,oxigeno_mg_L,fondo,6,2019.0,2025.0,6.334758995583333,0.09211323232857141,0.7695998332729391,0.02397465230957615,False
+26,Aysen,oxigeno_mg_L,fondo,6,2019.0,2025.0,6.371818506916667,0.06211176821428579,0.8549085220857612,0.00941524379064392,False
+27,Aysen,oxigeno_mg_L,fondo,6,2019.0,2025.0,6.8051004029166675,-0.0029172626714285173,0.9930253175441375,2.162084291060548e-05,False
+28,Aysen,oxigeno_mg_L,fondo,6,2019.0,2025.0,7.296579545666667,0.05178600572857141,0.8596171113764306,0.008810498563205149,False
+29,Aysen,oxigeno_mg_L,fondo,6,2019.0,2025.0,5.664412931166666,-0.0004001284000001287,0.9989437736763652,4.958286291147364e-07,False
+3,Reloncavi,oxigeno_mg_L,fondo,7,2019.0,2025.0,4.936216670142858,0.027100533214285672,0.844558303707398,0.008454976309729753,False
+30,Aysen,oxigeno_mg_L,fondo,6,2019.0,2025.0,8.159177779416668,-0.09652893502857152,0.7707065359398678,0.02374116059432949,False
+31,Aysen,oxigeno_mg_L,fondo,6,2019.0,2025.0,9.906810017916667,-0.13485551962857137,0.6775489472030333,0.04771682819047504,False
+32,Aysen,oxigeno_mg_L,fondo,5,2021.0,2025.0,4.6549794832,-0.019449098300000148,0.9805176972164966,0.0002341500412044321,False
+4,Reloncavi,oxigeno_mg_L,fondo,6,2019.0,2025.0,5.1942263354166665,-0.07908660314285709,0.6120822292781376,0.07011962154164555,False
+5,Reloncavi,oxigeno_mg_L,fondo,6,2019.0,2025.0,6.103387129999999,0.04619033254285709,0.7535499498012719,0.027496219234027817,False
+6,Reloncavi,oxigeno_mg_L,fondo,6,2019.0,2025.0,6.113044991083334,0.021057777785714365,0.9230603947954439,0.0026356079626738745,False
+7,Ayacara,oxigeno_mg_L,fondo,7,2019.0,2025.0,6.852280508857143,0.30002484849999994,0.2898217126422754,0.21882115629358018,False
+8,Butachauques,oxigeno_mg_L,fondo,6,2019.0,2025.0,7.198036018583333,0.1707935826571428,0.4702038711380639,0.13697010439847554,False
+9,Ayacara,oxigeno_mg_L,fondo,7,2019.0,2025.0,6.885821884428572,0.15937257075000003,0.5820378591052454,0.06469223888213989,False
+A01,Guaitecas,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.014625440625,,,,False
+A02,Guaitecas,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.994054308042328,,,,False
+A02N1,Guaitecas,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.50151435625,,,,False
+A03,Guaitecas,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.562373703124999,,,,False
+A03N1,Guaitecas,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.49065426,,,,False
+A04,Guaitecas,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.72420959021164,,,,False
+A04N1,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.690083335555556,,,,False
+A05,Guaitecas,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.976048116666666,,,,False
+A05N1,Guaitecas,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.655260653125,,,,False
+A05N2,Guaitecas,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.056666992857142,,,,False
+A06,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,5.867204099932248,,,,False
+A07,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.92839457594086,,,,False
+A08,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.200780096428572,,,,False
+A08N1,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.759930614583333,,,,False
+A08N2,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.202240315575397,,,,False
+A08N3,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.237624729807692,,,,False
+A09,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.06208763125,,,,False
+A10,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.12996655625,,,,False
+A11,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.47439904375,,,,False
+A11N1,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.079994171055555,,,,False
+A12,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.46725389375,,,,False
+A13,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.472612756249999,,,,False
+A14,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.130985271875,,,,False
+A15,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,5.711207709375,,,,False
+A16,Puyuhuapi,oxigeno_mg_L,fondo,2,2024.0,2025.0,5.470505468750001,,,,False
+A16N1,Puyuhuapi,oxigeno_mg_L,fondo,2,2024.0,2025.0,5.298128725,,,,False
+A17,Puyuhuapi,oxigeno_mg_L,fondo,2,2024.0,2025.0,5.2445401,,,,False
+A18,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,5.631717915625,,,,False
+A18N1,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.290858003125,,,,False
+A18N2,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,5.803201515625,,,,False
+A18N3,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,5.819278103125001,,,,False
+A18N4,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.734303875,,,,False
+A19,Puyuhuapi,oxigeno_mg_L,fondo,2,2024.0,2025.0,4.68453896875,,,,False
+A19N1,Puyuhuapi,oxigeno_mg_L,fondo,2,2024.0,2025.0,4.939784566770834,,,,False
+A19N2,Puyuhuapi,oxigeno_mg_L,fondo,2,2024.0,2025.0,4.87388544375,,,,False
+A20,Puyuhuapi,oxigeno_mg_L,fondo,2,2024.0,2025.0,5.278926134375,,,,False
+A20N1,Puyuhuapi,oxigeno_mg_L,fondo,2,2024.0,2025.0,5.3758322312499995,,,,False
+A21,Puyuhuapi,oxigeno_mg_L,fondo,2,2024.0,2025.0,5.750059462499999,,,,False
+A22,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,5.812579525,,,,False
+A23,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.598099453125,,,,False
+A24,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.860683715625,,,,False
+A25,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.753678608333333,,,,False
+A26,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.15204400625,,,,False
+A27,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.909555478125,,,,False
+A28,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.9760946875,,,,False
+A29,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.357913640625,,,,False
+A30,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.507296505208333,,,,False
+A30N1,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.828083968750001,,,,False
+A32,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,5.594057020833334,,,,False
+A32N1,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,5.8192143071428575,,,,False
+A33,Guaitecas,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.5253082375,,,,False
+A34,Guaitecas,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.450403248333334,,,,False
+A35,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.72358615,,,,False
+A35N1,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.001926,,,,False
+A35N2,Guaitecas,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.8229483921875005,,,,False
+A35N3,Guaitecas,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.024703185714285,,,,False
+A36,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.19752448125,,,,False
+A37,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.7610981875,,,,False
+A38N1,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.098196157142857,,,,False
+A38N2,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.080994527380952,,,,False
+A38N3,Guaitecas,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.30980945,,,,False
+A38N4,Guaitecas,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.127673941071428,,,,False
+A39,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.52652238125,,,,False
+A40,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.793572362499999,,,,False
+A41,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.766778049999999,,,,False
+A41N1,Moraleda,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.967288821875,,,,False
+A42,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.68225039375,,,,False
+A43,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.5878283,,,,False
+A44,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.288248428125002,,,,False
+A45,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.025640880208332,,,,False
+A47,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.26815269375,,,,False
+A48,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.29144694625,,,,False
+A48N1,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.572268140624999,,,,False
+A49,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.00199585625,,,,False
+A49N1,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.105600531250001,,,,False
+A50,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.02343130625,,,,False
+A50N1,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.021770590625,,,,False
+A51,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.6224097625,,,,False
+A51N1,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.48397248125,,,,False
+A52,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.553512121875,,,,False
+A53,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.350768490625,,,,False
+A54,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.019412159375,,,,False
+A55,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.530928773080614,,,,False
+A57,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.73092119821035,,,,False
+A59,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.89300061102207,,,,False
+A60,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.545371545617188,,,,False
+A62,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.119173596473251,,,,False
+L01,Reloncavi,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.033433479028627,,,,False
+L02,Estuario,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.576605540113481,,,,False
+L02N1,Estuario,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.288327860975208,,,,False
+L02N2,Estuario,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.442530662290437,,,,False
+L02N3,Estuario,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.655947280439752,,,,False
+L02N4,Estuario,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.225842154692235,,,,False
+L03,Reloncavi,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.322132526158626,,,,False
+L03N1,Estuario,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.896451726256869,,,,False
+L04,Calbuco,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.685212041233122,,,,False
+L04N2,Reloncavi,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.243514693868068,,,,False
+L04N3,Chacao,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.521091349326511,,,,False
+L04N4,Calbuco,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.946415687853444,,,,False
+L05,Ancud,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.226322407912914,,,,False
+L06,Chacao,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.289266613095162,,,,False
+L06N1,Reloncavi,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.570853457016153,,,,False
+L06N2,Reloncavi,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.800838794794783,,,,False
+L06N3,Hornopiren,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.994456057711899,,,,False
+L06N4,Hornopiren,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.16323303245867,,,,False
+L07,Butachauques,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.536232456891026,,,,False
+L08,Butachauques,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.292955647004419,,,,False
+L09,Butachauques,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.176187798795995,,,,False
+L09N1,Hornopiren,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.3111767881132765,,,,False
+L10,Ayacara,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.8153641057422405,,,,False
+L10N2,Desertores,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.364092469728709,,,,False
+L10N3,Ayacara,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.038242606770835,,,,False
+L11,Tenaun,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.5910530958635265,,,,False
+L12,Chiloe central,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.121486638549214,,,,False
+L13,Chaulinec,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.972201112500001,,,,False
+L13N1,Chaulinec,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.931570514739583,,,,False
+L14,Desertores,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.282017501768792,,,,False
+L16,Quellon,oxigeno_mg_L,fondo,3,2023.0,2025.0,7.195959955555555,-0.7049881333333325,0.44720658616199044,0.5825480270564971,False
+L16N1,Quellon,oxigeno_mg_L,fondo,3,2023.0,2025.0,7.562708698254986,-0.34038700694444435,0.6502442205904253,0.2726630083339472,False
+L17,Chaiten,oxigeno_mg_L,fondo,3,2023.0,2025.0,7.228510083333333,-0.3644026499999997,0.5748566129880228,0.38349633852656384,False
+L17N1,Chaiten,oxigeno_mg_L,fondo,3,2023.0,2025.0,7.09817725462963,-0.5444207347222223,0.5512560568720979,0.4198346629995047,False
+L17N2,Chaiten,oxigeno_mg_L,fondo,3,2023.0,2025.0,6.847229001222222,-0.3900061041666669,0.5026673280874787,0.49581021987170054,False
+L18,Quellon,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.308224038651961,,,,False
+L18N2,Quellon,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.222059068944445,,,,False
+L19,Quellon,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.401470042318376,,,,False
+L19N1,Quellon,oxigeno_mg_L,fondo,3,2023.0,2025.0,7.821893052943122,-0.10598639166666679,0.8703016692581796,0.04093470038088209,False
+L19N2,Quellon,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.610375046893941,,,,False
+L19N3,Quellon,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.3334048548611115,,,,False
+L19N4,Chaiten,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.791334647658729,,,,False
+L20,Quellon,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.734749631587301,,,,False
+L20N1,Quellon,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.797994174909812,,,,False
+L22,Quellon,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.285274330555556,,,,False
+L22N1,Quellon,oxigeno_mg_L,fondo,3,2023.0,2025.0,7.422772546067538,-0.9517935229166681,0.06546814516135067,0.9894617540373195,False
+L22N2,Quellon,oxigeno_mg_L,fondo,3,2023.0,2025.0,7.937595336408731,-0.27832060476190446,0.7493651104775713,0.14715249716398085,False
+L22N3,Quellon,oxigeno_mg_L,fondo,3,2023.0,2025.0,7.992511862962964,-0.5962230722222226,0.47090651557974744,0.545636335961756,False
+L23,Quellon,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.3762956025,,,,False
+L23N1,Quellon,oxigeno_mg_L,fondo,3,2023.0,2025.0,7.602712505034723,-1.070184688888888,0.25229157584254774,0.8509989497541874,False
+L23N2,Quellon,oxigeno_mg_L,fondo,3,2023.0,2025.0,7.629961659259259,-0.9288694999999997,0.3126987318662919,0.7775255047753054,False
+L24,Quellon,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.914697540729167,,,,False
+L24N1,Quellon,oxigeno_mg_L,fondo,3,2023.0,2025.0,8.100004639529915,-0.5751845750000006,0.3825949947196031,0.6802662392824264,False
+L25,Chaiten,oxigeno_mg_L,fondo,3,2023.0,2025.0,7.162086651851851,-0.1683873683333328,0.739661395140416,0.15811436391901407,False
+M01N,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.948721426345237,,,,False
+M02N,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.396921268833333,,,,False
+M03N,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.0987154564375,,,,False
+M04,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,5.8359530969375,,,,False
+M05,Aysen,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.466783823571429,,,,False
+M06,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.270468105359524,,,,False
+M06N,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.62215968225,,,,False
+M06N1,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.017072654500002,,,,False
+M06N2,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.2910957704,,,,False
+M06N3,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.840670809583333,,,,False
+M06N4,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.337122317625,,,,False
+M07,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.697178334708333,,,,False
+M07N,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.07686469459375,,,,False
+M07N1,Natales,oxigeno_mg_L,fondo,1,2024.0,2024.0,10.181001746714287,,,,False
+M07N2,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.707414293833334,,,,False
+M07N3,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.574481648785715,,,,False
+M07N4,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.2675196251875,,,,False
+M07N5,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.795233609875,,,,False
+M08,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.22939078675,,,,False
+M08N1,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.4399226315,,,,False
+M09,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.5214046675625,,,,False
+M09N1,Natales,oxigeno_mg_L,fondo,1,2024.0,2024.0,7.980846744000001,,,,False
+M09N2,Natales,oxigeno_mg_L,fondo,1,2024.0,2024.0,10.549385266,,,,False
+M10,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.218316335999999,,,,False
+M11,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.672584558285713,,,,False
+M12,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.004670396708333,,,,False
+M13,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.505963062738096,,,,False
+M13N1,Natales,oxigeno_mg_L,fondo,1,2024.0,2024.0,8.891853369,,,,False
+M13N2,Natales,oxigeno_mg_L,fondo,1,2024.0,2024.0,11.243750943,,,,False
+M14,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.18998581625,,,,False
+M15,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.372842113333334,,,,False
+M16,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.3502515307500005,,,,False
+M16N1,Natales,oxigeno_mg_L,fondo,1,2024.0,2024.0,8.945942154499999,,,,False
+M17,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.155250711642857,,,,False
+M18,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.4091939145714285,,,,False
+M20,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.207604246428572,,,,False
+M21,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.122622362785714,,,,False
+M22,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,6.301221447770834,,,,False
+M23,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.067470310916667,,,,False
+M24,Pta. Arenas,oxigeno_mg_L,fondo,1,2024.0,2024.0,11.601437152,,,,False
+M24N,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.009289544678571,,,,False
+M24N1,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.7240098615312505,,,,False
+M24N2,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.17180087775,,,,False
+M24N3,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.608996231947916,,,,False
+M25,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.615899339991667,,,,False
+M25N,Natales,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.01664841121875,,,,False
+M26,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.086775442716668,,,,False
+M27,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.294721274916666,,,,False
+M29,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.88811804336111,,,,False
+M29N1,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.366377864705555,,,,False
+M30,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.293578086242064,,,,False
+M31,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,10.091010000152785,,,,False
+M32,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,10.7458197298,,,,False
+M33,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.639983854354167,,,,False
+M34,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,10.039828893749998,,,,False
+M34N1,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.020454160416666,,,,False
+M35,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.447571911527778,,,,False
+M36,Pta. Arenas,oxigeno_mg_L,fondo,1,2024.0,2024.0,11.379304362319445,,,,False
+M36N1,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.142004730254762,,,,False
+M36N2,Pta. Arenas,oxigeno_mg_L,fondo,1,2024.0,2024.0,12.423313134428572,,,,False
+M37,Pta. Arenas,oxigeno_mg_L,fondo,1,2024.0,2024.0,12.352300550785714,,,,False
+M37N1,Pta. Arenas,oxigeno_mg_L,fondo,1,2024.0,2024.0,11.456917987119047,,,,False
+M37N2,Pta. Arenas,oxigeno_mg_L,fondo,1,2024.0,2024.0,11.101337896142857,,,,False
+M38,Pta. Arenas,oxigeno_mg_L,fondo,1,2024.0,2024.0,11.299999151611111,,,,False
+M38N1,Pta. Arenas,oxigeno_mg_L,fondo,1,2024.0,2024.0,11.88013372775,,,,False
+M39,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,10.326459364669445,,,,False
+M39C1,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.302360099375,,,,False
+M39C3,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.837804278777778,,,,False
+M39D1,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.80823526636111,,,,False
+M39D2,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.47914557079762,,,,False
+M39N1,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.715498307803573,,,,False
+M39N2,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.570222380805557,,,,False
+M39N3,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.609660631659724,,,,False
+M39N4,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.754667812175924,,,,False
+M39N5,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.606450878470238,,,,False
+M40,Pta. Arenas,oxigeno_mg_L,fondo,1,2024.0,2024.0,9.568715810216666,,,,False
+M40N1,Pta. Arenas,oxigeno_mg_L,fondo,1,2024.0,2024.0,12.322692410166667,,,,False
+M41,Pta. Arenas,oxigeno_mg_L,fondo,1,2024.0,2024.0,11.492084600777778,,,,False
+M42,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.3017354305,,,,False
+M43,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,7.9655704133,,,,False
+M44,Pta. Arenas,oxigeno_mg_L,fondo,1,2024.0,2024.0,13.3513415482,,,,False
+M44N1,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.822664499833333,,,,False
+M45,Pta. Arenas,oxigeno_mg_L,fondo,1,2024.0,2024.0,13.485879959266665,,,,False
+M46,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,9.640588874066667,,,,False
+M46N1,Pta. Arenas,oxigeno_mg_L,fondo,2,2024.0,2025.0,8.671788703291668,,,,False
+1,Estuario,oxigeno_mg_L,10 m,6,2019.0,2025.0,5.9317844441666665,0.010978012607142755,0.9814315794113889,0.00015325398774792748,False
+10,Chaulinec,oxigeno_mg_L,10 m,7,2019.0,2025.0,7.286154431571428,0.14162708035714294,0.6994130464862398,0.03238566824136236,False
+11,Desertores,oxigeno_mg_L,10 m,7,2019.0,2025.0,7.230687652857142,0.20489227992857134,0.5383479518825444,0.08017282361891562,False
+12,Chaiten,oxigeno_mg_L,10 m,6,2019.0,2025.0,7.37425923475,0.026481967371428494,0.928664330644136,0.002265098142878628,False
+13,Chaiten,oxigeno_mg_L,10 m,6,2019.0,2025.0,7.628864746416667,-0.02783750440000004,0.9217579330313129,0.0027257602818940717,False
+14,Moraleda,oxigeno_mg_L,10 m,6,2019.0,2025.0,7.625280262833333,-0.07472806164285703,0.7207497915269712,0.03549294422946428,False
+15,Moraleda,oxigeno_mg_L,10 m,6,2019.0,2025.0,7.9607688725,-0.014986441757142865,0.962156155268321,0.00063678433820551,False
+16,Moraleda,oxigeno_mg_L,10 m,6,2019.0,2025.0,7.768195171416667,-0.13943658151428578,0.6477348597421192,0.05732097103697225,False
+17,Puyuhuapi,oxigeno_mg_L,10 m,6,2019.0,2025.0,7.15911876825,-0.16863574735714282,0.46624851867961065,0.13924401863345817,False
+18,Puyuhuapi,oxigeno_mg_L,10 m,6,2019.0,2025.0,7.61033499075,-0.11619851224285699,0.7287716690059688,0.03343665639611412,False
+19,Puyuhuapi,oxigeno_mg_L,10 m,6,2019.0,2025.0,7.387084778999999,0.04555951787142839,0.9104440015498848,0.003573073660999445,False
+2,Estuario,oxigeno_mg_L,10 m,4,2019.0,2025.0,5.808220983500001,0.2692261112747253,0.18388156380625265,0.6660493018953276,False
+20,Puyuhuapi,oxigeno_mg_L,10 m,5,2019.0,2025.0,7.741398477200001,0.026616310517544015,0.959046005563768,0.0010349566470309643,False
+21,Aysen,oxigeno_mg_L,10 m,4,2019.0,2024.0,7.104136839000001,0.17083448128813558,0.7541667736721723,0.060433975166748956,False
+22,Aysen,oxigeno_mg_L,10 m,6,2019.0,2025.0,7.6562425795,-0.05818806012857149,0.870702940170363,0.0074672288212192664,False
+23,Aysen,oxigeno_mg_L,10 m,6,2019.0,2025.0,7.113354082499999,0.05156756828571422,0.880428518406909,0.0063814930764821845,False
+24,Aysen,oxigeno_mg_L,10 m,4,2021.0,2025.0,8.294518829000001,-0.3500266082,0.6040688935239349,0.15676144107536116,False
+25,Aysen,oxigeno_mg_L,10 m,5,2019.0,2025.0,7.022139097599999,0.10004195537931035,0.7458950609427644,0.04037445682870823,False
+26,Aysen,oxigeno_mg_L,10 m,6,2019.0,2025.0,7.361981485333334,0.08375340682857137,0.8429660825700939,0.011040964032076446,False
+27,Aysen,oxigeno_mg_L,10 m,6,2019.0,2025.0,7.523187977916667,-0.031144688114285602,0.9202288288596743,0.002833545568092576,False
+28,Aysen,oxigeno_mg_L,10 m,6,2019.0,2025.0,7.828524054583333,-0.007537112514285696,0.9764949905055543,0.0002455893061296821,False
+29,Aysen,oxigeno_mg_L,10 m,5,2019.0,2025.0,7.8811861918,-0.05234536889999997,0.87443312379016,0.009757661258425896,False
+3,Reloncavi,oxigeno_mg_L,10 m,5,2019.0,2025.0,7.057378977400001,0.21236814829999992,0.5487067315509957,0.1314438815712661,False
+30,Aysen,oxigeno_mg_L,10 m,5,2019.0,2025.0,8.5909853928,-0.06915790685000021,0.8628433502633305,0.011649426098908901,False
+31,Aysen,oxigeno_mg_L,10 m,6,2019.0,2025.0,10.301651006916666,-0.11610868750000007,0.7258284982808169,0.034183462253697866,False
+32,Aysen,oxigeno_mg_L,10 m,3,2021.0,2024.0,6.095860905333333,-0.05479309314285688,0.9683726039065759,0.0024660921605058664,False
+4,Reloncavi,oxigeno_mg_L,10 m,3,2019.0,2025.0,6.765147105833333,0.1011625648035714,0.1735032195165885,0.9275438302516289,False
+5,Reloncavi,oxigeno_mg_L,10 m,6,2019.0,2025.0,6.812614719,0.16159267092857135,0.6064428591278885,0.07227971324247162,False
+6,Reloncavi,oxigeno_mg_L,10 m,5,2021.0,2025.0,7.7239928918,-0.20069297320000007,0.7556823033586761,0.03728505664683894,False
+7,Ayacara,oxigeno_mg_L,10 m,4,2019.0,2025.0,7.8554493615,0.09347897671428551,0.8033236917396005,0.03868157023093969,False
+8,Butachauques,oxigeno_mg_L,10 m,4,2021.0,2025.0,7.3071305505,0.3522028167428572,0.10357900189316294,0.803570605846858,False
+9,Ayacara,oxigeno_mg_L,10 m,5,2019.0,2025.0,7.146664771799999,0.19605038064912267,0.6565353744426798,0.07463489770301361,False
+A01,Guaitecas,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.990507511111112,,,,False
+A02,Guaitecas,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.587789809523809,,,,False
+A02N1,Guaitecas,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.52895066875,,,,False
+A03,Guaitecas,oxigeno_mg_L,10 m,2,2024.0,2025.0,7.219153339285715,,,,False
+A03N1,Guaitecas,oxigeno_mg_L,10 m,2,2024.0,2025.0,7.5545670949999995,,,,False
+A04,Guaitecas,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.10580218574074,,,,False
+A04N1,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.209371236773505,,,,False
+A05,Guaitecas,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.346034398190234,,,,False
+A05N1,Guaitecas,oxigeno_mg_L,10 m,2,2024.0,2025.0,7.485437768750001,,,,False
+A05N2,Guaitecas,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.787513764285713,,,,False
+A06,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.190194346296297,,,,False
+A07,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.54165633574074,,,,False
+A08,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.26245865436508,,,,False
+A08N1,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.48346546429293,,,,False
+A08N2,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.424280707291667,,,,False
+A08N3,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,7.891996803750001,,,,False
+A09,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.247163815625001,,,,False
+A10,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.526592237500001,,,,False
+A11,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.55306555,,,,False
+A11N1,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,7.978161074920635,,,,False
+A12,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.051694946428572,,,,False
+A13,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.06190230357143,,,,False
+A14,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.689269971875,,,,False
+A15,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.063622775,,,,False
+A16,Puyuhuapi,oxigeno_mg_L,10 m,1,2024.0,2024.0,9.14375052857143,,,,False
+A16N1,Puyuhuapi,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.541582273214285,,,,False
+A17,Puyuhuapi,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.925804208333334,,,,False
+A18,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.12524969375,,,,False
+A18N1,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.75312975,,,,False
+A18N2,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.036062910714286,,,,False
+A18N3,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.560721067857141,,,,False
+A18N4,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.610798893750001,,,,False
+A19,Puyuhuapi,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.579502605,,,,False
+A19N1,Puyuhuapi,oxigeno_mg_L,10 m,2,2024.0,2025.0,11.478938658928572,,,,False
+A19N2,Puyuhuapi,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.702220556250001,,,,False
+A20,Puyuhuapi,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.994873991666667,,,,False
+A20N1,Puyuhuapi,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.757212692857141,,,,False
+A21,Puyuhuapi,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.307899610714284,,,,False
+A22,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.52034023125,,,,False
+A23,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.96905788422619,,,,False
+A24,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,11.2178855,,,,False
+A25,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.8481239875,,,,False
+A26,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.928504904910715,,,,False
+A27,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.480848498214286,,,,False
+A28,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,11.151410086607143,,,,False
+A29,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.87527779047619,,,,False
+A30,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.308473774553573,,,,False
+A30N1,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.753769729910715,,,,False
+A32,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.183008343005952,,,,False
+A32N1,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.065531586111112,,,,False
+A33,Guaitecas,oxigeno_mg_L,10 m,2,2024.0,2025.0,7.143618896428571,,,,False
+A34,Guaitecas,oxigeno_mg_L,10 m,2,2024.0,2025.0,7.376623088541667,,,,False
+A35,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.32677918125,,,,False
+A35N1,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.290736471428572,,,,False
+A35N2,Guaitecas,oxigeno_mg_L,10 m,2,2024.0,2025.0,6.798610225,,,,False
+A35N3,Guaitecas,oxigeno_mg_L,10 m,2,2024.0,2025.0,7.2293606964285715,,,,False
+A36,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.322568646428572,,,,False
+A37,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.750767278571429,,,,False
+A38N1,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,7.125245653571428,,,,False
+A38N2,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.001357896428571,,,,False
+A38N3,Guaitecas,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.6152646125,,,,False
+A38N4,Guaitecas,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.371310796875001,,,,False
+A39,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.1657621625,,,,False
+A40,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.629941728571428,,,,False
+A41,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.176158887500002,,,,False
+A41N1,Moraleda,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.612585181250001,,,,False
+A42,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.057443673263888,,,,False
+A43,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.1836250375,,,,False
+A44,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.471961611458333,,,,False
+A45,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.742903147619048,,,,False
+A47,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.553258958035714,,,,False
+A48,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.139308095238096,,,,False
+A48N1,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,11.036938829315476,,,,False
+A49,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.905055521964286,,,,False
+A49N1,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.17358007012987,,,,False
+A50,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,11.17926766547619,,,,False
+A50N1,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.353832717857143,,,,False
+A51,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.792834136309523,,,,False
+A51N1,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,11.8520175625,,,,False
+A52,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,11.169910921428572,,,,False
+A53,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.893480910714285,,,,False
+A54,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.380391091666667,,,,False
+A55,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.795872864338822,,,,False
+A57,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.816546807828367,,,,False
+A59,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.666329909483384,,,,False
+A60,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.888744953902387,,,,False
+A62,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.484365887105206,,,,False
+L01,Reloncavi,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.961658819277527,,,,False
+L02,Estuario,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.865443149090545,,,,False
+L02N1,Estuario,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.730387900054563,,,,False
+L02N2,Estuario,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.981144387465278,,,,False
+L02N3,Estuario,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.782524258141951,,,,False
+L02N4,Estuario,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.856954150606173,,,,False
+L03,Reloncavi,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.10609168608924,,,,False
+L03N1,Estuario,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.193498335681818,,,,False
+L04,Calbuco,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.436948324148855,,,,False
+L04N2,Reloncavi,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.69528467180066,,,,False
+L04N3,Chacao,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.99324533761218,,,,False
+L04N4,Calbuco,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.400052364002283,,,,False
+L05,Ancud,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.548934495622886,,,,False
+L06,Chacao,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.855720758092612,,,,False
+L06N1,Reloncavi,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.510934372421222,,,,False
+L06N2,Reloncavi,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.259833794470183,,,,False
+L06N3,Hornopiren,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.70767123791806,,,,False
+L06N4,Hornopiren,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.414452723355653,,,,False
+L07,Butachauques,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.630313132371734,,,,False
+L08,Butachauques,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.60185699545061,,,,False
+L09,Butachauques,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.97193841312091,,,,False
+L09N1,Hornopiren,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.455084506462162,,,,False
+L10,Ayacara,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.659371849962456,,,,False
+L10N2,Desertores,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.565777005885417,,,,False
+L10N3,Ayacara,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.895266147260347,,,,False
+L11,Tenaun,oxigeno_mg_L,10 m,2,2024.0,2025.0,11.329920814040179,,,,False
+L12,Chiloe central,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.346234341142019,,,,False
+L13,Chaulinec,oxigeno_mg_L,10 m,2,2024.0,2025.0,7.951492609537546,,,,False
+L13N1,Chaulinec,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.189055351733632,,,,False
+L14,Desertores,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.4421912577837,,,,False
+L16,Quellon,oxigeno_mg_L,10 m,3,2023.0,2025.0,7.346497680648148,-0.7071316783333326,0.46299291259388703,0.557999730135408,False
+L16N1,Quellon,oxigeno_mg_L,10 m,3,2023.0,2025.0,7.706083970277778,-0.3245088958333331,0.6212309611781408,0.3141412986073707,False
+L17,Chaiten,oxigeno_mg_L,10 m,3,2023.0,2025.0,7.579495729444445,-0.13289979000000018,0.818362363556181,0.07921997551207406,False
+L17N1,Chaiten,oxigeno_mg_L,10 m,3,2023.0,2025.0,7.618456644583333,-0.44121301249999956,0.6057177386251056,0.33697506684240003,False
+L17N2,Chaiten,oxigeno_mg_L,10 m,3,2023.0,2025.0,7.265791888222222,-0.07026064166666668,0.9169693636010448,0.016914243201632016,False
+L18,Quellon,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.213918289204546,,,,False
+L18N2,Quellon,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.064485544890873,,,,False
+L19,Quellon,oxigeno_mg_L,10 m,2,2024.0,2025.0,7.367992201001984,,,,False
+L19N1,Quellon,oxigeno_mg_L,10 m,3,2023.0,2025.0,8.150772123914143,0.20013637323232378,0.7859386139196135,0.10886465431599657,False
+L19N2,Quellon,oxigeno_mg_L,10 m,2,2024.0,2025.0,7.807530923392857,,,,False
+L19N3,Quellon,oxigeno_mg_L,10 m,2,2024.0,2025.0,7.628128115476191,,,,False
+L19N4,Chaiten,oxigeno_mg_L,10 m,2,2024.0,2025.0,7.855460703007936,,,,False
+L20,Quellon,oxigeno_mg_L,10 m,2,2024.0,2025.0,7.7724957165692645,,,,False
+L20N1,Quellon,oxigeno_mg_L,10 m,2,2024.0,2025.0,7.14423700861111,,,,False
+L22,Quellon,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.043632764861112,,,,False
+L22N1,Quellon,oxigeno_mg_L,10 m,3,2023.0,2025.0,7.938264957939815,-0.5117515211111114,0.010939685494752814,0.9997047385968856,True
+L22N2,Quellon,oxigeno_mg_L,10 m,3,2023.0,2025.0,8.084388387710439,-0.18656780555555486,0.7917863085326331,0.10320895151355076,False
+L22N3,Quellon,oxigeno_mg_L,10 m,3,2023.0,2025.0,8.056604469159543,-0.595786424166667,0.47537448488958817,0.5386430947073656,False
+L23,Quellon,oxigeno_mg_L,10 m,2,2024.0,2025.0,7.250041936150794,,,,False
+L23N1,Quellon,oxigeno_mg_L,10 m,3,2023.0,2025.0,7.7668706723148135,-0.9617371899999996,0.22296279643675793,0.8822734363817956,False
+L23N2,Quellon,oxigeno_mg_L,10 m,3,2023.0,2025.0,7.773180331230159,-0.8562271416666674,0.2976973924374658,0.7968110669721002,False
+L24,Quellon,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.006837046691919,,,,False
+L24N1,Quellon,oxigeno_mg_L,10 m,3,2023.0,2025.0,8.154157260784313,-0.6356801783333332,0.29650619212033047,0.7983147680609664,False
+L25,Chaiten,oxigeno_mg_L,10 m,3,2023.0,2025.0,7.854212999662097,0.1569381160714287,0.7771082727095674,0.11765461668399863,False
+M01N,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.378212334205612,,,,False
+M02N,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.28226238023611,,,,False
+M03N,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.282648416812501,,,,False
+M04,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.5242259383125,,,,False
+M05,Aysen,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.133229614059523,,,,False
+M06,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.74914900830625,,,,False
+M06N,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.74515308316875,,,,False
+M06N1,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.458082157583334,,,,False
+M06N2,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.502116819753333,,,,False
+M06N3,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,11.79989284263691,,,,False
+M06N4,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.372489746625,,,,False
+M07,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.979408463348959,,,,False
+M07N,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.155945555864584,,,,False
+M07N1,Natales,oxigeno_mg_L,10 m,1,2024.0,2024.0,12.182339548226192,,,,False
+M07N2,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.2268447953125,,,,False
+M07N3,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.269496300813096,,,,False
+M07N4,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,8.920483687335416,,,,False
+M07N5,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.421696012958332,,,,False
+M08,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.399509790458334,,,,False
+M08N1,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,11.801215545999998,,,,False
+M09,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.25098147340625,,,,False
+M09N1,Natales,oxigeno_mg_L,10 m,1,2024.0,2024.0,14.722248134666666,,,,False
+M09N2,Natales,oxigeno_mg_L,10 m,1,2024.0,2024.0,14.594683390000002,,,,False
+M10,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.882176262678572,,,,False
+M11,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.060136962535715,,,,False
+M12,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.562187524833334,,,,False
+M13,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.573775568798611,,,,False
+M13N1,Natales,oxigeno_mg_L,10 m,1,2024.0,2024.0,15.351783483999998,,,,False
+M13N2,Natales,oxigeno_mg_L,10 m,1,2024.0,2024.0,15.604959965666668,,,,False
+M14,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.505380179880952,,,,False
+M15,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.221828765215278,,,,False
+M16,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.416988946919444,,,,False
+M16N1,Natales,oxigeno_mg_L,10 m,1,2024.0,2024.0,12.926449419280953,,,,False
+M17,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.574779129100001,,,,False
+M18,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.062477743330358,,,,False
+M20,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.603561324403572,,,,False
+M21,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.81403551896786,,,,False
+M22,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,11.538055146238332,,,,False
+M23,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.136776273713888,,,,False
+M24,Pta. Arenas,oxigeno_mg_L,10 m,1,2024.0,2024.0,13.199116509166666,,,,False
+M24N,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.043568720666666,,,,False
+M24N1,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.668333193802084,,,,False
+M24N2,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.56839019552381,,,,False
+M24N3,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.14722468763631,,,,False
+M25,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.892880547991668,,,,False
+M25N,Natales,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.567343409666666,,,,False
+M26,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.53282995345,,,,False
+M27,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.139997942458333,,,,False
+M29,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.637514141529167,,,,False
+M29N1,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,11.389970483458335,,,,False
+M30,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,12.416714034414527,,,,False
+M31,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.546567983876262,,,,False
+M32,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.97001918795926,,,,False
+M33,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,11.321422693027777,,,,False
+M34,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,11.169589531447421,,,,False
+M34N1,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.576407627870832,,,,False
+M35,Pta. Arenas,oxigeno_mg_L,10 m,1,2024.0,2024.0,12.615451038069445,,,,False
+M36,Pta. Arenas,oxigeno_mg_L,10 m,1,2024.0,2024.0,13.444277266684127,,,,False
+M36N1,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,11.170254115458729,,,,False
+M36N2,Pta. Arenas,oxigeno_mg_L,10 m,1,2024.0,2024.0,13.1354722764,,,,False
+M37,Pta. Arenas,oxigeno_mg_L,10 m,1,2024.0,2024.0,12.91389402975,,,,False
+M37N1,Pta. Arenas,oxigeno_mg_L,10 m,1,2024.0,2024.0,13.55140751128896,,,,False
+M37N2,Pta. Arenas,oxigeno_mg_L,10 m,1,2024.0,2024.0,13.358984865835035,,,,False
+M38,Pta. Arenas,oxigeno_mg_L,10 m,1,2024.0,2024.0,12.712054656927778,,,,False
+M38N1,Pta. Arenas,oxigeno_mg_L,10 m,1,2024.0,2024.0,13.083266634877779,,,,False
+M39,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.828879397970237,,,,False
+M39C1,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.958709608847222,,,,False
+M39C3,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.789372991625,,,,False
+M39D1,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.75511451388889,,,,False
+M39D2,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.170816760695834,,,,False
+M39N1,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.723338444027778,,,,False
+M39N2,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.36144474103138,,,,False
+M39N3,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.956699043027777,,,,False
+M39N4,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.910211903222223,,,,False
+M39N5,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.631107153573211,,,,False
+M40,Pta. Arenas,oxigeno_mg_L,10 m,1,2024.0,2024.0,12.498582186,,,,False
+M40N1,Pta. Arenas,oxigeno_mg_L,10 m,1,2024.0,2024.0,12.531033075583332,,,,False
+M41,Pta. Arenas,oxigeno_mg_L,10 m,1,2024.0,2024.0,12.242029620958334,,,,False
+M42,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,10.18337892677778,,,,False
+M43,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.899730365125,,,,False
+M44,Pta. Arenas,oxigeno_mg_L,10 m,1,2024.0,2024.0,13.196421199805556,,,,False
+M44N1,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.593644047708334,,,,False
+M45,Pta. Arenas,oxigeno_mg_L,10 m,1,2024.0,2024.0,11.927440575041667,,,,False
+M46,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.670268125940476,,,,False
+M46N1,Pta. Arenas,oxigeno_mg_L,10 m,2,2024.0,2025.0,9.042276639375,,,,False
+1,Estuario,salinidad_psu,fondo,7,2019.0,2025.0,32.72331428571428,0.04387857142857118,0.44961300542922195,0.11849558184042235,False
+10,Chaulinec,salinidad_psu,fondo,7,2019.0,2025.0,33.002671428571425,-0.022635714285714058,0.3576641161312615,0.17020748628398966,False
+11,Desertores,salinidad_psu,fondo,7,2019.0,2025.0,33.2267,-0.053771428571429115,0.029888405426020146,0.6437924295601813,True
+12,Chaiten,salinidad_psu,fondo,6,2019.0,2025.0,33.33335833333333,-0.03272428571428481,0.19422990826754552,0.3776640186653252,False
+13,Chaiten,salinidad_psu,fondo,6,2019.0,2025.0,33.70733333333333,-0.045487142857143066,0.3133218148310343,0.24927038627897075,False
+14,Moraleda,salinidad_psu,fondo,6,2019.0,2025.0,33.90331666666667,-0.025805714285714848,0.21656882634258662,0.34945507217785826,False
+15,Moraleda,salinidad_psu,fondo,6,2019.0,2025.0,33.80509166666666,0.030637142857142814,0.5694691943634203,0.08739900061528336,False
+16,Moraleda,salinidad_psu,fondo,6,2019.0,2025.0,33.62524166666667,0.0371857142857139,0.5499462351539504,0.09607680164224562,False
+17,Puyuhuapi,salinidad_psu,fondo,6,2019.0,2025.0,34.03381666666667,0.004172857142856197,0.641491990610617,0.05945695079819484,False
+18,Puyuhuapi,salinidad_psu,fondo,6,2019.0,2025.0,33.942891666666675,0.0021928571428568534,0.6685483874720634,0.05051349725587333,False
+19,Puyuhuapi,salinidad_psu,fondo,6,2019.0,2025.0,33.966633333333334,0.007557142857142295,0.174122539007489,0.40521900050964094,False
+2,Estuario,salinidad_psu,fondo,7,2019.0,2025.0,32.890685714285716,-0.0021892857142853067,0.9127409309558163,0.0026489524960622885,False
+20,Puyuhuapi,salinidad_psu,fondo,5,2019.0,2025.0,33.988600000000005,-0.013302631578947125,0.3536486362913224,0.28545490651740096,False
+21,Aysen,salinidad_psu,fondo,5,2019.0,2024.0,33.38565,0.0036891891891897123,0.951525341055593,0.001450171253552713,False
+22,Aysen,salinidad_psu,fondo,6,2019.0,2025.0,31.595141666666667,-0.05618714285714238,0.5278500968087456,0.10650614682300737,False
+23,Aysen,salinidad_psu,fondo,6,2019.0,2025.0,31.689149999999998,-0.04756285714285734,0.4305572337578578,0.16091785514437776,False
+24,Aysen,salinidad_psu,fondo,6,2019.0,2025.0,31.658525,-0.007388571428571312,0.6234287174901137,0.06588715591787238,False
+25,Aysen,salinidad_psu,fondo,6,2019.0,2025.0,31.62615,-0.05961000000000018,0.25930322608933415,0.3013290740762321,False
+26,Aysen,salinidad_psu,fondo,6,2019.0,2025.0,31.554858333333332,-0.0557514285714287,0.32575665599544334,0.23844348201429336,False
+27,Aysen,salinidad_psu,fondo,6,2019.0,2025.0,30.381249999999998,-0.09639000000000023,0.32348084057551946,0.24039561381038965,False
+28,Aysen,salinidad_psu,fondo,6,2019.0,2025.0,28.824025000000002,-0.06388714285714296,0.5708030709983918,0.08682399281598835,False
+29,Aysen,salinidad_psu,fondo,6,2019.0,2025.0,27.55895,-0.013144285714285685,0.48130530392707155,0.13071857734367642,False
+3,Reloncavi,salinidad_psu,fondo,7,2019.0,2025.0,32.93261428571429,0.02572857142857186,0.30200098067829984,0.20929454352207869,False
+30,Aysen,salinidad_psu,fondo,6,2019.0,2025.0,23.724341666666664,0.11476999999999987,0.26011631844483585,0.300478415540085,False
+31,Aysen,salinidad_psu,fondo,6,2019.0,2025.0,16.46920833333333,0.20920000000000016,0.40712081955771573,0.17634777270031926,False
+32,Aysen,salinidad_psu,fondo,5,2021.0,2025.0,30.16984,-0.06425000000000018,0.28770878992191523,0.35653555534995673,False
+4,Reloncavi,salinidad_psu,fondo,6,2019.0,2025.0,32.96136666666666,-0.010839999999999603,0.38846391153906773,0.18936276308657346,False
+5,Reloncavi,salinidad_psu,fondo,6,2019.0,2025.0,32.978116666666665,-0.007180000000000419,0.8031884677072654,0.017417107465647216,False
+6,Reloncavi,salinidad_psu,fondo,6,2019.0,2025.0,32.9407,-0.008404285714285462,0.7944397746937558,0.019020422511733602,False
+7,Ayacara,salinidad_psu,fondo,7,2019.0,2025.0,32.87288571428571,-0.009385714285714742,0.6706268128271909,0.03915149582371214,False
+8,Butachauques,salinidad_psu,fondo,6,2019.0,2025.0,32.92455833333333,-0.029955714285713544,0.2934143751561032,0.26745823135737373,False
+9,Ayacara,salinidad_psu,fondo,7,2019.0,2025.0,32.851014285714285,-0.029935714285714555,0.2640280409212216,0.24034264719968618,False
+A01,Guaitecas,salinidad_psu,fondo,2,2024.0,2025.0,33.18,,,,False
+A02,Guaitecas,salinidad_psu,fondo,2,2024.0,2025.0,32.82192724867725,,,,False
+A02N1,Guaitecas,salinidad_psu,fondo,2,2024.0,2025.0,32.920156250000005,,,,False
+A03,Guaitecas,salinidad_psu,fondo,2,2024.0,2025.0,33.25071428571429,,,,False
+A03N1,Guaitecas,salinidad_psu,fondo,2,2024.0,2025.0,33.21875,,,,False
+A04,Guaitecas,salinidad_psu,fondo,2,2024.0,2025.0,32.88164021164021,,,,False
+A04N1,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,33.20287777777778,,,,False
+A05,Guaitecas,salinidad_psu,fondo,2,2024.0,2025.0,32.75378472222222,,,,False
+A05N1,Guaitecas,salinidad_psu,fondo,2,2024.0,2025.0,32.64875,,,,False
+A05N2,Guaitecas,salinidad_psu,fondo,2,2024.0,2025.0,32.7953125,,,,False
+A06,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,31.203306233062328,,,,False
+A07,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,31.31350582437276,,,,False
+A08,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,31.391984126984127,,,,False
+A08N1,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,31.540694444444444,,,,False
+A08N2,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.943333333333335,,,,False
+A08N3,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.93771367521367,,,,False
+A09,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.889375,,,,False
+A10,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,33.0225,,,,False
+A11,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.998125,,,,False
+A11N1,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.82451111111111,,,,False
+A12,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,33.01875,,,,False
+A13,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.996875,,,,False
+A14,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.99187499999999,,,,False
+A15,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,33.019,,,,False
+A16,Puyuhuapi,salinidad_psu,fondo,2,2024.0,2025.0,32.993125,,,,False
+A16N1,Puyuhuapi,salinidad_psu,fondo,2,2024.0,2025.0,32.991249999999994,,,,False
+A17,Puyuhuapi,salinidad_psu,fondo,2,2024.0,2025.0,33.010625,,,,False
+A18,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.822500000000005,,,,False
+A18N1,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.980000000000004,,,,False
+A18N2,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.838750000000005,,,,False
+A18N3,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.798125,,,,False
+A18N4,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.586875000000006,,,,False
+A19,Puyuhuapi,salinidad_psu,fondo,2,2024.0,2025.0,32.82625,,,,False
+A19N1,Puyuhuapi,salinidad_psu,fondo,2,2024.0,2025.0,31.43303125,,,,False
+A19N2,Puyuhuapi,salinidad_psu,fondo,2,2024.0,2025.0,32.8471875,,,,False
+A20,Puyuhuapi,salinidad_psu,fondo,2,2024.0,2025.0,32.838125000000005,,,,False
+A20N1,Puyuhuapi,salinidad_psu,fondo,2,2024.0,2025.0,32.82625,,,,False
+A21,Puyuhuapi,salinidad_psu,fondo,2,2024.0,2025.0,32.8496875,,,,False
+A22,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.84125,,,,False
+A23,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.780625,,,,False
+A24,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,31.1784375,,,,False
+A25,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,31.2346875,,,,False
+A26,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,31.4534375,,,,False
+A27,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,30.15458333333333,,,,False
+A28,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,31.036250000000003,,,,False
+A29,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,30.262812500000003,,,,False
+A30,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.75572916666667,,,,False
+A30N1,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.74854166666667,,,,False
+A32,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,32.45979166666667,,,,False
+A32N1,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.81625,,,,False
+A33,Guaitecas,salinidad_psu,fondo,2,2024.0,2025.0,32.79875,,,,False
+A34,Guaitecas,salinidad_psu,fondo,2,2024.0,2025.0,32.8223,,,,False
+A35,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.195,,,,False
+A35N1,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.705312500000005,,,,False
+A35N2,Guaitecas,salinidad_psu,fondo,2,2024.0,2025.0,32.5878125,,,,False
+A35N3,Guaitecas,salinidad_psu,fondo,2,2024.0,2025.0,32.442499999999995,,,,False
+A36,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.4265625,,,,False
+A37,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.515625,,,,False
+A38N1,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.21892857142858,,,,False
+A38N2,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.63083333333333,,,,False
+A38N3,Guaitecas,salinidad_psu,fondo,2,2024.0,2025.0,32.633125,,,,False
+A38N4,Guaitecas,salinidad_psu,fondo,2,2024.0,2025.0,32.6790625,,,,False
+A39,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.5209375,,,,False
+A40,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.4290625,,,,False
+A41,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.5134375,,,,False
+A41N1,Moraleda,salinidad_psu,fondo,2,2024.0,2025.0,32.6959375,,,,False
+A42,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,30.67964285714286,,,,False
+A43,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,32.8209375,,,,False
+A44,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,30.234604166666667,,,,False
+A45,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,31.1053125,,,,False
+A47,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,30.270000000000003,,,,False
+A48,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,30.129875,,,,False
+A48N1,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,30.030625,,,,False
+A49,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,31.296875,,,,False
+A49N1,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,32.6553125,,,,False
+A50,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,31.07625,,,,False
+A50N1,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,31.259479166666665,,,,False
+A51,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,31.065624999999997,,,,False
+A51N1,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,31.075714285714284,,,,False
+A52,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,30.616875,,,,False
+A53,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,30.628541666666663,,,,False
+A54,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,29.945104166666667,,,,False
+A55,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,32.794570864525824,,,,False
+A57,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,31.82331614433731,,,,False
+A59,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,32.760234201530494,,,,False
+A60,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,32.86756096285525,,,,False
+A62,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,33.011225824850534,,,,False
+L01,Reloncavi,salinidad_psu,fondo,2,2024.0,2025.0,32.403603036357765,,,,False
+L02,Estuario,salinidad_psu,fondo,2,2024.0,2025.0,32.5132426896374,,,,False
+L02N1,Estuario,salinidad_psu,fondo,2,2024.0,2025.0,32.41792488149106,,,,False
+L02N2,Estuario,salinidad_psu,fondo,2,2024.0,2025.0,32.36942311013004,,,,False
+L02N3,Estuario,salinidad_psu,fondo,2,2024.0,2025.0,32.465429563492066,,,,False
+L02N4,Estuario,salinidad_psu,fondo,2,2024.0,2025.0,32.39603693181819,,,,False
+L03,Reloncavi,salinidad_psu,fondo,2,2024.0,2025.0,32.37039181286549,,,,False
+L03N1,Estuario,salinidad_psu,fondo,2,2024.0,2025.0,32.50477579365079,,,,False
+L04,Calbuco,salinidad_psu,fondo,2,2024.0,2025.0,32.63378515316383,,,,False
+L04N2,Reloncavi,salinidad_psu,fondo,2,2024.0,2025.0,32.4909132592214,,,,False
+L04N3,Chacao,salinidad_psu,fondo,2,2024.0,2025.0,32.75228055329555,,,,False
+L04N4,Calbuco,salinidad_psu,fondo,2,2024.0,2025.0,32.56186427696079,,,,False
+L05,Ancud,salinidad_psu,fondo,2,2024.0,2025.0,32.94149163820051,,,,False
+L06,Chacao,salinidad_psu,fondo,2,2024.0,2025.0,32.76524983130904,,,,False
+L06N1,Reloncavi,salinidad_psu,fondo,2,2024.0,2025.0,32.35723354468599,,,,False
+L06N2,Reloncavi,salinidad_psu,fondo,2,2024.0,2025.0,32.36060648092004,,,,False
+L06N3,Hornopiren,salinidad_psu,fondo,2,2024.0,2025.0,32.021415541443844,,,,False
+L06N4,Hornopiren,salinidad_psu,fondo,2,2024.0,2025.0,32.55058688013074,,,,False
+L07,Butachauques,salinidad_psu,fondo,2,2024.0,2025.0,32.861693910256406,,,,False
+L08,Butachauques,salinidad_psu,fondo,2,2024.0,2025.0,32.7993125,,,,False
+L09,Butachauques,salinidad_psu,fondo,2,2024.0,2025.0,32.791431277056276,,,,False
+L09N1,Hornopiren,salinidad_psu,fondo,2,2024.0,2025.0,32.69340773809524,,,,False
+L10,Ayacara,salinidad_psu,fondo,2,2024.0,2025.0,32.721300925925924,,,,False
+L10N2,Desertores,salinidad_psu,fondo,2,2024.0,2025.0,32.79450721153846,,,,False
+L10N3,Ayacara,salinidad_psu,fondo,2,2024.0,2025.0,32.312168898809524,,,,False
+L11,Tenaun,salinidad_psu,fondo,2,2024.0,2025.0,33.049528877674256,,,,False
+L12,Chiloe central,salinidad_psu,fondo,2,2024.0,2025.0,33.24007936507937,,,,False
+L13,Chaulinec,salinidad_psu,fondo,2,2024.0,2025.0,33.154843750000005,,,,False
+L13N1,Chaulinec,salinidad_psu,fondo,2,2024.0,2025.0,33.12081004549808,,,,False
+L14,Desertores,salinidad_psu,fondo,2,2024.0,2025.0,32.978040616246496,,,,False
+L16,Quellon,salinidad_psu,fondo,3,2023.0,2025.0,33.36861111111111,0.19333333333333158,0.31276400405288124,0.7774402133877746,False
+L16N1,Quellon,salinidad_psu,fondo,3,2023.0,2025.0,33.403333333333336,0.11374999999999957,0.49875227761946017,0.501959912713157,False
+L17,Chaiten,salinidad_psu,fondo,3,2023.0,2025.0,32.98314285714286,0.2825000000000024,0.22219833510414252,0.8830463390273853,False
+L17N1,Chaiten,salinidad_psu,fondo,3,2023.0,2025.0,32.91038888888889,0.2645833333333343,0.17928632025960722,0.9227635873701074,False
+L17N2,Chaiten,salinidad_psu,fondo,3,2023.0,2025.0,33.290599206349206,0.13020833333333215,0.3304019633063778,0.7539770304256389,False
+L18,Quellon,salinidad_psu,fondo,2,2024.0,2025.0,33.40031372549019,,,,False
+L18N2,Quellon,salinidad_psu,fondo,2,2024.0,2025.0,33.34281111111111,,,,False
+L19,Quellon,salinidad_psu,fondo,2,2024.0,2025.0,33.37243055555555,,,,False
+L19N1,Quellon,salinidad_psu,fondo,3,2023.0,2025.0,33.33613888888889,0.18633333333333368,0.3680442575603714,0.7013895886974348,False
+L19N2,Quellon,salinidad_psu,fondo,2,2024.0,2025.0,33.50988636363636,,,,False
+L19N3,Quellon,salinidad_psu,fondo,2,2024.0,2025.0,33.211527777777775,,,,False
+L19N4,Chaiten,salinidad_psu,fondo,2,2024.0,2025.0,33.10198214285714,,,,False
+L20,Quellon,salinidad_psu,fondo,2,2024.0,2025.0,33.50463888888889,,,,False
+L20N1,Quellon,salinidad_psu,fondo,2,2024.0,2025.0,33.41577380952381,,,,False
+L22,Quellon,salinidad_psu,fondo,2,2024.0,2025.0,33.54298611111111,,,,False
+L22N1,Quellon,salinidad_psu,fondo,3,2023.0,2025.0,33.57229438997821,0.18638888888888872,0.39380030291965457,0.6637404332798283,False
+L22N2,Quellon,salinidad_psu,fondo,3,2023.0,2025.0,33.44605952380952,0.18888095238095204,0.23820790385902457,0.8664055394096989,False
+L22N3,Quellon,salinidad_psu,fondo,3,2023.0,2025.0,33.42648148148148,0.1901388888888924,0.40214535462613166,0.6513000323884548,False
+L23,Quellon,salinidad_psu,fondo,2,2024.0,2025.0,33.54340032679739,,,,False
+L23N1,Quellon,salinidad_psu,fondo,3,2023.0,2025.0,33.415795717592594,0.31430555555555273,0.17445256088542926,0.9267687560034936,False
+L23N2,Quellon,salinidad_psu,fondo,3,2023.0,2025.0,33.40314814814815,0.3474999999999966,0.10795557252181506,0.9715184896714913,False
+L24,Quellon,salinidad_psu,fondo,2,2024.0,2025.0,33.47436458333334,,,,False
+L24N1,Quellon,salinidad_psu,fondo,3,2023.0,2025.0,33.42590811965812,0.17666666666666586,0.4629195863894159,0.5581141315761929,False
+L25,Chaiten,salinidad_psu,fondo,3,2023.0,2025.0,32.971120370370365,0.17245833333333138,0.5791367636341284,0.3769688803296113,False
+M01N,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.05593988095238,,,,False
+M02N,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.2305,,,,False
+M03N,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.54624375,,,,False
+M04,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,33.640109374999994,,,,False
+M05,Aysen,salinidad_psu,fondo,2,2024.0,2025.0,32.88694642857143,,,,False
+M06,Natales,salinidad_psu,fondo,2,2024.0,2025.0,31.706869374999997,,,,False
+M06N,Natales,salinidad_psu,fondo,2,2024.0,2025.0,31.502396875,,,,False
+M06N1,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.26667142857143,,,,False
+M06N2,Natales,salinidad_psu,fondo,2,2024.0,2025.0,30.2736125,,,,False
+M06N3,Natales,salinidad_psu,fondo,2,2024.0,2025.0,31.922965476190477,,,,False
+M06N4,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.2752,,,,False
+M07,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.23913854166667,,,,False
+M07N,Natales,salinidad_psu,fondo,2,2024.0,2025.0,31.97670625,,,,False
+M07N1,Natales,salinidad_psu,fondo,2,2024.0,2025.0,31.876638095238093,,,,False
+M07N2,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.23759166666667,,,,False
+M07N3,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.17347142857143,,,,False
+M07N4,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.111725,,,,False
+M07N5,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.181878125,,,,False
+M08,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.300821428571425,,,,False
+M08N1,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.54775,,,,False
+M09,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.361153125,,,,False
+M09N1,Natales,salinidad_psu,fondo,1,2024.0,2024.0,32.7905,,,,False
+M09N2,Natales,salinidad_psu,fondo,1,2024.0,2024.0,32.5138,,,,False
+M10,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.49681428571429,,,,False
+M11,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.2957,,,,False
+M12,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.261741666666666,,,,False
+M13,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.52943571428571,,,,False
+M13N1,Natales,salinidad_psu,fondo,2,2024.0,2025.0,31.8604,,,,False
+M13N2,Natales,salinidad_psu,fondo,2,2024.0,2025.0,31.917825,,,,False
+M14,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.17042857142857,,,,False
+M15,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.304635000000005,,,,False
+M16,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.23534583333334,,,,False
+M16N1,Natales,salinidad_psu,fondo,1,2024.0,2024.0,32.216316666666664,,,,False
+M17,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.92664166666667,,,,False
+M18,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.031458928571425,,,,False
+M20,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.76867857142857,,,,False
+M21,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.0114,,,,False
+M22,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.2684875,,,,False
+M23,Natales,salinidad_psu,fondo,2,2024.0,2025.0,22.835951785714286,,,,False
+M24,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,31.032554166666667,,,,False
+M24N,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.11729642857143,,,,False
+M24N1,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.3858625,,,,False
+M24N2,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.29512857142857,,,,False
+M24N3,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.09575520833333,,,,False
+M25,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,30.944868749999998,,,,False
+M25N,Natales,salinidad_psu,fondo,2,2024.0,2025.0,32.374334375000004,,,,False
+M26,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,30.96927023809524,,,,False
+M27,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,31.009766666666668,,,,False
+M29,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,30.904532738095234,,,,False
+M29N1,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,31.02545619047619,,,,False
+M30,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,30.932404166666664,,,,False
+M31,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,30.998175000000003,,,,False
+M32,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,30.952235,,,,False
+M33,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,31.188224305555558,,,,False
+M34,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,31.056193452380953,,,,False
+M34N1,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,30.99053075396825,,,,False
+M35,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,31.110477777777778,,,,False
+M36,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,30.96948869047619,,,,False
+M36N1,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,30.959837916666665,,,,False
+M36N2,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,30.974692857142855,,,,False
+M37,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,30.94964285714286,,,,False
+M37N1,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,30.920064136904763,,,,False
+M37N2,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,31.069011250000003,,,,False
+M38,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,31.010776666666665,,,,False
+M38N1,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,31.022454166666662,,,,False
+M39,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,30.854642142857145,,,,False
+M39C1,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,30.886080787037038,,,,False
+M39C3,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,30.951169444444446,,,,False
+M39D1,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,30.912439285714285,,,,False
+M39D2,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,30.873836394557824,,,,False
+M39N1,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,30.94696904761905,,,,False
+M39N2,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,30.916260714285713,,,,False
+M39N3,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,30.924569444444444,,,,False
+M39N4,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,30.88747380952381,,,,False
+M39N5,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,30.8859125,,,,False
+M40,Pta. Arenas,salinidad_psu,fondo,1,2024.0,2024.0,32.762894,,,,False
+M40N1,Pta. Arenas,salinidad_psu,fondo,1,2024.0,2024.0,32.495666666666665,,,,False
+M41,Pta. Arenas,salinidad_psu,fondo,1,2024.0,2024.0,32.43257222222223,,,,False
+M42,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,31.494241666666667,,,,False
+M43,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,32.34806111111111,,,,False
+M44,Pta. Arenas,salinidad_psu,fondo,1,2024.0,2024.0,32.24877407407408,,,,False
+M44N1,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,32.34668333333333,,,,False
+M45,Pta. Arenas,salinidad_psu,fondo,1,2024.0,2024.0,31.633151111111108,,,,False
+M46,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,32.25622,,,,False
+M46N1,Pta. Arenas,salinidad_psu,fondo,2,2024.0,2025.0,32.102784722222225,,,,False
+1,Estuario,salinidad_psu,10 m,3,2019.0,2024.0,23.7277,0.7149947368421048,0.9213366019938636,0.01519055874669847,False
+10,Chaulinec,salinidad_psu,10 m,7,2019.0,2025.0,32.611,-0.014289285714285527,0.8261325911849933,0.010601016037126751,False
+11,Desertores,salinidad_psu,10 m,5,2019.0,2024.0,32.83188,-0.03471744186046539,0.516720209927658,0.1518395424200323,False
+12,Chaiten,salinidad_psu,10 m,4,2019.0,2025.0,32.42115,-0.08059999999999964,0.30281420065309717,0.4860680388109799,False
+13,Chaiten,salinidad_psu,10 m,6,2019.0,2025.0,32.5019,-0.08995285714285653,0.02900750693228172,0.7353280546225286,True
+14,Moraleda,salinidad_psu,10 m,6,2019.0,2025.0,32.56431666666667,-0.040741428571428574,0.6049413291599218,0.07286124153923651,False
+15,Moraleda,salinidad_psu,10 m,6,2019.0,2025.0,31.561850000000003,-0.07451142857142878,0.7515634194441154,0.027949806001224157,False
+16,Moraleda,salinidad_psu,10 m,6,2019.0,2025.0,30.26088333333333,0.010750000000000324,0.9374213948654073,0.0017425044357569852,False
+17,Puyuhuapi,salinidad_psu,10 m,4,2019.0,2025.0,30.416025,-0.05789759036144577,0.7900521111190917,0.04407811604555024,False
+18,Puyuhuapi,salinidad_psu,10 m,4,2019.0,2025.0,29.536375,-0.04173132530120485,0.8649480056604005,0.018239041175103214,False
+19,Puyuhuapi,salinidad_psu,10 m,2,2019.0,2023.0,29.83015,,,,False
+2,Estuario,salinidad_psu,10 m,0,,,,,,,False
+20,Puyuhuapi,salinidad_psu,10 m,4,2019.0,2025.0,29.924174999999998,-0.06174835164835157,0.728389640944028,0.07377218714651398,False
+21,Aysen,salinidad_psu,10 m,3,2019.0,2024.0,30.306166666666666,0.08702142857142801,0.03673555031124605,0.9966739347204012,True
+22,Aysen,salinidad_psu,10 m,6,2019.0,2025.0,29.30881666666667,-0.02693714285714306,0.8731929899874035,0.007181011377454109,False
+23,Aysen,salinidad_psu,10 m,4,2019.0,2025.0,29.033325,-0.12126428571428596,0.6303160960261878,0.13666618885731888,False
+24,Aysen,salinidad_psu,10 m,1,2023.0,2023.0,29.521,,,,False
+25,Aysen,salinidad_psu,10 m,1,2021.0,2021.0,27.2794,,,,False
+26,Aysen,salinidad_psu,10 m,5,2019.0,2025.0,28.157219999999995,-0.34828999999999993,0.2833389691381884,0.36167358797594834,False
+27,Aysen,salinidad_psu,10 m,6,2019.0,2025.0,28.516433333333335,-0.0355785714285714,0.8370806407796637,0.011890837924970647,False
+28,Aysen,salinidad_psu,10 m,4,2019.0,2024.0,26.8215,0.162607142857143,0.4220743259800933,0.33399808469136344,False
+29,Aysen,salinidad_psu,10 m,3,2019.0,2023.0,24.455533333333335,-0.23743076923076914,0.301444882000699,0.7920534473045241,False
+3,Reloncavi,salinidad_psu,10 m,1,2019.0,2019.0,32.2396,,,,False
+30,Aysen,salinidad_psu,10 m,4,2019.0,2025.0,21.661025,-0.24515599999999996,0.27790183524718015,0.5214257595393905,False
+31,Aysen,salinidad_psu,10 m,6,2019.0,2025.0,15.349850000000002,0.22089857142857136,0.45817684922820456,0.14396173151939026,False
+32,Aysen,salinidad_psu,10 m,0,,,,,,,False
+4,Reloncavi,salinidad_psu,10 m,0,,,,,,,False
+5,Reloncavi,salinidad_psu,10 m,1,2021.0,2021.0,32.3816,,,,False
+6,Reloncavi,salinidad_psu,10 m,0,,,,,,,False
+7,Ayacara,salinidad_psu,10 m,1,2023.0,2023.0,31.0635,,,,False
+8,Butachauques,salinidad_psu,10 m,3,2021.0,2024.0,32.79476666666667,0.036957142857143514,0.446618372330626,0.5834591706151477,False
+9,Ayacara,salinidad_psu,10 m,5,2019.0,2025.0,32.359,0.001951754385965755,0.9507052904203533,0.0014996764228034966,False
+A01,Guaitecas,salinidad_psu,10 m,2,2024.0,2025.0,32.59111111111111,,,,False
+A02,Guaitecas,salinidad_psu,10 m,2,2024.0,2025.0,32.616034391534384,,,,False
+A02N1,Guaitecas,salinidad_psu,10 m,2,2024.0,2025.0,32.840625,,,,False
+A03,Guaitecas,salinidad_psu,10 m,2,2024.0,2025.0,33.06125,,,,False
+A03N1,Guaitecas,salinidad_psu,10 m,2,2024.0,2025.0,33.04,,,,False
+A04,Guaitecas,salinidad_psu,10 m,2,2024.0,2025.0,32.28775,,,,False
+A04N1,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,32.5271623931624,,,,False
+A05,Guaitecas,salinidad_psu,10 m,2,2024.0,2025.0,32.557800925925925,,,,False
+A05N1,Guaitecas,salinidad_psu,10 m,2,2024.0,2025.0,32.4165625,,,,False
+A05N2,Guaitecas,salinidad_psu,10 m,2,2024.0,2025.0,32.66,,,,False
+A06,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,29.78553240740741,,,,False
+A07,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,29.701013888888887,,,,False
+A08,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,29.85550099206349,,,,False
+A08N1,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,30.595003156565657,,,,False
+A08N2,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,32.5389375,,,,False
+A08N3,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,32.30583333333334,,,,False
+A09,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,31.946875,,,,False
+A10,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,31.7509375,,,,False
+A11,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,31.69571428571429,,,,False
+A11N1,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,31.92932936507936,,,,False
+A12,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,31.781071428571426,,,,False
+A13,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,31.2675,,,,False
+A14,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,30.8440625,,,,False
+A15,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,30.427500000000002,,,,False
+A16,Puyuhuapi,salinidad_psu,10 m,1,2024.0,2024.0,30.002857142857145,,,,False
+A16N1,Puyuhuapi,salinidad_psu,10 m,2,2024.0,2025.0,29.85669642857143,,,,False
+A17,Puyuhuapi,salinidad_psu,10 m,2,2024.0,2025.0,30.285833333333336,,,,False
+A18,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,30.595937499999998,,,,False
+A18N1,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,31.198124999999997,,,,False
+A18N2,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,29.840714285714288,,,,False
+A18N3,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,30.38607142857143,,,,False
+A18N4,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,31.4209375,,,,False
+A19,Puyuhuapi,salinidad_psu,10 m,2,2024.0,2025.0,29.822499999999998,,,,False
+A19N1,Puyuhuapi,salinidad_psu,10 m,2,2024.0,2025.0,29.272857142857145,,,,False
+A19N2,Puyuhuapi,salinidad_psu,10 m,2,2024.0,2025.0,29.646875,,,,False
+A20,Puyuhuapi,salinidad_psu,10 m,2,2024.0,2025.0,29.065,,,,False
+A20N1,Puyuhuapi,salinidad_psu,10 m,2,2024.0,2025.0,29.049642857142857,,,,False
+A21,Puyuhuapi,salinidad_psu,10 m,2,2024.0,2025.0,30.432142857142857,,,,False
+A22,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,30.488125,,,,False
+A23,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,30.231785714285714,,,,False
+A24,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,28.605357142857144,,,,False
+A25,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,29.474092261904765,,,,False
+A26,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,30.41217857142857,,,,False
+A27,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,29.121979166666666,,,,False
+A28,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,29.065580357142856,,,,False
+A29,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,28.700595238095236,,,,False
+A30,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,30.24120535714286,,,,False
+A30N1,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,30.349166666666665,,,,False
+A32,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,29.917217261904764,,,,False
+A32N1,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,30.07,,,,False
+A33,Guaitecas,salinidad_psu,10 m,2,2024.0,2025.0,32.554642857142866,,,,False
+A34,Guaitecas,salinidad_psu,10 m,2,2024.0,2025.0,32.484224537037036,,,,False
+A35,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,31.5985,,,,False
+A35N1,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,31.182499999999997,,,,False
+A35N2,Guaitecas,salinidad_psu,10 m,2,2024.0,2025.0,32.275000000000006,,,,False
+A35N3,Guaitecas,salinidad_psu,10 m,2,2024.0,2025.0,32.2390625,,,,False
+A36,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,31.409285714285712,,,,False
+A37,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,31.856071428571433,,,,False
+A38N1,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,32.0346875,,,,False
+A38N2,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,32.61714285714285,,,,False
+A38N3,Guaitecas,salinidad_psu,10 m,2,2024.0,2025.0,32.565,,,,False
+A38N4,Guaitecas,salinidad_psu,10 m,2,2024.0,2025.0,32.646875,,,,False
+A39,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,30.809375000000003,,,,False
+A40,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,30.380357142857143,,,,False
+A41,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,31.450625,,,,False
+A41N1,Moraleda,salinidad_psu,10 m,2,2024.0,2025.0,32.365625,,,,False
+A42,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,29.897663690476186,,,,False
+A43,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,30.121636904761907,,,,False
+A44,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,29.833541666666665,,,,False
+A45,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,29.630238095238095,,,,False
+A47,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,29.825625000000002,,,,False
+A48,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,29.32242857142857,,,,False
+A48N1,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,29.512723214285714,,,,False
+A49,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,29.914035714285713,,,,False
+A49N1,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,31.582857142857144,,,,False
+A50,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,29.433630952380952,,,,False
+A50N1,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,29.464151785714286,,,,False
+A51,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,29.70955357142857,,,,False
+A51N1,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,29.461624999999998,,,,False
+A52,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,29.288660714285715,,,,False
+A53,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,29.492083333333333,,,,False
+A54,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,29.644666666666666,,,,False
+A55,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,28.14819146525374,,,,False
+A57,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,27.51607283876399,,,,False
+A59,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,28.243661964798292,,,,False
+A60,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,28.86653818824358,,,,False
+A62,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,28.92718704800733,,,,False
+L01,Reloncavi,salinidad_psu,10 m,2,2024.0,2025.0,31.864806268151412,,,,False
+L02,Estuario,salinidad_psu,10 m,2,2024.0,2025.0,30.705461271367522,,,,False
+L02N1,Estuario,salinidad_psu,10 m,2,2024.0,2025.0,30.057792410714285,,,,False
+L02N2,Estuario,salinidad_psu,10 m,2,2024.0,2025.0,31.27310615079365,,,,False
+L02N3,Estuario,salinidad_psu,10 m,2,2024.0,2025.0,30.733929821974,,,,False
+L02N4,Estuario,salinidad_psu,10 m,2,2024.0,2025.0,31.085270061102094,,,,False
+L03,Reloncavi,salinidad_psu,10 m,2,2024.0,2025.0,31.602313289141414,,,,False
+L03N1,Estuario,salinidad_psu,10 m,2,2024.0,2025.0,30.865752683080807,,,,False
+L04,Calbuco,salinidad_psu,10 m,2,2024.0,2025.0,32.461749210858585,,,,False
+L04N2,Reloncavi,salinidad_psu,10 m,2,2024.0,2025.0,32.049877860235,,,,False
+L04N3,Chacao,salinidad_psu,10 m,2,2024.0,2025.0,32.68233333333333,,,,False
+L04N4,Calbuco,salinidad_psu,10 m,2,2024.0,2025.0,32.36881171085859,,,,False
+L05,Ancud,salinidad_psu,10 m,2,2024.0,2025.0,32.81988243006993,,,,False
+L06,Chacao,salinidad_psu,10 m,2,2024.0,2025.0,32.68887642339544,,,,False
+L06N1,Reloncavi,salinidad_psu,10 m,2,2024.0,2025.0,31.639596298779722,,,,False
+L06N2,Reloncavi,salinidad_psu,10 m,2,2024.0,2025.0,31.283300844988347,,,,False
+L06N3,Hornopiren,salinidad_psu,10 m,2,2024.0,2025.0,31.44526265665192,,,,False
+L06N4,Hornopiren,salinidad_psu,10 m,2,2024.0,2025.0,31.572055059523812,,,,False
+L07,Butachauques,salinidad_psu,10 m,2,2024.0,2025.0,32.49411405480844,,,,False
+L08,Butachauques,salinidad_psu,10 m,2,2024.0,2025.0,32.574500599290005,,,,False
+L09,Butachauques,salinidad_psu,10 m,2,2024.0,2025.0,32.58448858652313,,,,False
+L09N1,Hornopiren,salinidad_psu,10 m,2,2024.0,2025.0,32.28364162071078,,,,False
+L10,Ayacara,salinidad_psu,10 m,2,2024.0,2025.0,32.01906747638327,,,,False
+L10N2,Desertores,salinidad_psu,10 m,2,2024.0,2025.0,32.72557142857143,,,,False
+L10N3,Ayacara,salinidad_psu,10 m,2,2024.0,2025.0,32.14498664529914,,,,False
+L11,Tenaun,salinidad_psu,10 m,2,2024.0,2025.0,32.8492337962963,,,,False
+L12,Chiloe central,salinidad_psu,10 m,2,2024.0,2025.0,33.2576127518315,,,,False
+L13,Chaulinec,salinidad_psu,10 m,2,2024.0,2025.0,33.11435496794872,,,,False
+L13N1,Chaulinec,salinidad_psu,10 m,2,2024.0,2025.0,33.02217261904762,,,,False
+L14,Desertores,salinidad_psu,10 m,2,2024.0,2025.0,32.90565079074152,,,,False
+L16,Quellon,salinidad_psu,10 m,3,2023.0,2025.0,33.32783333333333,0.17938888888888727,0.46085022383631385,0.5613413973708443,False
+L16N1,Quellon,salinidad_psu,10 m,3,2023.0,2025.0,33.34337962962963,0.09233333333333604,0.5810232868918077,0.37409882498720254,False
+L17,Chaiten,salinidad_psu,10 m,3,2023.0,2025.0,32.56744444444445,-0.041499999999999204,0.7929535470286756,0.10209600822023979,False
+L17N1,Chaiten,salinidad_psu,10 m,3,2023.0,2025.0,32.6067,0.20958333333333454,0.5376100892841955,0.44105957560290304,False
+L17N2,Chaiten,salinidad_psu,10 m,3,2023.0,2025.0,33.110499999999995,-0.036249999999999005,0.09807564373452826,0.9764536503808257,False
+L18,Quellon,salinidad_psu,10 m,2,2024.0,2025.0,33.296686507936506,,,,False
+L18N2,Quellon,salinidad_psu,10 m,2,2024.0,2025.0,33.309102182539675,,,,False
+L19,Quellon,salinidad_psu,10 m,2,2024.0,2025.0,33.328,,,,False
+L19N1,Quellon,salinidad_psu,10 m,3,2023.0,2025.0,33.30793181818182,0.16755050505050306,0.4182833373553615,0.6269549336476986,False
+L19N2,Quellon,salinidad_psu,10 m,2,2024.0,2025.0,33.463248619737755,,,,False
+L19N3,Quellon,salinidad_psu,10 m,2,2024.0,2025.0,33.07579761904762,,,,False
+L19N4,Chaiten,salinidad_psu,10 m,2,2024.0,2025.0,32.766741269841276,,,,False
+L20,Quellon,salinidad_psu,10 m,2,2024.0,2025.0,33.47073809523809,,,,False
+L20N1,Quellon,salinidad_psu,10 m,2,2024.0,2025.0,33.400000000000006,,,,False
+L22,Quellon,salinidad_psu,10 m,2,2024.0,2025.0,33.458875,,,,False
+L22N1,Quellon,salinidad_psu,10 m,3,2023.0,2025.0,33.4925324074074,0.11711111111111094,0.6251559211497114,0.3084320298659146,False
+L22N2,Quellon,salinidad_psu,10 m,3,2023.0,2025.0,33.40794444444444,0.17847222222222214,0.37147598574056917,0.6964440288488123,False
+L22N3,Quellon,salinidad_psu,10 m,3,2023.0,2025.0,33.42159259259259,0.19333333333333158,0.4115773747006391,0.6371144973026746,False
+L23,Quellon,salinidad_psu,10 m,2,2024.0,2025.0,33.52863095238095,,,,False
+L23N1,Quellon,salinidad_psu,10 m,3,2023.0,2025.0,33.34587037037037,0.38133333333333397,0.10167087825066515,0.974710661549536,False
+L23N2,Quellon,salinidad_psu,10 m,3,2023.0,2025.0,33.36629232804233,0.3262500000000017,0.19618853271476377,0.9079985076411936,False
+L24,Quellon,salinidad_psu,10 m,2,2024.0,2025.0,33.47236111111111,,,,False
+L24N1,Quellon,salinidad_psu,10 m,3,2023.0,2025.0,33.40701361655774,0.18308333333333593,0.4696281368400623,0.5476356533522039,False
+L25,Chaiten,salinidad_psu,10 m,3,2023.0,2025.0,32.668590764790764,0.14267857142856855,0.7277750004673215,0.17197377800499303,False
+M01N,Natales,salinidad_psu,10 m,2,2024.0,2025.0,29.281790476190473,,,,False
+M02N,Natales,salinidad_psu,10 m,2,2024.0,2025.0,29.097322222222225,,,,False
+M03N,Natales,salinidad_psu,10 m,2,2024.0,2025.0,30.142415625,,,,False
+M04,Aysen,salinidad_psu,10 m,1,2024.0,2024.0,28.92146833333333,,,,False
+M05,Aysen,salinidad_psu,10 m,2,2024.0,2025.0,23.067657142857144,,,,False
+M06,Natales,salinidad_psu,10 m,2,2024.0,2025.0,29.698793854166667,,,,False
+M06N,Natales,salinidad_psu,10 m,2,2024.0,2025.0,30.224449166666666,,,,False
+M06N1,Natales,salinidad_psu,10 m,2,2024.0,2025.0,29.24026666666667,,,,False
+M06N2,Natales,salinidad_psu,10 m,2,2024.0,2025.0,29.159349999999996,,,,False
+M06N3,Natales,salinidad_psu,10 m,2,2024.0,2025.0,29.204920238095237,,,,False
+M06N4,Natales,salinidad_psu,10 m,2,2024.0,2025.0,29.042494444444444,,,,False
+M07,Natales,salinidad_psu,10 m,2,2024.0,2025.0,29.439505729166665,,,,False
+M07N,Natales,salinidad_psu,10 m,2,2024.0,2025.0,29.201228125,,,,False
+M07N1,Natales,salinidad_psu,10 m,2,2024.0,2025.0,29.533320833333335,,,,False
+M07N2,Natales,salinidad_psu,10 m,2,2024.0,2025.0,29.630279861111113,,,,False
+M07N3,Natales,salinidad_psu,10 m,2,2024.0,2025.0,29.290669166666667,,,,False
+M07N4,Natales,salinidad_psu,10 m,2,2024.0,2025.0,29.499996875,,,,False
+M07N5,Natales,salinidad_psu,10 m,2,2024.0,2025.0,29.254421354166666,,,,False
+M08,Natales,salinidad_psu,10 m,2,2024.0,2025.0,28.280775595238097,,,,False
+M08N1,Natales,salinidad_psu,10 m,2,2024.0,2025.0,26.701016666666668,,,,False
+M09,Natales,salinidad_psu,10 m,2,2024.0,2025.0,27.033616145833335,,,,False
+M09N1,Natales,salinidad_psu,10 m,1,2024.0,2024.0,25.612800000000004,,,,False
+M09N2,Natales,salinidad_psu,10 m,1,2024.0,2024.0,25.5913,,,,False
+M10,Natales,salinidad_psu,10 m,2,2024.0,2025.0,26.894905952380952,,,,False
+M11,Natales,salinidad_psu,10 m,2,2024.0,2025.0,29.72827291666667,,,,False
+M12,Natales,salinidad_psu,10 m,2,2024.0,2025.0,28.2935,,,,False
+M13,Natales,salinidad_psu,10 m,2,2024.0,2025.0,27.594631547619045,,,,False
+M13N1,Natales,salinidad_psu,10 m,1,2024.0,2024.0,26.7107,,,,False
+M13N2,Natales,salinidad_psu,10 m,2,2024.0,2025.0,25.737699999999997,,,,False
+M14,Natales,salinidad_psu,10 m,2,2024.0,2025.0,25.76875714285714,,,,False
+M15,Natales,salinidad_psu,10 m,2,2024.0,2025.0,27.327021527777777,,,,False
+M16,Natales,salinidad_psu,10 m,2,2024.0,2025.0,26.223649523809524,,,,False
+M16N1,Natales,salinidad_psu,10 m,1,2024.0,2024.0,27.21499714285714,,,,False
+M17,Natales,salinidad_psu,10 m,2,2024.0,2025.0,24.664434166666666,,,,False
+M18,Natales,salinidad_psu,10 m,2,2024.0,2025.0,25.544775,,,,False
+M20,Natales,salinidad_psu,10 m,2,2024.0,2025.0,25.461061805555552,,,,False
+M21,Natales,salinidad_psu,10 m,2,2024.0,2025.0,23.425116547619048,,,,False
+M22,Natales,salinidad_psu,10 m,2,2024.0,2025.0,22.391396111111113,,,,False
+M23,Natales,salinidad_psu,10 m,2,2024.0,2025.0,18.440249166666664,,,,False
+M24,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.857815476190474,,,,False
+M24N,Natales,salinidad_psu,10 m,2,2024.0,2025.0,30.1751,,,,False
+M24N1,Natales,salinidad_psu,10 m,2,2024.0,2025.0,30.17104916666667,,,,False
+M24N2,Natales,salinidad_psu,10 m,2,2024.0,2025.0,29.59372333333333,,,,False
+M24N3,Natales,salinidad_psu,10 m,2,2024.0,2025.0,30.015372083333332,,,,False
+M25,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.801062023809525,,,,False
+M25N,Natales,salinidad_psu,10 m,2,2024.0,2025.0,27.243120312499997,,,,False
+M26,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.78128279761905,,,,False
+M27,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.828950694444444,,,,False
+M29,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.752108214285713,,,,False
+M29N1,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.861730357142857,,,,False
+M30,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.826819722222226,,,,False
+M31,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.878327777777777,,,,False
+M32,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.856739444444447,,,,False
+M33,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.96684487179487,,,,False
+M34,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.957894897959186,,,,False
+M34N1,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.855949583333334,,,,False
+M35,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.776274047619047,,,,False
+M36,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.836700476190476,,,,False
+M36N1,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.804101250000002,,,,False
+M36N2,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.846852499999997,,,,False
+M37,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.804605625,,,,False
+M37N1,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.828535331439394,,,,False
+M37N2,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.913270357142856,,,,False
+M38,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.869016354166668,,,,False
+M38N1,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.841034791666665,,,,False
+M39,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.744441865079366,,,,False
+M39C1,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.847506944444447,,,,False
+M39C3,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.82871898148148,,,,False
+M39D1,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.832509226190474,,,,False
+M39D2,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.807202083333337,,,,False
+M39N1,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.835707142857146,,,,False
+M39N2,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.81846244047619,,,,False
+M39N3,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.819459684343435,,,,False
+M39N4,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.823228869047618,,,,False
+M39N5,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.8409625,,,,False
+M40,Pta. Arenas,salinidad_psu,10 m,1,2024.0,2024.0,32.24917222222222,,,,False
+M40N1,Pta. Arenas,salinidad_psu,10 m,1,2024.0,2024.0,32.2885,,,,False
+M41,Pta. Arenas,salinidad_psu,10 m,1,2024.0,2024.0,32.26512916666667,,,,False
+M42,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.887275000000002,,,,False
+M43,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,30.911841666666668,,,,False
+M44,Pta. Arenas,salinidad_psu,10 m,1,2024.0,2024.0,31.951175000000003,,,,False
+M44N1,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,31.73879861111111,,,,False
+M45,Pta. Arenas,salinidad_psu,10 m,1,2024.0,2024.0,31.430400000000002,,,,False
+M46,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,31.925477380952383,,,,False
+M46N1,Pta. Arenas,salinidad_psu,10 m,2,2024.0,2025.0,31.97942916666667,,,,False

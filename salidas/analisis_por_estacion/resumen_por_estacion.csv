@@ -1,0 +1,121 @@
+zona_mf,variable,profundidad,n_estaciones,n_con_3_anos,n_sig
+Ancud,oxigeno_mg_L,10 m,1,0,0
+Ancud,oxigeno_mg_L,fondo,1,0,0
+Ancud,salinidad_psu,10 m,1,0,0
+Ancud,salinidad_psu,fondo,1,0,0
+Ancud,temperatura_C,10 m,1,0,0
+Ancud,temperatura_C,fondo,1,0,0
+Ayacara,oxigeno_mg_L,10 m,4,2,0
+Ayacara,oxigeno_mg_L,fondo,4,2,0
+Ayacara,salinidad_psu,10 m,4,1,0
+Ayacara,salinidad_psu,fondo,4,2,0
+Ayacara,temperatura_C,10 m,4,1,0
+Ayacara,temperatura_C,fondo,4,2,0
+Aysen,oxigeno_mg_L,10 m,42,12,0
+Aysen,oxigeno_mg_L,fondo,42,12,0
+Aysen,salinidad_psu,10 m,42,9,1
+Aysen,salinidad_psu,fondo,42,12,0
+Aysen,temperatura_C,10 m,42,12,1
+Aysen,temperatura_C,fondo,42,12,1
+Butachauques,oxigeno_mg_L,10 m,4,1,0
+Butachauques,oxigeno_mg_L,fondo,4,1,0
+Butachauques,salinidad_psu,10 m,4,1,0
+Butachauques,salinidad_psu,fondo,4,1,0
+Butachauques,temperatura_C,10 m,4,1,0
+Butachauques,temperatura_C,fondo,4,1,0
+Calbuco,oxigeno_mg_L,10 m,2,0,0
+Calbuco,oxigeno_mg_L,fondo,2,0,0
+Calbuco,salinidad_psu,10 m,2,0,0
+Calbuco,salinidad_psu,fondo,2,0,0
+Calbuco,temperatura_C,10 m,2,0,0
+Calbuco,temperatura_C,fondo,2,0,0
+Chacao,oxigeno_mg_L,10 m,2,0,0
+Chacao,oxigeno_mg_L,fondo,2,0,0
+Chacao,salinidad_psu,10 m,2,0,0
+Chacao,salinidad_psu,fondo,2,0,0
+Chacao,temperatura_C,10 m,2,0,0
+Chacao,temperatura_C,fondo,2,0,0
+Chaiten,oxigeno_mg_L,10 m,7,6,0
+Chaiten,oxigeno_mg_L,fondo,7,6,0
+Chaiten,salinidad_psu,10 m,7,6,1
+Chaiten,salinidad_psu,fondo,7,6,0
+Chaiten,temperatura_C,10 m,7,6,0
+Chaiten,temperatura_C,fondo,7,6,0
+Chaulinec,oxigeno_mg_L,10 m,3,1,0
+Chaulinec,oxigeno_mg_L,fondo,3,1,0
+Chaulinec,salinidad_psu,10 m,3,1,0
+Chaulinec,salinidad_psu,fondo,3,1,0
+Chaulinec,temperatura_C,10 m,3,1,1
+Chaulinec,temperatura_C,fondo,3,1,0
+Chiloe central,oxigeno_mg_L,10 m,1,0,0
+Chiloe central,oxigeno_mg_L,fondo,1,0,0
+Chiloe central,salinidad_psu,10 m,1,0,0
+Chiloe central,salinidad_psu,fondo,1,0,0
+Chiloe central,temperatura_C,10 m,1,0,0
+Chiloe central,temperatura_C,fondo,1,0,0
+Desertores,oxigeno_mg_L,10 m,3,1,0
+Desertores,oxigeno_mg_L,fondo,3,1,0
+Desertores,salinidad_psu,10 m,3,1,0
+Desertores,salinidad_psu,fondo,3,1,1
+Desertores,temperatura_C,10 m,3,1,0
+Desertores,temperatura_C,fondo,3,1,0
+Estuario,oxigeno_mg_L,10 m,8,2,0
+Estuario,oxigeno_mg_L,fondo,8,2,0
+Estuario,salinidad_psu,10 m,8,1,0
+Estuario,salinidad_psu,fondo,8,2,0
+Estuario,temperatura_C,10 m,8,2,0
+Estuario,temperatura_C,fondo,8,2,0
+Guaitecas,oxigeno_mg_L,10 m,15,0,0
+Guaitecas,oxigeno_mg_L,fondo,15,0,0
+Guaitecas,salinidad_psu,10 m,15,0,0
+Guaitecas,salinidad_psu,fondo,15,0,0
+Guaitecas,temperatura_C,10 m,15,0,0
+Guaitecas,temperatura_C,fondo,15,0,0
+Hornopiren,oxigeno_mg_L,10 m,3,0,0
+Hornopiren,oxigeno_mg_L,fondo,3,0,0
+Hornopiren,salinidad_psu,10 m,3,0,0
+Hornopiren,salinidad_psu,fondo,3,0,0
+Hornopiren,temperatura_C,10 m,3,0,0
+Hornopiren,temperatura_C,fondo,3,0,0
+Moraleda,oxigeno_mg_L,10 m,38,3,0
+Moraleda,oxigeno_mg_L,fondo,38,3,0
+Moraleda,salinidad_psu,10 m,38,3,0
+Moraleda,salinidad_psu,fondo,38,3,0
+Moraleda,temperatura_C,10 m,38,3,0
+Moraleda,temperatura_C,fondo,38,3,0
+Natales,oxigeno_mg_L,10 m,42,0,0
+Natales,oxigeno_mg_L,fondo,42,0,0
+Natales,salinidad_psu,10 m,42,0,0
+Natales,salinidad_psu,fondo,42,0,0
+Natales,temperatura_C,10 m,42,0,0
+Natales,temperatura_C,fondo,42,0,0
+Pta. Arenas,oxigeno_mg_L,10 m,41,0,0
+Pta. Arenas,oxigeno_mg_L,fondo,41,0,0
+Pta. Arenas,salinidad_psu,10 m,41,0,0
+Pta. Arenas,salinidad_psu,fondo,41,0,0
+Pta. Arenas,temperatura_C,10 m,41,0,0
+Pta. Arenas,temperatura_C,fondo,41,0,0
+Puyuhuapi,oxigeno_mg_L,10 m,13,4,0
+Puyuhuapi,oxigeno_mg_L,fondo,13,4,0
+Puyuhuapi,salinidad_psu,10 m,13,3,0
+Puyuhuapi,salinidad_psu,fondo,13,4,0
+Puyuhuapi,temperatura_C,10 m,13,4,0
+Puyuhuapi,temperatura_C,fondo,13,4,0
+Quellon,oxigeno_mg_L,10 m,19,9,1
+Quellon,oxigeno_mg_L,fondo,19,9,0
+Quellon,salinidad_psu,10 m,19,9,0
+Quellon,salinidad_psu,fondo,19,9,0
+Quellon,temperatura_C,10 m,19,9,4
+Quellon,temperatura_C,fondo,19,9,2
+Reloncavi,oxigeno_mg_L,10 m,9,4,0
+Reloncavi,oxigeno_mg_L,fondo,9,4,0
+Reloncavi,salinidad_psu,10 m,9,0,0
+Reloncavi,salinidad_psu,fondo,9,4,0
+Reloncavi,temperatura_C,10 m,9,4,0
+Reloncavi,temperatura_C,fondo,9,4,0
+Tenaun,oxigeno_mg_L,10 m,1,0,0
+Tenaun,oxigeno_mg_L,fondo,1,0,0
+Tenaun,salinidad_psu,10 m,1,0,0
+Tenaun,salinidad_psu,fondo,1,0,0
+Tenaun,temperatura_C,10 m,1,0,0
+Tenaun,temperatura_C,fondo,1,0,0

@@ -204,6 +204,19 @@ Compilar: `/home/rfvera/.typst/bin/typst compile informe/informe_ambiental.typ`
 Lee `estaciones_CTD_con_ZONA_MACROFAUNA.csv`. Escribe `salidas/verificacion/zonas_estaciones.csv`:
 zona, n de estaciones, lista de códigos, orden norte-sur.
 
+## Pipeline 11: Análisis por estación
+
+`~/miniconda3/envs/r_env/bin/python salidas/analisis_por_estacion.py`
+
+Lee `fondo_ctd_por_zona.csv` y `perfiles_procesados.csv` (profundidad 10 m).
+Escribe:
+- `salidas/analisis_por_estacion/tendencias_por_estacion.csv` — 1.548 combinaciones estación×variable×profundidad.
+- `salidas/analisis_por_estacion/resumen_por_estacion.csv` — conteos por zona×variable×profundidad.
+- `salidas/analisis_por_estacion/top_estaciones.csv` — 13 estaciones con tendencia significativa.
+- `informe/figuras/series_estaciones_*.png` — 5 figuras (temp/O2/sal × fondo/10 m).
+
+Resultado: 13 de 258 estaciones (5 %) con tendencia significativa. La señal de cambio a nivel de zona no se repite estación por estación.
+
 ## Reglas de versión
 
 - Nunca sobrescribir `.xlsx` fuentes. Están en `.gitignore` (`*.xlsx`).
