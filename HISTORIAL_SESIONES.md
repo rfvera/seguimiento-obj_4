@@ -630,3 +630,5 @@ de mar adyacente sin zona (656 fragmentos), incluida una parte de Puyuhuapi de
 - Commit 3fddb74 — metodologia de zonas en el informe.
 
 - Commit 7dfd3e3 — GPKG reproducible del mapa en informe/datos/.
+
+- Commit 16c41bc — sincronizar citas bibliograficas.
