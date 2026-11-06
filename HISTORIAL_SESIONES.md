@@ -626,3 +626,5 @@ de mar adyacente sin zona (656 fragmentos), incluida una parte de Puyuhuapi de
 - Commit 9593635 — analisis por estacion (13/258, 5 figuras).
 
 - Commit 7479b21 — definicion de siglas en primera aparicion.
+
+- Commit 3fddb74 — metodologia de zonas en el informe.
