@@ -15,13 +15,18 @@ OUT_PNG = BASE / "informe" / "figuras" / "cobertura_temporal.png"
 fondo = pd.read_csv(BASE / "fondo_ctd_por_zona.csv", low_memory=False)
 fondo["anio"] = fondo["fecha"].str[:4].astype(int)
 
+est = pd.read_csv(BASE / "estaciones_CTD_con_ZONA_MACROFAUNA.csv")
+lat = est.groupby("zona_mf")["lat"].mean()
 cob = fondo.groupby("zona_mf").agg(
     estaciones=("estacion_id", "nunique"),
     anio_min=("anio", "min"),
     anio_max=("anio", "max"),
     n_anios=("anio", "nunique"),
     casts=("fecha", "size"),
-).sort_values(["n_anios", "estaciones"], ascending=[False, False])
+)
+# orden norte -> sur por latitud media de las estaciones de cada zona
+cob["_lat"] = lat
+cob = cob.sort_values("_lat", ascending=False).drop(columns="_lat")
 
 mat = fondo.groupby(["zona_mf", "anio"]).size().unstack(fill_value=0)
 mat = mat.reindex(cob.index)

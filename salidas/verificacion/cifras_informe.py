@@ -130,12 +130,14 @@ for var, etiqueta in [("temperatura_C", "temperatura"), ("oxigeno_ml_L", "oxigen
     add(f"series.p_min_{etiqueta}", round(float(d["p_valor"].min()), 4),
         "resumen_tendencias_significativas.csv")
 
+est = pd.read_csv(BASE / "estaciones_CTD_con_ZONA_MACROFAUNA.csv")
+lat = est.groupby("zona_mf")["lat"].mean()
+
 # top 5 por variable, con el signo que corresponda
 tops = []
 for var, etiqueta in [("temperatura_C", "temperatura"), ("oxigeno_ml_L", "oxigeno"),
                       ("salinidad_psu", "salinidad")]:
     d = serie[serie["variable"] == var]
-    # se ordena por magnitud absoluta: el informe publica los cambios más fuertes
     d = d.reindex(d["pendiente"].abs().sort_values(ascending=False).index).head(5)
     for _, r in d.iterrows():
         tops.append({
@@ -144,8 +146,10 @@ for var, etiqueta in [("temperatura_C", "temperatura"), ("oxigeno_ml_L", "oxigen
             "cambio_decada": round(float(r.cambio_decada), 2),
             "p": round(float(r.p_valor), 3), "r2": round(float(r.r2), 3),
             "n_anos": int(r.n_anos),
+            "_lat": float(lat[r.zona_mf]),
         })
-pd.DataFrame(tops).to_csv(OUT / "top_tendencias_por_variable.csv", index=False)
+tops_df = pd.DataFrame(tops).sort_values(["variable", "_lat"], ascending=[True, False]).drop(columns="_lat")
+tops_df.to_csv(OUT / "top_tendencias_por_variable.csv", index=False)
 
 # --------------------------------------------------------- tabla de tendencias
 # Filas seleccionadas por bloques coherentes, no por ranking: así la tabla del
@@ -168,8 +172,10 @@ for var, zona, profs in seleccion:
             "tendencia": round(float(r.tendencia_anual), 3),
             "p": round(float(r.p_valor), 3), "r2": round(float(r.r2), 3),
             "n_anos": int(r.n_anos),
+            "_lat": float(lat[zona]),
         })
-pd.DataFrame(filas_sel).to_csv(OUT / "tendencias_profundidad_seleccion.csv", index=False)
+pd.DataFrame(filas_sel).sort_values(["_lat", "profundidad_m"], ascending=[False, True]).drop(columns="_lat").to_csv(
+    OUT / "tendencias_profundidad_seleccion.csv", index=False)
 add("anomalias.n_filas_tabla", len(filas_sel), "tendencias_profundidad_seleccion.csv")
 
 df = pd.DataFrame(filas).sort_values("clave")

@@ -190,3 +190,4 @@ Compilar: `/home/rfvera/.typst/bin/typst compile informe/informe_ambiental.typ`
 - Nunca sobrescribir `.xlsx` fuentes. Están en `.gitignore` (`*.xlsx`).
 - Salidas derivadas en `salidas/` y `informe/` son regenerables; revisar diff antes de commitear.
 - `git status` debe quedar limpio tras re-ejecutar los scripts.
+- **Orden norte-sur en figuras y tablas.** Toda tabla o figura que liste zonas de macrofauna se ordena de norte a sur por latitud media de sus estaciones (Estuario → Reloncaví → … → Pta. Arenas). No usar orden alfabético. Los scripts calculan el orden desde `estaciones_CTD_con_ZONA_MACROFAUNA.csv` (columna `lat`); no hardcodear la lista.

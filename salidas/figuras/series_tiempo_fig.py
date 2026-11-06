@@ -33,12 +33,12 @@ VARIABLES = {
 
 # Las seis tendencias significativas de fondo, en el orden del cuadro 3.
 PANELES = [
-    ("Quellon", "Quellón", "temperatura_C"),
-    ("Puyuhuapi", "Puyuhuapi", "oxigeno_ml_L"),
     ("Reloncavi", "Reloncaví", "oxigeno_ml_L"),
-    ("Aysen", "Aysén", "salinidad_psu"),
     ("Butachauques", "Butachauques", "salinidad_psu"),
     ("Desertores", "Desertores", "salinidad_psu"),
+    ("Quellon", "Quellón", "temperatura_C"),
+    ("Puyuhuapi", "Puyuhuapi", "oxigeno_ml_L"),
+    ("Aysen", "Aysén", "salinidad_psu"),
 ]
 
 fondo = pd.read_csv(BASE / "fondo_ctd_por_zona.csv", low_memory=False)
