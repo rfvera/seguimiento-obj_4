@@ -547,6 +547,9 @@ El análisis por zona agrega señal y puede ocultar la heterogeneidad dentro de 
 
 #bibliography("referencias.bib", title: none, style: "formato/apa-ifop.csl")
 
+#pagebreak()
+#include "formato/declaracion_ia.typ"
+
 = Estaciones por zona
 
 El cuadro 10 lista, por zona de macrofauna, las estaciones de muestreo que la componen. Los códigos con prefijo ``L`` corresponden al seguimiento 2019–2025 (archivo A, estaciones 1–32 y sus réplicas); los prefijos ``A`` y ``M`` corresponden a marea roja (archivo B, 2023–2025). La distribución espacial se muestra en el Mapa 1.
