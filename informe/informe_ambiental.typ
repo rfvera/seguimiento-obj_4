@@ -524,6 +524,10 @@ El cuadro 10 lista, por zona de macrofauna, las estaciones de muestreo que la co
 )
 
 
+= Reproducibilidad del mapa
+
+El Mapa 1 se puede reproducir con cualquier SIG a partir de `informe/datos/mapa_reproducible.gpkg` (capas `zonas`, `estaciones`, `costa`) y `informe/datos/acs_subpesca.gpkg`. El script `salidas/figuras/mapa_estaciones_acs.py` regenera el PNG a partir de esos archivos. Las capas están en EPSG:4326 (WGS84).
+
 = Anexo: archivos de salida y trazabilidad
 
 Las cifras regionales y los conteos provienen de `salidas/verificacion/cifras_informe.csv`, generado por `salidas/verificacion/cifras_informe.py`. Los cuadros 3 a 8 salen de los CSV de esa misma carpeta (`tendencias_fondo_significativas.csv`, `tendencias_profundidad_seleccion.csv`, `top_tendencias_por_variable.csv`) y la figura de `salidas/figuras/series_tiempo_fig.py`. Ninguna cifra se estimó a ojo: el informe completo se contrastó contra esos archivos en la auditoría.
@@ -540,6 +544,10 @@ Las cifras regionales y los conteos provienen de `salidas/verificacion/cifras_in
 - `salidas/figuras/cobertura_temporal.py` — genera `informe/figuras/cobertura_temporal.png` y `salidas/verificacion/cobertura_temporal.csv`.
 - `salidas/verificacion/zonas_estaciones.csv` — estaciones (código) por zona, orden norte-sur.
 - `salidas/verificacion/zonas_estaciones.py` — genera el CSV anterior.
+- `informe/datos/mapa_reproducible.gpkg` — capas `zonas` (20 polígonos, zona_mf), `estaciones` (259 puntos, zona_mf) y `costa` (línea Natural Earth 10 m), EPSG:4326. Reproduce el Mapa 1.
+- `informe/datos/acs_subpesca.gpkg` — polígonos oficiales de ACS de SUBPESCA.
+- `informe/datos/ne_10m_coastline.*` — línea de costa Natural Earth 10 m (shapefile).
+- `salidas/figuras/empaquetar_mapa.py` — genera el GPKG anterior a partir de las salidas del pipeline.
 - `salidas/oxigeno_conversion.py` — añade `oxigeno_mg_L` (factor 1,429) y `oxigeno_sat_pct` (Weiss 1970) a los CSVs de fondo y perfiles.
 - `zonas_poligonos.py` — genera `salidas/figuras/zonas_macrofauna.gpkg` (20 polígonos, orden norte-sur).
 - `salidas/analisis_por_estacion.py` — tendencias por estación (fondo y 10 m), resumen y top. Genera las Figuras 3 a 7.

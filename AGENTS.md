@@ -217,6 +217,14 @@ Escribe:
 
 Resultado: 13 de 258 estaciones (5 %) con tendencia significativa. La señal de cambio a nivel de zona no se repite estación por estación.
 
+## Pipeline 12: Empaquetar mapa para reproducibilidad
+
+`~/miniconda3/envs/r_env/bin/python salidas/figuras/empaquetar_mapa.py`
+
+Lee `zonas_macrofauna.gpkg`, `estaciones_CTD_con_ZONA_MACROFAUNA.csv` y `ne_10m_coastline.shp`.
+Escribe `informe/datos/mapa_reproducible.gpkg` (capas `zonas`, `estaciones`, `costa`) y copia
+`acs_subpesca.gpkg` y la linea de costa a `informe/datos/`.
+
 ## Reglas de versión
 
 - Nunca sobrescribir `.xlsx` fuentes. Están en `.gitignore` (`*.xlsx`).
