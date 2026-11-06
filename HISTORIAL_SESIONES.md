@@ -634,3 +634,5 @@ de mar adyacente sin zona (656 fragmentos), incluida una parte de Puyuhuapi de
 - Commit 16c41bc — sincronizar citas bibliograficas.
 
 - Commit c965ee6 — zonificacion de fiordos resuelta (tierra combinada NE+GSHHG, 0 estaciones fuera).
+
+- Commit 8f38c8e — linea de costa GSHHG alta resolucion en paquete reproducible.
