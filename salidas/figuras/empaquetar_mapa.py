@@ -31,26 +31,55 @@ est_gdf = gpd.GeoDataFrame(
     crs="EPSG:4326",
 )
 
-# 3. Costa
-costa = gpd.read_file(BASE / "salidas" / "figuras" / "ne_10m_coastline.shp")
-costa = costa[["geometry"]].copy()
+# 3. Costa (GSHHG high resolution, convertida a lineas)
+gshhg_path = Path("/tmp/opencode/gshhg_chile/gshhg_chile_high.shp")
+if gshhg_path.exists():
+    gshhg = gpd.read_file(gshhg_path)
+    lines = []
+    for geom in gshhg.geometry:
+        if geom is None or geom.is_empty:
+            continue
+        b = geom.boundary
+        if b is None or b.is_empty:
+            continue
+        if b.geom_type == "LineString":
+            lines.append(b)
+        elif hasattr(b, "geoms"):
+            for g in b.geoms:
+                if g.geom_type == "LineString":
+                    lines.append(g)
+                elif g.geom_type == "MultiLineString":
+                    for l in g.geoms:
+                        lines.append(l)
+    costa = gpd.GeoDataFrame(geometry=lines, crs="EPSG:4326")
+    # filtrar por bbox de Chile
+    costa = costa.cx[-76:-66, -55:-40]
+else:
+    costa = gpd.read_file(BASE / "salidas" / "figuras" / "ne_10m_coastline.shp")
+    costa = costa[["geometry"]].copy()
 
 # escribir GPKG (sobrescribir si existe)
 if GPKG.exists():
     GPKG.unlink()
 zonas.to_file(GPKG, layer="zonas", driver="GPKG")
 est_gdf.to_file(GPKG, layer="estaciones", driver="GPKG", mode="a")
-costa.to_file(GPKG, layer="costa", driver="GPKG", mode="a")
+costa.to_file(GPKG, layer="costa_gshhg_high", driver="GPKG", mode="a")
 
 # copiar archivos auxiliares
 shutil.copy2(BASE / "acs_subpesca.gpkg", OUT_DIR / "acs_subpesca.gpkg")
+# copiar GSHHG shapefile
+if gshhg_path.exists():
+    for ext in [".shp", ".shx", ".dbf", ".prj", ".cpg"]:
+        src = gshhg_path.with_suffix(ext)
+        if src.exists():
+            shutil.copy2(src, OUT_DIR / ("gshhg_chile_high" + ext))
 for ext in [".shp", ".shx", ".dbf", ".prj", ".cpg"]:
     src = BASE / "salidas" / "figuras" / ("ne_10m_coastline" + ext)
     if src.exists():
         shutil.copy2(src, OUT_DIR / ("ne_10m_coastline" + ext))
 
 print("GPKG:", GPKG)
-for layer in ["zonas", "estaciones", "costa"]:
+for layer in ["zonas", "estaciones", "costa_gshhg_high"]:
     g = gpd.read_file(GPKG, layer=layer)
     print(f"  {layer}: {len(g)} features, {g.crs}")
 print("auxiliares:", sorted(p.name for p in OUT_DIR.iterdir() if p.name != GPKG.name))

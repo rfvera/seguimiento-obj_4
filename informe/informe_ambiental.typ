@@ -526,7 +526,7 @@ El cuadro 10 lista, por zona de macrofauna, las estaciones de muestreo que la co
 
 = Reproducibilidad del mapa
 
-El Mapa 1 se puede reproducir con cualquier SIG a partir de `informe/datos/mapa_reproducible.gpkg` (capas `zonas`, `estaciones`, `costa`) y `informe/datos/acs_subpesca.gpkg`. El script `salidas/figuras/mapa_estaciones_acs.py` regenera el PNG a partir de esos archivos. Las capas están en EPSG:4326 (WGS84).
+El Mapa 1 se puede reproducir con cualquier SIG a partir de `informe/datos/mapa_reproducible.gpkg` (capas `zonas`, `estaciones`, `costa_gshhg_high`) y `informe/datos/acs_subpesca.gpkg`. La capa `costa_gshhg_high` contiene la línea de costa de GSHHG (alta resolución, 6.493 segmentos) en EPSG:4326. El script `salidas/figuras/mapa_estaciones_acs.py` regenera el PNG a partir de esos archivos.
 
 = Anexo: archivos de salida y trazabilidad
 
@@ -547,6 +547,7 @@ Las cifras regionales y los conteos provienen de `salidas/verificacion/cifras_in
 - `informe/datos/mapa_reproducible.gpkg` — capas `zonas` (20 polígonos, zona_mf), `estaciones` (259 puntos, zona_mf) y `costa` (línea Natural Earth 10 m), EPSG:4326. Reproduce el Mapa 1.
 - `informe/datos/acs_subpesca.gpkg` — polígonos oficiales de ACS de SUBPESCA.
 - `informe/datos/ne_10m_coastline.*` — línea de costa Natural Earth 10 m (shapefile).
+- `informe/datos/gshhg_chile_high.*` — línea de costa GSHHG alta resolución (shapefile, 6.493 segmentos).
 - `salidas/figuras/empaquetar_mapa.py` — genera el GPKG anterior a partir de las salidas del pipeline.
 - `salidas/oxigeno_conversion.py` — añade `oxigeno_mg_L` (factor 1,429) y `oxigeno_sat_pct` (Weiss 1970) a los CSVs de fondo y perfiles.
 - `zonas_poligonos.py` — genera `salidas/figuras/zonas_macrofauna.gpkg` (20 polígonos, orden norte-sur).
