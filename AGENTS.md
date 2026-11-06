@@ -185,6 +185,13 @@ Lee `fondo_ctd_por_zona.csv`. Escribe:
 
 Compilar: `/home/rfvera/.typst/bin/typst compile informe/informe_ambiental.typ`
 
+## Pipeline 10: Estaciones por zona
+
+`~/miniconda3/envs/r_env/bin/python salidas/verificacion/zonas_estaciones.py`
+
+Lee `estaciones_CTD_con_ZONA_MACROFAUNA.csv`. Escribe `salidas/verificacion/zonas_estaciones.csv`:
+zona, n de estaciones, lista de códigos, orden norte-sur.
+
 ## Reglas de versión
 
 - Nunca sobrescribir `.xlsx` fuentes. Están en `.gitignore` (`*.xlsx`).

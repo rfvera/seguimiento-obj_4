@@ -87,6 +87,8 @@ El mapa 1 muestra la distribución espacial de las 259 estaciones de la red CTD 
 
 La zonificación vigente incluye Pta. Arenas como zona propia. En versiones anteriores sus 393 registros (41 estaciones) estaban contabilizados dentro de Natales, lo que desplazaba las medias de esa zona; la separación corrige el sesgo y eleva el conteo de 19 a 20 zonas.
 
+Las estaciones que componen cada zona se listan en el anexo (tabla de estaciones por zona).
+
 = Cobertura temporal del muestreo
 
 La Figura 1 y el cuadro 9 resumen cuándo se muestreó cada zona. El periodo global del registro es 2019–2025, pero la cobertura por zona es muy desigual y condiciona todo lo que sigue.
@@ -385,6 +387,40 @@ La salinidad reúne el mayor número de tendencias significativas (91), con los 
 - Williams, C. A. J. (2014). *DY026 CTD processing report*. National Oceanography Centre, Liverpool. #link("https://www.bodc.ac.uk/data/documents/nodb/pdf/DY026_CTD_processing_report.pdf")
 - Rohan, S. K., Charriere, N. E., Riggle, B., O'Leary, C. A. y Raring, N. W. (2023). *A flexible approach for processing data collected using trawl-mounted CTDs during Alaska bottom-trawl surveys*. NOAA Technical Memorandum NMFS-AFSC 475. #link("https://doi.org/10.25923/8ape-q461")
 
+= Estaciones por zona
+
+El cuadro 10 lista, por zona de macrofauna, las estaciones de muestreo que la componen. Los códigos con prefijo ``L`` corresponden al seguimiento 2019–2025 (archivo A, estaciones 1–32 y sus réplicas); los prefijos ``A`` y ``M`` corresponden a marea roja (archivo B, 2023–2025). La distribución espacial se muestra en el Mapa 1.
+
+#cuadro(
+  table(
+    columns: (2.6cm, 1.4cm, 13.0cm),
+    align: (left, center, left),
+    [Zona], [n], [Estaciones (código)],
+    [Estuario], [8], [`1, 2, L02, L02N1, L02N2, L02N3, L02N4, L03N1`],
+    [Reloncavi], [9], [`3, 4, 5, 6, L01, L03, L04N2, L06N1, L06N2`],
+    [Calbuco], [2], [`L04, L04N4`],
+    [Chacao], [2], [`L04N3, L06`],
+    [Ancud], [1], [`L05`],
+    [Hornopiren], [3], [`L06N3, L06N4, L09N1`],
+    [Butachauques], [4], [`8, L07, L08, L09`],
+    [Tenaun], [1], [`L11`],
+    [Ayacara], [4], [`7, 9, L10, L10N3`],
+    [Chaulinec], [3], [`10, L13, L13N1`],
+    [Chiloe central], [1], [`L12`],
+    [Desertores], [3], [`11, L10N2, L14`],
+    [Quellon], [19], [`L16, L16N1, L18, L18N2, L19, L19N1, L19N2, L19N3, L20, L20N1, L22, L22N1, L22N2, L22N3, L23, L23N1, L23N2, L24, L24N1`],
+    [Chaiten], [7], [`12, 13, L17, L17N1, L17N2, L19N4, L25`],
+    [Guaitecas], [16], [`A01, A02, A02N1, A03, A03N1, A04, A05, A05N1, A05N2, A33, A34, A35N2, A35N3, A38N3, A38N4, L25N1`],
+    [Moraleda], [38], [`14, 15, 16, A04N1, A06, A07, A08, A08N1, A08N2, A08N3, A09, A10, A11, A11N1, A12, A13, A14, A15, A18, A18N1, A18N2, A18N3, A18N4, A22, A23, A30, A30N1, A32N1, A35, A35N1, A36, A37, A38N1, A38N2, A39, A40, A41, A41N1`],
+    [Puyuhuapi], [13], [`17, 18, 19, 20, A16, A16N1, A17, A19, A19N1, A19N2, A20, A20N1, A21`],
+    [Aysen], [42], [`21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, A24, A25, A26, A27, A28, A29, A32, A42, A43, A44, A45, A47, A48, A48N1, A49, A49N1, A50, A50N1, A51, A51N1, A52, A53, A54, A55, A57, A59, A60, A62, M04, M05`],
+    [Natales], [42], [`M01N, M02N, M03N, M06, M06N, M06N1, M06N2, M06N3, M06N4, M07, M07N, M07N1, M07N2, M07N3, M07N4, M07N5, M08, M08N1, M09, M09N1, M09N2, M10, M11, M12, M13, M13N1, M13N2, M14, M15, M16, M16N1, M17, M18, M20, M21, M22, M23, M24N, M24N1, M24N2, M24N3, M25N`],
+    [Pta. Arenas], [41], [`M24, M25, M26, M27, M29, M29N1, M30, M31, M32, M33, M34, M34N1, M35, M36, M36N1, M36N2, M37, M37N1, M37N2, M38, M38N1, M39, M39C1, M39C3, M39D1, M39D2, M39N1, M39N2, M39N3, M39N4, M39N5, M40, M40N1, M41, M42, M43, M44, M44N1, M45, M46, M46N1`],
+  ),
+  caption: [Estaciones de muestreo por zona de macrofauna (orden norte-sur). n = número de estaciones con al menos un cast procesado.],
+)
+
+
 = Anexo: archivos de salida y trazabilidad
 
 Las cifras regionales y los conteos provienen de `salidas/verificacion/cifras_informe.csv`, generado por `salidas/verificacion/cifras_informe.py`. Los cuadros 3 a 8 salen de los CSV de esa misma carpeta (`tendencias_fondo_significativas.csv`, `tendencias_profundidad_seleccion.csv`, `top_tendencias_por_variable.csv`) y la figura de `salidas/figuras/series_tiempo_fig.py`. Ninguna cifra se estimó a ojo: el informe completo se contrastó contra esos archivos en la auditoría.
@@ -399,6 +435,8 @@ Las cifras regionales y los conteos provienen de `salidas/verificacion/cifras_in
 - `salidas/analisis_serie_tiempo/resumen_tendencias_significativas.csv` — 178 tendencias significativas.
 - `salidas/figuras/series_tiempo_fig.py` — genera `informe/figuras/series_tendencias_fondo.png` (series anuales de fondo y 10 m en las seis zonas con tendencia).
 - `salidas/figuras/cobertura_temporal.py` — genera `informe/figuras/cobertura_temporal.png` y `salidas/verificacion/cobertura_temporal.csv`.
+- `salidas/verificacion/zonas_estaciones.csv` — estaciones (código) por zona, orden norte-sur.
+- `salidas/verificacion/zonas_estaciones.py` — genera el CSV anterior.
 - `fondo_ctd_por_zona.csv` — registro de fondo (2.363 filas, 220 del archivo A y 2.143 del archivo B).
 - `perfiles_procesados.py`, `reconstruir_ctd.py`, `salidas/analisis_ambiental/analisis_estado_referencia.py` — scripts reproducibles.
 - `mapa_estaciones_acs.png` — mapa de estaciones y zonas ACS.
