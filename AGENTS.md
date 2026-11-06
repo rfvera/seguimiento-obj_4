@@ -127,7 +127,7 @@ Usa `estaciones_CTD_con_ZONA_MACROFAUNA.csv` y `salidas/figuras/ne_10m_admin_0_c
 
 Metodología:
 - Tesselación de Voronoi por estación con `shapely.voronoi_polygons` (no `geovoronoi`): las regiones se generan sobre el bbox y luego se recortan. Así no falla con estaciones en fiordos que Natural Earth clasifica como tierra.
-- Área marina = bounding box grande alrededor de todas las estaciones MINUS la unión de TODOS los países que intersectan ese bbox (Chile, Argentina y cualquier otro). Restar solo Chile dejaba tierra argentina dentro de los polígonos.
+- Área marina = bounding box grande alrededor de todas las estaciones MINUS la tierra combinada (intersección de Natural Earth 10m y GSHHG alta resolución). Un punto es tierra solo si ambos datasets lo clasifican como tierra. Esto permite que los fiordos y canales (que GSHHG resuelve mejor) se consideren agua.
 - Cada región de Voronoi se asigna a la zona de su punto generador contenido (`region.contains`/`covers`) y se recorta al área marina.
 - Los polígonos se disuelven (unen) por zona_mf y se recortan de nuevo contra tierra; `set_precision(1e-9)` elimina astillas de borde.
 - Cada zona se recorta a la unión de buffers **geodésicos** de 100 km alrededor de sus propias estaciones, generados con `pyproj.Geod` (72 vértices). No se usa EPSG:6933: a estas latitudes un "buffer de 100 km" en 6933 resulta una elipse de ~148 km N-S por ~66 km E-O. Esto elimina extrapolaciones oceánicas sin respaldo: la auditoría SIG detectó que Puyuhuapi tenía 11.009,99 km² (94,4% de su área) en el Atlántico, a 649,9 km de su estación más cercana.
@@ -141,7 +141,7 @@ Verificación del script:
 - Partes menores a 1 km²: 3 (Chacao 0,224; Moraleda 0,007; Pta. Arenas 0,676).
 - Solapamiento entre zonas: 0,074 km² (73.607 m²; precisión de borde).
 - Tierra residual: 0,00000000 km² con `set_precision(1e-9)`; sin esa rejilla, 0,123 km² de astillas de borde.
-- Distancia máxima estación -> su polígono: 8,54 km (60 estaciones en fiordos quedan fuera por la costa NE 10m; se requiere GSHHG full/high o cartografía SHOA para corregirlo).
+- Distancia máxima estación -> su polígono: 0,00 km (todas las 259 estaciones quedan dentro de su zona tras incluir las 32 estaciones en fiordos con buffer de 100 m).
 - Distancia máxima parte -> estación más cercana de su zona: 97,76 km (dentro del buffer geodésico de 100 km).
 
 Salida:

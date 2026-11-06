@@ -172,16 +172,16 @@ Se aplicó el procedimiento estándar para perfiles CTD, basado en el paquete R 
 Las 20 zonas de macrofauna (zona_mf) se usan como referencia espacial para todo el análisis. Sus polígonos se construyeron a partir de las 259 estaciones de muestreo con el siguiente procedimiento:
 
 1. *Tesselación de Voronoi* por estación, con `shapely.voronoi_polygons` sobre el bounding box de todas las estaciones. La tesselación se hace en grados; las regiones se recortan después.
-2. *Área marina* = bounding box amplio alrededor de todas las estaciones menos la unión de todos los países que intersectan ese bounding box (Chile, Argentina y cualquier otro). Restar solo Chile dejaba tierra argentina dentro de los polígonos.
+2. *Área marina* = bounding box amplio alrededor de todas las estaciones menos la tierra combinada (intersección de Natural Earth 10 m y GSHHG alta resolución). Un punto es tierra solo si ambos datasets lo clasifican como tierra; esto permite que los fiordos y canales (que GSHHG resuelve mejor) se consideren agua.
 3. *Asignación*: cada región de Voronoi se asigna a la zona de su punto generador (estación) mediante `contains`/`covers`, y se recorta al área marina.
 4. *Dissolve por zona*: las regiones se unen por zona_mf y se recortan de nuevo contra tierra. `set_precision(1e-9)` elimina astillas de borde.
 5. *Recorte a 100 km*: cada zona se recorta a la unión de buffers *geodésicos* de 100 km alrededor de sus propias estaciones, generados con `pyproj.Geod` (72 vértices). No se usa EPSG:6933, porque a estas latitudes un buffer de 100 km en esa proyección resulta una elipse de ~148 km N-S por ~66 km E-O. Esto elimina extrapolaciones oceánicas sin respaldo: la auditoría SIG detectó que la versión anterior de Puyuhuapi tenía 11.009,99 km² (94,4 % de su área) en el Atlántico, a 649,9 km de su estación más cercana.
 6. *Topología por componentes conexas*: después de restar tierra, se conservan solo las partes que están en la misma componente marina que una parte ancla (la que contiene una estación, o la más cercana si todas caen en tierra). Una parte al otro lado de una barrera terrestre está en otra componente y se descarta. Una parte sin estación pero en la misma componente (agua adyacente) se conserva, para no abrir huecos de cobertura.
 
-Resultado: 20 polígonos de zona, sin solapamientos significativos (0,074 km² de borde), sin tierra firme y sin partes al otro lado de una barrera terrestre sin respaldo. Área total 178.279,27 km².
+Resultado: 20 polígonos de zona, sin solapamientos significativos (0,074 km² de borde) y sin partes al otro lado de una barrera terrestre sin respaldo. Área total 190.724 km². Las 32 estaciones que quedaban en tierra (fiordos no resueltos por ninguna base de datos) se incluyen en su zona con un buffer de 100 m (~6,5 % del área total es tierra residual).
 
 *Limitaciones de la zonificación:*
-- 60 de las 259 estaciones caen en "tierra" según la costa Natural Earth 10 m (fiordos y canales) y quedan fuera de su polígono (distancia máxima 8,54 km). Se requiere cartografía de mayor resolución (GSHHG o SHOA) para corregirlo.
+- 32 de las 259 estaciones caen en tierra según la costa combinada (Natural Earth 10 m + GSHHG alta resolución) y se incluyen en su zona con un buffer de 100 m. La cartografía de SHOA (1:50.000) resolvería los casos restantes.
 - La tesselación se hace en grados; teselar en un CRS métrico (UTM 18S/19S o Albers) es una mejora pendiente.
 - No hay capa de límites marítimos en el repositorio; el residual fuera de aguas chilenas no es calculable.
 - Tres partes menores a 1 km² (Chacao 0,224; Moraleda 0,007; Pta. Arenas 0,676 km²).
