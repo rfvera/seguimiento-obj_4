@@ -616,3 +616,5 @@ de mar adyacente sin zona (656 fragmentos), incluida una parte de Puyuhuapi de
 - Commit 04b3306 — orden norte-sur en tablas y figuras.
 
 - Commit ce6ed9e — tabla de estaciones por zona (Cuadro 10).
+
+- Commit d5ebeb1 — conversion O2 ml/L -> mg/L (factor 1.429) + saturacion Weiss.
