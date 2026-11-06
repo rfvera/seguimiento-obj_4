@@ -167,6 +167,28 @@ Se aplicó el procedimiento estándar para perfiles CTD, basado en el paquete R 
 6. Profundidad de fondo: en el archivo A se toma de la columna PROF_SECT_m (profundidad de sector o carta, valor máximo por grupo); en el archivo B, de la batimetría GEBCO (General Bathymetric Chart of the Oceans) 2026 en la coordenada de la estación, porque los perfiles de marea roja llegan mayoritariamente hasta ~55 m (máximo 101 m) y su medición más profunda no representa el fondo.
 7. Unión con zonas: cada registro se asigna a su zona de macrofauna (zona_mf).
 
+== Zonificación: polígonos de zona de macrofauna
+
+Las 20 zonas de macrofauna (zona_mf) se usan como referencia espacial para todo el análisis. Sus polígonos se construyeron a partir de las 259 estaciones de muestreo con el siguiente procedimiento:
+
+1. *Tesselación de Voronoi* por estación, con `shapely.voronoi_polygons` sobre el bounding box de todas las estaciones. La tesselación se hace en grados; las regiones se recortan después.
+2. *Área marina* = bounding box amplio alrededor de todas las estaciones menos la unión de todos los países que intersectan ese bounding box (Chile, Argentina y cualquier otro). Restar solo Chile dejaba tierra argentina dentro de los polígonos.
+3. *Asignación*: cada región de Voronoi se asigna a la zona de su punto generador (estación) mediante `contains`/`covers`, y se recorta al área marina.
+4. *Dissolve por zona*: las regiones se unen por zona_mf y se recortan de nuevo contra tierra. `set_precision(1e-9)` elimina astillas de borde.
+5. *Recorte a 100 km*: cada zona se recorta a la unión de buffers *geodésicos* de 100 km alrededor de sus propias estaciones, generados con `pyproj.Geod` (72 vértices). No se usa EPSG:6933, porque a estas latitudes un buffer de 100 km en esa proyección resulta una elipse de ~148 km N-S por ~66 km E-O. Esto elimina extrapolaciones oceánicas sin respaldo: la auditoría SIG detectó que la versión anterior de Puyuhuapi tenía 11.009,99 km² (94,4 % de su área) en el Atlántico, a 649,9 km de su estación más cercana.
+6. *Topología por componentes conexas*: después de restar tierra, se conservan solo las partes que están en la misma componente marina que una parte ancla (la que contiene una estación, o la más cercana si todas caen en tierra). Una parte al otro lado de una barrera terrestre está en otra componente y se descarta. Una parte sin estación pero en la misma componente (agua adyacente) se conserva, para no abrir huecos de cobertura.
+
+Resultado: 20 polígonos de zona, sin solapamientos significativos (0,074 km² de borde), sin tierra firme y sin partes al otro lado de una barrera terrestre sin respaldo. Área total 178.279,27 km².
+
+*Limitaciones de la zonificación:*
+- 60 de las 259 estaciones caen en "tierra" según la costa Natural Earth 10 m (fiordos y canales) y quedan fuera de su polígono (distancia máxima 8,54 km). Se requiere cartografía de mayor resolución (GSHHG o SHOA) para corregirlo.
+- La tesselación se hace en grados; teselar en un CRS métrico (UTM 18S/19S o Albers) es una mejora pendiente.
+- No hay capa de límites marítimos en el repositorio; el residual fuera de aguas chilenas no es calculable.
+- Tres partes menores a 1 km² (Chacao 0,224; Moraleda 0,007; Pta. Arenas 0,676 km²).
+
+El Mapa 1 muestra las estaciones coloreadas por zona_mf junto a los polígonos oficiales de ACS de SUBPESCA.
+
+
 == Estado de referencia
 
 Por zona de macrofauna y profundidad se calculan número de registros, número de estaciones, rango de años y, para cada variable, media, mediana, percentiles 5/25/75/95 y desvío estándar.
@@ -519,6 +541,7 @@ Las cifras regionales y los conteos provienen de `salidas/verificacion/cifras_in
 - `salidas/verificacion/zonas_estaciones.csv` — estaciones (código) por zona, orden norte-sur.
 - `salidas/verificacion/zonas_estaciones.py` — genera el CSV anterior.
 - `salidas/oxigeno_conversion.py` — añade `oxigeno_mg_L` (factor 1,429) y `oxigeno_sat_pct` (Weiss 1970) a los CSVs de fondo y perfiles.
+- `zonas_poligonos.py` — genera `salidas/figuras/zonas_macrofauna.gpkg` (20 polígonos, orden norte-sur).
 - `salidas/analisis_por_estacion.py` — tendencias por estación (fondo y 10 m), resumen y top. Genera las Figuras 3 a 7.
 - `fondo_ctd_por_zona.csv` — registro de fondo (2.363 filas, 220 del archivo A y 2.143 del archivo B).
 - `perfiles_procesados.py`, `reconstruir_ctd.py`, `salidas/analisis_ambiental/analisis_estado_referencia.py` — scripts reproducibles.
