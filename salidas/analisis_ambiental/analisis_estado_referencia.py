@@ -106,8 +106,10 @@ def trayectorias_cambio(df: pd.DataFrame) -> pd.DataFrame:
         fila = {"zona_mf": zona, "n_registros": len(sub),
                 "n_estaciones": sub["estacion_id"].nunique(),
                 "anio_min": int(sub["anio"].min()), "anio_max": int(sub["anio"].max())}
-        # Promedio anual por zona (una observacion por ano)
-        anual = sub.groupby("anio")[VARIABLES].mean().reset_index()
+        # Promedio anual por zona (una observacion por ano).
+        # El indice queda como el ano real: con anos faltantes, ajustar contra
+        # la posicion 0,1,2... escala mal la pendiente.
+        anual = sub.groupby("anio")[VARIABLES].mean()
         for var in VARIABLES:
             v = anual[var].dropna()
             if len(v) < 3:
@@ -117,7 +119,7 @@ def trayectorias_cambio(df: pd.DataFrame) -> pd.DataFrame:
                 fila[f"{var}_p_valor"] = np.nan
                 fila[f"{var}_n_anos"] = int(len(v))
                 continue
-            x = v.index.values.astype(float)  # indice de anos ordenados
+            x = v.index.values.astype(float)  # ano real
             y = v.values.astype(float)
             # OLS: y = a + b*x
             x_mean = x.mean()

@@ -1,5 +1,54 @@
 # Historial de sesiones — objetivo_4 (IFOP Seguimiento CTD)
 
+## Sesión 2026-11-06 (usuario `rfvera`) — corrección del informe y figuras de series
+
+### Objetivo
+Retomar el objetivo 4 corrigiendo el informe antes de añadir contenido nuevo: las cifras publicadas no coincidían con las salidas del pipeline. Añadir figuras de series de tiempo de las variables.
+
+### Diagnóstico
+1. `salidas/analisis_ambiental/*.csv` databa de las 13:40 del 5 de noviembre, antes de separar la zona **Pta. Arenas** de Natales. El análisis tenía 19 zonas; sus 393 registros y 41 estaciones seguían contabilizados en Natales, sesgando sus medias hasta 0,74 °C.
+2. El informe citaba 19 zonas, 102 tendencias en una sección y 178 en otra, 3 tendencias de fondo y "178 tendencias en 19 zonas, 349 profundidades". Las salidas daban 179 anomalías (41/48/90) y 178 series anuales en **8 zonas y 106 profundidades**.
+3. El cuadro 2 estaba calculado con el pipeline anterior: a 1 m publicaba 32,40 psu; la salida vigente da 29,42 psu.
+4. **Error metodológico:** `analisis_estado_referencia.py` ajustaba el OLS contra la posición de la serie (0,1,2…), no contra el año calendario. Con años faltantes (Puyuhuapi y Aysén no tienen 2020) la pendiente quedaba mal escalada. Corregido a año real.
+5. Las citas metodológicas del informe (RBR 2017, Scottish Marine 2013, Frontiers 2022) no estaban en las referencias verificadas del proyecto.
+
+### Correcciones aplicadas
+- `salidas/analisis_ambiental/analisis_estado_referencia.py`: OLS contra año real. Regeneradas las 3 salidas (20 zonas).
+- `informe/informe_ambiental.typ`: reescrito contra las salidas vigentes; 20 zonas, 6 tendencias de fondo, cifras de perfiles corregidas; cuadros 1–8 actualizados; pie de página arreglado; figuras con numeración propia (`Cuadro`, `Mapa`, `Figura`).
+- Referencias sustituidas por las verificadas: Kelley y Richards (2026, vignette `oce`), Williams (2014, DY026, NOC Liverpool) y Rohan et al. (2023, DOI 10.25923/8ape-q461).
+- Nuevo `salidas/verificacion/cifras_informe.py` → 152 cifras con clave, valor y fuente. Es la única fuente admisible del .typ.
+- Nuevo `salidas/figuras/series_tiempo_fig.py` → `informe/figuras/series_tendencias_fondo.png`: 6 paneles con serie anual de fondo y de 10 m y OLS sobre año real.
+- `AGENTS.md`, `contexto_metodologico_ctd.md` y `salidas/analisis_ambiental/README.md` sincronizados.
+
+### Resultados corregidos (registro de fondo, 2.363 registros, 20 zonas)
+- Temperatura 9,73 °C (n=2.310); oxígeno 5,48 ml/L (n=2.189); salinidad 32,16 psu (n=2.247).
+- Seis tendencias significativas (p<0,05):
+  - Quellón temperatura +0,88 °C/año (p=0,0235, R²=1,00, n=3).
+  - Puyuhuapi oxígeno +0,26 ml/L/año (p=0,0222, R²=0,77, n=6).
+  - Reloncaví oxígeno +0,45 ml/L/año (p=0,0261, R²=0,66, n=7).
+  - Aysén salinidad +0,41 psu/año (p=0,0496, R²=0,66, n=6).
+  - Butachauques salinidad −0,05 psu/año (p=0,0305, R²=0,73, n=6).
+  - Desertores salinidad −0,08 psu/año (p=0,0291, R²=0,65, n=7).
+- Butachauques entra como tendencia significativa solo al corregir el OLS: con el índice posicional daba p=0,058.
+- Aysén queda en el borde del umbral (p=0,0496).
+
+### Lecciones
+- Al separar una zona hay que regenerar el análisis por zona, no solo el registro de fondo. Los CSV de salida no avisan.
+- Ajustar contra la posición de la serie y no contra el año real cambia pendientes y significancias cuando faltan años. Revisar cualquier script que use `v.index` tras `groupby`.
+- Generar figuras al tamaño final: una imagen de 11 in insertada a 90 % de página deja el texto interno a ~4 pt.
+
+### Verificación de cierre (auditoría VERITAS, aplicada por SMITH)
+Las 10 correcciones obligatorias y las 5 recomendadas se aplicaron y se verificaron por grep y por reproducción en pandas:
+- `cifras_informe.csv` regenerado (152 cifras); `tendencias_fondo_significativas.csv` con p a 4 decimales.
+- PDF recompilado: 9 páginas, tablas completas, pie de página correcto, sin restos de la versión anterior.
+- Figura regenerada con coma decimal y pie que declara el no-ajuste de la serie de 10 m.
+- `git status` revisado antes del commit; los `.xlsx` siguen excluidos.
+
+### Commits
+- (pendiente) Aplicar correcciones de auditoría + figura + trazabilidad.
+
+---
+
 ## Sesión 2026-11-05 (usuario `rfvera`) — corrección profundidad fondo marea roja + GEBCO
 
 ### Objetivo

@@ -15,7 +15,9 @@ Estado ambiental de referencia y trayectorias de cambio ambiental regional, a pa
 - Cada registro de fondo se une a su estación y zona_mf.
 - Estado de referencia: media, mediana, percentiles 5/25/75/95 y desvio estándar por zona y variable.
 - Trayectoria de cambio: promedio anual por zona; pendiente OLS sobre el índice de año; p-valor por t-test (scipy.stats.t). Se requieren ≥3 años para calcular tendencia.
-- 19 zonas con datos; 7 zonas solo tienen 2024–2025 (n_anos=2, sin tendencia calculable).
+- 20 zonas con datos; 9 zonas solo tienen 2024–2025 (n_anos=2, sin tendencia calculable).
+- 6 tendencias significativas (p<0,05): Quellón temperatura, Puyuhuapi y Reloncaví oxígeno, Aysén, Butachauques y Desertores salinidad.
+- El OLS se ajusta contra el año calendario, no contra la posición de la serie: con años faltantes, `v.index` posicional escala mal la pendiente.
 
 ## Entorno
 `~/miniconda3/envs/r_env/bin/python` (pandas 3.0.2, scipy 1.17.1).

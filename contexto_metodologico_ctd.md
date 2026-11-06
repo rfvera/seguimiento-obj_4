@@ -48,11 +48,11 @@ Se aplican calibraciones de laboratorio a salinidad, oxígeno y otros sensores, 
 
 ### Lo que tenemos (`fondo_ctd_por_zona.csv`)
 
-- **2.366 registros** (una fila por estación×fecha)
+- **2.363 registros** (una fila por estación×fecha)
 - Para cada registro se guarda la medición a la **profundidad máxima** del perfil (registro de fondo)
 - Variables: temperatura_C, oxígeno_ml_L, salinidad_psu, profundidad_fondo_m
 - Período: 2019–2025 (archivo A: 2019–2025, estaciones 1–32; archivo B marea roja: 2023–2025, 227 estaciones)
-- Zonas: 19 zonas de macrofauna asignadas a cada estación
+- Zonas: 20 zonas de macrofauna asignadas a cada estación
 
 ### Lo que NO tenemos (y se necesitaría para análisis de perfiles completos)
 
@@ -63,12 +63,19 @@ Se aplican calibraciones de laboratorio a salinidad, oxígeno y otros sensores, 
 
 ## Implicación para el análisis actual
 
-El análisis realizado hasta ahora (`estado_referencia_por_zona.csv`, `trayectorias_cambio_por_zona.csv`) trabaja con el **registro de fondo** (medición a la profundidad máxima), no con perfiles CTD completos. Esto es válido para:
+`estado_referencia_por_zona.csv` y `trayectorias_cambio_por_zona.csv` trabajan con el **registro de fondo**. En paralelo, `perfiles_procesados.py` construye el perfil completo bineado a 1 m (140.787 registros) y sus derivados: promedios anuales por zona×profundidad, ciclo estacional, anomalías y tendencias. El análisis por perfiles ya no depende de datos crudos por escaneo: los `.xlsx` originales traen las mediciones discretas suficientes para el bineo.
 
-- Caracterizar condiciones de fondo por zona y año
-- Detectar tendencias de largo plazo en variables de fondo
+Con el registro de fondo es válido:
 
-Pero **no es un análisis de perfiles CTD** en el sentido oceánico estándar (downcast completo, binning por metro, etc.). Para eso se necesitarían los datos crudos por escaneo de cada estación×fecha.
+- Caracterizar condiciones de fondo por zona y año.
+- Detectar tendencias de largo plazo en variables de fondo.
+
+Con los perfiles procesados se añade:
+
+- Contraste vertical de las tendencias (caso Aysén: salinización somera y desalinización profunda).
+- Cálculo de anomalías con ciclo estacional removido.
+
+Lo que sigue sin estar disponible es el dato crudo a 24 Hz por cast, necesario para auditar el trimming original (downcast vs upcast, fase de equilibración) y para recalibrar sensores con botellas.
 
 ## Recomendación metodológica para futuras etapas
 

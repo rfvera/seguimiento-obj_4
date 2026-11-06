@@ -67,8 +67,8 @@ Metodología de series de tiempo integrada:
 Usa `fondo_ctd_por_zona.csv` (ya tiene zona_mf, no necesita merge).
 
 Salidas (en `salidas/analisis_ambiental/`):
-- `estado_referencia_por_zona.csv` — 19 zonas, estadísticas por zona y variable.
-- `trayectorias_cambio_por_zona.csv` — 19 zonas, pendientes OLS por variable.
+- `estado_referencia_por_zona.csv` — 20 zonas, estadísticas por zona y variable.
+- `trayectorias_cambio_por_zona.csv` — 20 zonas, pendientes OLS por variable.
 - `resumen_regional.csv` — métricas regionales.
 - `README.md` — documentación.
 
@@ -77,21 +77,26 @@ Salidas (en `salidas/analisis_ambiental/`):
 - Temperatura regional: media 9,73 °C, mediana 9,87 °C, desvío 1,50 °C (n=2.310).
 - Oxígeno regional: media 5,48 ml/L, mediana 5,26 ml/L, desvío 1,97 ml/L (n=2.189).
 - Salinidad regional: media 32,16 psu, mediana 32,56 psu, desvío 1,54 psu (n=2.247).
-- Tendencias significativas (p<0,05, registro de fondo):
-  - Quellón: temperatura +0,88 °C/año (p=0,023, R2=0,999, n=3 años).
-  - Aysén: salinidad +0,50 psu/año (p=0,030, R2=0,76, n=6 años).
-  - Desertores: salinidad -0,08 psu/año (p=0,029, R2=0,65, n=7 años).
-- 8 zonas con solo 2024–2025 (sin tendencia): Ancud, Calbuco, Chacao, Chiloé central, Guaitecas, Hornopirén, Natales, Tenaun.
+- Tendencias significativas (p<0,05, registro de fondo): **6**, no 3.
+  - Quellón: temperatura +0,88 °C/año (p=0,0235, R2=1,00, n=3 años).
+  - Puyuhuapi: oxígeno +0,26 ml/L/año (p=0,0222, R2=0,77, n=6 años).
+  - Reloncaví: oxígeno +0,45 ml/L/año (p=0,0261, R2=0,66, n=7 años).
+  - Aysén: salinidad +0,41 psu/año (p=0,0496, R2=0,66, n=6 años).
+  - Butachauques: salinidad -0,05 psu/año (p=0,0305, R2=0,73, n=6 años).
+  - Desertores: salinidad -0,08 psu/año (p=0,0291, R2=0,65, n=7 años).
+- El OLS de `analisis_estado_referencia.py` se ajusta contra el **año calendario**, no contra la posición 0,1,2 de la serie. Con años faltantes (Puyuhuapi y Aysén no tienen 2020), la versión anterior sobreestimaba la pendiente y omitía Butachauques. No volver a `v.index` posicional.
+- 9 zonas con solo 2024–2025 (sin tendencia): Ancud, Calbuco, Chacao, Chiloé central, Guaitecas, Hornopirén, Natales, Pta. Arenas, Tenaun.
+- Pta. Arenas es zona propia desde la corrección de zonificación: 393 registros y 41 estaciones que antes se contabilizaban en Natales. El análisis por zona debe regenerarse si se toca `estaciones_CTD_con_ZONA_MACROFAUNA.csv`, o queda con 19 zonas y cifras sesgadas.
 
 ### Resultados de perfiles por profundidad y series de tiempo (140.787 registros, 349 profundidades, 20 zonas)
 
-- 178 tendencias significativas (p<0,05) en zona×profundidad×variable.
-- Temperatura: 41 tendencias sig., calentamiento en Quellón +1,07 °C/año (R²=0,996).
+- 179 tendencias significativas (p<0,05) de **anomalías** en zona×profundidad×variable (41 temperatura, 48 oxígeno, 90 salinidad).
+- 178 tendencias significativas (p<0,05) de **series anuales OLS**, concentradas en 8 zonas y 106 profundidades (41 temperatura, 46 oxígeno, 91 salinidad). Son dos estimadores distintos: no sumar 179 y 178.
+- Temperatura: 41 tendencias sig., calentamiento en Quellón +1,07 °C/año (R²=0,996, 3–23 m).
 - Oxígeno: 46 tendencias sig., aumentos en Butachauques +0,68 ml/L/año (R²=0,966).
 - Salinidad: 91 tendencias sig., desalinización en Reloncaví −0,92 psu/año (R²=0,999), salinización en Aysén +0,60 psu/año (R²=0,73).
-- Aysén (238–250 m): salinidad −0,14 psu/año (R²=0,78–0,82).
-- Butachauques (284–290 m): salinidad −0,04 psu/año (R²>0,99).
-- Quellón (superficie): temperatura +0,88 °C/año (R²=1,00).
+- Aysén muestra contraste vertical: salinización sobre 56 m y desalinización en 239–251 m (−0,14 psu/año, R²=0,78–0,82).
+- Butachauques (285–304 m): salinidad −0,04 psu/año, pero con 3 años no consecutivos (2019, 2021, 2025) y un solo registro válido por año. El R²>0,99 no implica robustez.
 
 ## Pipeline 4: Análisis de series de tiempo por variable
 
@@ -142,6 +147,28 @@ Verificación del script:
 Salida:
 - `salidas/figuras/zonas_macrofauna.gpkg` — 20 polígonos de zona (EPSG:4326), sin tierra y con extensión acotada a 100 km de sus estaciones.
 - `salidas/figuras/ne_10m_admin_0_countries.*` — países Natural Earth 10m (necesario para reproducir).
+
+## Pipeline 7: Verificación de cifras del informe
+
+`~/miniconda3/envs/r_env/bin/python salidas/verificacion/cifras_informe.py`
+
+Lee las salidas de los pipelines 1–4 y escribe en `salidas/verificacion/`:
+- `cifras_informe.csv` — 152 cifras clave/valor/fuente. Es la única fuente admisible para el .typ.
+- `tendencias_fondo_significativas.csv`, `tendencias_profundidad_seleccion.csv`,
+  `top_tendencias_por_variable.csv`, `cuadro_resumen_por_profundidad.csv` — las tablas del informe.
+
+Regla: ninguna cifra del informe se transcribe a mano. Si cambia un CSV del pipeline, se
+re-ejecuta este script y se compara `cifras_informe.csv` antes de recompilar el PDF.
+
+## Pipeline 8: Figuras de series de tiempo
+
+`~/miniconda3/envs/r_env/bin/python salidas/figuras/series_tiempo_fig.py`
+
+Lee `fondo_ctd_por_zona.csv` y `salidas/perfiles_procesados/promedio_anual_por_profundidad.csv`.
+Escribe `informe/figuras/series_tendencias_fondo.png`: 6 paneles (una zona por tendencia
+significativa), cada uno con la serie anual de fondo y la de 10 m, y la recta OLS sobre el
+año real. El tamaño de la figura está pensado para insertarse a 90% del ancho de página:
+si se cambia el `figsize`, revisar que el texto interno siga siendo legible en el PDF.
 
 ## Informe Typst (en `informe/`)
 
