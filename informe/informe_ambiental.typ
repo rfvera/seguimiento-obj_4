@@ -52,21 +52,21 @@
 #let cuadro(body, caption: none) = figure(
   text(size: 9.5pt, body),
   caption: caption,
-  kind: "cuadro",
+  kind: table,
   supplement: [Cuadro],
 )
 
 #let mapa(body, caption: none) = figure(
   body,
   caption: caption,
-  kind: "mapa",
+  kind: image,
   supplement: [Mapa],
 )
 
 #let figura(body, caption: none) = figure(
   body,
   caption: caption,
-  kind: "figura",
+  kind: image,
   supplement: [Figura],
 )
 
@@ -93,6 +93,14 @@
 ]
 
 #counter(page).update(1)
+
+// ============ ÍNDICES ============
+#pagebreak()
+#outline(title: "Índice de contenidos", target: heading, depth: 2)
+#pagebreak()
+#outline(title: "Índice de figuras", target: figure.where(kind: image))
+#pagebreak()
+#outline(title: "Índice de tablas", target: figure.where(kind: table))
 
 #align(center)[
   #set text(size: 20pt, weight: "bold")
@@ -208,7 +216,7 @@ Las zonas de referencia son las definidas en la base de macrofauna del IFOP (zon
 
 == Procedimiento de procesamiento CTD (estándar oceánico)
 
-Se aplicó el procedimiento estándar para perfiles CTD, basado en el paquete R `oce` (Kelley y Richards, 2026), el informe de procesamiento DY026 del National Oceanography Centre (Williams, 2014) y el protocolo para CTD montados en redes de arrastre de NOAA AFSC (Rohan et al., 2023):
+Se aplicó el procedimiento estándar para perfiles CTD, basado en el paquete R `oce` @kelley2026oce, el informe de procesamiento DY026 del National Oceanography Centre @williams2014dy026 y el protocolo para CTD montados en redes de arrastre de NOAA AFSC @rohan2023ctd:
 
 1. Lectura de archivos originales: los archivos .xlsx se leen como solo lectura, nunca se sobrescriben.
 2. Trimming: se descartan datos de superficie y calibración. En el archivo A se excluyen las filas con FLAG_BOOL igual a 0; en el archivo B, las profundidades menores a 0,5 m.
@@ -535,11 +543,9 @@ El análisis por zona agrega señal y puede ocultar la heterogeneidad dentro de 
 
 6. Las zonas con menor oxígeno de referencia (Puyuhuapi, Moraleda, Chaitén, Estuario) son candidatas a monitoreo prioritario de oxígeno. Ninguna muestra tendencia negativa: las 46 tendencias significativas de oxígeno son positivas, y Puyuhuapi ya registra un aumento de fondo. Conviene verificar si se trata de una recuperación o de una oscilación de corto plazo.
 
-= Referencias
+= Referencias bibliográficas
 
-- Kelley, D. y Richards, C. (2026). *Analysis of CTD data*. Vignette del paquete oce. #link("https://cran.r-project.org/web/packages/oce/vignettes/B_ctd.html") (consultado el 6 de noviembre de 2026).
-- Williams, C. A. J. (2014). *DY026 CTD processing report*. National Oceanography Centre, Liverpool. #link("https://www.bodc.ac.uk/data/documents/nodb/pdf/DY026_CTD_processing_report.pdf")
-- Rohan, S. K., Charriere, N. E., Riggle, B., O'Leary, C. A. y Raring, N. W. (2023), NOAA (National Oceanic and Atmospheric Administration). *A flexible approach for processing data collected using trawl-mounted CTDs during Alaska bottom-trawl surveys*. NOAA Technical Memorandum NMFS-AFSC 475. #link("https://doi.org/10.25923/8ape-q461")
+#bibliography("referencias.bib", title: none, style: "formato/apa-ifop.csl")
 
 = Estaciones por zona
 
