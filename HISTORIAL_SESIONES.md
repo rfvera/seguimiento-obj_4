@@ -1,4 +1,24 @@
-# Historial de sesiones — objetivo_4 (IFOP Seguimiento CTD)
+## Sesión 2026-11-06 (cont.) — contexto temporal del muestreo
+
+### Objetivo
+El informe no dejaba claro qué periodo abarcaba cada una de las 20 zonas: pasaba del mapa (espacio) al estado de referencia sin mostrar la cobertura temporal. Se agregó una sección dedicada.
+
+### Cambios
+- Nuevo script `salidas/figuras/cobertura_temporal.py` → `informe/figuras/cobertura_temporal.png` (matriz zona×año, escala sqrt, marcador para zonas solo 2024–2025) y `salidas/verificacion/cobertura_temporal.csv`.
+- Nueva sección 3 "Cobertura temporal del muestreo" en el informe, con Figura 1 (cobertura) y Cuadro 9 (20 zonas, estaciones, primer/último año, años con dato, casts).
+- Resumen ejecutivo con una línea sobre la cobertura irregular.
+- `AGENTS.md`: pipeline 9 documentado.
+
+### Hallazgos que condicionan el informe
+- 9 zonas (Ancud, Calbuco, Chacao, Chiloé central, Guaitecas, Hornopirén, Natales, Pta. Arenas, Tenaun) solo tienen 2024–2025.
+- Quellón: 2023–2025.
+- Aysén, Moraleda y Puyuhuapi sin datos en 2020.
+- Aysén tiene 11 casts en 2019 y 243 en 2024: el promedio anual de 2019 se apoya en 11 registros.
+
+### Commits
+- (pendiente) Añadir contexto temporal.
+
+---
 
 ## Sesión 2026-11-06 (usuario `rfvera`) — corrección del informe y figuras de series
 

@@ -72,6 +72,8 @@ Los valores regionales del registro de fondo son:
 - Oxígeno disuelto: media 5,48 ml/L (mediana 5,26 ml/L, desvío estándar 1,97 ml/L) sobre 2.189 registros válidos.
 - Salinidad: media 32,16 psu (mediana 32,56 psu, desvío estándar 1,54 psu) sobre 2.247 registros válidos.
 
+La cobertura temporal no es uniforme: 11 zonas cubren 2019–2025 (con huecos: Aysén, Moraleda y Puyuhuapi sin 2020), 9 zonas tienen solo 2024–2025 y Quellón cubre 2023–2025. La Figura 1 y el cuadro de la sección 3 detallan la cobertura por zona.
+
 Seis combinaciones zona×variable muestran tendencia significativa en el registro de fondo (p menor que 0,05): calentamiento en Quellón, aumento de oxígeno en Puyuhuapi y Reloncaví, y cambios de salinidad de distinto signo en Aysén, Butachauques y Desertores. En los perfiles completos, 179 combinaciones zona×profundidad×variable presentan tendencia significativa de anomalías; las series anuales, calculadas con un estimador distinto, arrojan 178 tendencias significativas concentradas en 8 zonas y 106 profundidades. Ambas cifras miden cosas parecidas pero no idénticas y no deben sumarse.
 
 = Área de estudio
@@ -84,6 +86,52 @@ El mapa 1 muestra la distribución espacial de las 259 estaciones de la red CTD 
 )
 
 La zonificación vigente incluye Pta. Arenas como zona propia. En versiones anteriores sus 393 registros (41 estaciones) estaban contabilizados dentro de Natales, lo que desplazaba las medias de esa zona; la separación corrige el sesgo y eleva el conteo de 19 a 20 zonas.
+
+= Cobertura temporal del muestreo
+
+La Figura 1 y el cuadro 9 resumen cuándo se muestreó cada zona. El periodo global del registro es 2019–2025, pero la cobertura por zona es muy desigual y condiciona todo lo que sigue.
+
+#figura(
+  image("figuras/cobertura_temporal.png", width: 90%),
+  caption: [Cobertura temporal por zona de macrofauna: número de casts con registro de fondo por año (2019–2025). La escala de color es la raíz cuadrada del número de casts, para que los años con pocos muestreos sean visibles. Marcador rojo: zonas con datos solo en 2024–2025.],
+)
+
+#cuadro(
+  table(
+    columns: (3.0cm, 1.8cm, 1.7cm, 1.7cm, 1.5cm, 1.6cm),
+    align: center,
+    [Zona], [Estaciones], [Primer año], [Último año], [Años con dato], [Casts],
+    [Aysén], [42], [2019], [2025], [6], [377],
+    [Pta. Arenas], [41], [2024], [2025], [2], [393],
+    [Natales], [42], [2024], [2025], [2], [359],
+    [Moraleda], [38], [2019], [2025], [6], [361],
+    [Guaitecas], [15], [2024], [2025], [2], [146],
+    [Quellón], [19], [2023], [2025], [3], [180],
+    [Puyuhuapi], [13], [2019], [2025], [6], [117],
+    [Estuario], [8], [2019], [2025], [7], [74],
+    [Chaitén], [7], [2019], [2025], [6], [56],
+    [Reloncaví], [9], [2019], [2025], [7], [76],
+    [Chaulinec], [3], [2019], [2025], [7], [27],
+    [Desertores], [3], [2019], [2025], [7], [27],
+    [Butachauques], [4], [2019], [2025], [6], [37],
+    [Ayacara], [4], [2019], [2025], [7], [34],
+    [Hornopirén], [3], [2024], [2025], [2], [29],
+    [Calbuco], [2], [2024], [2025], [2], [20],
+    [Chacao], [2], [2024], [2025], [2], [20],
+    [Ancud], [1], [2024], [2025], [2], [10],
+    [Chiloé central], [1], [2024], [2025], [2], [10],
+    [Tenaun], [1], [2024], [2025], [2], [10],
+  ),
+  caption: [Cobertura temporal por zona (registro de fondo, 2019–2025). Años con dato = años con al menos un cast válido.],
+)
+
+De la tabla se desprenden tres hechos que condicionan el resto del informe:
+
+1. *Nueve zonas (Ancud, Calbuco, Chacao, Chiloé central, Guaitecas, Hornopirén, Natales, Pta. Arenas y Tenaun) tienen datos solo en 2024–2025.* No admiten tendencia de ningún tipo.
+2. *Quellón cubre 2023–2025 (3 años).* Sus tendencias son alertas tempranas.
+3. *Aysén, Moraleda y Puyuhuapi no tienen datos de 2020.* Las series anuales de esas zonas tienen un hueco que se trata como año faltante en el OLS, no como cero.
+
+Las zonas con menos de tres años quedan fuera de cualquier análisis de trayectoria, y las de tres años se interpretan con la reserva indicada en las limitaciones.
 
 = Contexto y objetivo
 
@@ -183,7 +231,7 @@ La salinidad superficial (29,42 psu a 1 m) es consistente con la descarga de agu
 
 = Tendencias del registro de fondo
 
-El cuadro 3 lista las seis combinaciones zona×variable con tendencia significativa (p menor que 0,05) en el registro de fondo; la Figura 1 muestra esas series completas. La tendencia se ajusta sobre el promedio anual de la zona contra el año calendario, de modo que los años faltantes cuentan como tales y no como un paso entre observaciones consecutivas.
+El cuadro 3 lista las seis combinaciones zona×variable con tendencia significativa (p menor que 0,05) en el registro de fondo; la Figura 2 muestra esas series completas. La tendencia se ajusta sobre el promedio anual de la zona contra el año calendario, de modo que los años faltantes cuentan como tales y no como un paso entre observaciones consecutivas.
 
 #cuadro(
   table(
@@ -350,6 +398,7 @@ Las cifras regionales y los conteos provienen de `salidas/verificacion/cifras_in
 - `salidas/analisis_ambiental/trayectorias_cambio_por_zona.csv` — tendencias por zona (20 zonas).
 - `salidas/analisis_serie_tiempo/resumen_tendencias_significativas.csv` — 178 tendencias significativas.
 - `salidas/figuras/series_tiempo_fig.py` — genera `informe/figuras/series_tendencias_fondo.png` (series anuales de fondo y 10 m en las seis zonas con tendencia).
+- `salidas/figuras/cobertura_temporal.py` — genera `informe/figuras/cobertura_temporal.png` y `salidas/verificacion/cobertura_temporal.csv`.
 - `fondo_ctd_por_zona.csv` — registro de fondo (2.363 filas, 220 del archivo A y 2.143 del archivo B).
 - `perfiles_procesados.py`, `reconstruir_ctd.py`, `salidas/analisis_ambiental/analisis_estado_referencia.py` — scripts reproducibles.
 - `mapa_estaciones_acs.png` — mapa de estaciones y zonas ACS.

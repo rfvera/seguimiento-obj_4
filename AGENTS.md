@@ -170,6 +170,14 @@ significativa), cada uno con la serie anual de fondo y la de 10 m, y la recta OL
 año real. El tamaño de la figura está pensado para insertarse a 90% del ancho de página:
 si se cambia el `figsize`, revisar que el texto interno siga siendo legible en el PDF.
 
+## Pipeline 9: Cobertura temporal del muestreo
+
+`~/miniconda3/envs/r_env/bin/python salidas/figuras/cobertura_temporal.py`
+
+Lee `fondo_ctd_por_zona.csv`. Escribe:
+- `salidas/verificacion/cobertura_temporal.csv` — 20 zonas con estaciones, primer/ultimo año, años con dato, casts y casts por año.
+- `informe/figuras/cobertura_temporal.png` — matriz zona×año (escala sqrt).
+
 ## Informe Typst (en `informe/`)
 
 - `informe/informe_ambiental.typ` — documento Typst completo.
