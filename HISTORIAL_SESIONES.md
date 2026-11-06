@@ -644,3 +644,5 @@ de mar adyacente sin zona (656 fragmentos), incluida una parte de Puyuhuapi de
 - Commit bf379d8 — logo IFOP en paquete reproducible.
 
 - Commit cc2b16a — imagen de fondo portada/contraportada.
+
+- Commit d541a86 — indices, bibliografia .bib y citas en azul.
