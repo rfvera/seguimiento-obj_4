@@ -16,7 +16,7 @@ El informe no dejaba claro qué periodo abarcaba cada una de las 20 zonas: pasab
 - Aysén tiene 11 casts en 2019 y 243 en 2024: el promedio anual de 2019 se apoya en 11 registros.
 
 ### Commits
-- (pendiente) Añadir contexto temporal.
+- Commit 5362230 — contexto temporal.
 
 ---
 
