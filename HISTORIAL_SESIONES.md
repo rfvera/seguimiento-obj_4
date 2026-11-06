@@ -640,3 +640,5 @@ de mar adyacente sin zona (656 fragmentos), incluida una parte de Puyuhuapi de
 - Commit deeb5b1 — formato IFOP (encabezado/pie institucional).
 
 - Commit 21a50c7 — portada, creditos y contraportada formato IFOP.
+
+- Commit bf379d8 — logo IFOP en paquete reproducible.
