@@ -638,3 +638,5 @@ de mar adyacente sin zona (656 fragmentos), incluida una parte de Puyuhuapi de
 - Commit 8f38c8e — linea de costa GSHHG alta resolucion en paquete reproducible.
 
 - Commit deeb5b1 — formato IFOP (encabezado/pie institucional).
+
+- Commit 21a50c7 — portada, creditos y contraportada formato IFOP.
