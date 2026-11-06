@@ -39,7 +39,7 @@ FONDO = BASE / "fondo_ctd_por_zona.csv"
 ZONAS_MF = BASE / "estaciones_CTD_con_ZONA_MACROFAUNA.csv"
 OUTDIR = BASE / "salidas" / "analisis_ambiental"
 
-VARIABLES = ["temperatura_C", "oxigeno_ml_L", "salinidad_psu"]
+VARIABLES = ["temperatura_C", "oxigeno_mg_L", "salinidad_psu"]
 
 # ---------------------------------------------------------------------------
 # 1. Lectura y union
@@ -224,7 +224,7 @@ def main():
     print(f"Resumen regional: {res.shape} -> resumen_regional.csv")
 
     print("\n=== Estado de referencia (primeras 10 zonas) ===")
-    cols_show = ["zona_mf", "n_registros", "temperatura_C_media", "oxigeno_ml_L_media", "salinidad_psu_media"]
+    cols_show = ["zona_mf", "n_registros", "temperatura_C_media", "oxigeno_mg_L_media", "salinidad_psu_media"]
     print(estado[cols_show].head(10).to_string(index=False))
 
     print("\n=== Trayectorias (pendientes significativas p<0.05) ===")

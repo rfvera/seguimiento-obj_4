@@ -2,9 +2,9 @@ metrica,valor,n
 temperatura_C_media_regional,9.732758850133171,2310
 temperatura_C_mediana_regional,9.8701,2310
 temperatura_C_desvio_regional,1.4981423235907076,2310
-oxigeno_ml_L_media_regional,5.481344848602338,2189
-oxigeno_ml_L_mediana_regional,5.26,2189
-oxigeno_ml_L_desvio_regional,1.9666230541702838,2189
+oxigeno_mg_L_media_regional,7.833006228998199,2189
+oxigeno_mg_L_mediana_regional,7.5166978,2189
+oxigeno_mg_L_desvio_regional,2.8103633431009607,2189
 salinidad_psu_media_regional,32.1599428430609,2247
 salinidad_psu_mediana_regional,32.559999999999995,2247
 salinidad_psu_desvio_regional,1.5435391186022007,2247

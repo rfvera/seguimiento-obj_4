@@ -75,8 +75,8 @@ Salidas (en `salidas/analisis_ambiental/`):
 ### Resultados (2019–2025, 2.363 registros fondo, 20 zonas, 258 estaciones)
 
 - Temperatura regional: media 9,73 °C, mediana 9,87 °C, desvío 1,50 °C (n=2.310).
-- Oxígeno regional: media 5,48 ml/L, mediana 5,26 ml/L, desvío 1,97 ml/L (n=2.189).
-- Salinidad regional: media 32,16 psu, mediana 32,56 psu, desvío 1,54 psu (n=2.247).
+- Oxígeno regional: media 7,83 mg/L, mediana 7,52 mg/L, desvío 2,81 mg/L (n=2.189). Medido en ml/L por el sensor SBE43; convertido a mg/L con factor 1,429 mg/ml. Saturación calculada con Weiss (1970) en `oxigeno_sat_pct`.
+- Salinidad regional: media 32,16 PSU, mediana 32,56 PSU, desvío 1,54 PSU (n=2.247).
 - Tendencias significativas (p<0,05, registro de fondo): **6**, no 3.
   - Quellón: temperatura +0,88 °C/año (p=0,0235, R2=1,00, n=3 años).
   - Puyuhuapi: oxígeno +0,26 ml/L/año (p=0,0222, R2=0,77, n=6 años).
@@ -159,6 +159,18 @@ Lee las salidas de los pipelines 1–4 y escribe en `salidas/verificacion/`:
 
 Regla: ninguna cifra del informe se transcribe a mano. Si cambia un CSV del pipeline, se
 re-ejecuta este script y se compara `cifras_informe.csv` antes de recompilar el PDF.
+
+## Pipeline 7b: Conversión de oxígeno (ml/L → mg/L)
+
+`~/miniconda3/envs/r_env/bin/python salidas/oxigeno_conversion.py`
+
+Añade a `fondo_ctd_por_zona.csv` y `perfiles_procesados.csv`:
+- `oxigeno_mg_L` = `oxigeno_ml_L` × 1,42903 (densidad del O2 a STP).
+- `oxigeno_sat_pct` = saturación con la ecuación de Weiss (1970).
+
+Añade `oxigeno_mg_L_media` / `oxigeno_mg_L_desvio` a `promedio_anual_por_profundidad.csv`.
+
+Regla: el sensor reporta en ml/L; el informe publica en mg/L. La conversión es un factor constante; la saturación es Weiss.
 
 ## Pipeline 8: Figuras de series de tiempo
 

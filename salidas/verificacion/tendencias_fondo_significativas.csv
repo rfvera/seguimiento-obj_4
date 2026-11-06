@@ -1,7 +1,7 @@
 zona,variable,pendiente,p,r2,n_anos
 Quellon,temperatura,0.882,0.0235,1.0,3
-Puyuhuapi,oxigeno,0.259,0.0222,0.77,6
-Reloncavi,oxigeno,0.451,0.0261,0.66,7
+Puyuhuapi,oxigeno,0.37,0.0222,0.77,6
+Reloncavi,oxigeno,0.645,0.0261,0.66,7
 Aysen,salinidad,0.414,0.0496,0.66,6
 Butachauques,salinidad,-0.046,0.0305,0.73,6
 Desertores,salinidad,-0.084,0.0291,0.65,7

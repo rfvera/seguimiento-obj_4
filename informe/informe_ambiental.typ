@@ -69,8 +69,8 @@ Este informe define el estado ambiental de referencia y las trayectorias de camb
 Los valores regionales del registro de fondo son:
 
 - Temperatura: media 9,73 °C (mediana 9,87 °C, desvío estándar 1,50 °C) sobre 2.310 registros válidos.
-- Oxígeno disuelto: media 5,48 ml/L (mediana 5,26 ml/L, desvío estándar 1,97 ml/L) sobre 2.189 registros válidos.
-- Salinidad: media 32,16 psu (mediana 32,56 psu, desvío estándar 1,54 psu) sobre 2.247 registros válidos.
+- Oxígeno disuelto: media 7,83 mg/L (mediana 7,52 mg/L, desvío estándar 2,81 mg/L) sobre 2.189 registros válidos.
+- Salinidad: media 32,16 PSU (mediana 32,56 PSU, desvío estándar 1,54 PSU) sobre 2.247 registros válidos.
 
 La cobertura temporal no es uniforme: 11 zonas cubren 2019–2025 (con huecos: Aysén, Moraleda y Puyuhuapi sin 2020), 9 zonas tienen solo 2024–2025 y Quellón cubre 2023–2025. La Figura 1 y el cuadro de la sección 3 detallan la cobertura por zona.
 
@@ -169,6 +169,8 @@ Se aplicó el procedimiento estándar para perfiles CTD, basado en el paquete R 
 
 Por zona de macrofauna y profundidad se calculan número de registros, número de estaciones, rango de años y, para cada variable, media, mediana, percentiles 5/25/75/95 y desvío estándar.
 
+Adicionalmente se calcula la saturación del oxígeno (%sat) con la ecuación de Weiss (1970), disponible en los CSVs como `oxigeno_sat_pct`.
+
 == Trayectorias de cambio (series de tiempo por profundidad)
 
 Por zona×profundidad×variable se calcula el promedio anual y se aplica:
@@ -188,7 +190,7 @@ Este enfoque de anomalías con ciclo estacional removido se contrasta con un seg
 - Nueve zonas (Ancud, Calbuco, Chacao, Chiloé central, Guaitecas, Hornopirén, Natales, Pta. Arenas y Tenaun) tienen datos solo para 2024–2025, de modo que no admiten tendencia.
 - Varias tendencias se estiman con 3 años. Un R² cercano a 1 en esas condiciones refleja el escaso número de puntos, no una relación excepcionalmente fuerte; debe leerse como señal preliminar. En algunos niveles, además, el promedio anual se apoya en un único cast.
 - Las profundidades de fondo derivadas de GEBCO_2026 tienen resolución de 15 segundos de arco (unos 450 m) y no representan la batimetría local de fiordos y canales.
-- El archivo B (marea roja) reporta oxígeno solo en ml/L y sus perfiles llegan mayoritariamente hasta ~55 m (máximo 101 m).
+- El archivo B (marea roja) reporta oxígeno en ml/L; se convierte a mg/L con el factor estándar 1,429 mg/ml (densidad del O2 a STP). La saturación se calcula con la ecuación de Weiss (1970). Sus perfiles llegan mayoritariamente hasta ~55 m (máximo 101 m).
 - Faltantes en perfiles: temperatura 3.289, oxígeno 8.931, salinidad 8.804, por despiking o ausencia en el dato original.
 - 43.474 registros del archivo B carecen de profundidad de fondo, todos ellos en estaciones sin valor GEBCO utilizable.
 
@@ -202,8 +204,8 @@ El cuadro 1 presenta las estadísticas regionales agregadas para todas las zonas
     align: center,
     [Variable], [Media], [Mediana], [Desvío estándar],
     [Temperatura (°C)], [9,73], [9,87], [1,50],
-    [Oxígeno (ml/L)], [5,48], [5,26], [1,97],
-    [Salinidad (psu)], [32,16], [32,56], [1,54],
+    [Oxígeno (mg/L)], [7,83], [7,52], [2,81],
+    [Salinidad (PSU)], [32,16], [32,56], [1,54],
   ),
   caption: [Estadísticas regionales del estado de referencia (2019–2025). n temperatura = 2.310, n oxígeno = 2.189, n salinidad = 2.247 registros válidos (registro de fondo).],
 )
@@ -216,20 +218,20 @@ El cuadro 2 resume las condiciones por nivel de profundidad, promediando todas l
   table(
     columns: (2.2cm, 1.8cm, 2.2cm, 2.2cm, 2.2cm, 1.6cm),
     align: center,
-    [Prof. (m)], [n reg.], [Temp. media (°C)], [O2 media (ml/L)], [Sal. media (psu)], [n zonas],
-    [1], [2.127], [10,26], [7,02], [29,42], [20],
-    [10], [2.295], [10,01], [6,67], [30,66], [20],
-    [20], [2.176], [9,80], [6,18], [31,29], [19],
-    [30], [1.935], [9,69], [5,97], [31,58], [19],
-    [50], [1.337], [9,81], [5,28], [31,98], [17],
-    [100], [253], [9,88], [4,40], [31,75], [12],
-    [200], [126], [10,21], [3,54], [32,71], [9],
-    [300], [22], [10,30], [3,27], [32,99], [6],
+    [Prof. (m)], [n reg.], [Temp. media (°C)], [O2 media (mg/L)], [Sal. media (PSU)], [n zonas],
+    [1], [2.127], [10,26], [10,04], [29,42], [20],
+    [10], [2.295], [10,01], [9,53], [30,66], [20],
+    [20], [2.176], [9,80], [8,83], [31,29], [19],
+    [30], [1.935], [9,69], [8,53], [31,58], [19],
+    [50], [1.337], [9,81], [7,54], [31,98], [17],
+    [100], [253], [9,88], [6,28], [31,75], [12],
+    [200], [126], [10,21], [5,05], [32,71], [9],
+    [300], [22], [10,30], [4,67], [32,99], [6],
   ),
   caption: [Resumen regional por profundidad (2019–2025). n reg. = número de registros de perfil; n zonas = número de zonas con datos en esa profundidad.],
 )
 
-La salinidad superficial (29,42 psu a 1 m) es consistente con la descarga de agua dulce de fiordos y canales; por debajo de 50 m se estabiliza en torno a 32 psu. El oxígeno desciende de 7,02 ml/L en superficie a 3,27 ml/L a 300 m. Ese gradiente es coherente con una columna estratificada y con consumo de oxígeno en profundidad; el presente análisis no permite separar ambas causas.
+La salinidad superficial (29,42 PSU a 1 m) es consistente con la descarga de agua dulce de fiordos y canales; por debajo de 50 m se estabiliza en torno a 32 PSU. El oxígeno desciende de 10,03 mg/L en superficie a 4,67 mg/L a 300 m. Ese gradiente es coherente con una columna estratificada y con consumo de oxígeno en profundidad; el presente análisis no permite separar ambas causas.
 
 = Tendencias del registro de fondo
 
@@ -240,12 +242,12 @@ El cuadro 3 lista las seis combinaciones zona×variable con tendencia significat
     columns: (2.2cm, 2.8cm, 2.6cm, 1.6cm, 1.4cm, 1.5cm),
     align: center,
     [Zona], [Variable], [Tendencia anual], [p-valor], [R²], [n años],
-    [Reloncaví], [Oxígeno (ml/L)], [+0,45], [0,026], [0,66], [7],
-    [Butachauques], [Salinidad (psu)], [−0,05], [0,031], [0,73], [6],
-    [Desertores], [Salinidad (psu)], [−0,08], [0,029], [0,65], [7],
+    [Reloncaví], [Oxígeno (mg/L)], [+0,64], [0,026], [0,66], [7],
+    [Butachauques], [Salinidad (PSU)], [−0,05], [0,031], [0,73], [6],
+    [Desertores], [Salinidad (PSU)], [−0,08], [0,029], [0,65], [7],
     [Quellón], [Temperatura (°C)], [+0,88], [0,023], [1,00], [3],
-    [Puyuhuapi], [Oxígeno (ml/L)], [+0,26], [0,022], [0,77], [6],
-    [Aysén], [Salinidad (psu)], [+0,41], [0,0496], [0,66], [6],
+    [Puyuhuapi], [Oxígeno (mg/L)], [+0,37], [0,022], [0,77], [6],
+    [Aysén], [Salinidad (PSU)], [+0,41], [0,0496], [0,66], [6],
   ),
   caption: [Tendencias significativas del registro de fondo (2019–2025). n años = años con promedio anual válido en la zona.],
 )
@@ -258,9 +260,9 @@ El cuadro 3 lista las seis combinaciones zona×variable con tendencia significat
 == Interpretación de las tendencias de fondo
 
 - Quellón: la temperatura aumenta +0,88 °C/año, pero la serie cubre solo 2023–2025. El R² de 1,00 (0,9986) con tres puntos es un ajuste casi perfecto, no evidencia de robustez.
-- Puyuhuapi y Reloncaví: el oxígeno de fondo sube +0,26 y +0,45 ml/L/año, con 6 y 7 años de datos. Son, junto con Desertores, las de menor p-valor (0,022–0,029), aunque comparten 6–7 años con Aysén y Butachauques.
-- Aysén: la salinidad de fondo aumenta +0,41 psu/año, con p=0,0496. Está en el borde del umbral: un año más de datos puede moverla dentro o fuera de la significancia.
-- Butachauques y Desertores: la salinidad de fondo desciende −0,05 y −0,08 psu/año. La de Butachauques no aparecía en la versión anterior porque el ajuste usaba la posición de la serie y no el año calendario; al corregirlo, pasa a ser significativa.
+- Puyuhuapi y Reloncaví: el oxígeno de fondo sube +0,37 y +0,64 mg/L/año, con 6 y 7 años de datos. Son, junto con Desertores, las de menor p-valor (0,022–0,029), aunque comparten 6–7 años con Aysén y Butachauques.
+- Aysén: la salinidad de fondo aumenta +0,41 PSU/año, con p=0,0496. Está en el borde del umbral: un año más de datos puede moverla dentro o fuera de la significancia.
+- Butachauques y Desertores: la salinidad de fondo desciende −0,05 y −0,08 PSU/año. La de Butachauques no aparecía en la versión anterior porque el ajuste usaba la posición de la serie y no el año calendario; al corregirlo, pasa a ser significativa.
 - Nueve zonas quedan sin tendencia calculable por contar con dos años de datos.
 
 
@@ -273,26 +275,26 @@ Con el perfil completo se detectaron 179 combinaciones zona×profundidad×variab
     columns: (2.4cm, 1.2cm, 3.0cm, 2.2cm, 1.4cm, 1.1cm, 1.2cm),
     align: center,
     [Zona], [Prof. (m)], [Variable], [Tendencia anual], [p-valor], [R²], [n años],
-    [Butachauques], [285], [Salinidad (psu)], [−0,04], [0,047], [0,99], [3],
-    [Butachauques], [295], [Salinidad (psu)], [−0,04], [0,001], [1,00], [3],
-    [Butachauques], [304], [Salinidad (psu)], [−0,04], [0,045], [1,00], [3],
+    [Butachauques], [285], [Salinidad (PSU)], [−0,04], [0,047], [0,99], [3],
+    [Butachauques], [295], [Salinidad (PSU)], [−0,04], [0,001], [1,00], [3],
+    [Butachauques], [304], [Salinidad (PSU)], [−0,04], [0,045], [1,00], [3],
     [Quellón], [3], [Temperatura (°C)], [+1,07], [0,043], [0,996], [3],
     [Quellón], [10], [Temperatura (°C)], [+0,99], [0,024], [0,999], [3],
     [Quellón], [22], [Temperatura (°C)], [+0,87], [0,005], [1,00], [3],
-    [Aysén], [44], [Salinidad (psu)], [+0,60], [0,030], [0,73], [6],
-    [Aysén], [56], [Salinidad (psu)], [+0,49], [0,047], [0,67], [6],
-    [Aysén], [239], [Salinidad (psu)], [−0,14], [0,013], [0,82], [6],
-    [Aysén], [247], [Salinidad (psu)], [−0,14], [0,015], [0,81], [6],
-    [Aysén], [248], [Salinidad (psu)], [−0,08], [0,037], [0,70], [6],
-    [Aysén], [251], [Salinidad (psu)], [−0,08], [0,037], [0,70], [6],
+    [Aysén], [44], [Salinidad (PSU)], [+0,60], [0,030], [0,73], [6],
+    [Aysén], [56], [Salinidad (PSU)], [+0,49], [0,047], [0,67], [6],
+    [Aysén], [239], [Salinidad (PSU)], [−0,14], [0,013], [0,82], [6],
+    [Aysén], [247], [Salinidad (PSU)], [−0,14], [0,015], [0,81], [6],
+    [Aysén], [248], [Salinidad (PSU)], [−0,08], [0,037], [0,70], [6],
+    [Aysén], [251], [Salinidad (PSU)], [−0,08], [0,037], [0,70], [6],
   ),
   caption: [Bloques seleccionados de tendencias significativas de anomalías (p menor que 0,05). Los bloques continuos en profundidad corresponden a un mismo proceso, no a observaciones independientes.],
 )
 
 == Interpretación de las tendencias por profundidad
 
-- Aysén muestra un contraste vertical neto: salinización en aguas someras (30–56 m, hasta +0,60 psu/año) y desalinización bajo los 239 m (−0,14 psu/año). La señal profunda se sostiene en 6 años con R² de 0,70–0,82.
-- Butachauques presenta desalinización profunda muy estable en apariencia (−0,04 psu/año, R² mayor que 0,99), pero descansa en tres años no consecutivos (2019, 2021 y 2025) con un solo registro válido por año a esa profundidad. Con ese n, el R² no debe interpretarse como consistencia temporal.
+- Aysén muestra un contraste vertical neto: salinización en aguas someras (30–56 m, hasta +0,60 PSU/año) y desalinización bajo los 239 m (−0,14 PSU/año). La señal profunda se sostiene en 6 años con R² de 0,70–0,82.
+- Butachauques presenta desalinización profunda muy estable en apariencia (−0,04 PSU/año, R² mayor que 0,99), pero descansa en tres años no consecutivos (2019, 2021 y 2025) con un solo registro válido por año a esa profundidad. Con ese n, el R² no debe interpretarse como consistencia temporal.
 - Quellón concentra el calentamiento más intenso del registro: +1,07 °C/año a 3 m, decreciente con la profundidad (+0,87 °C/año a 22 m). También aquí la serie es de tres años.
 
 = Series de tiempo por variable (OLS sobre promedio anual)
@@ -305,8 +307,8 @@ Como control independiente del método de anomalías, se ajustó OLS directament
     align: center,
     [Variable], [n tend. sig.], [Pendiente media], [Cambio por década], [R² medio], [p-valor mínimo],
     [Temperatura (°C)], [41], [+0,57 °C/año], [+5,71 °C/década], [0,99], [0,006],
-    [Oxígeno (ml/L)], [46], [+0,23 ml/L/año], [+2,27 ml/L/década], [0,88], [0,003],
-    [Salinidad (psu)], [91], [+0,09 psu/año], [+0,95 psu/década], [0,78], [0,001],
+    [Oxígeno (mg/L)], [46], [+0,32 mg/L/año], [+3,24 mg/L/década], [0,88], [0,003],
+    [Salinidad (PSU)], [91], [+0,09 PSU/año], [+0,95 PSU/década], [0,78], [0,001],
   ),
   caption: [Resumen de tendencias significativas por variable (series de tiempo anual, 2019–2025).],
 )
@@ -339,12 +341,12 @@ El oxígeno presenta 46 tendencias significativas, con los aumentos más fuertes
   table(
     columns: (2.4cm, 1.8cm, 2.2cm, 2.2cm, 1.8cm, 1.6cm),
     align: center,
-    [Zona], [Prof. (m)], [Pendiente (ml/L/año)], [Cambio por década], [p-valor], [R²],
-    [Butachauques], [6], [+0,68], [+6,84], [0,017], [0,966],
-    [Butachauques], [5], [+0,68], [+6,84], [0,018], [0,965],
-    [Butachauques], [4], [+0,68], [+6,79], [0,017], [0,967],
-    [Butachauques], [7], [+0,68], [+6,77], [0,018], [0,965],
-    [Butachauques], [2], [+0,67], [+6,74], [0,014], [0,972],
+    [Zona], [Prof. (m)], [Pendiente (mg/L/año)], [Cambio por década], [p-valor], [R²],
+    [Butachauques], [6], [+0,97], [+9,78], [0,017], [0,966],
+    [Butachauques], [5], [+0,97], [+9,77], [0,018], [0,965],
+    [Butachauques], [4], [+0,97], [+9,70], [0,017], [0,967],
+    [Butachauques], [7], [+0,97], [+9,67], [0,018], [0,965],
+    [Butachauques], [2], [+0,96], [+9,63], [0,014], [0,972],
   ),
   caption: [Tendencias de oxígeno disuelto significativas (top 5 por pendiente).],
 )
@@ -357,7 +359,7 @@ La salinidad reúne el mayor número de tendencias significativas (91), con los 
   table(
     columns: (2.4cm, 1.8cm, 2.2cm, 2.2cm, 1.8cm, 1.6cm),
     align: center,
-    [Zona], [Prof. (m)], [Pendiente (psu/año)], [Cambio por década], [p-valor], [R²],
+    [Zona], [Prof. (m)], [Pendiente (PSU/año)], [Cambio por década], [p-valor], [R²],
     [Reloncaví], [3], [−0,92], [−9,18], [0,033], [0,997],
     [Reloncaví], [4], [−0,75], [−7,50], [0,007], [1,000],
     [Reloncaví], [5], [−0,62], [−6,15], [0,036], [0,997],
@@ -369,11 +371,11 @@ La salinidad reúne el mayor número de tendencias significativas (91), con los 
 
 = Conclusiones
 
-1. El estado ambiental de referencia regional combina temperaturas frías (media 9,73 °C), oxígeno moderado (5,48 ml/L) y salinidad cercana a la del océano abierto (32,16 psu). La heterogeneidad entre zonas y profundidades refleja la complejidad de fiordos y canales de la Patagonia chilena, no un régimen único.
+1. El estado ambiental de referencia regional combina temperaturas frías (media 9,73 °C), oxígeno moderado (7,83 mg/L) y salinidad cercana a la del océano abierto (32,16 PSU). La heterogeneidad entre zonas y profundidades refleja la complejidad de fiordos y canales de la Patagonia chilena, no un régimen único.
 
 2. El registro de fondo entrega seis tendencias significativas. Las de oxígeno en Puyuhuapi y Reloncaví y la de salinidad en Desertores son las mejor sustentadas por número de años.
 
-3. Las señales más intensas —calentamiento de Quellón y desalinización profunda de Butachauques en el perfil— se apoyan en tres años. Deben tratarse como alertas tempranas, no como tasas consolidadas. La desalinización profunda de Aysén (239–251 m), con seis años y R² de 0,70–0,82, es la tendencia más defendible del análisis por profundidad; su salinidad de fondo, en cambio, sube +0,41 psu/año y queda en el borde de la significancia.
+3. Las señales más intensas —calentamiento de Quellón y desalinización profunda de Butachauques en el perfil— se apoyan en tres años. Deben tratarse como alertas tempranas, no como tasas consolidadas. La desalinización profunda de Aysén (239–251 m), con seis años y R² de 0,70–0,82, es la tendencia más defendible del análisis por profundidad; su salinidad de fondo, en cambio, sube +0,41 PSU/año y queda en el borde de la significancia.
 
 4. Aysén muestra un contraste vertical que el registro de fondo oculta: salinización sobre los 56 m y desalinización bajo los 239 m. Analizar solo el fondo habría promediado procesos opuestos.
 
@@ -437,6 +439,7 @@ Las cifras regionales y los conteos provienen de `salidas/verificacion/cifras_in
 - `salidas/figuras/cobertura_temporal.py` — genera `informe/figuras/cobertura_temporal.png` y `salidas/verificacion/cobertura_temporal.csv`.
 - `salidas/verificacion/zonas_estaciones.csv` — estaciones (código) por zona, orden norte-sur.
 - `salidas/verificacion/zonas_estaciones.py` — genera el CSV anterior.
+- `salidas/oxigeno_conversion.py` — añade `oxigeno_mg_L` (factor 1,429) y `oxigeno_sat_pct` (Weiss 1970) a los CSVs de fondo y perfiles.
 - `fondo_ctd_por_zona.csv` — registro de fondo (2.363 filas, 220 del archivo A y 2.143 del archivo B).
 - `perfiles_procesados.py`, `reconstruir_ctd.py`, `salidas/analisis_ambiental/analisis_estado_referencia.py` — scripts reproducibles.
 - `mapa_estaciones_acs.png` — mapa de estaciones y zonas ACS.

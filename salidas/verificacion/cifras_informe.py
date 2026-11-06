@@ -32,7 +32,7 @@ for arch, n in fondo.groupby("archivo").size().items():
 
 for var, etiqueta in [
     ("temperatura_C", "temperatura"),
-    ("oxigeno_ml_L", "oxigeno"),
+    ("oxigeno_mg_L", "oxigeno"),
     ("salinidad_psu", "salinidad"),
 ]:
     v = fondo[var].dropna()
@@ -57,7 +57,7 @@ for _, r in estado.iterrows():
         "salidas/analisis_ambiental/estado_referencia_por_zona.csv")
     add(f"zona.{r.zona_mf}.temp_media", round(float(r.temperatura_C_media), 2),
         "salidas/analisis_ambiental/estado_referencia_por_zona.csv")
-    add(f"zona.{r.zona_mf}.o2_media", round(float(r.oxigeno_ml_L_media), 2),
+    add(f"zona.{r.zona_mf}.o2_media", round(float(r.oxigeno_mg_L_media), 2),
         "salidas/analisis_ambiental/estado_referencia_por_zona.csv")
     add(f"zona.{r.zona_mf}.sal_media", round(float(r.salinidad_psu_media), 2),
         "salidas/analisis_ambiental/estado_referencia_por_zona.csv")
@@ -66,7 +66,7 @@ for _, r in estado.iterrows():
 sigtray = []
 for var, etiqueta in [
     ("temperatura_C", "temperatura"),
-    ("oxigeno_ml_L", "oxigeno"),
+    ("oxigeno_mg_L", "oxigeno"),
     ("salinidad_psu", "salinidad"),
 ]:
     for _, r in tray[tray[f"{var}_p_valor"] < 0.05].iterrows():
@@ -98,7 +98,7 @@ for p in [1, 10, 20, 30, 50, 100, 200, 300]:
         "profundidad_m": p,
         "n_registros": int(r.n_registros),
         "temp_media": round(float(r.temperatura_C_media), 2),
-        "o2_media": round(float(r.oxigeno_ml_L_media), 2),
+        "o2_media": round(float(r.oxigeno_mg_L_media), 2),
         "sal_media": round(float(r.salinidad_psu_media), 2),
         "n_zonas": int(r.n_zonas),
     })
@@ -108,7 +108,7 @@ pd.DataFrame(cuadro_prof).to_csv(OUT / "cuadro_resumen_por_profundidad.csv", ind
 anom = pd.read_csv(BASE / "salidas/perfiles_procesados/tendencias_anomalias_por_profundidad.csv")
 sig = anom[anom["p_valor"] < 0.05]
 add("anomalias.n_sig_total", len(sig), "tendencias_anomalias_por_profundidad.csv")
-for var, etiqueta in [("temperatura_C", "temperatura"), ("oxigeno_ml_L", "oxigeno"),
+for var, etiqueta in [("temperatura_C", "temperatura"), ("oxigeno_mg_L", "oxigeno"),
                       ("salinidad_psu", "salinidad")]:
     add(f"anomalias.n_sig_{etiqueta}", int((sig["variable"] == var).sum()),
         "tendencias_anomalias_por_profundidad.csv")
@@ -117,7 +117,7 @@ serie = pd.read_csv(BASE / "salidas/analisis_serie_tiempo/resumen_tendencias_sig
 add("series.n_sig_total", len(serie), "resumen_tendencias_significativas.csv")
 add("series.n_zonas", serie["zona_mf"].nunique(), "resumen_tendencias_significativas.csv")
 add("series.n_profundidades", serie["profundidad_m"].nunique(), "resumen_tendencias_significativas.csv")
-for var, etiqueta in [("temperatura_C", "temperatura"), ("oxigeno_ml_L", "oxigeno"),
+for var, etiqueta in [("temperatura_C", "temperatura"), ("oxigeno_mg_L", "oxigeno"),
                       ("salinidad_psu", "salinidad")]:
     d = serie[serie["variable"] == var]
     add(f"series.n_sig_{etiqueta}", len(d), "resumen_tendencias_significativas.csv")
@@ -135,7 +135,7 @@ lat = est.groupby("zona_mf")["lat"].mean()
 
 # top 5 por variable, con el signo que corresponda
 tops = []
-for var, etiqueta in [("temperatura_C", "temperatura"), ("oxigeno_ml_L", "oxigeno"),
+for var, etiqueta in [("temperatura_C", "temperatura"), ("oxigeno_mg_L", "oxigeno"),
                       ("salinidad_psu", "salinidad")]:
     d = serie[serie["variable"] == var]
     d = d.reindex(d["pendiente"].abs().sort_values(ascending=False).index).head(5)

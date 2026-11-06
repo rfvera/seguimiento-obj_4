@@ -34,7 +34,7 @@ BASE = Path("/home/rfvera/Documentos/IFOP/SEGUIMIENTO/objetivo_4")
 ENTRADA = BASE / "salidas" / "perfiles_procesados" / "promedio_anual_por_profundidad.csv"
 OUTDIR = BASE / "salidas" / "analisis_serie_tiempo"
 
-VARIABLES = ["temperatura_C", "oxigeno_ml_L", "salinidad_psu"]
+VARIABLES = ["temperatura_C", "oxigeno_mg_L", "salinidad_psu"]
 MIN_ANOS = 3  # mínimo de años para calcular tendencia
 
 
@@ -43,7 +43,7 @@ def cargar_datos() -> pd.DataFrame:
     # Normalizar nombres de columnas para análisis
     df = df.rename(columns={
         "temperatura_C_media": "temperatura_C",
-        "oxigeno_ml_L_media": "oxigeno_ml_L",
+        "oxigeno_mg_L_media": "oxigeno_mg_L",
         "salinidad_psu_media": "salinidad_psu",
     })
     df["anio"] = df["anio"].astype(int)

@@ -44,6 +44,7 @@ GEBCO_PROF = BASE / "gebco_profundidades_marea_roja.csv"
 OUTDIR = BASE / "salidas" / "perfiles_procesados"
 
 VARIABLES_CTD = ["temperatura_C", "oxigeno_ml_L", "salinidad_psu"]
+VARIABLES_ANALISIS = ["temperatura_C", "oxigeno_ml_L", "oxigeno_mg_L", "salinidad_psu"]
 BIN_SIZE = 1.0  # metros, estándar para aguas costeras (RBR Guidelines)
 
 
@@ -260,7 +261,7 @@ def promedio_anual_por_profundidad(df: pd.DataFrame) -> pd.DataFrame:
         fila = {"zona_mf": zona, "profundidad_m": prof, "anio": int(anio),
                 "n_registros": len(sub),
                 "n_estaciones": sub["estacion_id"].nunique()}
-        for var in VARIABLES_CTD:
+        for var in VARIABLES_ANALISIS:
             vals = sub[var].dropna()
             fila[var + "_media"] = float(vals.mean()) if len(vals) > 0 else np.nan
             fila[var + "_desvio"] = float(vals.std(ddof=1)) if len(vals) > 1 else np.nan
@@ -282,7 +283,7 @@ def ciclo_estacional_por_profundidad(df_anual: pd.DataFrame) -> pd.DataFrame:
         # Usamos el mes como tiempo (1-12)
         t = sub["mes"].values.astype(float) if "mes" in sub.columns else \
             pd.to_datetime(sub["fecha_rep"].values).month.values.astype(float)
-        for var in VARIABLES_CTD:
+        for var in VARIABLES_ANALISIS:
             y = sub[var + "_media"].dropna().values
             t_var = t[:len(y)] if len(y) < len(t) else t
             if len(y) < 3:
@@ -397,6 +398,7 @@ def main():
 
     # --- Combinar perfiles ---
     perfiles = pd.concat([perfilesA, perfilesB], ignore_index=True)
+    perfiles["oxigeno_mg_L"] = perfiles["oxigeno_ml_L"] * 1.42903
 
     # Añadir columna profundidad_fondo (GEBCO o PROF_SECT_m)
     perfiles["profundidad_fondo_m"] = pd.NA
@@ -427,7 +429,7 @@ def main():
     # --- Guardar perfiles procesados ---
     cols_perfiles = ["archivo", "estacion_id", "fecha", "profundidad_m",
                      "profundidad_fondo_m", "profundidad_fondo_fuente",
-                     "temperatura_C", "oxigeno_ml_L", "salinidad_psu",
+                     "temperatura_C", "oxigeno_ml_L", "oxigeno_mg_L", "salinidad_psu",
                      "zona_mf", "acs_mf", "dist_km"]
     perfiles_z = perfiles_z[cols_perfiles]
     perfiles_z.to_csv(OUTDIR / "perfiles_procesados.csv", index=False, encoding="utf-8")
@@ -452,7 +454,7 @@ def main():
     print("\n=== Calculando tendencias de anomalías ===")
     # Preparar df_anual con columna variable_col para groupby
     df_anual_long = []
-    for var in VARIABLES_CTD:
+    for var in VARIABLES_ANALISIS:
         tmp = df_anual[["zona_mf", "profundidad_m", "anio", "mes", "fecha_rep",
                         var + "_media"]].copy()
         tmp = tmp.rename(columns={var + "_media": "valor_media"})
@@ -461,7 +463,7 @@ def main():
         df_anual_long.append(tmp)
     df_anual_long = pd.concat(df_anual_long, ignore_index=True)
     # Renombrar para que tendencias_anomalias funcione
-    for var in VARIABLES_CTD:
+    for var in VARIABLES_ANALISIS:
         mask = df_anual_long["variable_col"] == var
         df_anual_long.loc[mask, var + "_media"] = df_anual_long.loc[mask, "valor_media"]
 
@@ -478,7 +480,7 @@ def main():
                 "n_zonas": sub["zona_mf"].nunique(),
                 "anio_min": int(sub["fecha"].dt.year.min()),
                 "anio_max": int(sub["fecha"].dt.year.max())}
-        for var in VARIABLES_CTD:
+        for var in VARIABLES_ANALISIS:
             vals = sub[var].dropna()
             fila[var + "_media"] = float(vals.mean()) if len(vals) > 0 else np.nan
             fila[var + "_desvio"] = float(vals.std(ddof=1)) if len(vals) > 1 else np.nan
