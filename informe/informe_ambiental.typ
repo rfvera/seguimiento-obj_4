@@ -6,10 +6,12 @@
 )
 
 #set text(
-  size: 11pt,
-  font: "Libertinus Serif",
+  size: 12pt,
+  font: "Roboto",
   lang: "es",
 )
+
+#set par(justify: true, leading: 0.5em)
 
 #set heading(
   numbering: "1.",
