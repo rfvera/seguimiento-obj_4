@@ -598,6 +598,7 @@ Las cifras regionales y los conteos provienen de `salidas/verificacion/cifras_in
 - `informe/datos/acs_subpesca.gpkg` — polígonos oficiales de ACS de SUBPESCA.
 - `informe/datos/ne_10m_coastline.*` — línea de costa Natural Earth 10 m (shapefile).
 - `informe/datos/gshhg_chile_high.*` — línea de costa GSHHG alta resolución (shapefile, 6.493 segmentos).
+- `informe/imagenes/logo_ifop_2.png` — logo institucional IFOP (usado en portada, créditos y contraportada).
 - `salidas/figuras/empaquetar_mapa.py` — genera el GPKG anterior a partir de las salidas del pipeline.
 - `salidas/oxigeno_conversion.py` — añade `oxigeno_mg_L` (factor 1,429) y `oxigeno_sat_pct` (Weiss 1970) a los CSVs de fondo y perfiles.
 - `zonas_poligonos.py` — genera `salidas/figuras/zonas_macrofauna.gpkg` (20 polígonos, orden norte-sur).
