@@ -614,3 +614,5 @@ de mar adyacente sin zona (656 fragmentos), incluida una parte de Puyuhuapi de
 5. Decidir si se eliminan las 3 partes < 1 km².
 
 - Commit 04b3306 — orden norte-sur en tablas y figuras.
+
+- Commit ce6ed9e — tabla de estaciones por zona (Cuadro 10).
